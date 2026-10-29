@@ -1,0 +1,1121 @@
+<!doctype html>
+<!-- Écrit pour Base Clean : maquette HORS JEU de la radio (28/10/2026). Double-cliquer pour l'ouvrir dans le navigateur.
+     Les musiques sont lues directement depuis Wikimedia Commons (rien n'est téléchargé sur le disque).
+     Le catalogue (catalogue.js, à côté de cette page) répertorie les titres libres trouvés, sans aucun filtre.
+     En jeu, plus tard, les fichiers choisis seront embarqués dans la ressource (aucune adresse extérieure dans une NUI). -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radio Base Clean — maquette</title>
+<style>
+  :root {
+    --fond: #0f1115; --carte: #181b22; --carte-2: #1f232c; --bord: #2a2f3a;
+    --texte: #eef0f4; --doux: #9aa3b2; --accent: #ff4f8b; --accent-2: #4fc3ff;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fond); color: var(--texte); font: 15px/1.45 "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 1200px; margin: 0 auto; padding: 24px 16px 80px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  h2 { font-size: 15px; margin: 30px 0 10px; color: var(--doux); text-transform: uppercase; letter-spacing: .08em; }
+  .sous-titre, .note { color: var(--doux); }
+  .note { font-size: 13px; }
+  .stations { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; }
+  .station { background: var(--carte); border: 2px solid var(--bord); border-radius: 14px; padding: 14px; cursor: pointer;
+             text-align: left; color: inherit; font: inherit; transition: border-color .15s, transform .15s; }
+  .station:hover { transform: translateY(-2px); }
+  .station.active { border-color: var(--couleur, var(--accent)); }
+  .station .nom { font-size: 19px; font-weight: 700; }
+  .station .genre, .station .info { color: var(--doux); font-size: 13px; }
+  .lecteur { position: sticky; top: 0; z-index: 5; background: var(--carte); border: 1px solid var(--bord); border-radius: 14px;
+             padding: 14px 16px; margin-top: 16px; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+  .ligne { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .direct { font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 6px; background: var(--accent); color: #fff; }
+  .direct.non { background: var(--carte-2); color: var(--doux); }
+  .titre { font-size: 19px; font-weight: 700; margin: 8px 0 0; }
+  .artiste { color: var(--doux); font-size: 14px; }
+  .barre { width: 100%; height: 6px; background: var(--carte-2); border-radius: 3px; margin: 10px 0 4px; overflow: hidden; cursor: pointer; }
+  .barre > div { height: 100%; width: 0; background: var(--couleur, var(--accent)); }
+  .temps { display: flex; justify-content: space-between; color: var(--doux); font-size: 13px; font-variant-numeric: tabular-nums; }
+  button.bouton, select, input[type=text] { background: var(--carte-2); border: 1px solid var(--bord); color: var(--texte);
+             border-radius: 9px; padding: 7px 12px; font: inherit; }
+  button.bouton { cursor: pointer; }
+  button.bouton:hover { border-color: var(--doux); }
+  button.bouton:disabled { opacity: .4; cursor: default; }
+  button.petit { padding: 3px 8px; font-size: 13px; }
+  button.ajoute { border-color: var(--couleur); color: var(--couleur); }
+  input[type=range] { accent-color: var(--accent); width: 120px; }
+  .antenne { margin-top: 10px; padding: 8px 12px; border-radius: 10px; background: var(--carte-2); color: var(--doux); font-size: 14px; }
+  .erreur { color: #ff8080; }
+  table { width: 100%; border-collapse: collapse; background: var(--carte); }
+  th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--bord); font-size: 13.5px; vertical-align: middle; }
+  th { color: var(--doux); font-weight: 600; background: var(--carte-2); position: sticky; top: 0; }
+  tr.en-cours td { color: var(--accent); font-weight: 600; }
+  td.num { font-variant-numeric: tabular-nums; color: var(--doux); white-space: nowrap; }
+  .tableau { overflow: auto; border-radius: 12px; border: 1px solid var(--bord); max-height: 70vh; }
+  .filtres { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; align-items: center; }
+  .filtres input[type=text] { min-width: 240px; flex: 1; }
+  .lic { font-size: 12px; padding: 2px 6px; border-radius: 5px; background: var(--carte-2); white-space: nowrap; }
+  .lic.cc0 { color: #3ddc97; } .lic.ccby { color: #ffd166; } .lic.autre { color: #ff8080; }
+  .gestion { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 12px; }
+  .bloc { background: var(--carte); border: 1px solid var(--bord); border-radius: 14px; padding: 14px; }
+  .bloc input[type=text] { width: 100%; margin-bottom: 6px; }
+  .bloc ol { margin: 8px 0 0; padding-left: 22px; max-height: 260px; overflow: auto; }
+  .bloc li { margin: 3px 0; font-size: 13.5px; }
+  .bloc li .actions { display: inline-flex; gap: 3px; margin-left: 6px; }
+  a { color: var(--accent-2); }
+  .credits p, .sources li { color: var(--doux); font-size: 13px; margin: 4px 0; }
+  label.case { display: inline-flex; gap: 6px; align-items: center; color: var(--doux); font-size: 13px; cursor: pointer; }
+  .onglets { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .onglets button { background: var(--carte); border: 2px solid var(--bord); color: var(--texte); border-radius: 10px; padding: 8px 14px;
+                    font: inherit; font-weight: 600; cursor: pointer; }
+  .onglets button.actif { border-color: var(--accent-2); background: var(--carte-2); }
+  .onglets button span { color: var(--doux); font-weight: 400; margin-left: 4px; }
+  tr.section td { background: var(--fond); color: var(--accent-2); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: 12.5px; padding: 12px 8px 6px; }
+  tr.groupe td { background: var(--carte-2); padding: 0; }
+  tr.groupe button { display: flex; width: 100%; gap: 10px; align-items: baseline; background: none; border: 0; color: var(--texte);
+                     font: inherit; font-weight: 600; text-align: left; padding: 9px 10px; cursor: pointer; }
+  tr.groupe button:hover { color: var(--accent-2); }
+  tr.groupe .info { color: var(--doux); font-weight: 400; font-size: 13px; }
+  .stations.petites { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin-top: 0; }
+  .stations.petites .station { padding: 9px 11px; border-radius: 11px; }
+  .stations.petites .station .nom { font-size: 15px; }
+  .stations.petites .station .genre, .stations.petites .station .info { font-size: 12px; }
+  .garder { display: inline-block; margin-top: 4px; font-size: 12px; color: var(--accent-2); cursor: pointer; }
+  .garder:hover { text-decoration: underline; }
+  .puces { margin-top: -4px; }
+  .puces button { padding: 5px 10px; font-size: 13px; font-weight: 500; border-width: 1px; }
+  .etoile { color: #ffd166; margin-right: 4px; }
+  .celebre { font-size: 11px; color: #ffd166; border: 1px solid #ffd16655; border-radius: 5px; padding: 0 5px; margin-left: 6px; white-space: nowrap; }
+  .interprete { display: block; color: var(--doux); font-size: 12px; }
+  .bandeau { margin-top: 14px; padding: 12px 14px; border-radius: 12px; border: 2px solid var(--accent-2); background: var(--carte-2); }
+  .bandeau .ligne { margin-top: 8px; }
+  .potes { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+  .potes .pote { background: var(--carte); border: 1px solid var(--bord); border-radius: 10px; padding: 6px 10px; font-size: 13px; }
+  .avis-potes { display: block; font-size: 12px; color: var(--doux); }
+  select.choix-style { padding: 4px 8px; font-size: 13px; }
+  .lien-style { cursor: pointer; border-bottom: 1px dashed var(--doux); }
+  .lien-style:hover { color: var(--accent-2); border-color: var(--accent-2); }
+  .lien-style.corrige { color: var(--accent-2); }
+  button.avis { font-size: 17px; padding: 4px 12px; }
+  button.avis.oui { border-color: #3ddc97; background: #3ddc9726; }
+  button.avis.non { border-color: #ff8080; background: #ff808026; }
+  td.actions-ligne { white-space: nowrap; }
+  td.actions-ligne button.avis { font-size: 13px; padding: 2px 6px; }
+  tr.aime td:first-child { box-shadow: inset 3px 0 0 #3ddc97; }
+  tr.aimepas td { opacity: .45; }
+  tr.aimepas td:first-child { opacity: 1; box-shadow: inset 3px 0 0 #ff8080; }
+  .protege { display: block; color: #ff8080; font-size: 12px; }
+  .droits { display: block; font-size: 12px; margin-top: 2px; cursor: help; }
+  .droits.sur { color: #3ddc97; } .droits.verifier { color: #ffd166; } .droits.refuse { color: #ff8080; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Radio Base Clean — maquette</h1>
+  <p class="sous-titre">Hors jeu. Écoute le catalogue, crée tes stations, ajoute les titres d'un clic, puis exporte ton choix. · <a href="radio-direct.html">📻 Écouter comme une vraie radio</a></p>
+  <div class="bandeau" id="bandeau" hidden></div>
+
+  <div class="stations" id="stations"></div>
+  <h2>Stations toutes prêtes — une par style</h2>
+  <p class="note">Choisies pour toi dans le catalogue : les œuvres célèbres d'abord, puis des titres conseillés (licence sûre, durée de radio, artistes mélangés). Clique pour écouter en direct ; « ＋ Garder » la copie dans tes stations pour la modifier.</p>
+  <div class="stations petites" id="stationsPretes"></div>
+
+  <section class="lecteur" id="lecteur">
+    <div class="ligne">
+      <span class="direct non" id="etatDirect">ÉTEINTE</span>
+      <strong id="nomStation">Aucune station</strong>
+    </div>
+    <div class="titre" id="titre">—</div>
+    <div class="artiste" id="artiste">Choisis une station, ou écoute un titre du catalogue.</div>
+    <div class="barre" id="barre" title="Cliquer pour avancer dans le morceau"><div id="progression"></div></div>
+    <div class="temps"><span id="tempsEcoule">0:00</span><span id="tempsTotal">0:00</span></div>
+    <div class="ligne" style="margin-top:8px">
+      <button class="bouton" id="btnPrecedent" disabled>⏮</button>
+      <button class="bouton" id="btnLecture" disabled>⏸ Pause</button>
+      <button class="bouton" id="btnSuivant" disabled>⏭</button>
+      <button class="bouton avis" id="btnAime" disabled title="J'aime : je garde ce titre (il passe en priorité dans sa station)">👍</button>
+      <button class="bouton avis" id="btnAimePas" disabled title="Je n'aime pas : retiré des stations, on passe au titre suivant">👎</button>
+      <span class="note" id="compteAvis"></span>
+      <label class="case" title="Mal rangé ? Choisis le bon style : le titre change de station">Style <span id="zoneStyle"></span></label>
+      <span class="note">Volume</span>
+      <input type="range" id="volume" min="0" max="100" value="70">
+      <span id="ajoutRapide" class="ligne"></span>
+      <label class="case"><input type="checkbox" id="animatrice"> Animatrice (voix de synthèse, maquette)</label>
+    </div>
+    <div class="antenne" id="antenne">À l'antenne : rien pour l'instant.</div>
+  </section>
+
+  <h2>Catalogue de musiques libres</h2>
+  <div class="onglets" id="onglets"></div>
+  <div class="onglets puces" id="puces"></div>
+  <div class="filtres">
+    <label class="case"><input type="checkbox" id="filtreConseil"> <span class="etoile">★</span>Seulement les titres conseillés</label>
+    <select id="filtreAvis" title="Mes avis">
+      <option value="">Tous mes avis</option>
+      <option value="1">👍 J'aime</option>
+      <option value="-1">👎 Je n'aime pas</option>
+      <option value="0">Pas encore noté</option>
+      <option value="p1">👍 par au moins un pote</option>
+      <option value="p-1">👎 par au moins un pote</option>
+    </select>
+    <select id="vue" title="Façon de ranger le catalogue">
+      <option value="artiste">Rangé par compositeur / artiste</option>
+      <option value="liste">Liste complète</option>
+    </select>
+    <button class="bouton petit" id="btnOuvrir">Tout ouvrir</button>
+    <button class="bouton petit" id="btnFermer">Tout fermer</button>
+    <input type="text" id="recherche" placeholder="Rechercher un titre, un compositeur, un artiste…">
+    <select id="filtreArtiste"><option value="">Tous les compositeurs et artistes</option></select>
+    <select id="filtreLicence">
+      <option value="">Toutes les licences</option>
+      <option value="cc0">CC0 ou domaine public (aucun crédit exigé)</option>
+      <option value="ccby">CC BY (crédit obligatoire)</option>
+      <option value="autre">Autres (CC BY-SA, Art Libre : à vérifier)</option>
+    </select>
+    <select id="filtreDroits" title="Droits de diffusion (registre des droits)">
+      <option value="">Tous les droits</option>
+      <option value="sur">✅ Droits vérifiés seulement</option>
+      <option value="verifier">🟡 Droits à vérifier</option>
+      <option value="refuse">⛔ Ne pas diffuser</option>
+    </select>
+    <select id="filtreFormat"><option value="">Tous les formats</option></select>
+    <select id="filtreDuree">
+      <option value="">Toutes les durées</option>
+      <option value="court">Moins d'1 min (jingles)</option>
+      <option value="moyen">1 à 8 min</option>
+      <option value="long">Plus de 8 min</option>
+    </select>
+    <span class="note" id="compte"></span>
+  </div>
+  <div class="tableau">
+    <table>
+      <thead><tr><th></th><th>Titre</th><th>Compositeur / artiste</th><th>Album</th><th>Durée</th><th>Licence</th><th>Format</th><th>Taille</th><th>Ajouter à</th></tr></thead>
+      <tbody id="catalogue"></tbody>
+    </table>
+  </div>
+  <p class="note" id="plusZone"><button class="bouton" id="btnPlus">Afficher 200 de plus</button></p>
+
+  <h2>Mes stations</h2>
+  <div class="ligne" style="margin-bottom:10px">
+    <button class="bouton" id="btnNouvelle">＋ Nouvelle station</button>
+    <button class="bouton" id="btnExporter">⬇ Exporter mon choix (fichier)</button>
+    <button class="bouton" id="btnCopier">⧉ Copier mon choix</button>
+    <button class="bouton" id="btnReinitialiser">↺ Revenir aux stations de départ</button>
+    <button class="bouton" id="btnEffacerAvis">Effacer mes 👍 / 👎</button>
+  </div>
+  <div class="ligne" style="margin-bottom:10px">
+    <button class="bouton" id="btnPartager">🔗 Partager mes stations avec mes potes</button>
+    <button class="bouton" id="btnEnvoyerAvis">📤 Envoyer mes 👍 / 👎</button>
+    <input type="text" id="lienPartage" readonly placeholder="Le lien à envoyer apparaît ici" style="flex:1;min-width:260px">
+  </div>
+  <p class="note" id="notePartage">Partager : tes potes ouvrent le lien et retrouvent tes stations. Ils votent 👍 / 👎 en écoutant, puis t'envoient leurs avis avec « 📤 Envoyer mes 👍 / 👎 ». Tu ouvres leur lien et tu vois leurs votes sur chaque titre.</p>
+  <div class="potes" id="potes"></div>
+  <p class="note">Tes stations sont gardées dans ce navigateur. Exporte ton choix et donne-le-moi pour le mettre dans la vraie radio.</p>
+  <div class="gestion" id="gestion"></div>
+
+  <h2>Crédits des titres choisis</h2>
+  <div class="credits" id="credits"></div>
+
+  <h2>Sources et règles</h2>
+  <ul class="sources">
+    <li><strong>Wikimedia Commons</strong> : chaque fichier a sa licence écrite sur sa fiche. CC0 = libre sans crédit ; CC BY = libre avec crédit obligatoire ; CC BY-SA = partage dans les mêmes conditions, à vérifier avant le jeu.</li>
+    <li>Aucun titre n'est écarté ici (formats WAV, OGG, MP3… tous gardés) : on convertira les titres choisis avant le jeu.</li>
+    <li><strong>Classique</strong> : l'œuvre est libre si le compositeur est mort depuis plus de 70 ans (en France, en 2026 : mort en 1955 ou avant), et l'enregistrement doit aussi être libre (licence de la fiche). Les œuvres encore protégées (Ibert, Milhaud) sont marquées en rouge.</li>
+    <li>Interdits : la radio de GTA et toute musique gérée par une société d'auteurs (SACEM, BMI, ASCAP…), d'après le contrat Rockstar (§ 2.4). Voir <code>MEMOIRE-IA\RADIO</code>.</li>
+  </ul>
+</main>
+
+<audio id="audio" preload="auto"></audio>
+<script src="catalogue.js"></script>
+<script>
+"use strict";
+
+// ---------- Catalogue ----------
+const COMMONS = "https://upload.wikimedia.org/wikipedia/commons/";
+const FICHE = "https://commons.wikimedia.org/wiki/File:";
+const $ = (id) => document.getElementById(id);
+
+function nettoyerTitre(titre, artiste) {
+  let t = titre.replace(/_/g, " ");
+  const prefixe = artiste.replace(/ \(.*\)$/, "") + " - ";
+  if (t.startsWith(prefixe)) t = t.slice(prefixe.length);
+  return t.replace(/^\d+\s*-\s*/, "").trim();
+}
+function familleLicence(lic) {
+  if (/^CC0|public domain|domaine public|^PD/i.test(lic)) return "cc0";
+  if (/^CC BY(?!-SA|-NC|-ND)|^Attribution$/i.test(lic)) return "ccby";
+  return "autre"; // CC BY-SA, FAL (Licence Art Libre), inconnues : à vérifier
+}
+// Œuvre encore protégée en France : compositeur mort il y a 70 ans ou moins (CPI L123-1), même si l'enregistrement est libre.
+const ANNEE = new Date().getFullYear();
+const protege = (m) => m.mort > 0 && m.mort + 70 >= ANNEE;
+const famille = (m) => (protege(m) ? "autre" : familleLicence(m.licence));
+// Interprète tiré de la fiche (classique seulement), sans les mentions inutiles.
+function interpreteDe(brut, rangement) {
+  const s = (brut || "").replace(/&amp;/g, "&").replace(/\s*\((?:see musopen|leave a reply)[^)]*\)?/gi, "").trim();
+  if (!s || /^\?$|see musopen|^musopen$|unknown author|palo alto/i.test(s) || s === rangement) return "";
+  return s.length > 70 ? s.slice(0, 69) + "…" : s;
+}
+
+// Styles précis (outils\ranger_styles.mjs), dans l'ordre d'affichage, avec le nom de leur station toute prête.
+const GENRES = [
+  ["piano", "Piano", "Radio Piano"], ["orchestre", "Orchestre", "Radio Orchestre"], ["opera", "Opéra et opérette", "Radio Opéra"],
+  ["sacre", "Sacré et chœurs", "Radio Chœurs"], ["chambre", "Musique de chambre et guitare", "Radio Chambre"], ["orgue", "Orgue", "Radio Orgue"],
+  ["jazz", "Jazz", "Radio Jazz"], ["blues", "Blues et soul", "Radio Blues"], ["funk", "Funk et disco", "Radio Funk"], ["lounge", "Lounge et détente", "Radio Lounge"],
+  ["electro", "Électro", "Radio Électro"], ["hiphop", "Hip-hop", "Radio Hip-hop"], ["rock", "Rock, pop et chansons", "Radio Rock"], ["folk", "Folk et acoustique", "Radio Folk"],
+  ["monde", "Musiques du monde", "Radio Monde"], ["ambiance", "Ambiance et planant", "Radio Ambiance"], ["cinema", "Cinéma et suspense", "Radio Cinéma"],
+  ["fantaisie", "Humour et fantaisie", "Radio Fantaisie"], ["noel", "Noël", "Radio Noël"], ["experimental", "Expérimental", ""],
+  ["jingle", "Jingles (moins de 45 s)", ""], ["pistes", "Pistes de studio séparées (pas pour la radio)", ""], ["inconnu", "Style non indiqué", ""],
+];
+const GENRE = new Map(GENRES.map(([cle, nom, radio], i) => [cle, { nom, radio, ordre: i }]));
+const nomGenre = (m) => (GENRE.get(m.genre) || GENRE.get("inconnu")).nom;
+
+// Colonnes de catalogue.js : artiste, album, titre, licence, durée, Mo, format, chemin,
+// puis (outils\ranger_classique.mjs) famille, compositeur ou artiste de rangement, titre propre, clé de tri, année de mort du compositeur,
+// puis (outils\ranger_styles.mjs) style précis, note (2 = œuvre célèbre conseillée, 1 = conseillé pour la radio, 0 = non).
+const BRUT = Array.isArray(window.CATALOGUE) ? window.CATALOGUE : [];
+// puis (outils\registre_droits.mjs) verdict des droits de diffusion ("sur", "verifier", "refuse") et sa raison (registre : droits\registre-droits.csv).
+const CATALOGUE = BRUT.map(([artiste, album, titre, licence, duree, mo, format, chemin, style, rangement, titreP, cle, mort, genre, note, verdict, raison]) => {
+  const nom = rangement || (!artiste || artiste === "?" ? "Artiste non indiqué (voir la fiche)" : artiste);
+  const g = GENRE.has(genre) ? genre : "inconnu";
+  return { id: chemin, artiste: nom, interprete: style === "classique" ? interpreteDe(artiste, nom) : "", album,
+    titre: titreP || nettoyerTitre(titre, nom), licence, duree: duree || 0, mo, format, chemin,
+    style: style || "autre", styleOrigine: style || "autre", cle: cle || nom.toLowerCase(), mort: mort || 0, genre: g, genreOrigine: g, note: note || 0,
+    droits: ["sur", "verifier", "refuse"].includes(verdict) ? verdict : "verifier", raison: raison || "registre des droits pas encore fait" };
+});
+const DROITS = { sur: ["✅", "Droits vérifiés"], verifier: ["🟡", "Droits à vérifier"], refuse: ["⛔", "Ne pas diffuser"] };
+// Titres de départ, connus même sans catalogue.js.
+const DEPART = [
+  ["Kevin MacLeod", "Monkeys Spinning Monkeys", "CC BY 3.0", 125, "3/37/Kevin_MacLeod_-_Monkeys_Spinning_Monkeys.ogg"],
+  ["Kevin MacLeod", "Aces High", "CC BY 3.0", 193, "6/68/Kevin_MacLeod_-_01_-_Aces_High.ogg"],
+  ["Kevin MacLeod", "Fluffing a Duck", "CC BY 3.0", 67, "c/c3/Kevin_MacLeod_-_Fluffing_a_Duck.ogg"],
+  ["Kevin MacLeod", "Presenterator", "CC BY 3.0", 256, "5/59/Kevin_MacLeod_-_04_-_Presenterator.ogg"],
+  ["Kevin MacLeod", "Vibe Ace", "CC BY 3.0", 61, "7/7c/Kevin_MacLeod_-_Vibe_Ace.ogg"],
+  ["Kevin MacLeod", "Private Eye", "CC BY 3.0", 76, "e/e7/Kevin_MacLeod_-_02_-_Private_Eye.ogg"],
+  ["Kevin MacLeod", "Carefree", "CC BY 3.0", 205, "5/58/Kevin_MacLeod_-_Carefree.ogg"],
+  ["Kevin MacLeod", "Night on the Docks - Sax", "CC BY 3.0", 174, "2/2d/Kevin_MacLeod_-_Night_on_the_Docks_-_Sax.ogg"],
+  ["Kevin MacLeod", "Smoother Move", "CC BY 3.0", 278, "e/e5/Kevin_MacLeod_-_Smoother_Move.ogg"],
+  ["Kevin MacLeod", "Dream Culture", "CC BY 3.0", 214, "e/e0/Kevin_MacLeod_-_Dream_Culture.ogg"],
+  ["Kevin MacLeod", "Clean Soul", "CC BY 3.0", 307, "4/43/Kevin_MacLeod_-_Clean_Soul.ogg"],
+  ["Kevin MacLeod", "Early Riser", "CC BY 3.0", 174, "d/d7/Kevin_MacLeod_-_Early_Riser.ogg"],
+];
+const PAR_ID = new Map(CATALOGUE.map((m) => [m.id, m]));
+for (const [artiste, titre, licence, duree, chemin] of DEPART) {
+  if (!PAR_ID.has(chemin)) {
+    const m = { id: chemin, artiste, interprete: "", album: "", titre, licence, duree, mo: null, format: "ogg", chemin, style: "autre", styleOrigine: "autre",
+      cle: artiste.toLowerCase(), mort: 0, genre: "inconnu", genreOrigine: "inconnu", note: 0, droits: "verifier", raison: "hors catalogue" };
+    CATALOGUE.push(m); PAR_ID.set(chemin, m);
+  }
+}
+
+// ---------- Mes corrections de style (menu « Style »), gardées dans le navigateur ----------
+const CLE_STYLES = "radio_styles_perso";
+const GENRES_CLASSIQUES = new Set(["piano", "orchestre", "opera", "sacre", "chambre", "orgue", "pistes"]);
+let STYLES_PERSO = {};
+try { const s = JSON.parse(localStorage.getItem(CLE_STYLES)); if (s && typeof s === "object") STYLES_PERSO = s; } catch (_) { /* aucune correction */ }
+function appliquerStyle(m) {
+  const g = STYLES_PERSO[m.id];
+  if (g && GENRE.has(g) && g !== m.genreOrigine) { m.genre = g; m.style = GENRES_CLASSIQUES.has(g) ? "classique" : "autre"; }
+  else { m.genre = m.genreOrigine; m.style = m.styleOrigine; }
+}
+for (const m of CATALOGUE) appliquerStyle(m);
+
+// ---------- Stations (gardées dans le navigateur) ----------
+const COULEURS = ["#ff4f8b", "#4fc3ff", "#3ddc97", "#ffd166", "#b388ff", "#ff9f43"];
+const CLE_STATIONS = "radio_stations_v2";
+// Radio classique de départ : 16 œuvres connues, toutes en CC0 ou domaine public (aucun crédit exigé), à garder ou retirer.
+const CLASSIQUE_DEPART = [
+  "1/18/The_Modena_Chamber_Orchestra_-_Vivaldi%27s_Spring%2C_RV_269_-_I._Allegro.ogg",
+  "6/68/Mozart_K525_Serenade_in_G_Major_1_-_Allegro.ogg",
+  "8/82/Nocturne_in_E_flat_major%2C_Op._9_no._2.mp3",
+  "1/1a/Musopen_-_Morning.ogg",
+  "2/27/Bach%2C_BWV_147%2C_10._Jesus_bleibet_meine_Freude.ogg",
+  "6/63/Beethoven%2C_Sonata_No._8_in_C_Minor_Pathetique%2C_Op._13_-_II._Adagio_cantabile.ogg",
+  "9/91/Strauss%2C_An_der_sch%C3%B6nen_blauen_Donau.ogg",
+  "9/9f/Carmen_-_Prelude_to_Act_1.ogg",
+  "c/cb/A_Midsummer_Night%27s_Dream_Op._61_Wedding_March_%28Mendelssohn%29_European_Archive.ogg",
+  "8/82/Tchaikovsky_-_Swan_Lake_Op.20_-_Act_II_Pt.1.ogg",
+  "1/18/Chopin_-_Grande_valse_brillante_in_E_flat_major%2C_Op._18.ogg",
+  "e/e2/Mozart%2C_The_Marriage_of_Figaro_%28overture%29.ogg",
+  "4/48/Ludwig_van_Beethoven_-_sonata_no._14_in_c_sharp_minor_%27moonlight%27%2C_op._27_no._2_-_i._adagio_sostenuto.ogg",
+  "6/63/Offenbach_-_Orpheus_in_the_Underworld_-_Overture%2C_Can_Can_section.ogg",
+  "a/af/Bach%2C_Goldberg_Variations%2C_Aria_%28Musopen_version%29.ogg",
+  "b/be/Modest_Mussorgsky_-_pictures_at_an_exhibition_-_x._la_grande_porte_de_kiev_-_allegro_alla_breve._maestoso._con_grandezza.ogg",
+];
+function stationClassique() {
+  return { id: "radio_classique", nom: "Radio classique", genre: "Classique — piano, orchestre", couleur: COULEURS[2], titres: CLASSIQUE_DEPART.slice() };
+}
+function stationsDeDepart() {
+  return [
+    { id: "radio_1", nom: "Radio 1", genre: "Énergique — funk, pop", couleur: COULEURS[0], titres: DEPART.slice(0, 6).map((d) => d[4]) },
+    { id: "radio_2", nom: "Radio 2", genre: "Détente — lounge, jazz", couleur: COULEURS[1], titres: DEPART.slice(6).map((d) => d[4]) },
+    stationClassique(),
+  ];
+}
+let STATIONS = stationsDeDepart();
+try { const s = JSON.parse(localStorage.getItem(CLE_STATIONS)); if (Array.isArray(s) && s.length) STATIONS = s; } catch (_) { /* rien de gardé */ }
+function sauver() { try { localStorage.setItem(CLE_STATIONS, JSON.stringify(STATIONS)); } catch (_) { /* stockage indisponible */ } }
+// Mes avis : 1 = 👍 j'aime, -1 = 👎 je n'aime pas (gardés dans ce navigateur, dans l'ordre où je les donne).
+const CLE_AVIS = "radio_avis";
+let AVIS = {};
+try { const a = JSON.parse(localStorage.getItem(CLE_AVIS)); if (a && typeof a === "object") AVIS = a; } catch (_) { /* aucun avis gardé */ }
+const avisDe = (m) => AVIS[m.id] || 0;
+function sauverAvis() { try { localStorage.setItem(CLE_AVIS, JSON.stringify(AVIS)); } catch (_) { /* stockage indisponible */ } }
+// Stations gardées avant l'arrivée de Radio classique : on l'ajoute une seule fois (si elle est supprimée ensuite, elle ne revient pas).
+try {
+  if (!localStorage.getItem("radio_classique_ajoutee")) {
+    if (!STATIONS.some((s) => s.id === "radio_classique")) { STATIONS.push(stationClassique()); sauver(); }
+    localStorage.setItem("radio_classique_ajoutee", "1");
+  }
+} catch (_) { /* stockage indisponible : Radio classique reste dans les stations de départ */ }
+
+// ---------- Stations toutes prêtes : une par style, recalculées à chaque ouverture depuis le catalogue ----------
+const TITRES_PAR_STATION = 18;
+// Mélange toujours dans le même ordre pour un même style (la station « en direct » reste la même d'une visite à l'autre).
+function melangeFixe(liste, graine) {
+  let h = 2166136261; for (const c of graine) h = Math.imul(h ^ c.charCodeAt(0), 16777619);
+  const r = liste.slice();
+  for (let i = r.length - 1; i > 0; i--) { h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0; const j = h % (i + 1); [r[i], r[j]] = [r[j], r[i]]; }
+  return r;
+}
+function stationsPretes() {
+  const liste = [];
+  // Mes coups de cœur : tous mes 👍, dans l'ordre où je les ai donnés.
+  const aimes = Object.keys(AVIS).filter((id) => AVIS[id] === 1 && PAR_ID.has(id));
+  if (aimes.length) liste.push({ id: "pret_coeur", nom: "Mes coups de cœur", genre: "Tous mes 👍", couleur: "#3ddc97", titres: aimes, prete: true });
+  for (const [cle, , radio] of GENRES) {
+    // Candidats : les conseillés et mes 👍 de ce style, sans mes 👎.
+    const conseilles = CATALOGUE.filter((m) => m.genre === cle && (m.note > 0 || avisDe(m) === 1) && avisDe(m) !== -1 && m.droits !== "refuse");
+    if (!radio || conseilles.length < 6) continue;
+    // Mes 👍 puis les œuvres célèbres, réparties dans la station ; le reste pris à tour de rôle chez chaque artiste, pour varier.
+    const celebres = [...conseilles.filter((m) => avisDe(m) === 1), ...melangeFixe(conseilles.filter((m) => m.note === 2 && avisDe(m) !== 1), cle)];
+    const files = new Map();
+    for (const m of melangeFixe(conseilles.filter((m) => m.note < 2 && avisDe(m) !== 1), cle)) { if (!files.has(m.artiste)) files.set(m.artiste, []); files.get(m.artiste).push(m); }
+    const autres = [];
+    while (autres.length < TITRES_PAR_STATION && [...files.values()].some((f) => f.length)) for (const f of files.values()) if (f.length) autres.push(f.shift());
+    const n = Math.min(TITRES_PAR_STATION, celebres.length + autres.length), nc = Math.min(celebres.length, n);
+    const places = new Set(Array.from({ length: nc }, (_, j) => Math.floor((j * n) / nc)));
+    const titres = []; let a = 0, b = 0;
+    for (let i = 0; i < n; i++) titres.push(places.has(i) && a < nc ? celebres[a++] : b < autres.length ? autres[b++] : celebres[a++]);
+    liste.push({ id: "pret_" + cle, nom: radio, genre: GENRE.get(cle).nom, couleur: COULEURS[liste.length % COULEURS.length], titres: titres.map((m) => m.id), prete: true });
+  }
+  return liste;
+}
+const PRETES = stationsPretes();
+// Après un avis : les stations toutes prêtes sont refaites (un 👎 est remplacé par un autre candidat). Les mêmes objets sont gardés
+// pour que la station en cours d'écoute reste reconnue.
+function recalculerPretes() {
+  const parId = new Map(PRETES.map((s) => [s.id, s]));
+  const liste = stationsPretes().map((n) => { const s = parId.get(n.id); if (!s) return n; Object.assign(s, { titres: n.titres, couleur: n.couleur, genre: n.genre }); return s; });
+  PRETES.splice(0, PRETES.length, ...liste);
+}
+function garderStation(st) {
+  STATIONS.push({ id: "radio_" + Date.now(), nom: st.nom, genre: st.genre, couleur: st.couleur, titres: st.titres.slice() });
+  sauver(); toutAfficher(); antenne("« " + st.nom + " » est copiée dans Mes stations : tu peux la modifier.");
+}
+// Les titres 👎 ne passent plus sur aucune station (ils restent dans la liste de Mes stations, marqués, pour pouvoir changer d'avis).
+function morceauxDe(station) { return station.titres.map((id) => PAR_ID.get(id)).filter((m) => m && avisDe(m) !== -1); }
+const dureeDe = (m) => (m.duree > 0 ? m.duree : 180);
+
+// Le « direct » : chaque station tourne en boucle depuis minuit, comme si elle n'avait jamais cessé d'émettre.
+function positionEnDirect(morceaux, maintenantMs) {
+  const minuit = new Date(maintenantMs); minuit.setHours(0, 0, 0, 0);
+  const total = morceaux.reduce((s, m) => s + dureeDe(m), 0);
+  if (!total) return { index: 0, secondes: 0 };
+  let reste = ((maintenantMs - minuit.getTime()) / 1000) % total;
+  for (let i = 0; i < morceaux.length; i++) {
+    if (reste < dureeDe(morceaux[i])) return { index: i, secondes: reste };
+    reste -= dureeDe(morceaux[i]);
+  }
+  return { index: 0, secondes: 0 };
+}
+
+// ---------- Lecture ----------
+const audio = $("audio");
+// etat.source : une station (radio) ou { nom: "Écoute", morceaux: [m] } (pré-écoute du catalogue).
+const etat = { source: null, morceaux: [], index: 0, enDirect: false, enPause: false, enParole: false };
+const morceauCourant = () => etat.morceaux[etat.index] || null;
+
+function format(secondes) {
+  if (!isFinite(secondes) || secondes < 0) secondes = 0;
+  const s = Math.floor(secondes);
+  return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+}
+
+function jouer(source, morceaux, index, depuisSecondes, enDirect) {
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  Object.assign(etat, { source, morceaux, index, enDirect, enPause: false, enParole: false });
+  const m = morceauCourant();
+  if (!m) { antenne("Cette station n'a aucun titre : ajoute-en depuis le catalogue.", true); afficher(); return; }
+  audio.src = COMMONS + m.chemin;
+  audio.volume = $("volume").value / 100;
+  if (depuisSecondes > 0) {
+    audio.addEventListener("loadedmetadata", () => {
+      if (depuisSecondes < (audio.duration || dureeDe(m))) audio.currentTime = depuisSecondes;
+    }, { once: true });
+  }
+  antenne("À l'antenne : " + m.titre + " — " + m.artiste + ". Chargement…");
+  audio.play().then(() => {
+    if (morceauCourant() === m) antenne("À l'antenne : " + m.titre + " — " + m.artiste + ".");
+  }).catch((e) => {
+    if (e.name === "AbortError") return;
+    etat.enPause = true; afficher();
+    antenne("Le navigateur a bloqué le son (" + e.name + "). Clique sur ▶ Lecture.", true);
+  });
+  afficher();
+}
+
+function choisirStation(station) {
+  if (!station) {
+    audio.pause(); audio.removeAttribute("src"); audio.load();
+    if ("speechSynthesis" in window) speechSynthesis.cancel();
+    Object.assign(etat, { source: null, morceaux: [], index: 0, enDirect: false });
+    antenne("Radio éteinte."); afficher(); return;
+  }
+  const morceaux = morceauxDe(station);
+  const p = positionEnDirect(morceaux, Date.now());
+  jouer(station, morceaux, p.index, p.secondes, true);
+}
+
+function ecouter(m) { jouer({ id: "ecoute", nom: "Écoute du catalogue", genre: "pré-écoute" }, [m], 0, 0, false); }
+
+function suivant() {
+  if (!etat.source || !etat.morceaux.length) return;
+  if (etat.source.id === "ecoute") { choisirStation(null); return; }
+  jouer(etat.source, etat.morceaux, (etat.index + 1) % etat.morceaux.length, 0, false);
+}
+// Menu « Style » d'un titre : les styles classiques puis les autres ; le style d'origine est signalé s'il a été changé.
+function menuStyle(m) {
+  const choix = document.createElement("select"); choix.className = "choix-style"; choix.title = "Ranger ce titre dans un autre style";
+  for (const [nomBloc, classique] of [["Classique", true], ["Autres musiques", false]]) {
+    const bloc = document.createElement("optgroup"); bloc.label = nomBloc;
+    for (const [cle, nom] of GENRES) if (GENRES_CLASSIQUES.has(cle) === classique) bloc.append(new Option(nom + (cle === m.genreOrigine && m.genre !== cle ? " (d'origine)" : ""), cle));
+    choix.append(bloc);
+  }
+  choix.value = m.genre;
+  choix.addEventListener("change", () => changerStyle(m, choix.value));
+  return choix;
+}
+// Range un titre dans un autre style : il quitte la station toute prête de l'ancien style et peut entrer dans celle du nouveau.
+function changerStyle(m, g) {
+  if (!m || !GENRE.has(g)) return;
+  const avant = nomGenre(m);
+  if (g === m.genreOrigine) delete STYLES_PERSO[m.id]; else STYLES_PERSO[m.id] = g;
+  try { localStorage.setItem(CLE_STYLES, JSON.stringify(STYLES_PERSO)); } catch (_) { /* stockage indisponible */ }
+  appliquerStyle(m); recalculerPretes();
+  $("zoneStyle").replaceChildren(); // refait le menu du lecteur, pour y marquer le style d'origine
+  construireOnglets(); construirePuces(); remplirArtistes(); toutAfficher();
+  antenne("« " + m.titre + " » passe de « " + avant + " » à « " + nomGenre(m) + " ».");
+}
+
+// 👍 / 👎 sur un titre (un deuxième clic sur le même bouton retire l'avis).
+// 👎 sur le titre en cours : on passe aussitôt au suivant de la station, qui n'a plus ce titre.
+function donnerAvis(m, valeur) {
+  if (!m) return;
+  if (avisDe(m) === valeur) delete AVIS[m.id]; else { delete AVIS[m.id]; AVIS[m.id] = valeur; }
+  sauverAvis(); recalculerPretes();
+  const enCours = morceauCourant() === m && etat.source;
+  if (enCours && AVIS[m.id] === -1) {
+    if (etat.source.id === "ecoute") { choisirStation(null); antenne("👎 noté pour « " + m.titre + " »."); }
+    else passerSansLui(m);
+  } else if (AVIS[m.id]) antenne((valeur === 1 ? "👍 J'aime" : "👎 Je n'aime pas") + " : « " + m.titre + " » — " + m.artiste + ".");
+  else antenne("Avis retiré pour « " + m.titre + " ».");
+  toutAfficher();
+}
+function passerSansLui(m) {
+  const source = etat.source, ancienne = etat.morceaux, i = ancienne.indexOf(m), nouvelle = morceauxDe(source);
+  if (!nouvelle.length) { choisirStation(null); antenne("Plus aucun titre à écouter sur cette station : ils sont tous 👎.", true); return; }
+  let prochain = null;
+  for (let k = 1; k <= ancienne.length && !prochain; k++) { const x = ancienne[(i + k) % ancienne.length]; if (nouvelle.includes(x)) prochain = x; }
+  jouer(source, nouvelle, prochain ? nouvelle.indexOf(prochain) : 0, 0, false);
+  antenne("👎 noté pour « " + m.titre + " » : retiré de la station. À l'antenne : " + morceauCourant().titre + " — " + morceauCourant().artiste + ".");
+}
+function precedent() {
+  if (!etat.source || !etat.morceaux.length) return;
+  if (audio.currentTime > 5 || etat.morceaux.length === 1) { audio.currentTime = 0; return; }
+  const n = etat.morceaux.length;
+  jouer(etat.source, etat.morceaux, (etat.index - 1 + n) % n, 0, false);
+}
+
+const BLAGUES = [
+  "Quelle est la différence entre ton loyer et ton salaire ? Le loyer, lui, tombe à date fixe.",
+  "Quelle est la différence entre un banquier de Los Santos et un pickpocket ? Le pickpocket te regarde dans les yeux.",
+  "Quelle est la différence entre un pêcheur et un menteur ? Le pêcheur a parfois une photo.",
+  "Quelle est la différence entre une facture et un compliment ? La facture arrive toujours à la bonne adresse.",
+  "Quelle est la différence entre un influenceur et un réveil ? Le réveil, on peut l'éteindre.",
+  "Quelle est la différence entre ton patron et un feu rouge ? Le feu rouge finit par passer au vert.",
+  "Quelle est la différence entre mon revers et ma vie amoureuse ? Mon revers passe encore le filet de temps en temps.",
+];
+
+function finDuMorceau() {
+  if (!etat.source) return;
+  if (etat.source.id === "ecoute") { choisirStation(null); return; }
+  const { source, morceaux, enDirect } = etat, prochain = (etat.index + 1) % morceaux.length;
+  if ($("animatrice").checked && "speechSynthesis" in window) {
+    const blague = BLAGUES[Math.floor(Math.random() * BLAGUES.length)];
+    etat.enParole = true;
+    antenne("L'animatrice : « " + blague + " »");
+    const parole = new SpeechSynthesisUtterance(blague);
+    parole.lang = "fr-FR";
+    const voix = speechSynthesis.getVoices().find((v) => v.lang && v.lang.startsWith("fr"));
+    if (voix) parole.voice = voix;
+    let fini = false;
+    const continuer = () => { if (fini) return; fini = true; if (etat.source === source && etat.enParole) jouer(source, morceaux, prochain, 0, enDirect); };
+    parole.onend = continuer; parole.onerror = continuer; setTimeout(continuer, 15000);
+    speechSynthesis.speak(parole);
+  } else {
+    jouer(source, morceaux, prochain, 0, enDirect);
+  }
+}
+
+function antenne(texte, estErreur) {
+  const zone = $("antenne"); zone.textContent = texte; zone.classList.toggle("erreur", !!estErreur);
+}
+
+// ---------- Ajout aux stations ----------
+function basculerTitre(station, id) {
+  const i = station.titres.indexOf(id);
+  if (i >= 0) station.titres.splice(i, 1); else station.titres.push(id);
+  sauver(); toutAfficher();
+}
+function boutonsAjout(m) {
+  const zone = document.createElement("span"); zone.className = "ligne"; zone.style.gap = "4px";
+  for (const st of STATIONS) {
+    const present = st.titres.includes(m.id);
+    const b = document.createElement("button");
+    b.className = "bouton petit" + (present ? " ajoute" : "");
+    b.style.setProperty("--couleur", st.couleur);
+    b.textContent = (present ? "✓ " : "+ ") + st.nom;
+    b.title = present ? "Retirer de " + st.nom : "Ajouter à " + st.nom;
+    b.addEventListener("click", (e) => { e.stopPropagation(); basculerTitre(st, m.id); });
+    zone.append(b);
+  }
+  return zone;
+}
+
+// ---------- Affichage : stations ----------
+function construireStations() {
+  const conteneur = $("stations"); conteneur.replaceChildren();
+  for (const station of STATIONS) {
+    const morceaux = morceauxDe(station);
+    const total = morceaux.reduce((s, m) => s + dureeDe(m), 0);
+    const bouton = document.createElement("button");
+    bouton.className = "station"; bouton.dataset.id = station.id;
+    bouton.style.setProperty("--couleur", station.couleur);
+    const nom = document.createElement("div"); nom.className = "nom"; nom.textContent = station.nom;
+    const genre = document.createElement("div"); genre.className = "genre"; genre.textContent = station.genre || "";
+    const info = document.createElement("div"); info.className = "info";
+    info.textContent = morceaux.length + " titres · " + format(total);
+    bouton.append(nom, genre, info);
+    bouton.addEventListener("click", () => choisirStation(station));
+    conteneur.append(bouton);
+  }
+  const off = document.createElement("button"); off.className = "station"; off.dataset.id = "";
+  const n = document.createElement("div"); n.className = "nom"; n.textContent = "Éteindre";
+  const g = document.createElement("div"); g.className = "genre"; g.textContent = "Couper la radio";
+  off.append(n, g); off.addEventListener("click", () => choisirStation(null));
+  conteneur.append(off);
+  const pretes = $("stationsPretes"); pretes.replaceChildren();
+  for (const st of PRETES) {
+    const morceaux = morceauxDe(st);
+    const carte = document.createElement("div"); carte.className = "station"; carte.dataset.id = st.id; carte.tabIndex = 0;
+    carte.style.setProperty("--couleur", st.couleur); carte.title = "Écouter " + st.nom + " en direct";
+    const nom = document.createElement("div"); nom.className = "nom"; nom.textContent = st.nom;
+    const genre = document.createElement("div"); genre.className = "genre"; genre.textContent = st.genre;
+    const info = document.createElement("div"); info.className = "info";
+    info.textContent = morceaux.length + " titres · " + dureeLongue(morceaux.reduce((s, m) => s + dureeDe(m), 0));
+    const garder = document.createElement("span"); garder.className = "garder"; garder.textContent = "＋ Garder";
+    garder.title = "Copier dans Mes stations pour la modifier";
+    garder.addEventListener("click", (e) => { e.stopPropagation(); garderStation(st); });
+    carte.append(nom, genre, info, garder);
+    carte.addEventListener("click", () => choisirStation(st));
+    carte.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); choisirStation(st); } });
+    pretes.append(carte);
+  }
+}
+
+// ---------- Affichage : catalogue ----------
+let limite = 200;
+// Onglet de style ("" = tout, "classique", "autre") et groupes ouverts, gardés dans le navigateur.
+const STYLES = [["", "Tout"], ["classique", "Classique"], ["autre", "Autres musiques"]];
+let styleChoisi = "";
+try { const s = localStorage.getItem("radio_style"); if (STYLES.some(([v]) => v === s)) styleChoisi = s; } catch (_) { /* défaut */ }
+// Style précis choisi dans la rangée de puces ("" = tous les styles de l'onglet).
+let genreChoisi = "";
+try { const g = localStorage.getItem("radio_genre"); if (GENRE.has(g)) genreChoisi = g; } catch (_) { /* défaut */ }
+const ouverts = new Set();
+function filtrer() {
+  const q = $("recherche").value.trim().toLowerCase();
+  const ar = $("filtreArtiste").value, lic = $("filtreLicence").value, fmt = $("filtreFormat").value, du = $("filtreDuree").value;
+  const conseil = $("filtreConseil").checked, av = $("filtreAvis").value, dr = $("filtreDroits").value;
+  return CATALOGUE.filter((m) =>
+    (!styleChoisi || m.style === styleChoisi) && (!genreChoisi || m.genre === genreChoisi) && (!conseil || m.note > 0) &&
+    (av === "" || (av[0] === "p" ? compterPotes(m)[av === "p1" ? "oui" : "non"].length > 0 : avisDe(m) === +av)) && (!dr || m.droits === dr) &&
+    (!q || (m.titre + " " + m.artiste + " " + m.interprete + " " + m.album + " " + nomGenre(m)).toLowerCase().includes(q)) &&
+    (!ar || m.artiste === ar) && (!lic || famille(m) === lic) && (!fmt || m.format === fmt) &&
+    (!du || (du === "court" && m.duree < 60) || (du === "moyen" && m.duree >= 60 && m.duree <= 480) || (du === "long" && m.duree > 480)));
+}
+function ligneTitre(m) {
+  const tr = document.createElement("tr"); tr.dataset.id = m.id;
+  const avis = avisDe(m); if (avis) tr.className = avis === 1 ? "aime" : "aimepas";
+  const tdJouer = document.createElement("td"); tdJouer.className = "actions-ligne";
+  const bj = document.createElement("button"); bj.className = "bouton petit"; bj.textContent = "▶"; bj.title = "Écouter";
+  bj.addEventListener("click", () => ecouter(m)); tdJouer.append(bj);
+  for (const [valeur, signe, titre] of [[1, "👍", "J'aime"], [-1, "👎", "Je n'aime pas"]]) {
+    const b = document.createElement("button"); b.className = "bouton avis" + (avis === valeur ? (valeur === 1 ? " oui" : " non") : "");
+    b.textContent = signe; b.title = titre + (avis === valeur ? " (cliquer pour retirer)" : "");
+    b.addEventListener("click", () => donnerAvis(m, valeur)); tdJouer.append(b);
+  }
+  tr.append(tdJouer);
+  const tdTitre = document.createElement("td");
+  if (m.note) { const e = document.createElement("span"); e.className = "etoile"; e.textContent = "★"; e.title = "Conseillé pour la radio"; tdTitre.append(e); }
+  const lien = document.createElement("a"); lien.href = FICHE + m.chemin.split("/").pop(); lien.target = "_blank"; lien.rel = "noopener";
+  lien.textContent = m.titre; lien.title = "Fiche et licence sur Wikimedia Commons"; tdTitre.append(lien);
+  if (m.note === 2) { const c = document.createElement("span"); c.className = "celebre"; c.textContent = "célèbre"; tdTitre.append(c); }
+  const potes = compterPotes(m);
+  if (potes.oui.length || potes.non.length) {
+    const p = document.createElement("span"); p.className = "avis-potes";
+    p.textContent = "Potes : " + (potes.oui.length ? "👍 " + potes.oui.join(", ") : "") + (potes.oui.length && potes.non.length ? " · " : "") + (potes.non.length ? "👎 " + potes.non.join(", ") : "");
+    tdTitre.append(p);
+  }
+  tr.append(tdTitre);
+  const tdArt = document.createElement("td"); tdArt.textContent = m.artiste;
+  if (m.interprete) { const i = document.createElement("span"); i.className = "interprete"; i.textContent = "Fiche : " + m.interprete; tdArt.append(i); }
+  tr.append(tdArt);
+  const tdAlb = document.createElement("td"); tdAlb.textContent = m.album || "—";
+  // Style cliquable : le menu n'est créé qu'au clic (des milliers de lignes).
+  const ligneStyle = document.createElement("span"); ligneStyle.className = "interprete";
+  const g = document.createElement("span"); g.className = "lien-style" + (m.genre !== m.genreOrigine ? " corrige" : "");
+  g.textContent = nomGenre(m) + (m.genre !== m.genreOrigine ? " (corrigé)" : "") + " ✎"; g.title = "Changer le style de ce titre";
+  g.addEventListener("click", () => { const menu = menuStyle(m); g.replaceWith(menu); menu.focus(); });
+  ligneStyle.append(g); tdAlb.append(ligneStyle); tr.append(tdAlb);
+  const tdD = document.createElement("td"); tdD.className = "num"; tdD.textContent = m.duree ? format(m.duree) : "?"; tr.append(tdD);
+  const tdL = document.createElement("td"); const sp = document.createElement("span");
+  sp.className = "lic " + famille(m); sp.textContent = m.licence; tdL.append(sp);
+  if (protege(m)) { const p = document.createElement("span"); p.className = "protege"; p.textContent = "Œuvre protégée en France jusqu'au 1er janvier " + (m.mort + 71); tdL.append(p); }
+  const dr = document.createElement("span"); dr.className = "droits " + m.droits;
+  dr.textContent = DROITS[m.droits][0] + " " + DROITS[m.droits][1]; dr.title = m.raison; tdL.append(dr);
+  tr.append(tdL);
+  const tdF = document.createElement("td"); tdF.className = "num"; tdF.textContent = (m.format || "?").toUpperCase(); tr.append(tdF);
+  const tdT = document.createElement("td"); tdT.className = "num"; tdT.textContent = m.mo != null ? m.mo + " Mo" : "?"; tr.append(tdT);
+  const tdA = document.createElement("td"); tdA.append(boutonsAjout(m)); tr.append(tdA);
+  return tr;
+}
+function ligneSection(texte) {
+  const tr = document.createElement("tr"); tr.className = "section";
+  const td = document.createElement("td"); td.colSpan = 9; td.textContent = texte; tr.append(td); return tr;
+}
+// Groupes par compositeur (classique) ou artiste, dans l'ordre du catalogue (classique d'abord, puis par nom de famille).
+// Un même artiste peut avoir des titres des deux côtés (Kevin MacLeod) : un groupe par style. « Non indiqué » en dernier.
+function groupesDe(liste) {
+  const groupes = new Map();
+  for (const m of liste) { const k = m.style + "|" + m.artiste; if (!groupes.has(k)) groupes.set(k, []); groupes.get(k).push(m); }
+  const cleTri = (m) => (m.cle.startsWith("~") ? "￿" + m.cle : m.cle);
+  return [...groupes.values()].map((titres) => [titres[0].artiste, titres])
+    .sort((a, b) => (a[1][0].style === b[1][0].style ? 0 : a[1][0].style === "classique" ? -1 : 1) || cleTri(a[1][0]).localeCompare(cleTri(b[1][0]), "fr"));
+}
+function dureeLongue(secondes) {
+  const h = Math.floor(secondes / 3600), min = Math.round((secondes % 3600) / 60);
+  return h ? h + " h " + String(min).padStart(2, "0") : format(secondes);
+}
+function construireCatalogue() {
+  const liste = filtrer();
+  $("compte").textContent = liste.length + " titres sur " + CATALOGUE.length;
+  const corps = $("catalogue"); corps.replaceChildren();
+  const parArtiste = $("vue").value === "artiste";
+  for (const id of ["btnOuvrir", "btnFermer"]) $(id).style.display = parArtiste ? "" : "none";
+  if (!parArtiste) {
+    for (const m of liste.slice(0, limite)) corps.append(ligneTitre(m));
+    $("plusZone").style.display = liste.length > limite ? "" : "none";
+    marquerEnCours(); return;
+  }
+  $("plusZone").style.display = "none";
+  // Une recherche ou un artiste choisi ouvre les groupes trouvés (s'il n'y a pas trop de titres).
+  const toutOuvrir = ($("recherche").value.trim() || $("filtreArtiste").value) && liste.length <= 400;
+  // Une section par style précis (sauf si un style est choisi), puis un groupe par compositeur ou artiste.
+  for (const [genre, titresGenre] of parGenre(liste)) {
+    if (!genreChoisi) {
+      const n = titresGenre.filter((m) => m.note).length;
+      corps.append(ligneSection(GENRE.get(genre).nom + " — " + titresGenre.length + " titres" + (n ? " · " + n + " ★ conseillés" : "")));
+    }
+    for (const [nom, titres] of groupesDe(titresGenre)) ligneGroupe(corps, genre, nom, titres, toutOuvrir);
+  }
+  marquerEnCours();
+}
+// Styles présents dans la liste, dans l'ordre de GENRES.
+function parGenre(liste) {
+  const g = new Map();
+  for (const m of liste) { if (!g.has(m.genre)) g.set(m.genre, []); g.get(m.genre).push(m); }
+  return [...g.entries()].sort((a, b) => GENRE.get(a[0]).ordre - GENRE.get(b[0]).ordre);
+}
+const cleGroupe = (genre, titres) => genre + "|" + titres[0].style + "|" + titres[0].artiste;
+function ligneGroupe(corps, genre, nom, titres, toutOuvrir) {
+  const cle = cleGroupe(genre, titres), ouvert = toutOuvrir || ouverts.has(cle);
+  // Œuvres célèbres puis titres conseillés en tête du groupe.
+  titres = titres.slice().sort((a, b) => b.note - a.note);
+  const tr = document.createElement("tr"); tr.className = "groupe";
+  const td = document.createElement("td"); td.colSpan = 9;
+  const b = document.createElement("button"); b.title = ouvert ? "Fermer" : "Ouvrir";
+  const nomEl = document.createElement("span"); nomEl.textContent = (ouvert ? "▾ " : "▸ ") + nom;
+  const info = document.createElement("span"); info.className = "info";
+  const conseilles = titres.filter((m) => m.note).length;
+  info.textContent = titres.length + (titres.length > 1 ? " titres · " : " titre · ") + dureeLongue(titres.reduce((s, m) => s + dureeDe(m), 0)) +
+    (conseilles ? " · " + conseilles + " ★" : "");
+  b.append(nomEl, info);
+  b.addEventListener("click", () => { if (ouverts.has(cle)) ouverts.delete(cle); else ouverts.add(cle); construireCatalogue(); });
+  td.append(b); tr.append(td); corps.append(tr);
+  if (ouvert) for (const m of titres) corps.append(ligneTitre(m));
+}
+// Rangée de puces : les styles précis de l'onglet choisi.
+function construirePuces() {
+  const zone = $("puces"); zone.replaceChildren();
+  const dansOnglet = CATALOGUE.filter((m) => !styleChoisi || m.style === styleChoisi);
+  const presents = parGenre(dansOnglet);
+  if (genreChoisi && !presents.some(([g]) => g === genreChoisi)) genreChoisi = "";
+  const puce = (valeur, texte, n) => {
+    const b = document.createElement("button"); b.className = valeur === genreChoisi ? "actif" : "";
+    b.textContent = texte; const s = document.createElement("span"); s.textContent = n; b.append(s);
+    b.addEventListener("click", () => {
+      genreChoisi = valeur; try { localStorage.setItem("radio_genre", valeur); } catch (_) { /* sans importance */ }
+      limite = 200; construirePuces(); remplirArtistes(); construireCatalogue();
+    });
+    zone.append(b);
+  };
+  puce("", "Tous les styles", dansOnglet.length);
+  for (const [g, titres] of presents) puce(g, GENRE.get(g).nom, titres.length);
+}
+function construireOnglets() {
+  const zone = $("onglets"); zone.replaceChildren();
+  for (const [valeur, nom] of STYLES) {
+    const titres = CATALOGUE.filter((m) => !valeur || m.style === valeur);
+    const b = document.createElement("button"); b.className = valeur === styleChoisi ? "actif" : "";
+    b.textContent = nom;
+    const n = document.createElement("span");
+    n.textContent = titres.length + " titres · " + groupesDe(titres).length +
+      (valeur === "classique" ? " compositeurs" : valeur ? " artistes" : " compositeurs et artistes");
+    b.append(n);
+    b.addEventListener("click", () => {
+      styleChoisi = valeur; try { localStorage.setItem("radio_style", valeur); } catch (_) { /* sans importance */ }
+      limite = 200; construireOnglets(); construirePuces(); remplirArtistes(); construireCatalogue();
+    });
+    zone.append(b);
+  }
+}
+// Liste des compositeurs et artistes de l'onglet choisi, rangés comme le catalogue.
+function remplirArtistes() {
+  const choix = $("filtreArtiste"), avant = choix.value;
+  choix.replaceChildren(new Option(styleChoisi === "classique" ? "Tous les compositeurs" : styleChoisi ? "Tous les artistes" : "Tous les compositeurs et artistes", ""));
+  const groupes = groupesDe(CATALOGUE.filter((m) => (!styleChoisi || m.style === styleChoisi) && (!genreChoisi || m.genre === genreChoisi)));
+  let bloc = null, styleBloc = null;
+  for (const [nom, titres] of groupes) {
+    if (titres[0].style !== styleBloc) {
+      styleBloc = titres[0].style;
+      bloc = document.createElement("optgroup"); bloc.label = styleBloc === "classique" ? "Classique — compositeurs" : "Autres musiques — artistes";
+      choix.append(bloc);
+    }
+    bloc.append(new Option(nom + " (" + titres.length + ")", nom));
+  }
+  choix.value = groupes.some(([nom]) => nom === avant) ? avant : "";
+}
+function remplirFiltres() {
+  remplirArtistes();
+  const formats = [...new Set(CATALOGUE.map((m) => m.format))].sort();
+  for (const f of formats) { const o = document.createElement("option"); o.value = f; o.textContent = f.toUpperCase(); $("filtreFormat").append(o); }
+}
+
+// ---------- Affichage : gestion des stations ----------
+function construireGestion() {
+  const zone = $("gestion"); zone.replaceChildren();
+  STATIONS.forEach((st, iStation) => {
+    const bloc = document.createElement("div"); bloc.className = "bloc"; bloc.style.borderColor = st.couleur;
+    const nom = document.createElement("input"); nom.type = "text"; nom.value = st.nom; nom.placeholder = "Nom de la station";
+    nom.addEventListener("change", () => { st.nom = nom.value.trim() || "Sans nom"; sauver(); toutAfficher(); });
+    const genre = document.createElement("input"); genre.type = "text"; genre.value = st.genre || ""; genre.placeholder = "Genre (ex. Détente — lounge, jazz)";
+    genre.addEventListener("change", () => { st.genre = genre.value.trim(); sauver(); construireStations(); afficher(); });
+    const morceaux = morceauxDe(st);
+    const info = document.createElement("div"); info.className = "note";
+    info.textContent = morceaux.length + " titres · " + format(morceaux.reduce((s, m) => s + dureeDe(m), 0)) + " de musique";
+    const ol = document.createElement("ol");
+    st.titres.forEach((id, i) => {
+      const m = PAR_ID.get(id); const li = document.createElement("li");
+      const marque = m && avisDe(m) === 1 ? "👍 " : m && avisDe(m) === -1 ? "👎 (ne passe plus) " : "";
+      li.append(document.createTextNode(m ? marque + m.titre + " — " + m.artiste + " (" + format(m.duree) + ", " + m.licence + (protege(m) ? ", œuvre protégée" : "") + ")" : "Titre introuvable : " + id));
+      const actions = document.createElement("span"); actions.className = "actions";
+      const mk = (txt, titre, fn) => { const b = document.createElement("button"); b.className = "bouton petit"; b.textContent = txt; b.title = titre; b.addEventListener("click", fn); actions.append(b); };
+      if (m) mk("▶", "Écouter", () => ecouter(m));
+      mk("▲", "Monter", () => { if (i > 0) { [st.titres[i - 1], st.titres[i]] = [st.titres[i], st.titres[i - 1]]; sauver(); toutAfficher(); } });
+      mk("▼", "Descendre", () => { if (i < st.titres.length - 1) { [st.titres[i + 1], st.titres[i]] = [st.titres[i], st.titres[i + 1]]; sauver(); toutAfficher(); } });
+      mk("✕", "Retirer", () => { st.titres.splice(i, 1); sauver(); toutAfficher(); });
+      li.append(actions); ol.append(li);
+    });
+    const suppr = document.createElement("button"); suppr.className = "bouton petit"; suppr.textContent = "Supprimer la station";
+    suppr.addEventListener("click", () => {
+      if (!confirm("Supprimer « " + st.nom + " » ?")) return;
+      if (etat.source === st) choisirStation(null);
+      STATIONS.splice(iStation, 1); sauver(); toutAfficher();
+    });
+    bloc.append(nom, genre, info, ol, suppr);
+    zone.append(bloc);
+  });
+}
+
+function construireCredits() {
+  const zone = $("credits"); zone.replaceChildren();
+  const vus = new Set();
+  for (const st of STATIONS) for (const m of morceauxDe(st)) {
+    if (vus.has(m.id)) continue; vus.add(m.id);
+    const p = document.createElement("p");
+    const fam = famille(m);
+    p.textContent = "« " + m.titre + " » — " + m.artiste + (m.interprete ? " (fiche : " + m.interprete + ")" : "") + " — " + m.licence +
+      (protege(m) ? " (œuvre protégée en France jusqu'au 1er janvier " + (m.mort + 71) + ")" :
+        fam === "cc0" ? " (aucun crédit exigé)" : fam === "ccby" ? " (crédit obligatoire)" : " (licence à vérifier)") + " — " + FICHE + m.chemin.split("/").pop();
+    zone.append(p);
+  }
+  if (!vus.size) zone.textContent = "Aucun titre choisi.";
+}
+
+function marquerEnCours() {
+  const m = morceauCourant();
+  document.querySelectorAll("#catalogue tr").forEach((tr) => tr.classList.toggle("en-cours", !!m && tr.dataset.id === m.id));
+}
+
+function afficher() {
+  const source = etat.source, m = morceauCourant();
+  document.querySelectorAll(".station").forEach((b) => b.classList.toggle("active", source ? b.dataset.id === source.id : b.dataset.id === ""));
+  $("lecteur").style.setProperty("--couleur", source && source.couleur ? source.couleur : "");
+  const direct = $("etatDirect");
+  direct.textContent = !source ? "ÉTEINTE" : source.id === "ecoute" ? "PRÉ-ÉCOUTE" : etat.enDirect ? "EN DIRECT" : "HORS DIRECT";
+  direct.classList.toggle("non", !source || !etat.enDirect);
+  $("nomStation").textContent = source ? source.nom + (source.genre ? " · " + source.genre : "") : "Aucune station";
+  $("titre").textContent = m ? m.titre : "—";
+  $("artiste").textContent = m ? m.artiste + (m.interprete ? " · " + m.interprete : "") + (m.album ? " · " + m.album : "") + " · " + m.licence + " · " + (m.format || "").toUpperCase() +
+    " · " + DROITS[m.droits][0] + " " + DROITS[m.droits][1] + (m.droits === "sur" ? "" : " (" + m.raison + ")") : "Choisis une station, ou écoute un titre du catalogue.";
+  for (const id of ["btnPrecedent", "btnLecture", "btnSuivant"]) $(id).disabled = !source;
+  $("btnLecture").textContent = etat.enPause ? "▶ Lecture" : "⏸ Pause";
+  const rapide = $("ajoutRapide"); rapide.replaceChildren(); if (m) rapide.append(boutonsAjout(m));
+  $("btnAime").disabled = $("btnAimePas").disabled = !m;
+  const zoneStyle = $("zoneStyle");
+  if (!m) zoneStyle.replaceChildren("—");
+  else if (!zoneStyle.firstChild || zoneStyle.firstChild.dataset?.id !== m.id || zoneStyle.firstChild.value !== m.genre) {
+    const menu = menuStyle(m); menu.dataset.id = m.id; zoneStyle.replaceChildren(menu);
+  }
+  $("btnAime").classList.toggle("oui", !!m && avisDe(m) === 1);
+  $("btnAimePas").classList.toggle("non", !!m && avisDe(m) === -1);
+  const valeurs = Object.values(AVIS);
+  const potes = m ? compterPotes(m) : { oui: [], non: [] };
+  $("compteAvis").textContent = (valeurs.length ? "👍 " + valeurs.filter((v) => v === 1).length + " · 👎 " + valeurs.filter((v) => v === -1).length : "") +
+    (potes.oui.length || potes.non.length ? "  ·  Potes sur ce titre : " + (potes.oui.length ? "👍 " + potes.oui.join(", ") + " " : "") + (potes.non.length ? "👎 " + potes.non.join(", ") : "") : "");
+  marquerEnCours();
+}
+
+function toutAfficher() { construireStations(); construireCatalogue(); construireGestion(); construirePotes(); construireCredits(); afficher(); }
+
+function mettreAJourTemps() {
+  const m = morceauCourant();
+  const duree = audio.duration && isFinite(audio.duration) ? audio.duration : (m ? m.duree : 0);
+  $("tempsEcoule").textContent = format(audio.currentTime);
+  $("tempsTotal").textContent = format(duree);
+  $("progression").style.width = duree ? Math.min(100, (audio.currentTime / duree) * 100) + "%" : "0";
+}
+
+// ---------- Export ----------
+function choixEnTexte() {
+  const avis = (valeur) => Object.keys(AVIS).filter((id) => AVIS[id] === valeur && PAR_ID.has(id)).map((id) => {
+    const m = PAR_ID.get(id); return { titre: m.titre, artiste: m.artiste, style: nomGenre(m), fiche: FICHE + m.chemin.split("/").pop() };
+  });
+  return JSON.stringify({
+    exporte_le: new Date().toISOString(),
+    avis: { aime: avis(1), aime_pas: avis(-1) },
+    avis_potes: Object.fromEntries(Object.entries(AVIS_POTES).map(([nom, p]) => [nom, Object.entries(p.a || {}).filter(([k]) => PAR_HACHE.has(k))
+      .map(([k, v]) => ({ titre: PAR_HACHE.get(k).titre, artiste: PAR_HACHE.get(k).artiste, avis: v === 1 ? "👍" : "👎" }))])),
+    styles_corriges: Object.keys(STYLES_PERSO).filter((id) => PAR_ID.has(id)).map((id) => {
+      const m = PAR_ID.get(id); return { titre: m.titre, artiste: m.artiste, avant: GENRE.get(m.genreOrigine).nom, apres: nomGenre(m), cle_style: m.genre, chemin: m.chemin };
+    }),
+    stations: STATIONS.map((st) => ({ nom: st.nom, genre: st.genre || "", titres: morceauxDe(st).map((m) => ({
+      titre: m.titre, artiste: m.artiste, interprete: m.interprete, famille: m.style, style: nomGenre(m), conseille: m.note > 0, celebre: m.note === 2,
+      album: m.album, licence: m.licence, oeuvre_protegee: protege(m), droits: m.droits, droits_raison: m.raison, duree_s: m.duree, format: m.format,
+      fiche: FICHE + m.chemin.split("/").pop(), fichier: COMMONS + m.chemin })) })),
+  }, null, 2);
+}
+
+// ---------- Partage avec les potes : tout passe par des liens, aucun serveur ----------
+// Adresse publique de la page (GitHub Pages), utilisée pour les liens quand la page est ouverte comme fichier sur le PC.
+const ADRESSE_EN_LIGNE = "https://tamalou70.github.io/radio/radio-maquette.html";
+// Un titre = un code court tiré de son chemin (le même chez tout le monde tant que le catalogue a ce titre).
+function hacher(texte) { let h = 2166136261; for (let i = 0; i < texte.length; i++) h = Math.imul(h ^ texte.charCodeAt(i), 16777619); return (h >>> 0).toString(36); }
+for (const m of CATALOGUE) m.hache = hacher(m.id);
+const PAR_HACHE = new Map(CATALOGUE.map((m) => [m.hache, m]));
+function versTexteLien(objet) {
+  let b = ""; for (const o of new TextEncoder().encode(JSON.stringify(objet))) b += String.fromCharCode(o);
+  return btoa(b).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+function depuisTexteLien(texte) {
+  const b = atob(texte.replace(/-/g, "+").replace(/_/g, "/"));
+  return JSON.parse(new TextDecoder().decode(Uint8Array.from(b, (c) => c.charCodeAt(0))));
+}
+const adresseDeBase = () => (location.protocol === "file:" && ADRESSE_EN_LIGNE ? ADRESSE_EN_LIGNE : location.href.split("#")[0]);
+// Prénom affiché chez les potes (lettres, chiffres, espaces, . _ - seulement).
+function prenomPropre(p) {
+  const s = String(p || "").replace(/[^\p{L}\p{N} ._-]/gu, "").trim().slice(0, 30);
+  return !s || ["__proto__", "constructor", "prototype"].includes(s) ? "Un pote" : s;
+}
+function demanderPrenom() {
+  let p = ""; try { p = localStorage.getItem("radio_prenom") || ""; } catch (_) { /* rien */ }
+  const r = prompt("Ton prénom (tes potes le verront) :", p);
+  if (r === null) return null;
+  p = prenomPropre(r); try { localStorage.setItem("radio_prenom", p); } catch (_) { /* rien */ }
+  return p;
+}
+function montrerLien(lien, message) {
+  const champ = $("lienPartage"); champ.value = lien; champ.focus(); champ.select();
+  const local = location.protocol === "file:" && !ADRESSE_EN_LIGNE;
+  const attention = local ? " Attention : la page est ouverte comme fichier sur ton PC, ce lien ne marchera pas chez tes potes. Ouvre la page en ligne pour partager." : "";
+  const dire = (copie) => antenne(message + (copie ? " Lien copié : colle-le à tes potes." : " Copie le lien dans le champ.") + attention, local);
+  if (navigator.clipboard) navigator.clipboard.writeText(lien).then(() => dire(true), () => dire(false)); else dire(false);
+}
+const lienStations = (prenom) => adresseDeBase() + "#stations=" + versTexteLien({ de: prenom,
+  st: STATIONS.map((s) => ({ n: s.nom, g: s.genre || "", c: s.couleur, t: s.titres.filter((id) => PAR_ID.has(id)).map((id) => PAR_ID.get(id).hache) })) });
+const lienAvis = (prenom) => adresseDeBase() + "#avis=" + versTexteLien({ de: prenom,
+  a: Object.fromEntries(Object.entries(AVIS).filter(([id]) => PAR_ID.has(id)).map(([id, v]) => [PAR_ID.get(id).hache, v])),
+  s: Object.fromEntries(Object.entries(STYLES_PERSO).filter(([id]) => PAR_ID.has(id)).map(([id, g]) => [PAR_ID.get(id).hache, g])) });
+
+// Avis reçus des potes : { prénom: { a: { code: 1 | -1 }, s: { code: style }, le: date } }, gardés dans ce navigateur.
+let AVIS_POTES = {};
+try { const p = JSON.parse(localStorage.getItem("radio_avis_potes")); if (p && typeof p === "object") AVIS_POTES = p; } catch (_) { /* aucun */ }
+function sauverPotes() { try { localStorage.setItem("radio_avis_potes", JSON.stringify(AVIS_POTES)); } catch (_) { /* stockage indisponible */ } }
+function compterPotes(m) {
+  const r = { oui: [], non: [] };
+  for (const [nom, p] of Object.entries(AVIS_POTES)) { const v = p.a && p.a[m.hache]; if (v === 1) r.oui.push(nom); else if (v === -1) r.non.push(nom); }
+  return r;
+}
+function construirePotes() {
+  const zone = $("potes"); zone.replaceChildren();
+  for (const [nom, p] of Object.entries(AVIS_POTES)) {
+    const v = Object.values(p.a || {}), carte = document.createElement("span"); carte.className = "pote";
+    carte.textContent = nom + " : 👍 " + v.filter((x) => x === 1).length + " · 👎 " + v.filter((x) => x === -1).length +
+      (Object.keys(p.s || {}).length ? " · " + Object.keys(p.s).length + " style(s) proposé(s)" : "") + " ";
+    const retirer = document.createElement("button"); retirer.className = "bouton petit"; retirer.textContent = "Retirer";
+    retirer.addEventListener("click", () => { if (!confirm("Retirer les avis de " + nom + " ?")) return; delete AVIS_POTES[nom]; sauverPotes(); toutAfficher(); });
+    carte.append(retirer); zone.append(carte);
+  }
+}
+// Ouverture d'un lien reçu : bandeau pour accepter ou refuser (rien n'est ajouté sans clic).
+function lireLien() {
+  const h = location.hash.slice(1), i = h.indexOf("=");
+  if (i < 0) return;
+  const cle = h.slice(0, i); let d;
+  try { d = depuisTexteLien(h.slice(i + 1)); } catch (_) { return; }
+  const bandeau = $("bandeau"), texte = document.createElement("div"), boutons = document.createElement("div"); boutons.className = "ligne";
+  const fermer = () => { bandeau.hidden = true; history.replaceState(null, "", location.href.split("#")[0]); };
+  const bouton = (t, fn) => { const b = document.createElement("button"); b.className = "bouton"; b.textContent = t; b.addEventListener("click", () => { fn(); fermer(); }); boutons.append(b); };
+  const de = prenomPropre(d && d.de);
+  if (cle === "stations" && Array.isArray(d.st)) {
+    const recues = d.st.slice(0, 40).map((s) => ({ nom: String(s.n || "Station").slice(0, 40), genre: String(s.g || "").slice(0, 60),
+      couleur: /^#[0-9a-f]{3,8}$/i.test(s.c) ? s.c : COULEURS[0], titres: (Array.isArray(s.t) ? s.t : []).map((x) => PAR_HACHE.get(x)).filter(Boolean).map((m) => m.id) }));
+    texte.textContent = de + " te partage " + recues.length + (recues.length > 1 ? " stations : " : " station : ") + recues.map((s) => s.nom + " (" + s.titres.length + " titres)").join(", ") + ".";
+    bouton("Ajouter ces stations", () => {
+      for (const s of recues) {
+        const nouvelle = { id: "partage_" + hacher(de + "|" + s.nom), nom: s.nom + " (de " + de + ")", genre: s.genre, couleur: s.couleur, titres: s.titres };
+        const avant = STATIONS.findIndex((x) => x.id === nouvelle.id);
+        if (avant >= 0) STATIONS[avant] = nouvelle; else STATIONS.push(nouvelle);
+      }
+      sauver(); toutAfficher(); antenne("Stations de " + de + " ajoutées : écoute-les, vote 👍 / 👎, puis clique sur « 📤 Envoyer mes 👍 / 👎 ».");
+    });
+    bouton("Non merci", () => {});
+  } else if (cle === "avis" && d.a && typeof d.a === "object") {
+    const a = {}, s = {};
+    for (const [k, v] of Object.entries(d.a)) if (PAR_HACHE.has(k) && (v === 1 || v === -1)) a[k] = v;
+    for (const [k, v] of Object.entries(d.s || {})) if (PAR_HACHE.has(k) && GENRE.has(v)) s[k] = v;
+    const oui = Object.values(a).filter((v) => v === 1).length;
+    texte.textContent = "Avis de " + de + " : 👍 " + oui + " · 👎 " + (Object.keys(a).length - oui) + (Object.keys(s).length ? " · " + Object.keys(s).length + " style(s) proposé(s)" : "") + ".";
+    bouton("Ajouter ses avis", () => { AVIS_POTES[de] = { a, s, le: new Date().toISOString() }; sauverPotes(); toutAfficher(); antenne("Avis de " + de + " ajoutés : ils s'affichent sur chaque titre."); });
+    bouton("Non merci", () => {});
+  } else return;
+  bandeau.replaceChildren(texte, boutons); bandeau.hidden = false; bandeau.scrollIntoView({ block: "nearest" });
+}
+window.addEventListener("hashchange", lireLien);
+
+// ---------- Événements ----------
+audio.addEventListener("timeupdate", mettreAJourTemps);
+audio.addEventListener("ended", finDuMorceau);
+audio.addEventListener("error", () => {
+  const m = morceauCourant(); if (!etat.source || !m) return;
+  antenne("Impossible de lire « " + m.titre + " » (format " + (m.format || "?").toUpperCase() + " ou connexion). Titre suivant dans 3 s.", true);
+  const source = etat.source, index = etat.index;
+  setTimeout(() => { if (etat.source === source && etat.index === index) suivant(); }, 3000);
+});
+$("barre").addEventListener("click", (e) => {
+  if (!audio.duration || !isFinite(audio.duration)) return;
+  const r = e.currentTarget.getBoundingClientRect();
+  audio.currentTime = ((e.clientX - r.left) / r.width) * audio.duration;
+  if (etat.enDirect) { etat.enDirect = false; afficher(); }
+});
+$("btnSuivant").addEventListener("click", suivant);
+$("btnPrecedent").addEventListener("click", precedent);
+$("btnLecture").addEventListener("click", () => {
+  if (!etat.source) return;
+  if (etat.enPause) {
+    if (etat.enDirect && etat.source.id !== "ecoute") { choisirStation(etat.source); return; }
+    etat.enPause = false;
+    audio.play().catch((e) => { etat.enPause = true; afficher(); antenne("Le navigateur a bloqué le son (" + e.name + ").", true); });
+  } else { audio.pause(); etat.enPause = true; }
+  afficher();
+});
+$("volume").addEventListener("input", (e) => {
+  audio.volume = e.target.value / 100;
+  try { localStorage.setItem("radio_volume", e.target.value); } catch (_) { /* sans importance */ }
+});
+try { const v = localStorage.getItem("radio_volume"); if (v !== null) $("volume").value = v; } catch (_) { /* idem */ }
+$("btnPartager").addEventListener("click", () => {
+  const p = demanderPrenom(); if (p === null) return;
+  montrerLien(lienStations(p), "Tes " + STATIONS.length + " stations sont dans le lien.");
+});
+$("btnEnvoyerAvis").addEventListener("click", () => {
+  if (!Object.keys(AVIS).length && !Object.keys(STYLES_PERSO).length) { antenne("Tu n'as encore donné aucun 👍 / 👎.", true); return; }
+  const p = demanderPrenom(); if (p === null) return;
+  montrerLien(lienAvis(p), "Tes " + Object.keys(AVIS).length + " avis sont dans le lien : envoie-le à celui qui t'a partagé les stations.");
+});
+$("btnAime").addEventListener("click", () => donnerAvis(morceauCourant(), 1));
+$("btnAimePas").addEventListener("click", () => donnerAvis(morceauCourant(), -1));
+$("btnEffacerAvis").addEventListener("click", () => {
+  if (!Object.keys(AVIS).length || !confirm("Effacer tous tes 👍 et 👎 ? Les titres 👎 reviendront dans les stations.")) return;
+  AVIS = {}; sauverAvis(); recalculerPretes(); toutAfficher(); antenne("Tous tes avis sont effacés.");
+});
+for (const id of ["vue", "filtreConseil", "filtreAvis", "filtreDroits", "recherche", "filtreArtiste", "filtreLicence", "filtreFormat", "filtreDuree"]) {
+  $(id).addEventListener(id === "recherche" ? "input" : "change", () => { limite = 200; construireCatalogue(); });
+}
+$("btnOuvrir").addEventListener("click", () => {
+  for (const [genre, titresGenre] of parGenre(filtrer())) for (const [, titres] of groupesDe(titresGenre)) ouverts.add(cleGroupe(genre, titres));
+  construireCatalogue();
+});
+$("btnFermer").addEventListener("click", () => { ouverts.clear(); construireCatalogue(); });
+$("btnPlus").addEventListener("click", () => { limite += 200; construireCatalogue(); });
+$("btnNouvelle").addEventListener("click", () => {
+  const n = STATIONS.length + 1;
+  STATIONS.push({ id: "radio_" + Date.now(), nom: "Radio " + n, genre: "", couleur: COULEURS[(n - 1) % COULEURS.length], titres: [] });
+  sauver(); toutAfficher();
+});
+$("btnExporter").addEventListener("click", () => {
+  const blob = new Blob([choixEnTexte()], { type: "application/json" });
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "radio-choix.json"; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+});
+$("btnCopier").addEventListener("click", () => {
+  navigator.clipboard.writeText(choixEnTexte()).then(() => antenne("Choix copié : colle-le dans la conversation."),
+    () => antenne("Copie impossible ici : utilise « Exporter mon choix ».", true));
+});
+$("btnReinitialiser").addEventListener("click", () => {
+  if (!confirm("Revenir aux stations de départ (Radio 1, Radio 2 et Radio classique) ? Tes stations actuelles seront perdues.")) return;
+  STATIONS = stationsDeDepart(); sauver(); choisirStation(null); toutAfficher();
+});
+
+if (!BRUT.length) antenne("Catalogue non chargé (catalogue.js absent) : seuls les 12 titres de départ sont disponibles.", true);
+construireOnglets();
+construirePuces();
+remplirFiltres();
+toutAfficher();
+lireLien();
+</script>
+</body>
+</html>

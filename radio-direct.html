@@ -1,0 +1,517 @@
+<!doctype html>
+<!-- Écrit pour Base Clean : maquette HORS JEU de la page d'accueil de la radio, « comme une vraie radio en ligne » (29/10/2026).
+     Même catalogue et mêmes stations toutes prêtes que radio-maquette.html (mêmes avis 👍 / 👎 gardés dans le navigateur).
+     Musique lue depuis Wikimedia Commons ; images d'artistes : vignettes libres de Commons (images-artistes.js), sinon pochette dessinée. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radio Base Clean — en direct</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fond: oklch(0.16 0.012 270); --fond-2: oklch(0.20 0.014 270); --carte: oklch(0.23 0.016 270 / 0.72);
+    --texte: oklch(0.96 0.005 270); --texte-2: oklch(0.80 0.01 270); --texte-3: oklch(0.64 0.012 270); --texte-4: oklch(0.48 0.012 270);
+    --bord: oklch(1 0 0 / 0.08); --accent: #ff4f8b; --accent-doux: color-mix(in oklch, var(--accent) 22%, transparent);
+    --sortie: cubic-bezier(0.16, 1, 0.3, 1); --ressort: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --titre: "Unbounded", "Segoe UI", system-ui, sans-serif; --corps: "Manrope", "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--fond); }
+  body { margin: 0; min-height: 100vh; background: var(--fond); color: var(--texte); font: 500 17px/1.5 var(--corps); letter-spacing: -0.01em; overflow-x: hidden; }
+  a { color: inherit; }
+  button { font: inherit; color: inherit; }
+  .etiquette { font: 700 11.5px/1 var(--corps); letter-spacing: 0.12em; text-transform: uppercase; color: var(--texte-3); }
+
+  /* ---------- Barre du haut ---------- */
+  .haut { position: relative; z-index: 3; display: flex; align-items: center; gap: 18px; padding: 18px clamp(16px, 4vw, 48px); }
+  .marque { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; background: var(--accent); color: oklch(0.16 0.012 270);
+          font: 800 15px/1 var(--titre); letter-spacing: -0.04em; transition: background .6s var(--sortie); }
+  .marque strong { font: 700 17px/1 var(--titre); letter-spacing: -0.02em; }
+  .direct-pastille { display: inline-flex; align-items: center; gap: 8px; padding: 6px 11px; border-radius: 99px; background: oklch(1 0 0 / 0.06); border: 1px solid var(--bord); }
+  .point { width: 8px; height: 8px; border-radius: 50%; background: #ff4d4d; box-shadow: 0 0 0 0 #ff4d4d99; animation: pouls 1.8s infinite; }
+  .direct-pastille.hors .point { background: var(--texte-4); animation: none; }
+  @keyframes pouls { 0% { box-shadow: 0 0 0 0 #ff4d4d88; } 70% { box-shadow: 0 0 0 9px #ff4d4d00; } 100% { box-shadow: 0 0 0 0 #ff4d4d00; } }
+  .haut .espace { flex: 1; }
+  .horloge { font: 500 15px/1 var(--titre); color: var(--texte-2); font-variant-numeric: tabular-nums; }
+  .lien-catalogue { text-decoration: none; font-weight: 700; font-size: 14px; padding: 9px 14px; border-radius: 99px; border: 1px solid var(--bord); color: var(--texte-2);
+                    transition: border-color .25s var(--sortie), color .25s var(--sortie); }
+  .lien-catalogue:hover { border-color: var(--accent); color: var(--texte); }
+
+  /* ---------- Scène : le titre en cours ---------- */
+  .scene { position: relative; isolation: isolate; padding: clamp(18px, 5vw, 64px) clamp(16px, 4vw, 48px) clamp(36px, 6vw, 80px); overflow: hidden; }
+  .fond-flou { position: absolute; inset: -12%; z-index: -2; background-size: cover; background-position: center; filter: blur(70px) saturate(1.4); opacity: .55;
+               transform: scale(1.1); transition: opacity .8s var(--sortie); }
+  .scene::after { content: ""; position: absolute; inset: 0; z-index: -1;
+                  background: radial-gradient(120% 90% at 20% 30%, transparent 0%, var(--fond) 78%), linear-gradient(to bottom, transparent 55%, var(--fond)); }
+  .scene-grille { display: grid; grid-template-columns: minmax(240px, 440px) 1fr; gap: clamp(24px, 5vw, 72px); align-items: center; max-width: 1320px; margin: 0 auto; }
+  .pochette { position: relative; aspect-ratio: 1; border-radius: 28px; overflow: hidden; background: var(--fond-2);
+              box-shadow: 0 40px 90px -30px var(--accent-doux), 0 30px 60px -20px oklch(0 0 0 / .6); transition: box-shadow .8s var(--sortie); }
+  .pochette img, .pochette canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .pochette .credit-image { position: absolute; left: 10px; right: 10px; bottom: 10px; font-size: 11px; color: oklch(1 0 0 / .78); text-shadow: 0 1px 6px #000c;
+                            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .infos { min-width: 0; }
+  .surtitre { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin: 0 0 18px; }
+  .surtitre .station-nom { color: var(--accent); transition: color .6s var(--sortie); }
+  .titre { font: 800 clamp(2.4rem, 6.4vw, 6.2rem)/0.95 var(--titre); letter-spacing: -0.035em; margin: 0; overflow-wrap: anywhere;
+           display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .titre.long { font-size: clamp(2rem, 4.6vw, 4.4rem); }
+  .titre.tres-long { font-size: clamp(1.7rem, 3.4vw, 3.2rem); line-height: 1.02; }
+  .artiste { font: 500 clamp(1.15rem, 2.2vw, 1.7rem)/1.2 var(--titre); letter-spacing: -0.02em; color: var(--texte-2); margin: 14px 0 0; }
+  .details { color: var(--texte-3); font-size: 15px; margin: 10px 0 0; }
+  .details .droits { white-space: nowrap; }
+  .change { animation: arrivee .7s var(--sortie) both; }
+  @keyframes arrivee { from { opacity: 0; transform: translateY(18px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+
+  .progression { margin-top: 28px; max-width: 720px; }
+  .barre { height: 4px; border-radius: 4px; background: oklch(1 0 0 / .1); overflow: hidden; }
+  .barre > div { height: 100%; width: 0; background: var(--accent); border-radius: 4px; transition: background .6s var(--sortie); }
+  .temps { display: flex; justify-content: space-between; margin-top: 8px; font: 500 13px/1 var(--titre); color: var(--texte-3); font-variant-numeric: tabular-nums; }
+
+  .commandes { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+  .lecture { display: inline-flex; align-items: center; gap: 12px; height: 60px; padding: 0 26px 0 20px; border: 0; border-radius: 99px; cursor: pointer;
+             background: var(--texte); color: oklch(0.16 0.012 270); font: 700 16px/1 var(--titre); letter-spacing: -0.01em;
+             transition: transform .25s var(--ressort), background .25s var(--sortie); }
+  .lecture:hover { transform: scale(1.03); }
+  .lecture:active { transform: scale(0.97); }
+  .lecture .icone { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: #fff; font-size: 13px; transition: background .6s var(--sortie); }
+  .rond { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--bord); background: oklch(1 0 0 / .05); cursor: pointer; font-size: 20px;
+          transition: transform .25s var(--ressort), border-color .25s var(--sortie), background .25s var(--sortie); }
+  .rond:hover { transform: translateY(-2px); border-color: oklch(1 0 0 / .2); }
+  .rond.oui { border-color: #3ddc97; background: #3ddc9724; }
+  .rond.non { border-color: #ff8080; background: #ff808024; }
+  .rond:disabled { opacity: .35; cursor: default; transform: none; }
+  .volume { display: inline-flex; align-items: center; gap: 10px; margin-left: 6px; color: var(--texte-3); font-size: 14px; }
+  .volume input { accent-color: var(--accent); width: 110px; }
+  .retour-direct { display: none; border: 1px solid var(--accent); background: transparent; color: var(--texte); border-radius: 99px; padding: 10px 16px; cursor: pointer; font-weight: 700; }
+  .retour-direct.visible { display: inline-block; }
+  .spectre { display: block; width: 100%; max-width: 720px; height: 64px; margin-top: 22px; }
+  .antenne { margin-top: 14px; color: var(--texte-3); font-size: 14.5px; min-height: 22px; }
+
+  /* ---------- Stations ---------- */
+  .bloc { max-width: 1320px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px); }
+  .entete-bloc { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin: 8px 0 16px; }
+  .entete-bloc h2 { font: 700 clamp(1.3rem, 2.4vw, 1.9rem)/1.1 var(--titre); letter-spacing: -0.025em; margin: 0; }
+  .rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 260px); gap: 14px; overflow-x: auto; padding: 4px 2px 18px; scroll-snap-type: x mandatory;
+          scrollbar-width: thin; scrollbar-color: oklch(1 0 0 / .15) transparent; }
+  .carte-station { scroll-snap-align: start; position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 12px; align-items: center; padding: 12px; border-radius: 18px;
+                   background: var(--carte); border: 1px solid var(--bord); cursor: pointer; text-align: left; transition: transform .3s var(--sortie), border-color .3s var(--sortie); }
+  .carte-station:hover { transform: translateY(-3px); border-color: oklch(1 0 0 / .18); }
+  .carte-station.active { border-color: var(--couleur); box-shadow: 0 0 0 1px var(--couleur) inset; }
+  .carte-station .mini { width: 64px; height: 64px; border-radius: 12px; overflow: hidden; position: relative; background: var(--fond-2); }
+  .carte-station .mini img, .carte-station .mini canvas { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .carte-station .nom { font: 700 15px/1.15 var(--titre); letter-spacing: -0.015em; display: flex; align-items: center; gap: 7px; }
+  .carte-station .nom::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--couleur); flex: none; }
+  .carte-station .maintenant { color: var(--texte-3); font-size: 13px; line-height: 1.35; margin-top: 5px;
+                               display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+  /* ---------- Programme ---------- */
+  .programme { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 4vw, 56px); margin-top: clamp(28px, 4vw, 52px); }
+  .liste { list-style: none; margin: 0; padding: 0; }
+  .liste li { display: grid; grid-template-columns: 58px 48px 1fr auto; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--bord); }
+  .liste .heure { font: 500 14px/1 var(--titre); color: var(--texte-3); font-variant-numeric: tabular-nums; }
+  .liste .vignette { width: 48px; height: 48px; border-radius: 10px; overflow: hidden; background: var(--fond-2); }
+  .liste .vignette img, .liste .vignette canvas { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .liste .t { font-weight: 700; color: var(--texte); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .liste .a { color: var(--texte-3); font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .liste .duree { color: var(--texte-4); font-size: 13px; font-variant-numeric: tabular-nums; }
+  .liste li.en-cours .t { color: var(--accent); }
+
+  /* ---------- Pied de page ---------- */
+  .pied { max-width: 1320px; margin: clamp(40px, 6vw, 88px) auto 0; padding: 28px clamp(16px, 4vw, 48px) 48px; border-top: 1px solid var(--bord); color: var(--texte-3); font-size: 14px; }
+  .pied .colonnes { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; }
+  .pied h3 { font: 700 15px/1.2 var(--titre); color: var(--texte-2); margin: 0 0 10px; }
+  .pied p { margin: 6px 0; }
+  .credits { max-height: 180px; overflow: auto; font-size: 12.5px; color: var(--texte-4); }
+  .bascule { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; color: var(--texte-3); font-size: 14px; }
+  .bascule input { accent-color: var(--accent); }
+
+  @media (max-width: 860px) {
+    .scene-grille { grid-template-columns: 1fr; }
+    .pochette { max-width: 420px; width: 100%; margin: 0 auto; }
+    .programme, .pied .colonnes { grid-template-columns: 1fr; }
+    .horloge, .haut .direct-pastille .texte-long { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+<header class="haut">
+  <a class="marque" href="#" aria-label="Radio Base Clean"><span class="logo" id="logo">BC</span><strong>Radio Base Clean</strong></a>
+  <span class="direct-pastille" id="pastille"><span class="point"></span><span class="etiquette" id="pastilleTexte">En direct</span></span>
+  <span class="espace"></span>
+  <span class="horloge" id="horloge">--:--</span>
+  <a class="lien-catalogue" href="radio-maquette.html">Catalogue et mes stations</a>
+</header>
+
+<section class="scene" aria-live="polite">
+  <div class="fond-flou" id="fondFlou"></div>
+  <div class="scene-grille">
+    <div class="pochette" id="pochette"></div>
+    <div class="infos">
+      <p class="surtitre etiquette"><span class="station-nom" id="stationNom">—</span><span id="stationGenre"></span><span id="heureDebut"></span></p>
+      <div id="blocTitre">
+        <h1 class="titre" id="titre">Radio Base Clean</h1>
+        <p class="artiste" id="artiste">Choisis une station et appuie sur « Écouter le direct ».</p>
+        <p class="details" id="details"></p>
+      </div>
+      <div class="progression">
+        <div class="barre"><div id="avance"></div></div>
+        <div class="temps"><span id="ecoule">0:00</span><span id="reste">0:00</span></div>
+      </div>
+      <div class="commandes">
+        <button class="lecture" id="btnLecture"><span class="icone" id="iconeLecture">▶</span><span id="texteLecture">Écouter le direct</span></button>
+        <button class="rond" id="btnAime" title="J'aime : il passera en priorité" disabled>👍</button>
+        <button class="rond" id="btnAimePas" title="Je n'aime pas : on passe au suivant, il ne repassera plus" disabled>👎</button>
+        <button class="retour-direct" id="btnDirect">↺ Revenir au direct</button>
+        <label class="volume">Volume <input type="range" id="volume" min="0" max="100" value="70"></label>
+      </div>
+      <canvas class="spectre" id="spectre" width="1440" height="128" aria-hidden="true"></canvas>
+      <div class="antenne" id="antenne"></div>
+    </div>
+  </div>
+</section>
+
+<section class="bloc">
+  <div class="entete-bloc"><h2>Les stations</h2><span class="etiquette" id="nbStations"></span></div>
+  <div class="rail" id="rail"></div>
+
+  <div class="programme">
+    <div>
+      <div class="entete-bloc"><h2>À suivre</h2><span class="etiquette">sur cette station</span></div>
+      <ol class="liste" id="aSuivre"></ol>
+    </div>
+    <div>
+      <div class="entete-bloc"><h2>Titres diffusés</h2><span class="etiquette">dernière heure</span></div>
+      <ol class="liste" id="diffuses"></ol>
+    </div>
+  </div>
+</section>
+
+<footer class="pied">
+  <div class="colonnes">
+    <div>
+      <h3>Une radio de musiques libres</h3>
+      <p>Chaque station tourne en continu depuis minuit : tout le monde entend le même titre au même moment, comme une vraie radio. Les musiques sont lues depuis Wikimedia Commons ; chaque titre garde sa licence (CC0, domaine public ou CC BY).</p>
+      <p>✅ droits vérifiés · 🟡 à vérifier · ⛔ jamais diffusé — registre complet dans <code>droits/registre-droits.csv</code>.</p>
+      <p><label class="bascule"><input type="checkbox" id="animatrice"> 🎙️ Animatrice entre deux titres (voix de synthèse, maquette)</label></p>
+    </div>
+    <div>
+      <h3>Crédits de la station</h3>
+      <div class="credits" id="credits"></div>
+    </div>
+  </div>
+</footer>
+
+<audio id="audio" preload="none" crossorigin="anonymous"></audio>
+<script src="catalogue.js"></script>
+<script src="images-artistes.js"></script>
+<script>
+"use strict";
+// Un lien de partage (#stations=… ou #avis=…) ouvert sur cette page est renvoyé vers la page Catalogue, qui sait le lire.
+if (/^#(stations|avis)=/.test(location.hash)) location.replace("radio-maquette.html" + location.hash);
+const $ = (id) => document.getElementById(id);
+const COMMONS = "https://upload.wikimedia.org/wikipedia/commons/";
+const FICHE = "https://commons.wikimedia.org/wiki/File:";
+const IMAGES = window.IMAGES_ARTISTES || {};
+
+// ---------- Catalogue (mêmes colonnes et mêmes styles que radio-maquette.html) ----------
+const GENRES = [
+  ["piano", "Piano", "Radio Piano"], ["orchestre", "Orchestre", "Radio Orchestre"], ["opera", "Opéra et opérette", "Radio Opéra"],
+  ["sacre", "Sacré et chœurs", "Radio Chœurs"], ["chambre", "Musique de chambre et guitare", "Radio Chambre"], ["orgue", "Orgue", "Radio Orgue"],
+  ["jazz", "Jazz", "Radio Jazz"], ["blues", "Blues et soul", "Radio Blues"], ["funk", "Funk et disco", "Radio Funk"], ["lounge", "Lounge et détente", "Radio Lounge"],
+  ["electro", "Électro", "Radio Électro"], ["hiphop", "Hip-hop", "Radio Hip-hop"], ["rock", "Rock, pop et chansons", "Radio Rock"], ["folk", "Folk et acoustique", "Radio Folk"],
+  ["monde", "Musiques du monde", "Radio Monde"], ["ambiance", "Ambiance et planant", "Radio Ambiance"], ["cinema", "Cinéma et suspense", "Radio Cinéma"],
+  ["fantaisie", "Humour et fantaisie", "Radio Fantaisie"], ["noel", "Noël", "Radio Noël"], ["experimental", "Expérimental", ""],
+  ["jingle", "Jingles (moins de 45 s)", ""], ["pistes", "Pistes de studio séparées (pas pour la radio)", ""], ["inconnu", "Style non indiqué", ""],
+];
+const GENRE = new Map(GENRES.map(([cle, nom, radio]) => [cle, { nom, radio }]));
+const GENRES_CLASSIQUES = new Set(["piano", "orchestre", "opera", "sacre", "chambre", "orgue", "pistes"]);
+const DROITS = { sur: "✅ droits vérifiés", verifier: "🟡 droits à vérifier", refuse: "⛔ ne pas diffuser" };
+const lireStockage = (cle, defaut) => { try { const v = JSON.parse(localStorage.getItem(cle)); return v && typeof v === "object" ? v : defaut; } catch (_) { return defaut; } };
+const AVIS = lireStockage("radio_avis", {});
+const STYLES_PERSO = lireStockage("radio_styles_perso", {});
+const CATALOGUE = (window.CATALOGUE || []).map(([, album, titre, licence, duree, , format, chemin, , rangement, titreP, , , genre, note, verdict]) => {
+  const g = GENRE.has(STYLES_PERSO[chemin]) ? STYLES_PERSO[chemin] : GENRE.has(genre) ? genre : "inconnu";
+  return { id: chemin, artiste: rangement || "Artiste non indiqué", album, titre: titreP || titre, licence, duree: duree || 0, format, chemin,
+    genre: g, note: note || 0, droits: DROITS[verdict] ? verdict : "verifier" };
+});
+const PAR_ID = new Map(CATALOGUE.map((m) => [m.id, m]));
+const avisDe = (m) => AVIS[m.id] || 0;
+const dureeDe = (m) => (m.duree > 0 ? m.duree : 180);
+const morceauxDe = (station) => station.titres.map((id) => PAR_ID.get(id)).filter((m) => m && avisDe(m) !== -1);
+
+// ---------- Stations toutes prêtes : même calcul que radio-maquette.html (même direct sur les deux pages) ----------
+const COULEURS = ["#ff4f8b", "#4fc3ff", "#3ddc97", "#ffd166", "#b388ff", "#ff9f43"];
+const TITRES_PAR_STATION = 18;
+function melangeFixe(liste, graine) {
+  let h = 2166136261; for (const c of graine) h = Math.imul(h ^ c.charCodeAt(0), 16777619);
+  const r = liste.slice();
+  for (let i = r.length - 1; i > 0; i--) { h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0; const j = h % (i + 1); [r[i], r[j]] = [r[j], r[i]]; }
+  return r;
+}
+function stationsPretes() {
+  const liste = [];
+  const aimes = Object.keys(AVIS).filter((id) => AVIS[id] === 1 && PAR_ID.has(id));
+  if (aimes.length) liste.push({ id: "pret_coeur", nom: "Mes coups de cœur", genre: "Tous mes 👍", couleur: "#3ddc97", titres: aimes });
+  for (const [cle, , radio] of GENRES) {
+    const conseilles = CATALOGUE.filter((m) => m.genre === cle && (m.note > 0 || avisDe(m) === 1) && avisDe(m) !== -1 && m.droits !== "refuse");
+    if (!radio || conseilles.length < 6) continue;
+    const celebres = [...conseilles.filter((m) => avisDe(m) === 1), ...melangeFixe(conseilles.filter((m) => m.note === 2 && avisDe(m) !== 1), cle)];
+    const files = new Map();
+    for (const m of melangeFixe(conseilles.filter((m) => m.note < 2 && avisDe(m) !== 1), cle)) { if (!files.has(m.artiste)) files.set(m.artiste, []); files.get(m.artiste).push(m); }
+    const autres = [];
+    while (autres.length < TITRES_PAR_STATION && [...files.values()].some((f) => f.length)) for (const f of files.values()) if (f.length) autres.push(f.shift());
+    const n = Math.min(TITRES_PAR_STATION, celebres.length + autres.length), nc = Math.min(celebres.length, n);
+    const places = new Set(Array.from({ length: nc }, (_, j) => Math.floor((j * n) / nc)));
+    const titres = []; let a = 0, b = 0;
+    for (let i = 0; i < n; i++) titres.push(places.has(i) && a < nc ? celebres[a++] : b < autres.length ? autres[b++] : celebres[a++]);
+    liste.push({ id: "pret_" + cle, nom: radio, genre: GENRE.get(cle).nom, couleur: COULEURS[liste.length % COULEURS.length], titres: titres.map((m) => m.id) });
+  }
+  return liste;
+}
+// Mes stations (page Catalogue) d'abord, puis les stations toutes prêtes.
+const MES_STATIONS = (lireStockage("radio_stations_v2", []) || []).filter((s) => s && Array.isArray(s.titres))
+  .map((s) => ({ id: String(s.id), nom: String(s.nom || "Ma station"), genre: String(s.genre || "Ma station"), couleur: /^#[0-9a-f]{3,8}$/i.test(s.couleur) ? s.couleur : COULEURS[0], titres: s.titres }));
+const STATIONS = [...MES_STATIONS, ...stationsPretes()].filter((s) => morceauxDe(s).length);
+
+// ---------- Le direct : chaque station tourne en boucle depuis minuit ----------
+function positionEnDirect(morceaux, maintenantMs) {
+  const minuit = new Date(maintenantMs); minuit.setHours(0, 0, 0, 0);
+  const total = morceaux.reduce((s, m) => s + dureeDe(m), 0);
+  if (!total) return { index: 0, secondes: 0 };
+  let reste = ((maintenantMs - minuit.getTime()) / 1000) % total;
+  for (let i = 0; i < morceaux.length; i++) { if (reste < dureeDe(morceaux[i])) return { index: i, secondes: reste }; reste -= dureeDe(morceaux[i]); }
+  return { index: 0, secondes: 0 };
+}
+const format = (s) => { s = Math.max(0, Math.floor(s || 0)); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); };
+const heure = (ms) => new Date(ms).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+
+// ---------- Pochettes : image libre de l'artiste, sinon pochette dessinée à sa couleur ----------
+function teinte(texte) { let h = 0; for (const c of texte) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h % 360; }
+function pochetteDessinee(m, taille) {
+  const c = document.createElement("canvas"); c.width = c.height = taille; const x = c.getContext("2d");
+  const t = teinte(m.artiste), t2 = (t + 40 + teinte(m.titre) % 80) % 360;
+  const g = x.createLinearGradient(0, 0, taille, taille);
+  g.addColorStop(0, `hsl(${t} 70% 45%)`); g.addColorStop(1, `hsl(${t2} 75% 22%)`);
+  x.fillStyle = g; x.fillRect(0, 0, taille, taille);
+  // Cercles concentriques façon disque, propres à chaque titre.
+  x.globalAlpha = 0.18; x.strokeStyle = "#fff"; x.lineWidth = taille / 160;
+  const cx = taille * (0.3 + (teinte(m.titre) % 40) / 100), cy = taille * 0.62;
+  for (let r = taille * 0.08; r < taille * 1.1; r += taille / 22) { x.beginPath(); x.arc(cx, cy, r, 0, Math.PI * 2); x.stroke(); }
+  x.globalAlpha = 1; x.fillStyle = "#fff";
+  const initiales = m.artiste.split(/\s+/).filter((w) => /^\p{L}/u.test(w)).slice(0, 2).map((w) => w[0].toUpperCase()).join("") || "♪";
+  x.font = `800 ${Math.round(taille * 0.34)}px Unbounded, sans-serif`; x.textBaseline = "top";
+  x.fillText(initiales, taille * 0.08, taille * 0.07);
+  return c;
+}
+function visuel(m, taille) {
+  const im = IMAGES[m.artiste];
+  if (!im) return pochetteDessinee(m, taille);
+  const img = new Image(); img.alt = m.artiste; img.loading = "lazy"; img.decoding = "async"; img.src = im.image;
+  img.addEventListener("error", () => img.replaceWith(pochetteDessinee(m, taille)), { once: true });
+  return img;
+}
+
+// ---------- Lecture ----------
+const audio = $("audio");
+const etat = { station: null, morceaux: [], index: 0, enDirect: true, debutMs: 0, joue: false };
+const courant = () => etat.morceaux[etat.index] || null;
+let analyseur = null, donneesSpectre = null;
+function brancherSpectre() {
+  if (analyseur || !window.AudioContext) return;
+  try {
+    const ctx = new AudioContext(); const source = ctx.createMediaElementSource(audio);
+    analyseur = ctx.createAnalyser(); analyseur.fftSize = 256; analyseur.smoothingTimeConstant = 0.82;
+    source.connect(analyseur); analyseur.connect(ctx.destination); donneesSpectre = new Uint8Array(analyseur.frequencyBinCount);
+  } catch (_) { analyseur = null; }
+}
+function jouer(index, depuis, enDirect) {
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  etat.index = index; etat.enDirect = enDirect;
+  const m = courant(); if (!m) return;
+  etat.debutMs = Date.now() - depuis * 1000;
+  // Sans écoute, la page suit le direct sans rien charger ; le son ne se charge qu'au clic sur « Écouter ».
+  if (etat.joue) {
+    audio.src = COMMONS + m.chemin; audio.volume = $("volume").value / 100;
+    if (depuis > 0) audio.addEventListener("loadedmetadata", () => { if (depuis < (audio.duration || dureeDe(m))) audio.currentTime = depuis; }, { once: true });
+    audio.play().catch(() => { etat.joue = false; afficher(); dire("Le navigateur a bloqué le son : appuie sur « Écouter le direct »."); });
+  }
+  afficher(true);
+}
+function choisir(station, ecouter) {
+  etat.station = station; etat.morceaux = morceauxDe(station);
+  document.documentElement.style.setProperty("--accent", station.couleur);
+  try { localStorage.setItem("radio_direct_station", station.id); } catch (_) { /* sans importance */ }
+  if (ecouter) { etat.joue = true; brancherSpectre(); }
+  const p = positionEnDirect(etat.morceaux, Date.now());
+  jouer(p.index, p.secondes, true);
+  construireRail();
+}
+function suivant() {
+  const n = etat.morceaux.length; if (!n) return;
+  if (etat.enDirect) { const p = positionEnDirect(etat.morceaux, Date.now() + 1500); jouer(p.index, 0, true); }
+  else jouer((etat.index + 1) % n, 0, false);
+}
+const BLAGUES = [
+  "Quelle est la différence entre ton loyer et ton salaire ? Le loyer, lui, tombe à date fixe.",
+  "Quelle est la différence entre un banquier de Los Santos et un pickpocket ? Le pickpocket te regarde dans les yeux.",
+  "Quelle est la différence entre un pêcheur et un menteur ? Le pêcheur a parfois une photo.",
+  "Quelle est la différence entre une facture et un compliment ? La facture arrive toujours à la bonne adresse.",
+  "Quelle est la différence entre un influenceur et un réveil ? Le réveil, on peut l'éteindre.",
+  "Quelle est la différence entre ton patron et un feu rouge ? Le feu rouge finit par passer au vert.",
+];
+audio.addEventListener("ended", () => {
+  if (!$("animatrice").checked || !("speechSynthesis" in window)) { suivant(); return; }
+  const blague = BLAGUES[Math.floor(Math.random() * BLAGUES.length)];
+  dire("🎙️ « " + blague + " »");
+  const parole = new SpeechSynthesisUtterance(blague); parole.lang = "fr-FR";
+  const voix = speechSynthesis.getVoices().find((v) => v.lang && v.lang.startsWith("fr")); if (voix) parole.voice = voix;
+  let fini = false; const continuer = () => { if (!fini) { fini = true; suivant(); } };
+  parole.onend = continuer; parole.onerror = continuer; setTimeout(continuer, 15000);
+  speechSynthesis.speak(parole);
+});
+audio.addEventListener("error", () => { if (!courant()) return; dire("Ce titre ne se lit pas (format ou connexion) : titre suivant dans 3 s."); setTimeout(suivant, 3000); });
+audio.addEventListener("playing", () => dire(""));
+
+// ---------- Affichage ----------
+const dire = (t) => { $("antenne").textContent = t; };
+function afficher(nouveauTitre) {
+  const m = courant(), st = etat.station;
+  $("pastille").classList.toggle("hors", !etat.enDirect || !etat.joue);
+  $("pastilleTexte").textContent = !etat.joue ? "En pause" : etat.enDirect ? "En direct" : "Hors direct";
+  $("btnDirect").classList.toggle("visible", !etat.enDirect);
+  $("iconeLecture").textContent = etat.joue ? "❚❚" : "▶";
+  $("texteLecture").textContent = etat.joue ? "Pause" : "Écouter le direct";
+  $("btnAime").disabled = $("btnAimePas").disabled = !m;
+  $("btnAime").classList.toggle("oui", !!m && avisDe(m) === 1);
+  $("btnAimePas").classList.toggle("non", !!m && avisDe(m) === -1);
+  if (!m || !st) return;
+  $("stationNom").textContent = st.nom; $("stationGenre").textContent = st.genre;
+  $("heureDebut").textContent = "depuis " + heure(etat.debutMs);
+  if (nouveauTitre) {
+    $("titre").textContent = m.titre; $("artiste").textContent = m.artiste;
+    $("titre").className = "titre" + (m.titre.length > 70 ? " tres-long" : m.titre.length > 32 ? " long" : "");
+    $("details").replaceChildren(document.createTextNode([m.album, GENRE.get(m.genre).nom, m.licence].filter(Boolean).join(" · ") + " · "),
+      Object.assign(document.createElement("span"), { className: "droits", textContent: DROITS[m.droits] }));
+    const bloc = $("blocTitre"); bloc.classList.remove("change"); void bloc.offsetWidth; bloc.classList.add("change");
+    const poch = $("pochette"), v = visuel(m, 880); poch.replaceChildren(v);
+    const im = IMAGES[m.artiste];
+    if (im) poch.append(Object.assign(document.createElement("span"), { className: "credit-image", textContent: "Image : " + (im.auteur || "Wikimedia Commons") + (im.licence ? " · " + im.licence : "") }));
+    $("fondFlou").style.backgroundImage = im ? `url("${im.image}")` : `linear-gradient(135deg, hsl(${teinte(m.artiste)} 70% 40%), ${st.couleur})`;
+    document.title = m.titre + " — " + m.artiste + " · " + st.nom;
+    construireProgramme(); construireCredits();
+  }
+}
+function vignette(m) { const d = document.createElement("div"); d.className = "vignette"; d.append(visuel(m, 120)); return d; }
+function ligne(m, quand, enCours) {
+  const li = document.createElement("li"); if (enCours) li.className = "en-cours";
+  const h = document.createElement("span"); h.className = "heure"; h.textContent = heure(quand);
+  const txt = document.createElement("div"); txt.style.minWidth = "0";
+  txt.append(Object.assign(document.createElement("div"), { className: "t", textContent: m.titre }), Object.assign(document.createElement("div"), { className: "a", textContent: m.artiste }));
+  li.append(h, vignette(m), txt, Object.assign(document.createElement("span"), { className: "duree", textContent: format(dureeDe(m)) }));
+  return li;
+}
+// Programme : les prochains titres avec leur heure de passage, et ceux de la dernière heure.
+function construireProgramme() {
+  const n = etat.morceaux.length, m = courant(); if (!m) return;
+  const suite = $("aSuivre"), passes = $("diffuses"); suite.replaceChildren(); passes.replaceChildren();
+  let t = etat.debutMs + dureeDe(m) * 1000;
+  for (let k = 1; k <= Math.min(5, n - 1); k++) { const x = etat.morceaux[(etat.index + k) % n]; suite.append(ligne(x, t)); t += dureeDe(x) * 1000; }
+  passes.append(ligne(m, etat.debutMs, true));
+  let debut = etat.debutMs;
+  for (let k = 1; k < n && Date.now() - debut < 3600e3 && k <= 8; k++) { const x = etat.morceaux[(etat.index - k + n * 10) % n]; debut -= dureeDe(x) * 1000; passes.append(ligne(x, debut)); }
+}
+function construireRail() {
+  const rail = $("rail"); rail.replaceChildren();
+  for (const st of STATIONS) {
+    const morceaux = morceauxDe(st), p = positionEnDirect(morceaux, Date.now()), m = morceaux[p.index];
+    const b = document.createElement("button"); b.className = "carte-station" + (st === etat.station ? " active" : ""); b.style.setProperty("--couleur", st.couleur);
+    b.title = "Écouter " + st.nom + " en direct";
+    const mini = document.createElement("div"); mini.className = "mini"; if (m) mini.append(visuel(m, 128));
+    const txt = document.createElement("div"); txt.style.minWidth = "0";
+    txt.append(Object.assign(document.createElement("div"), { className: "nom", textContent: st.nom }),
+      Object.assign(document.createElement("div"), { className: "maintenant", textContent: m ? "En ce moment : " + m.titre + " — " + m.artiste : "" }));
+    b.append(mini, txt); b.addEventListener("click", () => choisir(st, true)); rail.append(b);
+  }
+  $("nbStations").textContent = STATIONS.length + " stations en direct";
+}
+function construireCredits() {
+  const zone = $("credits"); zone.replaceChildren();
+  for (const m of etat.morceaux) {
+    const p = document.createElement("p");
+    p.textContent = "« " + m.titre + " » — " + m.artiste + " — " + m.licence + " — ";
+    const a = Object.assign(document.createElement("a"), { href: FICHE + m.chemin.split("/").pop(), target: "_blank", rel: "noopener", textContent: "fiche" });
+    p.append(a); zone.append(p);
+  }
+}
+// Barre d'avancement, horloge, rail rafraîchi chaque minute.
+function tic() {
+  const m = courant();
+  $("horloge").textContent = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+  if (m) {
+    const d = audio.duration && isFinite(audio.duration) ? audio.duration : dureeDe(m), e = etat.joue ? audio.currentTime : (Date.now() - etat.debutMs) / 1000;
+    $("avance").style.width = Math.min(100, (e / d) * 100) + "%"; $("ecoule").textContent = format(e); $("reste").textContent = "-" + format(d - e);
+    // Sans écoute, la page suit quand même le direct.
+    if (!etat.joue && etat.enDirect && e >= dureeDe(m)) { const p = positionEnDirect(etat.morceaux, Date.now()); jouer(p.index, p.secondes, true); }
+  }
+}
+setInterval(tic, 500); setInterval(() => construireRail(), 60000);
+// Spectre : barres à la couleur de la station (vraies fréquences si le navigateur le permet, sinon vague calme).
+const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
+(function dessiner() {
+  const c = $("spectre"), x = c.getContext("2d"), w = c.width, h = c.height, barres = 72, accent = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#ff4f8b";
+  x.clearRect(0, 0, w, h);
+  if (analyseur && etat.joue) analyseur.getByteFrequencyData(donneesSpectre);
+  for (let i = 0; i < barres; i++) {
+    let v;
+    // Fréquences réparties en échelle logarithmique, comme l'oreille : les graves n'écrasent plus tout à gauche.
+    if (analyseur && etat.joue) v = Math.pow(donneesSpectre[Math.min(donneesSpectre.length - 1, Math.floor(Math.pow(donneesSpectre.length * 0.7, i / barres)))] / 255, 0.85);
+    else v = etat.joue && !reduit ? 0.15 + 0.12 * Math.sin(Date.now() / 420 + i * 0.5) : 0.06;
+    const bh = Math.max(3, v * h), bw = w / barres * 0.56;
+    x.fillStyle = accent; x.globalAlpha = 0.35 + v * 0.65;
+    x.fillRect(i * (w / barres), (h - bh) / 2, bw, bh);
+  }
+  x.globalAlpha = 1;
+  requestAnimationFrame(dessiner);
+})();
+
+// ---------- Commandes ----------
+$("btnLecture").addEventListener("click", () => {
+  if (!etat.station) return;
+  if (etat.joue) { audio.pause(); etat.joue = false; afficher(); return; }
+  etat.joue = true; brancherSpectre();
+  if (etat.enDirect) { const p = positionEnDirect(etat.morceaux, Date.now()); jouer(p.index, p.secondes, true); }
+  else if (!audio.currentSrc) jouer(etat.index, 0, false);
+  else audio.play().catch(() => { etat.joue = false; afficher(); });
+  afficher();
+});
+$("btnDirect").addEventListener("click", () => { etat.joue = true; const p = positionEnDirect(etat.morceaux, Date.now()); jouer(p.index, p.secondes, true); });
+function donnerAvis(valeur) {
+  const m = courant(); if (!m) return;
+  if (AVIS[m.id] === valeur) delete AVIS[m.id]; else { delete AVIS[m.id]; AVIS[m.id] = valeur; }
+  try { localStorage.setItem("radio_avis", JSON.stringify(AVIS)); } catch (_) { /* stockage indisponible */ }
+  if (AVIS[m.id] === -1) {
+    dire("👎 noté : « " + m.titre + " » ne repassera plus.");
+    const reste = morceauxDe(etat.station); const i = etat.morceaux.indexOf(m);
+    etat.morceaux = reste.length ? reste : etat.morceaux;
+    jouer(reste.length ? (Math.max(0, i) % reste.length) : 0, 0, false);
+  } else { dire(AVIS[m.id] === 1 ? "👍 noté : « " + m.titre + " » passera en priorité dans sa station." : "Avis retiré."); afficher(); }
+}
+$("btnAime").addEventListener("click", () => donnerAvis(1));
+$("btnAimePas").addEventListener("click", () => donnerAvis(-1));
+$("volume").addEventListener("input", (e) => { audio.volume = e.target.value / 100; try { localStorage.setItem("radio_volume", e.target.value); } catch (_) { /* rien */ } });
+try { const v = localStorage.getItem("radio_volume"); if (v !== null) $("volume").value = v; } catch (_) { /* rien */ }
+
+// ---------- Départ : la dernière station écoutée, sinon la première ----------
+let depart = STATIONS[0];
+try { const id = localStorage.getItem("radio_direct_station"); depart = STATIONS.find((s) => s.id === id) || depart; } catch (_) { /* rien */ }
+if (depart) choisir(depart, false); else dire("Catalogue non chargé (catalogue.js absent).");
+</script>
+</body>
+</html>

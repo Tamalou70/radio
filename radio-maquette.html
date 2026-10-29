@@ -228,11 +228,15 @@
 
 <audio id="audio" preload="auto"></audio>
 <script src="catalogue.js"></script>
+<script src="hebergement.js"></script>
 <script>
 "use strict";
 
 // ---------- Catalogue ----------
 const COMMONS = "https://upload.wikimedia.org/wikipedia/commons/";
+// Titres hébergés sur notre stockage (hebergement.js, écrit par outils/envoyer_r2.mjs) ; les autres sont lus sur Wikimedia Commons.
+const HEBERGE = window.HEBERGEMENT || {};
+const adresseSon = (m) => HEBERGE[m.chemin] || COMMONS + m.chemin;
 const FICHE = "https://commons.wikimedia.org/wiki/File:";
 const $ = (id) => document.getElementById(id);
 
@@ -448,7 +452,7 @@ function jouer(source, morceaux, index, depuisSecondes, enDirect) {
   Object.assign(etat, { source, morceaux, index, enDirect, enPause: false, enParole: false });
   const m = morceauCourant();
   if (!m) { antenne("Cette station n'a aucun titre : ajoute-en depuis le catalogue.", true); afficher(); return; }
-  audio.src = COMMONS + m.chemin;
+  audio.src = adresseSon(m);
   audio.volume = $("volume").value / 100;
   if (depuisSecondes > 0) {
     audio.addEventListener("loadedmetadata", () => {
@@ -935,7 +939,7 @@ function choixEnTexte() {
     stations: STATIONS.map((st) => ({ nom: st.nom, genre: st.genre || "", titres: morceauxDe(st).map((m) => ({
       titre: m.titre, artiste: m.artiste, interprete: m.interprete, famille: m.style, style: nomGenre(m), conseille: m.note > 0, celebre: m.note === 2,
       album: m.album, licence: m.licence, oeuvre_protegee: protege(m), droits: m.droits, droits_raison: m.raison, duree_s: m.duree, format: m.format,
-      fiche: FICHE + m.chemin.split("/").pop(), fichier: COMMONS + m.chemin })) })),
+      fiche: FICHE + m.chemin.split("/").pop(), fichier: adresseSon(m) })) })),
   }, null, 2);
 }
 

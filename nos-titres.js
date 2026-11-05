@@ -156,6 +156,54 @@ window.ANIMATIONS = [
   "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-devant-la-porte.mp3",
   "duree": 30.24,
   "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-meteo",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-meteo.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 24.18,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-messages",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-messages.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 20.97,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-defi",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-defi.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 19.51,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-horoscope",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-horoscope.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 23.36,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-quiz",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-quiz.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 18.42,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-jingle",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-jingle.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 18.6,
+  "voix": "Deejay Di et Samantha"
  }
 ];
 window.CATALOGUE = [

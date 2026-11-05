@@ -230,7 +230,7 @@
 </footer>
 
 <audio id="audio" preload="none" crossorigin="anonymous"></audio>
-<script src="nos-titres.js?v=1793918947244"></script>
+<script src="nos-titres.js?v=1793919863796"></script>
 <script>
 "use strict";
 // Un lien de partage (#stations=… ou #avis=…) ouvert sur cette page est renvoyé vers la page Catalogue, qui sait le lire.
@@ -436,7 +436,9 @@ function veilleFondu() {
 // dans le navigateur, plus de chaîne de minuteurs à casser.
 const VOLUME_VOIX = 1.1, FOND = 0.25, AVANT_PASSAGE = 6, AVANT_JINGLE = 3, ENTRE_VOIX = 0.35, SORTIE_VOIX = 1.2, ANNONCE_MIN_ECART = 3600;
 const PAUSES = [["rien", 25], ["jingle", 25], ["annonce", 20], ["intermede", 15], ["longue", 15]];   // poids sur 100
-const estJingle = (a) => /^id-/.test(String(a.id)), estAnnonce = (a) => !!a.avant, estIntermede = (a) => !a.avant && !estJingle(a);
+// estRappel (06/11/2026) : refrain chanté par les animateurs sur la fin du titre qui vient de passer (champ apres)
+const estJingle = (a) => /^id-/.test(String(a.id)), estAnnonce = (a) => !!a.avant, estRappel = (a) => !!a.apres, estIntermede = (a) => !a.avant && !a.apres && !estJingle(a);
+const RAPPEL_MIN_ECART = 7200, RAPPEL_CHANCE = 0.5;   // un même refrain chanté pas deux fois en 2 h ; une fois sur deux quand il peut
 const jourDe = (ms) => { const d = new Date(ms); return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); };
 const minuitDe = (ms) => { const d = new Date(ms); d.setHours(0, 0, 0, 0); return d.getTime(); };
 const hasardFixe = (texte) => { let h = 2166136261; for (const c of texte) h = Math.imul(h ^ c.charCodeAt(0), 16777619); h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0; h = Math.imul(h ^ (h >>> 13), 3266489909) >>> 0; return ((h ^ (h >>> 16)) >>> 0) / 4294967296; };   // >>> 0 : sans lui, le nombre peut sortir négatif
@@ -447,6 +449,7 @@ function grilleDu(morceaux, maintenantMs) {
   if (GRILLES.has(cle)) return GRILLES.get(cle);
   const deLaStation = ANIMATIONS.filter((a) => !a.station || a.station === genre);
   const annonces = new Map(deLaStation.filter(estAnnonce).map((a) => [a.avant, a]));
+  const rappels = new Map(deLaStation.filter(estRappel).map((a) => [a.apres, a])), rappelDit = new Map();
   const sacs = { intermede: melangeFixe(deLaStation.filter(estIntermede), jour + "|i|" + genre), jingle: melangeFixe(deLaStation.filter(estJingle), jour + "|j|" + genre) };
   const rang = { intermede: 0, jingle: 0 }, derniers = { intermede: null, jingle: null }, annonceDite = new Map();
   const tirer = (sorte) => {   // le suivant du sac, jamais deux fois le même de suite
@@ -471,6 +474,15 @@ function grilleDu(morceaux, maintenantMs) {
     else if (sorte === "intermede") liste = [tirer("intermede")];
     else if (sorte === "longue") liste = annonceLibre ? [tirer("intermede"), annonce] : [tirer("jingle"), tirer("intermede")];
     liste = liste.filter(Boolean);
+    // 06/11 (Simon : « nos animateurs peuvent chanter les refrains, comme des animateurs qui kiffent les sons ») : après un titre
+    // qui a son refrain chanté, une fois sur deux (et pas deux fois en 2 h), les animateurs le chantent sur sa fin ; il remplace un
+    // jingle, ou passe juste avant l'annonce du titre suivant.
+    const rappel = rappels.get(avant.chemin);
+    if (rappel && !(rappelDit.get(rappel.id) > t - RAPPEL_MIN_ECART) && hasardFixe(jour + "|r|" + genre + "|" + k) < RAPPEL_CHANCE) {
+      if (sorte === "jingle") liste = [rappel];
+      else if (sorte === "annonce" && liste.length === 1 && estAnnonce(liste[0])) liste = [rappel, liste[0]];
+      if (liste.includes(rappel)) rappelDit.set(rappel.id, t);
+    }
     if (Math.floor(t / 3600) !== Math.floor(debut / 3600) && sacs.jingle.length && !liste.some(estJingle)) liste.unshift(tirer("jingle"));
     for (const a of liste) if (estAnnonce(a)) annonceDite.set(a.id, t);
     // placement : la dernière voix part AVANT_PASSAGE s avant le passage (un jingle seul : AVANT_JINGLE), les autres juste devant
@@ -506,6 +518,7 @@ const nomVoix = (a) => {
   if (!a) return "";
   if (estAnnonce(a)) { const m = PAR_ID.get(a.avant); return "Annonce de « " + (m ? m.titre : a.avant) + " »"; }
   if (estJingle(a)) return "Jingle : " + (a.nom || a.id);
+  if (estRappel(a)) { const m = PAR_ID.get(a.apres); return "Refrain chanté de « " + (m ? m.titre : a.apres) + " »"; }
   if (a.nom) return "Intermède : " + a.nom;
   const n = String(a.id).replace(/^intermede-/, "").replace(/-/g, " ");
   return "Intermède : " + n.charAt(0).toUpperCase() + n.slice(1);

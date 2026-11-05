@@ -212,7 +212,7 @@ window.ANIMATIONS = [
   "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-meteo.mp3",
   "station": "rapfr",
   "avant": null,
-  "duree": 24.18,
+  "duree": 25,
   "voix": "Deejay Di et Samantha",
   "nom": "La météo de Samantha"
  },
@@ -531,6 +531,30 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-elle-compte.mp3",
   "duree": 19.17,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-cash-cash-8",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-cash-cash-8.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-au-dos-des-tickets.mp3",
+  "duree": 34.02,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-cash-cash-9",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-cash-cash-9.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-pompe-4.mp3",
+  "duree": 23.52,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-cash-cash-10",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-cash-cash-10.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-demission.mp3",
+  "duree": 34.32,
   "voix": "Deejay Di et Samantha"
  }
 ];

@@ -197,7 +197,7 @@
     <div>
       <h3>Nos titres, faits maison</h3>
       <p>Chaque station tourne en continu depuis minuit : tout le monde entend le même titre au même moment, comme une vraie radio. Toutes les musiques sont nos propres créations, faites pour Base Clean.</p>
-      <p><label class="bascule"><input type="checkbox" id="animatrice"> 🎙️ Animatrice entre deux titres (voix de synthèse, maquette)</label></p>
+      <p><label class="bascule"><input type="checkbox" id="animatrice"> 🎙️ Animateurs radio : Deejay Di et Samantha</label></p>
     </div>
     <div>
       <h3>Crédits de la station</h3>
@@ -207,7 +207,7 @@
 </footer>
 
 <audio id="audio" preload="none" crossorigin="anonymous"></audio>
-<script src="nos-titres.js?v=1793894566328"></script>
+<script src="nos-titres.js?v=1793902188511"></script>
 <script>
 "use strict";
 // Un lien de partage (#stations=… ou #avis=…) ouvert sur cette page est renvoyé vers la page Catalogue, qui sait le lire.
@@ -217,6 +217,7 @@ const FICHE = "https://commons.wikimedia.org/wiki/File:";
 const IMAGES = window.IMAGES_ARTISTES || {};
 const POCHETTES = window.POCHETTES || {};
 const MESURES = window.MESURES || {};
+const ANIMATIONS = window.ANIMATIONS || [];   // interventions des animateurs validées par Simon (étape 11)
 const FONDU = 6;   // secondes de fondu enchaîné entre deux titres
 const debutDe = (m) => (m && MESURES[m.chemin] ? MESURES[m.chemin].debut : 0);
 const gainDe = (m) => (m && MESURES[m.chemin] ? MESURES[m.chemin].gain : 1);
@@ -328,6 +329,7 @@ function visuel(m, taille) {
 // ---------- Lecture ----------
 let audio = $("audio");   // le lecteur actif ; l'autre prépare le titre suivant
 const LECTEURS = [audio, document.body.appendChild(Object.assign(document.createElement("audio"), { preload: "none", crossOrigin: "anonymous" }))];
+const VOIX = document.body.appendChild(Object.assign(document.createElement("audio"), { preload: "none", crossOrigin: "anonymous" }));   // les animateurs
 const etat = { station: null, morceaux: [], index: 0, enDirect: true, debutMs: 0, joue: false };
 const courant = () => etat.morceaux[etat.index] || null;
 let analyseur = null, donneesSpectre = null;
@@ -342,8 +344,8 @@ function brancherSpectre() {
     maitre = ctxAudio.createGain(); maitre.gain.value = $("volume").value / 100;
     analyseur = ctxAudio.createAnalyser(); analyseur.fftSize = 256; analyseur.smoothingTimeConstant = 0.82;
     maitre.connect(analyseur); analyseur.connect(ctxAudio.destination); donneesSpectre = new Uint8Array(analyseur.frequencyBinCount);
-    for (const el of LECTEURS) {
-      const g = ctxAudio.createGain(); g.gain.value = el === audio ? gainDe(courant()) : 0;
+    for (const el of [...LECTEURS, VOIX]) {
+      const g = ctxAudio.createGain(); g.gain.value = el === VOIX ? VOLUME_VOIX : el === audio ? gainDe(courant()) : 0;
       ctxAudio.createMediaElementSource(el).connect(g); g.connect(maitre); GAINS.set(el, g); el.volume = 1;
     }
   } catch (_) { analyseur = null; maitre = null; GAINS.clear(); }
@@ -367,12 +369,51 @@ function regler(el, valeur, secondes) {
 // Toutes les 200 ms : le titre actif a-t-il fini son créneau ? Alors le suivant entre en fondu.
 function veilleFondu() {
   const m = courant();
-  if (!m || !etat.joue || enFondu || !MESURES[m.chemin] || $("animatrice").checked) return;
+  if (!m || !etat.joue || enFondu || !MESURES[m.chemin]) return;
   if (audio.paused || audio.readyState < 2 || audio.currentTime - debutDe(m) < dureeDe(m)) return;
   const n = etat.morceaux.length; if (!n) return;
   let i = (etat.index + 1) % n, depuis = 0;
   if (etat.enDirect) { const p = positionEnDirect(etat.morceaux, Date.now() + 300); if (p.index !== etat.index) { i = p.index; depuis = p.secondes; } }
+  // Case « Animateurs radio » cochée : l'annonce qui lance le titre suivant passe avant lui ; juste après avoir coché la case,
+  // une annonce de la station passe tout de suite et enchaîne sur le titre qu'elle lance.
+  if ($("animatrice").checked) {
+    let anim = animationPour(etat.morceaux[i]);
+    if (!anim && animationDemandee) {
+      anim = ANIMATIONS.find((a) => etat.morceaux.some((t) => t.chemin === a.avant)) || null;
+      if (anim) i = etat.morceaux.findIndex((t) => t.chemin === anim.avant);
+    }
+    if (anim) { animationDemandee = false; animer(anim, i); return; }
+  }
   enchainer(i, depuis);
+}
+// ---------- Animateurs radio (05/11/2026) : voix enregistrées, fondus entre animation et musique ----------
+const VOLUME_VOIX = 1.1, ENTREE_VOIX = 1, SORTIE_VOIX = 2.5;   // la voix part 1 s après le début de la descente ; le titre monte 2,5 s avant la fin de la voix
+let animationDemandee = false;
+const animationPour = (m) => (m ? ANIMATIONS.find((a) => a.avant === m.chemin) || null : null);
+function animer(anim, index) {
+  const m = etat.morceaux[index]; if (!m) return;
+  const ancien = audio, neuf = LECTEURS[LECTEURS[0] === audio ? 1 : 0], jeton = ++numeroFondu;
+  enFondu = true;
+  regler(ancien, 0, 4);                                    // 1) la musique qui finit descend sous la voix
+  VOIX.src = anim.son; regler(VOIX, VOLUME_VOIX, 0);
+  setTimeout(() => { if (jeton === numeroFondu) VOIX.play().catch(() => {}); }, ENTREE_VOIX * 1000);   // 2) les animateurs parlent
+  const lancer = () => {                                   // 3) le titre annoncé monte sous la fin de la voix
+    if (jeton !== numeroFondu) return;
+    audio = neuf; etat.index = index; etat.enDirect = false; etat.debutMs = Date.now();
+    regler(neuf, 0, 0); neuf.src = adresseSon(m);
+    const pos = debutDe(m); if (pos > 0) neuf.addEventListener("loadedmetadata", () => { neuf.currentTime = pos; }, { once: true });
+    neuf.addEventListener("playing", () => { if (jeton === numeroFondu) regler(neuf, gainDe(m), 3); }, { once: true });
+    neuf.play().catch(() => {});
+    setTimeout(() => { if (jeton !== numeroFondu) return; ancien.pause(); enFondu = false; }, 4000);
+    afficher(true);
+  };
+  let lance = false;
+  const veille = setInterval(() => {
+    if (jeton !== numeroFondu) return clearInterval(veille);
+    const d = VOIX.duration;
+    if (VOIX.ended || (d && isFinite(d) && VOIX.currentTime >= d - SORTIE_VOIX)) { clearInterval(veille); if (!lance) { lance = true; lancer(); } }
+  }, 100);
+  VOIX.addEventListener("error", () => { if (jeton === numeroFondu && !lance) { clearInterval(veille); lance = true; lancer(); } }, { once: true });
 }
 function enchainer(index, depuis) {
   const m = etat.morceaux[index]; if (!m) return;
@@ -395,6 +436,7 @@ function enchainer(index, depuis) {
 function jouer(index, depuis, enDirect) {
   if ("speechSynthesis" in window) speechSynthesis.cancel();
   for (const el of LECTEURS) if (el !== audio) el.pause();
+  VOIX.pause();
   enFondu = false; numeroFondu++;
   etat.index = index; etat.enDirect = enDirect;
   const m = courant(); if (!m) return;
@@ -422,25 +464,9 @@ function suivant() {
   if (etat.enDirect) { const p = positionEnDirect(etat.morceaux, Date.now() + 1500); jouer(p.index, 0, true); }
   else jouer((etat.index + 1) % n, 0, false);
 }
-const BLAGUES = [
-  "Quelle est la différence entre ton loyer et ton salaire ? Le loyer, lui, tombe à date fixe.",
-  "Quelle est la différence entre un banquier de Los Santos et un pickpocket ? Le pickpocket te regarde dans les yeux.",
-  "Quelle est la différence entre un pêcheur et un menteur ? Le pêcheur a parfois une photo.",
-  "Quelle est la différence entre une facture et un compliment ? La facture arrive toujours à la bonne adresse.",
-  "Quelle est la différence entre un influenceur et un réveil ? Le réveil, on peut l'éteindre.",
-  "Quelle est la différence entre ton patron et un feu rouge ? Le feu rouge finit par passer au vert.",
-];
-for (const el of LECTEURS) el.addEventListener("ended", (ev) => {
-  if (ev.target !== audio) return;
-  if (!$("animatrice").checked || !("speechSynthesis" in window)) { suivant(); return; }
-  const blague = BLAGUES[Math.floor(Math.random() * BLAGUES.length)];
-  dire("🎙️ « " + blague + " »");
-  const parole = new SpeechSynthesisUtterance(blague); parole.lang = "fr-FR";
-  const voix = speechSynthesis.getVoices().find((v) => v.lang && v.lang.startsWith("fr")); if (voix) parole.voice = voix;
-  let fini = false; const continuer = () => { if (!fini) { fini = true; suivant(); } };
-  parole.onend = continuer; parole.onerror = continuer; setTimeout(continuer, 15000);
-  speechSynthesis.speak(parole);
-});
+// fin de titre sans fondu (titre non mesuré, ou après une erreur) : le suivant
+for (const el of LECTEURS) el.addEventListener("ended", (ev) => { if (ev.target === audio && !enFondu) suivant(); });
+$("animatrice").addEventListener("change", (e) => { animationDemandee = e.target.checked; dire(e.target.checked ? "🎙️ Deejay Di et Samantha arrivent à la fin du titre." : ""); });
 for (const el of LECTEURS) el.addEventListener("error", (ev) => { if (ev.target !== audio || !courant()) return; dire("Ce titre ne se lit pas (format ou connexion) : titre suivant dans 3 s."); setTimeout(suivant, 3000); });
 for (const el of LECTEURS) el.addEventListener("playing", (ev) => { if (ev.target === audio) dire(""); });
 
@@ -548,7 +574,7 @@ const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
 // ---------- Commandes ----------
 $("btnLecture").addEventListener("click", () => {
   if (!etat.station) return;
-  if (etat.joue) { for (const el of LECTEURS) el.pause(); enFondu = false; etat.joue = false; afficher(); return; }
+  if (etat.joue) { for (const el of LECTEURS) el.pause(); VOIX.pause(); enFondu = false; numeroFondu++; etat.joue = false; afficher(); return; }
   etat.joue = true; brancherSpectre();
   if (etat.enDirect) { const p = positionEnDirect(etat.morceaux, Date.now()); jouer(p.index, p.secondes, true); }
   else if (!audio.currentSrc) jouer(etat.index, 0, false);

@@ -99,6 +99,11 @@ window.MESURES = {
   "debut": 0,
   "fin": 168.2,
   "gain": 0.95
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-sisi.mp3": {
+  "debut": 0,
+  "fin": 165,
+  "gain": 0.89
  }
 };
 window.ANIMATIONS = [
@@ -510,5 +515,6 @@ window.CATALOGUE = [
 ["Cash Cash","Au dos des tickets","Vitre blindée","",163,5.01,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-vitre-blindee.mp3","rapfr","Cash Cash","Vitre blindée","cash-cash-vitre-blindee",0,"rapfr",1,"sur","création maison"],
 ["Cash Cash","Au dos des tickets","Parloir","",159,4.88,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-parloir.mp3","rapfr","Cash Cash","Parloir","cash-cash-parloir",0,"rapfr",1,"sur","création maison"],
 ["Cash Cash","Au dos des tickets","Les filles du bâtiment","",165,5.06,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-filles-du-batiment.mp3","rapfr","Cash Cash","Les filles du bâtiment","cash-cash-filles-du-batiment",0,"rapfr",1,"sur","création maison"],
-["Cash Cash","Au dos des tickets","Rembobine","",169,5.19,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-rembobine.mp3","rapfr","Cash Cash","Rembobine","cash-cash-rembobine",0,"rapfr",1,"sur","création maison"]
+["Cash Cash","Au dos des tickets","Rembobine","",169,5.19,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-rembobine.mp3","rapfr","Cash Cash","Rembobine","cash-cash-rembobine",0,"rapfr",1,"sur","création maison"],
+["Cash Cash","Au dos des tickets","Sisi","",165,5.06,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-sisi.mp3","rapfr","Cash Cash","Sisi","cash-cash-sisi",0,"rapfr",1,"sur","création maison"]
 ];

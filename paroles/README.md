@@ -27,3 +27,4 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 18 | [Sisi](cash-cash-sisi.md) | Cash Cash | Vinyle Rap |
 | 19 | [Elle compte](cash-cash-elle-compte.md) | Cash Cash | Vinyle Rap |
 | 20 | [Au dos des tickets](cash-cash-au-dos-des-tickets.md) | Cash Cash | Vinyle Rap |
+| 21 | [Pompe 4](cash-cash-pompe-4.md) | Cash Cash | Vinyle Rap |

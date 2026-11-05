@@ -114,6 +114,11 @@ window.MESURES = {
   "debut": 0,
   "fin": 175,
   "gain": 0.88
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-pompe-4.mp3": {
+  "debut": 0,
+  "fin": 170,
+  "gain": 0.82
  }
 };
 window.ANIMATIONS = [
@@ -544,5 +549,6 @@ window.CATALOGUE = [
 ["Cash Cash","Au dos des tickets","Rembobine","",169,5.19,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-rembobine.mp3","rapfr","Cash Cash","Rembobine","cash-cash-rembobine",0,"rapfr",1,"sur","création maison"],
 ["Cash Cash","Au dos des tickets","Sisi","",165,5.06,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-sisi.mp3","rapfr","Cash Cash","Sisi","cash-cash-sisi",0,"rapfr",1,"sur","création maison"],
 ["Cash Cash","Au dos des tickets","Elle compte","",175,5.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-elle-compte.mp3","rapfr","Cash Cash","Elle compte","cash-cash-elle-compte",0,"rapfr",1,"sur","création maison"],
-["Cash Cash","Au dos des tickets","Au dos des tickets","",175,5.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-au-dos-des-tickets.mp3","rapfr","Cash Cash","Au dos des tickets","cash-cash-au-dos-des-tickets",0,"rapfr",1,"sur","création maison"]
+["Cash Cash","Au dos des tickets","Au dos des tickets","",175,5.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-au-dos-des-tickets.mp3","rapfr","Cash Cash","Au dos des tickets","cash-cash-au-dos-des-tickets",0,"rapfr",1,"sur","création maison"],
+["Cash Cash","Au dos des tickets","Pompe 4","",170,5.21,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-pompe-4.mp3","rapfr","Cash Cash","Pompe 4","cash-cash-pompe-4",0,"rapfr",1,"sur","création maison"]
 ];

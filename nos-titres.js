@@ -204,6 +204,150 @@ window.ANIMATIONS = [
   "avant": null,
   "duree": 18.6,
   "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-croissants",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-croissants.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 27.86,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-applaudissements",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-applaudissements.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 28.54,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-pub",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-pub.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 28.64,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-dedicaces",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-dedicaces.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 25.59,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-conseils",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-conseils.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 27.12,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-chanter",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-chanter.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 31.9,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-flash-info",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-flash-info.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 20.94,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-argot",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-argot.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 28.14,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-beatbox",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-beatbox.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 19.79,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-repondeur",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-repondeur.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 19.6,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-retard",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-retard.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 20.15,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-premiere-soiree",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-premiere-soiree.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 21.78,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-micro",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-micro.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 20.7,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-zen",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-zen.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 25.49,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-recette",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-recette.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 17.91,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-seule",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-seule.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 22.13,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-blind-test",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-blind-test.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 19.18,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "intermede-boite-a-idees",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/intermede-boite-a-idees.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 25.48,
+  "voix": "Deejay Di et Samantha"
  }
 ];
 window.CATALOGUE = [

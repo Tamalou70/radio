@@ -207,7 +207,7 @@
 </footer>
 
 <audio id="audio" preload="none" crossorigin="anonymous"></audio>
-<script src="nos-titres.js?v=1793893579927"></script>
+<script src="nos-titres.js?v=1793894566328"></script>
 <script>
 "use strict";
 // Un lien de partage (#stations=… ou #avis=…) ouvert sur cette page est renvoyé vers la page Catalogue, qui sait le lire.
@@ -216,6 +216,10 @@ const COMMONS = "https://upload.wikimedia.org/wikipedia/commons/";
 const FICHE = "https://commons.wikimedia.org/wiki/File:";
 const IMAGES = window.IMAGES_ARTISTES || {};
 const POCHETTES = window.POCHETTES || {};
+const MESURES = window.MESURES || {};
+const FONDU = 6;   // secondes de fondu enchaîné entre deux titres
+const debutDe = (m) => (m && MESURES[m.chemin] ? MESURES[m.chemin].debut : 0);
+const gainDe = (m) => (m && MESURES[m.chemin] ? MESURES[m.chemin].gain : 1);
 // Titres hébergés sur notre stockage (hebergement.js, écrit par outils/envoyer_r2.mjs) ; les autres sont lus sur Wikimedia Commons.
 const HEBERGE = window.HEBERGEMENT || {};
 const adresseSon = (m) => (/^(https?:|musique\/)/.test(m.chemin) ? m.chemin : HEBERGE[m.chemin] || COMMONS + m.chemin);
@@ -246,7 +250,7 @@ const CATALOGUE = (window.CATALOGUE || []).map(([, album, titre, licence, duree,
 });
 const PAR_ID = new Map(CATALOGUE.map((m) => [m.id, m]));
 const avisDe = (m) => AVIS[m.id] || 0;
-const dureeDe = (m) => (m.duree > 0 ? m.duree : 180);
+const dureeDe = (m) => { const x = MESURES[m.chemin]; if (x && x.fin - x.debut > FONDU * 4) return x.fin - x.debut - FONDU; return m.duree > 0 ? m.duree : 180; };
 const morceauxDe = (station) => station.titres.map((id) => PAR_ID.get(id)).filter((m) => m && avisDe(m) !== -1);
 
 // ---------- Stations toutes prêtes : même calcul que radio-maquette.html (même direct sur les deux pages) ----------
@@ -322,27 +326,84 @@ function visuel(m, taille) {
 }
 
 // ---------- Lecture ----------
-const audio = $("audio");
+let audio = $("audio");   // le lecteur actif ; l'autre prépare le titre suivant
+const LECTEURS = [audio, document.body.appendChild(Object.assign(document.createElement("audio"), { preload: "none", crossOrigin: "anonymous" }))];
 const etat = { station: null, morceaux: [], index: 0, enDirect: true, debutMs: 0, joue: false };
 const courant = () => etat.morceaux[etat.index] || null;
 let analyseur = null, donneesSpectre = null;
+// ---------- Fondu enchaîné : chaque lecteur a son gain, puis volume général, spectre, haut-parleurs ----------
+let ctxAudio = null, maitre = null, enFondu = false, numeroFondu = 0;   // numéro : un fondu dépassé (station changée…) ne fait plus rien
+const GAINS = new Map();
 function brancherSpectre() {
-  if (analyseur || !window.AudioContext) return;
+  if (analyseur) { if (ctxAudio && ctxAudio.state === "suspended") ctxAudio.resume(); return; }
+  if (!window.AudioContext) return;
   try {
-    const ctx = new AudioContext(); const source = ctx.createMediaElementSource(audio);
-    analyseur = ctx.createAnalyser(); analyseur.fftSize = 256; analyseur.smoothingTimeConstant = 0.82;
-    source.connect(analyseur); analyseur.connect(ctx.destination); donneesSpectre = new Uint8Array(analyseur.frequencyBinCount);
-  } catch (_) { analyseur = null; }
+    ctxAudio = new AudioContext();
+    maitre = ctxAudio.createGain(); maitre.gain.value = $("volume").value / 100;
+    analyseur = ctxAudio.createAnalyser(); analyseur.fftSize = 256; analyseur.smoothingTimeConstant = 0.82;
+    maitre.connect(analyseur); analyseur.connect(ctxAudio.destination); donneesSpectre = new Uint8Array(analyseur.frequencyBinCount);
+    for (const el of LECTEURS) {
+      const g = ctxAudio.createGain(); g.gain.value = el === audio ? gainDe(courant()) : 0;
+      ctxAudio.createMediaElementSource(el).connect(g); g.connect(maitre); GAINS.set(el, g); el.volume = 1;
+    }
+  } catch (_) { analyseur = null; maitre = null; GAINS.clear(); }
+}
+// courbe à puissance constante (sinus / cosinus) : pas de creux au milieu du fondu
+const courbe = (de, a, n) => Float32Array.from({ length: n }, (_, i) => { const t = i / (n - 1); return a > de ? de + (a - de) * Math.sin(t * Math.PI / 2) : a + (de - a) * Math.cos(t * Math.PI / 2); });
+function regler(el, valeur, secondes) {
+  const g = GAINS.get(el);
+  if (g) {
+    const t = ctxAudio.currentTime; const de = g.gain.value; g.gain.cancelScheduledValues(t);
+    if (secondes > 0) g.gain.setValueCurveAtTime(courbe(de, valeur, 64), t, secondes); else g.gain.value = valeur;
+    return;
+  }
+  // sans Web Audio : le volume de l'élément, par pas de 50 ms
+  clearInterval(el._fondu);
+  const a = Math.min(1, ($("volume").value / 100) * valeur), pas = Math.round((secondes || 0) * 20);
+  if (pas < 2) { el.volume = a; return; }
+  const c = courbe(el.volume, a, pas + 1); let k = 0;
+  el._fondu = setInterval(() => { k++; el.volume = Math.max(0, Math.min(1, c[k])); if (k >= pas) clearInterval(el._fondu); }, 50);
+}
+// Toutes les 200 ms : le titre actif a-t-il fini son créneau ? Alors le suivant entre en fondu.
+function veilleFondu() {
+  const m = courant();
+  if (!m || !etat.joue || enFondu || !MESURES[m.chemin] || $("animatrice").checked) return;
+  if (audio.paused || audio.readyState < 2 || audio.currentTime - debutDe(m) < dureeDe(m)) return;
+  const n = etat.morceaux.length; if (!n) return;
+  let i = (etat.index + 1) % n, depuis = 0;
+  if (etat.enDirect) { const p = positionEnDirect(etat.morceaux, Date.now() + 300); if (p.index !== etat.index) { i = p.index; depuis = p.secondes; } }
+  enchainer(i, depuis);
+}
+function enchainer(index, depuis) {
+  const m = etat.morceaux[index]; if (!m) return;
+  const ancien = audio, neuf = LECTEURS[LECTEURS[0] === audio ? 1 : 0], jeton = ++numeroFondu;
+  enFondu = true; audio = neuf;
+  etat.index = index; etat.debutMs = Date.now() - depuis * 1000;
+  regler(neuf, 0, 0); neuf.src = adresseSon(m);
+  const pos = debutDe(m) + depuis;
+  if (pos > 0) neuf.addEventListener("loadedmetadata", () => { neuf.currentTime = pos; }, { once: true });
+  neuf.addEventListener("playing", () => {
+    if (jeton !== numeroFondu) return;
+    regler(neuf, gainDe(m), FONDU); regler(ancien, 0, FONDU);
+    setTimeout(() => { if (jeton !== numeroFondu) return; if (audio !== ancien) ancien.pause(); enFondu = false; }, FONDU * 1000 + 300);
+  }, { once: true });
+  neuf.play().catch(() => { if (jeton === numeroFondu) enFondu = false; });
+  // le suivant ne démarre pas (réseau) : on reprend le direct au lieu de laisser un blanc
+  setTimeout(() => { if (jeton === numeroFondu && enFondu && audio === neuf && neuf.paused) { enFondu = false; suivant(); } }, 8000);
+  afficher(true);
 }
 function jouer(index, depuis, enDirect) {
   if ("speechSynthesis" in window) speechSynthesis.cancel();
+  for (const el of LECTEURS) if (el !== audio) el.pause();
+  enFondu = false; numeroFondu++;
   etat.index = index; etat.enDirect = enDirect;
   const m = courant(); if (!m) return;
   etat.debutMs = Date.now() - depuis * 1000;
   // Sans écoute, la page suit le direct sans rien charger ; le son ne se charge qu'au clic sur « Écouter ».
   if (etat.joue) {
-    audio.src = adresseSon(m); audio.volume = $("volume").value / 100;
-    if (depuis > 0) audio.addEventListener("loadedmetadata", () => { if (depuis < (audio.duration || dureeDe(m))) audio.currentTime = depuis; }, { once: true });
+    audio.src = adresseSon(m); regler(audio, gainDe(m), 0);
+    const pos = debutDe(m) + depuis, el = audio;
+    if (pos > 0) el.addEventListener("loadedmetadata", () => { if (pos < (el.duration || pos + 1)) el.currentTime = pos; }, { once: true });
     audio.play().catch(() => { etat.joue = false; afficher(); dire("Le navigateur a bloqué le son : appuie sur « Écouter le direct »."); });
   }
   afficher(true);
@@ -369,7 +430,8 @@ const BLAGUES = [
   "Quelle est la différence entre un influenceur et un réveil ? Le réveil, on peut l'éteindre.",
   "Quelle est la différence entre ton patron et un feu rouge ? Le feu rouge finit par passer au vert.",
 ];
-audio.addEventListener("ended", () => {
+for (const el of LECTEURS) el.addEventListener("ended", (ev) => {
+  if (ev.target !== audio) return;
   if (!$("animatrice").checked || !("speechSynthesis" in window)) { suivant(); return; }
   const blague = BLAGUES[Math.floor(Math.random() * BLAGUES.length)];
   dire("🎙️ « " + blague + " »");
@@ -379,8 +441,8 @@ audio.addEventListener("ended", () => {
   parole.onend = continuer; parole.onerror = continuer; setTimeout(continuer, 15000);
   speechSynthesis.speak(parole);
 });
-audio.addEventListener("error", () => { if (!courant()) return; dire("Ce titre ne se lit pas (format ou connexion) : titre suivant dans 3 s."); setTimeout(suivant, 3000); });
-audio.addEventListener("playing", () => dire(""));
+for (const el of LECTEURS) el.addEventListener("error", (ev) => { if (ev.target !== audio || !courant()) return; dire("Ce titre ne se lit pas (format ou connexion) : titre suivant dans 3 s."); setTimeout(suivant, 3000); });
+for (const el of LECTEURS) el.addEventListener("playing", (ev) => { if (ev.target === audio) dire(""); });
 
 // ---------- Affichage ----------
 const dire = (t) => { $("antenne").textContent = t; };
@@ -457,13 +519,13 @@ function tic() {
   const m = courant();
   $("horloge").textContent = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
   if (m) {
-    const d = audio.duration && isFinite(audio.duration) ? audio.duration : dureeDe(m), e = etat.joue ? audio.currentTime : (Date.now() - etat.debutMs) / 1000;
+    const d = dureeDe(m), e = etat.joue ? Math.max(0, audio.currentTime - debutDe(m)) : (Date.now() - etat.debutMs) / 1000;
     $("avance").style.width = Math.min(100, (e / d) * 100) + "%"; $("ecoule").textContent = format(e); $("reste").textContent = "-" + format(d - e);
     // Sans écoute, la page suit quand même le direct.
     if (!etat.joue && etat.enDirect && e >= dureeDe(m)) { const p = positionEnDirect(etat.morceaux, Date.now()); jouer(p.index, p.secondes, true); }
   }
 }
-setInterval(tic, 500); setInterval(() => construireRail(), 60000);
+setInterval(tic, 500); setInterval(() => construireRail(), 60000); setInterval(veilleFondu, 200);
 // Spectre : barres à la couleur de la station (vraies fréquences si le navigateur le permet, sinon vague calme).
 const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
 (function dessiner() {
@@ -486,7 +548,7 @@ const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
 // ---------- Commandes ----------
 $("btnLecture").addEventListener("click", () => {
   if (!etat.station) return;
-  if (etat.joue) { audio.pause(); etat.joue = false; afficher(); return; }
+  if (etat.joue) { for (const el of LECTEURS) el.pause(); enFondu = false; etat.joue = false; afficher(); return; }
   etat.joue = true; brancherSpectre();
   if (etat.enDirect) { const p = positionEnDirect(etat.morceaux, Date.now()); jouer(p.index, p.secondes, true); }
   else if (!audio.currentSrc) jouer(etat.index, 0, false);
@@ -507,7 +569,7 @@ function donnerAvis(valeur) {
 }
 $("btnAime").addEventListener("click", () => donnerAvis(1));
 $("btnAimePas").addEventListener("click", () => donnerAvis(-1));
-$("volume").addEventListener("input", (e) => { audio.volume = e.target.value / 100; try { localStorage.setItem("radio_volume", e.target.value); } catch (_) { /* rien */ } });
+$("volume").addEventListener("input", (e) => { if (maitre) maitre.gain.value = e.target.value / 100; else audio.volume = Math.min(1, (e.target.value / 100) * gainDe(courant())); try { localStorage.setItem("radio_volume", e.target.value); } catch (_) { /* rien */ } });
 try { const v = localStorage.getItem("radio_volume"); if (v !== null) $("volume").value = v; } catch (_) { /* rien */ }
 
 // ---------- Départ : la dernière station écoutée, sinon la première ----------

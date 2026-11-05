@@ -19,3 +19,6 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 10 | [Devant la porte](zero-retour-devant-la-porte.md) | Zéro Retour | Vinyle Rap |
 | 11 | [Petit frère](zero-retour-petit-frere.md) | Zéro Retour | Vinyle Rap |
 | 12 | [Mains propres](zero-retour-mains-propres.md) | Zéro Retour | Vinyle Rap |
+| 13 | [J'te l'dis cash](cash-cash-jte-ldis-cash.md) | Cash Cash | Vinyle Rap |
+| 14 | [Vitre blindée](cash-cash-vitre-blindee.md) | Cash Cash | Vinyle Rap |
+| 15 | [Parloir](cash-cash-parloir.md) | Cash Cash | Vinyle Rap |

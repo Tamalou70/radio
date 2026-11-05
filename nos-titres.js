@@ -74,6 +74,21 @@ window.MESURES = {
   "debut": 0,
   "fin": 160,
   "gain": 0.95
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-jte-ldis-cash.mp3": {
+  "debut": 0,
+  "fin": 175,
+  "gain": 0.85
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-vitre-blindee.mp3": {
+  "debut": 0,
+  "fin": 163.36,
+  "gain": 0.91
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-parloir.mp3": {
+  "debut": 0,
+  "fin": 159.32,
+  "gain": 0.75
  }
 };
 window.ANIMATIONS = [
@@ -426,6 +441,30 @@ window.ANIMATIONS = [
   "duree": 3.6,
   "voix": "Samantha",
   "nom": "« Chut… t'es sur Vinyle Rap, le quartier écoute »"
+ },
+ {
+  "id": "duo-cash-cash-1",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-cash-cash-1.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-jte-ldis-cash.mp3",
+  "duree": 29.3,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-cash-cash-2",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-cash-cash-2.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-vitre-blindee.mp3",
+  "duree": 23.56,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-cash-cash-3",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-cash-cash-3.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-parloir.mp3",
+  "duree": 22.8,
+  "voix": "Deejay Di et Samantha"
  }
 ];
 window.CATALOGUE = [
@@ -440,5 +479,8 @@ window.CATALOGUE = [
 ["Zéro Retour","Poches vides, cœur plein","Elle a tenu","",180,5.7,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-elle-a-tenu.mp3","rapfr","Zéro Retour","Elle a tenu","zero-retour-elle-a-tenu",0,"rapfr",1,"sur","création maison"],
 ["Zéro Retour","Poches vides, cœur plein","Devant la porte","",185,5.9,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-devant-la-porte.mp3","rapfr","Zéro Retour","Devant la porte","zero-retour-devant-la-porte",0,"rapfr",1,"sur","création maison"],
 ["Zéro Retour","Poches vides, cœur plein","Petit frère","",160,5.07,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-petit-frere.mp3","rapfr","Zéro Retour","Petit frère","zero-retour-petit-frere",0,"rapfr",1,"sur","création maison"],
-["Zéro Retour","Poches vides, cœur plein","Mains propres","",160,5.05,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-mains-propres.mp3","rapfr","Zéro Retour","Mains propres","zero-retour-mains-propres",0,"rapfr",1,"sur","création maison"]
+["Zéro Retour","Poches vides, cœur plein","Mains propres","",160,5.05,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-mains-propres.mp3","rapfr","Zéro Retour","Mains propres","zero-retour-mains-propres",0,"rapfr",1,"sur","création maison"],
+["Cash Cash","Au dos des tickets","J'te l'dis cash","",175,5.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-jte-ldis-cash.mp3","rapfr","Cash Cash","J'te l'dis cash","cash-cash-jte-ldis-cash",0,"rapfr",1,"sur","création maison"],
+["Cash Cash","Au dos des tickets","Vitre blindée","",163,5.01,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-vitre-blindee.mp3","rapfr","Cash Cash","Vitre blindée","cash-cash-vitre-blindee",0,"rapfr",1,"sur","création maison"],
+["Cash Cash","Au dos des tickets","Parloir","",159,4.88,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-parloir.mp3","rapfr","Cash Cash","Parloir","cash-cash-parloir",0,"rapfr",1,"sur","création maison"]
 ];

@@ -1,16 +1,9 @@
-# Radio — maquette
+# Radio Base Clean — nos titres
 
-Page d'écoute de musiques **libres de droits** (CC0, domaine public, CC BY), lues directement depuis Wikimedia Commons.
+Une radio en ligne qui ne passe **que nos propres titres**, faits pour Base Clean.
 
-**Écouter en direct :** https://tamalou70.github.io/radio/ · **Catalogue et stations :** https://tamalou70.github.io/radio/radio-maquette.html
+**Écouter en direct :** https://tamalou70.github.io/radio/
 
-Les portraits et photos d'artistes viennent de Wikimedia Commons (auteur et licence affichés sur chaque image) ; sans image libre, une pochette est dessinée.
-
-- Des stations toutes prêtes, une par style (piano, opéra, jazz, électro, lounge…), en direct.
-- 👍 / 👎 sur chaque titre, et un menu pour changer le style d'un titre mal rangé.
-- « 🔗 Partager mes stations » : un lien pour que les potes retrouvent les stations.
-- « 📤 Envoyer mes 👍 / 👎 » : un lien pour renvoyer ses votes.
-
-Tout reste dans le navigateur de chacun, et rien n'est envoyé à un serveur.
-
-Chaque titre garde sa licence et sa fiche sur Wikimedia Commons. Les crédits obligatoires (CC BY) s'affichent dans la page.
+- Chaque station tourne en continu depuis minuit : tout le monde entend le même titre au même moment, comme une vraie radio.
+- Première station : **Néon** (French touch et synthwave).
+- 👍 / 👎 sur chaque titre, gardés dans le navigateur de chacun ; rien n'est envoyé à un serveur.

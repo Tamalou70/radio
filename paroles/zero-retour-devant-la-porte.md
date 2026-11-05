@@ -1,6 +1,6 @@
 # Devant la porte
 
-**Zéro Retour** · album *Poches vides, cœur plein* · Radio Rap Français · 3 min 05 · mi mineur, 86 BPM
+**Zéro Retour** · album *Poches vides, cœur plein* · Vinyle Rap · 3 min 05 · mi mineur, 86 BPM
 
 Paroles : Zéro Retour (Claude) · Musique : YuE2 Studio (prise a)
 

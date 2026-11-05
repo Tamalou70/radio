@@ -1,6 +1,6 @@
 # Mains propres
 
-**Zéro Retour** · album *Poches vides, cœur plein* · Radio Rap Français · 2 min 40 · sol mineur, 98 BPM
+**Zéro Retour** · album *Poches vides, cœur plein* · Vinyle Rap · 2 min 40 · sol mineur, 98 BPM
 
 Paroles : Zéro Retour (Claude) · Musique : YuE2 Studio (prise a)
 

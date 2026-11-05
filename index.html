@@ -207,7 +207,7 @@
 </footer>
 
 <audio id="audio" preload="none" crossorigin="anonymous"></audio>
-<script src="nos-titres.js?v=1793909512609"></script>
+<script src="nos-titres.js?v=1793911727392"></script>
 <script>
 "use strict";
 // Un lien de partage (#stations=… ou #avis=…) ouvert sur cette page est renvoyé vers la page Catalogue, qui sait le lire.
@@ -355,8 +355,14 @@ const courbe = (de, a, n) => Float32Array.from({ length: n }, (_, i) => { const 
 function regler(el, valeur, secondes) {
   const g = GAINS.get(el);
   if (g) {
-    const t = ctxAudio.currentTime; const de = g.gain.value; g.gain.cancelScheduledValues(t);
-    if (secondes > 0) g.gain.setValueCurveAtTime(courbe(de, valeur, 64), t, secondes); else g.gain.value = valeur;
+    // 05/11 au soir : on annule TOUT ce qui était prévu (cancelScheduledValues(0)), y compris un fondu encore en cours ; avec (t),
+    // Firefox garde le fondu en cours et refuse le nouveau (NotSupportedError : deux courbes qui se chevauchent), ce qui bloquait
+    // l'enchaînement. Et si le navigateur refuse quand même, le volume est posé directement : jamais d'erreur qui arrête la radio.
+    const t = ctxAudio.currentTime; const de = g.gain.value;
+    try {
+      g.gain.cancelScheduledValues(0);
+      if (secondes > 0) g.gain.setValueCurveAtTime(courbe(de, valeur, 64), t, secondes); else g.gain.value = valeur;
+    } catch (_) { try { g.gain.cancelScheduledValues(0); g.gain.value = valeur; } catch (__) {} }
     return;
   }
   // sans Web Audio : le volume de l'élément, par pas de 50 ms
@@ -369,7 +375,10 @@ function regler(el, valeur, secondes) {
 // Toutes les 200 ms : le titre actif a-t-il fini son créneau ? Alors le suivant entre en fondu.
 // Si les animateurs vont parler, on part plus tôt (AVANCE_VOIX) : ils parlent sur la fin du titre, musique baissée.
 const finUtile = (m) => debutDe(m) + dureeDe(m) + FONDU;   // seconde où le son utile du titre s'arrête
+let debutFondu = 0;
 function veilleFondu() {
+  // garde-fou : un passage qui ne s'est jamais terminé (erreur du navigateur) ne bloque pas la radio plus de 90 s
+  if (enFondu && Date.now() - debutFondu > 90000) enFondu = false;
   const m = courant();
   if (!m || !etat.joue || enFondu || !MESURES[m.chemin]) return;
   if (audio.paused || audio.readyState < 2) return;
@@ -427,7 +436,7 @@ const animationPour = (m) => (m ? ANIMATIONS.find((a) => a.avant === m.chemin) |
 function animer(anim, index) {
   const m = etat.morceaux[index], mAncien = courant(); if (!m || !mAncien) return;
   const ancien = audio, neuf = LECTEURS[LECTEURS[0] === audio ? 1 : 0], jeton = ++numeroFondu, t0 = Date.now();
-  enFondu = true;
+  enFondu = true; debutFondu = Date.now();
   regler(ancien, gainDe(mAncien) * FOND, BAISSE);          // 1) la musique baisse sous la voix, sans s'arrêter
   VOIX.src = anim.son; regler(VOIX, VOLUME_VOIX, 0);
   setTimeout(() => { if (jeton === numeroFondu) VOIX.play().catch(() => {}); }, ENTREE_VOIX * 1000);   // les animateurs parlent
@@ -465,7 +474,7 @@ function animer(anim, index) {
 function enchainer(index, depuis) {
   const m = etat.morceaux[index]; if (!m) return;
   const ancien = audio, neuf = LECTEURS[LECTEURS[0] === audio ? 1 : 0], jeton = ++numeroFondu;
-  enFondu = true; audio = neuf;
+  enFondu = true; debutFondu = Date.now(); audio = neuf;
   etat.index = index; etat.debutMs = Date.now() - depuis * 1000;
   regler(neuf, 0, 0); neuf.src = adresseSon(m);
   const pos = debutDe(m) + depuis;
@@ -513,7 +522,8 @@ function suivant() {
 }
 // fin de titre sans fondu (titre non mesuré, ou après une erreur) : le suivant
 for (const el of LECTEURS) el.addEventListener("ended", (ev) => { if (ev.target === audio && !enFondu) suivant(); });
-$("animatrice").addEventListener("change", (e) => { animationDemandee = e.target.checked; dire(e.target.checked ? "🎙️ Deejay Di et Samantha arrivent à la fin du titre." : ""); });
+$("animatrice").addEventListener("change", (e) => { animationDemandee = e.target.checked; dire(e.target.checked ? "🎙️ Deejay Di et Samantha arrivent à la fin du titre." : ""); try { localStorage.setItem("radio-animateurs", e.target.checked ? "1" : "0"); } catch (_) {} });
+try { if (localStorage.getItem("radio-animateurs") === "1") { $("animatrice").checked = true; animationDemandee = true; } } catch (_) {}
 for (const el of LECTEURS) el.addEventListener("error", (ev) => { if (ev.target !== audio || !courant()) return; dire("Ce titre ne se lit pas (format ou connexion) : titre suivant dans 3 s."); setTimeout(suivant, 3000); });
 for (const el of LECTEURS) el.addEventListener("playing", (ev) => { if (ev.target === audio) dire(""); });
 

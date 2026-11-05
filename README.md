@@ -8,4 +8,5 @@ Une radio en ligne qui ne passe **que nos propres titres**, faits pour Base Clea
 - **Radio Rap Français** : Zéro Retour, album *Poches vides, cœur plein*.
 - **Radio Russe** : ALLSIDE.
 - **Les paroles** de chaque titre : [paroles/](paroles/README.md), un fichier par titre.
+- **L'histoire de Zéro Retour**, en 12 chapitres tirés de ses titres : [artistes/zero-retour-histoire.md](artistes/zero-retour-histoire.md).
 - 👍 / 👎 sur chaque titre, gardés dans le navigateur de chacun ; rien n'est envoyé à un serveur.

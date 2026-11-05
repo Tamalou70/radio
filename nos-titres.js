@@ -475,6 +475,22 @@ window.ANIMATIONS = [
   "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-parloir.mp3",
   "duree": 22.8,
   "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-cash-cash-4",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-cash-cash-4.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-filles-du-batiment.mp3",
+  "duree": 23.58,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-cash-cash-5",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-cash-cash-5.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-rembobine.mp3",
+  "duree": 21.52,
+  "voix": "Deejay Di et Samantha"
  }
 ];
 window.CATALOGUE = [

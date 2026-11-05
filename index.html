@@ -233,7 +233,7 @@ const GENRES = [
 ];
 const GENRE = new Map(GENRES.map(([cle, nom, radio]) => [cle, { nom, radio }]));
 const GENRES_CLASSIQUES = new Set(["piano", "orchestre", "opera", "sacre", "chambre", "orgue", "pistes"]);
-const DROITS = { sur: "✅ droits vérifiés", verifier: "🟡 droits à vérifier", refuse: "⛔ ne pas diffuser" };
+const DROITS = { sur: "création maison", verifier: "création maison", refuse: "création maison" };
 const lireStockage = (cle, defaut) => { try { const v = JSON.parse(localStorage.getItem(cle)); return v && typeof v === "object" ? v : defaut; } catch (_) { return defaut; } };
 const AVIS = lireStockage("radio_avis", {});
 const STYLES_PERSO = lireStockage("radio_styles_perso", {});

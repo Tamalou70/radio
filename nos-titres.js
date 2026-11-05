@@ -108,6 +108,14 @@ window.ANIMATIONS = [
   "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-lumiere.mp3",
   "duree": 36.29,
   "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-deejay-di-samantha-5",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-deejay-di-samantha-5.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-jfais-plus-ca-cest-mort.mp3",
+  "duree": 33.71,
+  "voix": "Deejay Di et Samantha"
  }
 ];
 window.CATALOGUE = [

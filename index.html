@@ -138,6 +138,8 @@
   .admin-liste li.passe { opacity: .45; }
   .admin-liste li.voix .t { color: var(--texte-2); font-weight: 600; white-space: normal; }
   .admin-liste li.en-cours { background: var(--accent-doux); }
+  .admin-liste li.admin-heure { display: block; position: sticky; top: 0; z-index: 1; background: var(--fond); color: var(--accent);
+                                font: 800 14px/1.2 var(--titre); letter-spacing: 0.02em; padding: 14px 0 8px; border-bottom: 2px solid var(--bord); }
   .admin-journal { background: var(--fond-2); border: 1px solid var(--bord); border-radius: 12px; padding: 12px 14px; max-height: 260px; overflow: auto;
                    font: 500 13px/1.5 ui-monospace, Consolas, monospace; color: var(--texte-2); white-space: pre-wrap; margin: 0; }
   @media (max-width: 860px) {
@@ -207,8 +209,10 @@
   <div class="entete-bloc"><h2>Grille d'antenne</h2><span class="etiquette" id="adminStation"></span></div>
   <p class="admin-note">La même pour tous les auditeurs du direct : les titres et les voix de Deejay Di et Samantha, à l'heure.
     À chaque passage d'un titre à l'autre, une pause tirée au hasard du jour : musique seule, jingle court, annonce du titre qui
-    arrive, intermède, ou pause longue à deux voix ; un jingle au début de chaque heure. <a href="#">Fermer</a></p>
+    arrive, intermède, refrain chanté, ou pause longue à deux voix ; un jingle au début de chaque heure. Toute la journée, 24 h
+    sur 24, heure par heure. <a href="#">Fermer</a></p>
   <p class="admin-prochaine" id="adminProchaine"></p>
+  <p class="admin-note" id="adminBilan"></p>
   <ol class="liste admin-liste" id="adminGrille"></ol>
   <div class="entete-bloc"><h2>Journal de l'antenne</h2><span class="etiquette">ce navigateur</span></div>
   <pre class="admin-journal" id="adminJournal"></pre>
@@ -230,7 +234,7 @@
 </footer>
 
 <audio id="audio" preload="none" crossorigin="anonymous"></audio>
-<script src="nos-titres.js?v=1793919944143"></script>
+<script src="nos-titres.js?v=1793920371017"></script>
 <script>
 "use strict";
 // Un lien de partage (#stations=… ou #avis=…) ouvert sur cette page est renvoyé vers la page Catalogue, qui sait le lire.
@@ -242,6 +246,11 @@ const POCHETTES = window.POCHETTES || {};
 const MESURES = window.MESURES || {};
 const ANIMATIONS = window.ANIMATIONS || [];   // interventions des animateurs validées par Simon (étape 11)
 const FONDU = 8;   // secondes de fondu enchaîné entre deux titres (6 s jusqu'au 05/11 au soir ; Simon : « allonger un peu les fondus de fin »)
+// Direct CONTINU (06/11/2026) : la boucle des titres part d'une date fixe, la même pour tous (UTC), au lieu de repartir de zéro à
+// minuit (le titre en cours était coupé net à 00:00 ; les jours de changement d'heure faisaient 23 h ou 25 h). Simon : « notre radio
+// doit faire 24 h… je veux qu'on fasse une vraie radio ».
+const EPOQUE_DIRECT = Date.UTC(2026, 0, 1);
+const positionBoucle = (total, ms) => (total ? ((((ms - EPOQUE_DIRECT) / 1000) % total) + total) % total : 0);   // secondes dans la boucle
 const debutDe = (m) => (m && MESURES[m.chemin] ? MESURES[m.chemin].debut : 0);
 const gainDe = (m) => (m && MESURES[m.chemin] ? MESURES[m.chemin].gain : 1);
 // Titres hébergés sur notre stockage (hebergement.js, écrit par outils/envoyer_r2.mjs) ; les autres sont lus sur Wikimedia Commons.
@@ -316,7 +325,7 @@ function positionEnDirect(morceaux, maintenantMs) {
   const minuit = new Date(maintenantMs); minuit.setHours(0, 0, 0, 0);
   const total = morceaux.reduce((s, m) => s + dureeDe(m), 0);
   if (!total) return { index: 0, secondes: 0 };
-  let reste = ((maintenantMs - minuit.getTime()) / 1000) % total;
+  let reste = positionBoucle(total, maintenantMs);   // direct continu (06/11/2026)
   for (let i = 0; i < morceaux.length; i++) { if (reste < dureeDe(morceaux[i])) return { index: i, secondes: reste }; reste -= dureeDe(morceaux[i]); }
   return { index: 0, secondes: 0 };
 }
@@ -459,8 +468,11 @@ function grilleDu(morceaux, maintenantMs) {
     rang[sorte]++; derniers[sorte] = a.id; return a;
   };
   const totalPoids = PAUSES.reduce((s, [, p]) => s + p, 0);
-  const passages = [], n = morceaux.length; let t = 0, k = 0;
-  while (n && t < 90000) {   // une journée et une heure de plus
+  // direct continu (06/11/2026) : la grille part du début de la boucle en cours à minuit (avant minuit), pour que ses passages
+  // tombent exactement sur ceux du lecteur (positionEnDirect) ; les passages d'avant minuit servent aux voix de 00:00.
+  const total = morceaux.reduce((s, m) => s + dureeDe(m), 0);
+  const passages = [], n = morceaux.length; let t = -positionBoucle(total, minuitDe(maintenantMs)), k = 0;
+  while (n && t < 90000) {   // jusqu'à une heure après minuit du lendemain
     const avant = morceaux[k % n], apres = morceaux[(k + 1) % n], debut = t;
     t += dureeDe(avant);
     // la pause de ce passage, tirée au hasard du jour
@@ -628,39 +640,64 @@ function stationAdmin() {
   if (etat.station && ANIMATIONS.some((a) => !a.station || morceauxDe(etat.station).some((m) => m.genre === a.station))) return etat.station;
   return STATIONS.find((s) => morceauxDe(s).some((m) => ANIMATIONS.some((a) => a.station === m.genre))) || etat.station || STATIONS[0];
 }
+// 06/11/2026 : la JOURNÉE ENTIÈRE (00 h → 24 h), heure par heure (Simon : « notre radio doit faire 24 h… le journal de l'antenne
+// s'arrête à 4 h 10 » : avant, le panneau ne montrait que les 4 h à venir). La liste est construite une fois (station, jour, voix),
+// puis seules les lignes « passé / en cours » sont mises à jour toutes les 2 s.
+let ADMIN_CLE = null, ADMIN_LIGNES = [];
+const SORTES_ADMIN = { jingle: "pause courte", annonce: "pause moyenne", intermede: "pause moyenne", longue: "pause longue", refrain: "refrain chanté" };
+function construireAdmin(st, g) {
+  const h = (sec) => new Date(g.minuit + sec * 1000).toLocaleTimeString("fr-FR");
+  const liste = $("adminGrille"); liste.replaceChildren(); ADMIN_LIGNES = [];
+  const ajouter = (debut, fin, icone, texte, duree, classe) => {
+    const li = document.createElement("li"); li.className = classe || "";
+    for (const [cls, txt] of [["heure", h(debut)], ["icone-admin", icone], ["t", texte], ["duree", duree]]) { const sp = document.createElement("span"); sp.className = cls; sp.textContent = txt; li.append(sp); }
+    liste.append(li); ADMIN_LIGNES.push({ li, debut, fin, base: li.className });
+  };
+  const jour = g.passages.filter((p) => p.t > 0 && p.debut < 86400);
+  const bilan = { titres: 0, jingles: 0, annonces: 0, intermedes: 0, refrains: 0 };
+  let heureCourante = -1;
+  for (const p of jour) {
+    const hDebut = Math.max(0, Math.floor(p.debut / 3600));
+    if (hDebut !== heureCourante) {
+      heureCourante = hDebut;
+      const dans = jour.filter((x) => Math.max(0, Math.floor(x.debut / 3600)) === hDebut);
+      const nv = dans.reduce((n, x) => n + x.voix.length, 0);
+      const li = document.createElement("li"); li.className = "admin-heure";
+      li.textContent = String(hDebut).padStart(2, "0") + " h – " + String(hDebut + 1).padStart(2, "0") + " h · " + dans.length + " titres · " + nv + " voix";
+      liste.append(li);
+    }
+    bilan.titres++;
+    ajouter(Math.max(0, p.debut), p.t, "▶", p.avant.titre + " — " + p.avant.artiste, format(p.t - p.debut), "");
+    p.voix.forEach((v, i) => {
+      if (estJingle(v.anim)) bilan.jingles++; else if (estAnnonce(v.anim)) bilan.annonces++; else if (estRappel(v.anim)) bilan.refrains++; else bilan.intermedes++;
+      const ou = i === 0 ? " · " + SORTES_ADMIN[p.sorte] + ", entre « " + p.avant.titre + " » et « " + p.apres.titre + " »" : "";
+      ajouter(v.debut, v.fin, estJingle(v.anim) ? "📻" : estRappel(v.anim) ? "🎤" : "🎙️", nomVoix(v.anim) + ou, Math.round(v.anim.duree || 0) + " s", "voix");
+    });
+  }
+  $("adminBilan").textContent = "Aujourd'hui, 24 h sur 24 : " + bilan.titres + " titres et " + (bilan.jingles + bilan.annonces + bilan.intermedes + bilan.refrains) + " voix (" + bilan.jingles + " jingles, " + bilan.annonces + " annonces, " + bilan.intermedes + " intermèdes, " + bilan.refrains + " refrains chantés).";
+}
 function afficherAdmin() {
   const zone = $("admin"); if (!zone || zone.hidden) return;
   const st = stationAdmin(); if (!st) return;
   const morceaux = morceauxDe(st), ms = Date.now(), g = grilleDu(morceaux, ms), s = (ms - g.minuit) / 1000;
   const h = (sec) => new Date(g.minuit + sec * 1000).toLocaleTimeString("fr-FR");
+  const cle = st.id + "|" + jourDe(ms) + "|" + ANIMATIONS.length + "|" + morceaux.length;
+  if (cle !== ADMIN_CLE) { ADMIN_CLE = cle; construireAdmin(st, g); afficherAdmin.place = false; }
   const ecoute = etat.joue && etat.station === st;
   $("adminStation").textContent = st.nom + " · " + (ecoute ? (etat.enDirect ? "tu écoutes le direct" : "tu écoutes hors direct : pas de voix") : "pas écoutée ici") + " · " + ($("animatrice").checked ? "animateurs à l'antenne" : "animateurs coupés");
-  const lignes = [];
-  for (const p of g.passages) {
-    if (p.t < s - 600) continue;
-    if (p.debut > s + 4 * 3600) break;
-    const enCours = s >= p.debut && s < p.t;
-    lignes.push({ heure: h(p.debut), icone: "▶", texte: p.avant.titre + " — " + p.avant.artiste, duree: format(p.t - p.debut), classe: enCours ? "en-cours" : p.t < s ? "passe" : "" });
-    const SORTES = { jingle: "pause courte", annonce: "pause moyenne", intermede: "pause moyenne", longue: "pause longue", refrain: "refrain chanté" };
-    p.voix.forEach((v, i) => {
-      const vEnCours = s >= v.debut && s < v.fin;
-      const ou = i === 0 ? " · " + SORTES[p.sorte] + ", entre « " + p.avant.titre + " » et « " + p.apres.titre + " »" : "";
-      lignes.push({ heure: h(v.debut), icone: estJingle(v.anim) ? "📻" : estRappel(v.anim) ? "🎤" : "🎙️", texte: nomVoix(v.anim) + ou, duree: Math.round(v.anim.duree || 0) + " s", classe: "voix" + (vEnCours ? " en-cours" : v.fin < s ? " passe" : "") });
-    });
-  }
-  const liste = $("adminGrille"); liste.replaceChildren();
-  for (const l of lignes) {
-    const li = document.createElement("li"); li.className = l.classe;
-    for (const [cls, txt] of [["heure", l.heure], ["icone-admin", l.icone], ["t", l.texte], ["duree", l.duree]]) { const sp = document.createElement("span"); sp.className = cls; sp.textContent = txt; li.append(sp); }
-    liste.append(li);
+  let enCours = null;
+  for (const l of ADMIN_LIGNES) {
+    const etatL = s >= l.debut && s < l.fin ? " en-cours" : l.fin <= s ? " passe" : "";
+    const c = (l.base + etatL).trim(); if (l.li.className !== c) l.li.className = c;
+    if (etatL === " en-cours" && !enCours) enCours = l.li;
   }
   const prochaine = g.passages.find((p) => p.voix.length && p.debutPause > s);
-  const heureDebut = s, dansLHeure = g.passages.filter((p) => p.voix.length && p.debutPause >= heureDebut && p.debutPause < heureDebut + 3600);
+  const dansLHeure = g.passages.filter((p) => p.voix.length && p.debutPause >= s && p.debutPause < s + 3600);
   const compte = (f) => dansLHeure.reduce((n, p) => n + p.voix.filter((v) => f(v.anim)).length, 0);
   $("adminProchaine").textContent = (prochaine ? "Prochaine pause à " + h(prochaine.debutPause) + " : " + prochaine.voix.map((v) => nomVoix(v.anim)).join(" + ") : "Aucune voix prévue sur cette station.")
-    + " — dans l'heure qui vient : " + compte(estJingle) + " jingles, " + compte(estAnnonce) + " annonces, " + compte(estIntermede) + " intermèdes.";
+    + " — dans l'heure qui vient : " + compte(estJingle) + " jingles, " + compte(estAnnonce) + " annonces, " + compte(estIntermede) + " intermèdes, " + compte(estRappel) + " refrains.";
   $("adminJournal").textContent = JOURNAL_ANTENNE.length ? JOURNAL_ANTENNE.slice().reverse().join("\n") : "Rien encore : lance le direct.";
-  const encours = liste.querySelector("li.en-cours"); if (encours && !afficherAdmin.place) { afficherAdmin.place = true; encours.scrollIntoView({ block: "center" }); }
+  if (enCours && !afficherAdmin.place) { afficherAdmin.place = true; const boite = $("adminGrille"); boite.scrollTop = Math.max(0, enCours.offsetTop - boite.offsetTop - boite.clientHeight / 2); }
 }
 function ouvrirAdmin() { const ouvert = location.hash === "#admin"; $("admin").hidden = !ouvert; afficherAdmin.place = false; if (ouvert) { afficherAdmin(); $("admin").scrollIntoView({ block: "start" }); } }
 window.addEventListener("hashchange", ouvrirAdmin); ouvrirAdmin();

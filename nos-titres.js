@@ -496,6 +496,14 @@ window.ANIMATIONS = [
   "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-rembobine.mp3",
   "duree": 21.52,
   "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-cash-cash-6",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-cash-cash-6.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-sisi.mp3",
+  "duree": 27.67,
+  "voix": "Deejay Di et Samantha"
  }
 ];
 window.CATALOGUE = [

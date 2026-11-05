@@ -1,6 +1,6 @@
 # Dos au miroir
 
-**Zéro Retour** · album *Poches vides, cœur plein* · Radio Rap Français · 2 min 54 · mi bémol mineur, 90 BPM
+**Zéro Retour** · album *Poches vides, cœur plein* · Vinyle Rap · 2 min 54 · mi bémol mineur, 90 BPM
 
 Paroles : Zéro Retour (Claude) · Musique : YuE2 Studio (prise b)
 

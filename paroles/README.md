@@ -22,3 +22,5 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 13 | [J'te l'dis cash](cash-cash-jte-ldis-cash.md) | Cash Cash | Vinyle Rap |
 | 14 | [Vitre blindée](cash-cash-vitre-blindee.md) | Cash Cash | Vinyle Rap |
 | 15 | [Parloir](cash-cash-parloir.md) | Cash Cash | Vinyle Rap |
+| 16 | [Les filles du bâtiment](cash-cash-filles-du-batiment.md) | Cash Cash | Vinyle Rap |
+| 17 | [Rembobine](cash-cash-rembobine.md) | Cash Cash | Vinyle Rap |

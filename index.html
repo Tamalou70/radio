@@ -207,7 +207,7 @@
 </footer>
 
 <audio id="audio" preload="none" crossorigin="anonymous"></audio>
-<script src="nos-titres.js?v=1793908772542"></script>
+<script src="nos-titres.js?v=1793908936225"></script>
 <script>
 "use strict";
 // Un lien de partage (#stations=… ou #avis=…) ouvert sur cette page est renvoyé vers la page Catalogue, qui sait le lire.
@@ -218,7 +218,7 @@ const IMAGES = window.IMAGES_ARTISTES || {};
 const POCHETTES = window.POCHETTES || {};
 const MESURES = window.MESURES || {};
 const ANIMATIONS = window.ANIMATIONS || [];   // interventions des animateurs validées par Simon (étape 11)
-const FONDU = 6;   // secondes de fondu enchaîné entre deux titres
+const FONDU = 8;   // secondes de fondu enchaîné entre deux titres (6 s jusqu'au 05/11 au soir ; Simon : « allonger un peu les fondus de fin »)
 const debutDe = (m) => (m && MESURES[m.chemin] ? MESURES[m.chemin].debut : 0);
 const gainDe = (m) => (m && MESURES[m.chemin] ? MESURES[m.chemin].gain : 1);
 // Titres hébergés sur notre stockage (hebergement.js, écrit par outils/envoyer_r2.mjs) ; les autres sont lus sur Wikimedia Commons.
@@ -367,10 +367,15 @@ function regler(el, valeur, secondes) {
   el._fondu = setInterval(() => { k++; el.volume = Math.max(0, Math.min(1, c[k])); if (k >= pas) clearInterval(el._fondu); }, 50);
 }
 // Toutes les 200 ms : le titre actif a-t-il fini son créneau ? Alors le suivant entre en fondu.
+// Si les animateurs vont parler, on part plus tôt (AVANCE_VOIX) : ils parlent sur la fin du titre, musique baissée.
+const finUtile = (m) => debutDe(m) + dureeDe(m) + FONDU;   // seconde où le son utile du titre s'arrête
 function veilleFondu() {
   const m = courant();
   if (!m || !etat.joue || enFondu || !MESURES[m.chemin]) return;
-  if (audio.paused || audio.readyState < 2 || audio.currentTime - debutDe(m) < dureeDe(m)) return;
+  if (audio.paused || audio.readyState < 2) return;
+  const voixAttendue = $("animatrice").checked && (animationDemandee || passagesSansVoix >= PASSAGES_ENTRE_INTERMEDES)
+    && ANIMATIONS.some((a) => !a.station || a.station === m.genre);
+  if (finUtile(m) - audio.currentTime > (voixAttendue ? AVANCE_VOIX : FONDU)) return;
   const n = etat.morceaux.length; if (!n) return;
   let i = (etat.index + 1) % n, depuis = 0;
   if (etat.enDirect) { const p = positionEnDirect(etat.morceaux, Date.now() + 300); if (p.index !== etat.index) { i = p.index; depuis = p.secondes; } }
@@ -407,34 +412,52 @@ function intermedeSuivant(genre) {
   }
   const a = sacIntermedes.shift(); dernierIntermede = a.id; return a;
 }
-// ---------- Animateurs radio (05/11/2026) : voix enregistrées, fondus entre animation et musique ----------
-const VOLUME_VOIX = 1.1, ENTREE_VOIX = 1, SORTIE_VOIX = 2.5;   // la voix part 1 s après le début de la descente ; le titre monte 2,5 s avant la fin de la voix
+// ---------- Animateurs radio (05/11/2026) : voix enregistrées, la musique ne s'arrête jamais sous elles ----------
+// Simon (05/11) : « À la radio, il y a toujours le son de l'ancienne musique derrière et la nouvelle qui arrive, sinon ça fait de
+// gros blancs. On pourrait un peu allonger les fondus de fin et diminuer le son, que cela semble plus réel. » Donc :
+// 1) AVANCE_VOIX s avant la fin du titre, la musique baisse (FOND ≈ -12 dB) et les animateurs parlent par-dessus ;
+// 2) l'ancien titre finit sous la voix et passe la main au nouveau, baissé lui aussi, par un long fondu (FONDU_SOUS_VOIX) ;
+// 3) à la fin de la voix, le nouveau titre remonte. Voix plus courte que la fin du titre : fondu enchaîné normal à sa fin.
+const VOLUME_VOIX = 1.1, FOND = 0.25, AVANCE_VOIX = 14, FONDU_SOUS_VOIX = 8, BAISSE = 1.5, ENTREE_VOIX = 0.8, SORTIE_VOIX = 1.5, REMONTEE = 3;
 let animationDemandee = false;
 const animationPour = (m) => (m ? ANIMATIONS.find((a) => a.avant === m.chemin) || null : null);
 function animer(anim, index) {
-  const m = etat.morceaux[index]; if (!m) return;
-  const ancien = audio, neuf = LECTEURS[LECTEURS[0] === audio ? 1 : 0], jeton = ++numeroFondu;
+  const m = etat.morceaux[index], mAncien = courant(); if (!m || !mAncien) return;
+  const ancien = audio, neuf = LECTEURS[LECTEURS[0] === audio ? 1 : 0], jeton = ++numeroFondu, t0 = Date.now();
   enFondu = true;
-  regler(ancien, 0, 4);                                    // 1) la musique qui finit descend sous la voix
+  regler(ancien, gainDe(mAncien) * FOND, BAISSE);          // 1) la musique baisse sous la voix, sans s'arrêter
   VOIX.src = anim.son; regler(VOIX, VOLUME_VOIX, 0);
-  setTimeout(() => { if (jeton === numeroFondu) VOIX.play().catch(() => {}); }, ENTREE_VOIX * 1000);   // 2) les animateurs parlent
-  const lancer = () => {                                   // 3) le titre annoncé monte sous la fin de la voix
-    if (jeton !== numeroFondu) return;
+  setTimeout(() => { if (jeton === numeroFondu) VOIX.play().catch(() => {}); }, ENTREE_VOIX * 1000);   // les animateurs parlent
+  const finAncien = finUtile(mAncien);
+  let parti = false, remonte = false;
+  const partir = (sousVoix) => {                           // 2) le nouveau titre arrive : baissé si la voix parle encore
+    if (parti || jeton !== numeroFondu) return; parti = true;
     audio = neuf; etat.index = index; etat.enDirect = false; etat.debutMs = Date.now();
     regler(neuf, 0, 0); neuf.src = adresseSon(m);
     const pos = debutDe(m); if (pos > 0) neuf.addEventListener("loadedmetadata", () => { neuf.currentTime = pos; }, { once: true });
-    neuf.addEventListener("playing", () => { if (jeton === numeroFondu) regler(neuf, gainDe(m), 3); }, { once: true });
+    const duree = sousVoix ? FONDU_SOUS_VOIX : FONDU;
+    neuf.addEventListener("playing", () => {
+      if (jeton !== numeroFondu) return;
+      regler(neuf, gainDe(m) * (remonte ? 1 : FOND), duree); regler(ancien, 0, duree);   // long fondu de fin de l'ancien
+      setTimeout(() => { if (jeton === numeroFondu && audio !== ancien) ancien.pause(); }, duree * 1000 + 300);
+    }, { once: true });
     neuf.play().catch(() => {});
-    setTimeout(() => { if (jeton !== numeroFondu) return; ancien.pause(); enFondu = false; }, 4000);
+    // le nouveau ne démarre pas (réseau) : on reprend le direct au lieu de laisser un blanc
+    setTimeout(() => { if (jeton === numeroFondu && audio === neuf && neuf.paused) { VOIX.pause(); enFondu = false; suivant(); } }, 10000);
     afficher(true);
   };
-  let lance = false;
+  const remonter = () => {                                 // 3) fin de la voix : le nouveau titre remonte
+    if (remonte || jeton !== numeroFondu) return; remonte = true;
+    if (!parti) partir(false); else regler(neuf, gainDe(m), REMONTEE);
+    setTimeout(() => { if (jeton === numeroFondu) enFondu = false; }, (FONDU + 1) * 1000);
+  };
   const veille = setInterval(() => {
     if (jeton !== numeroFondu) return clearInterval(veille);
-    const d = VOIX.duration;
-    if (VOIX.ended || (d && isFinite(d) && VOIX.currentTime >= d - SORTIE_VOIX)) { clearInterval(veille); if (!lance) { lance = true; lancer(); } }
+    if (!parti && (ancien.ended || ancien.currentTime >= finAncien - FONDU_SOUS_VOIX)) partir(true);
+    const d = VOIX.duration, muette = VOIX.paused && !VOIX.ended && Date.now() - t0 > (ENTREE_VOIX + 4) * 1000;   // lecture refusée
+    if (VOIX.ended || muette || (d && isFinite(d) && VOIX.currentTime >= d - SORTIE_VOIX)) { clearInterval(veille); remonter(); }
   }, 100);
-  VOIX.addEventListener("error", () => { if (jeton === numeroFondu && !lance) { clearInterval(veille); lance = true; lancer(); } }, { once: true });
+  VOIX.addEventListener("error", () => { if (jeton === numeroFondu) { clearInterval(veille); remonter(); } }, { once: true });
 }
 function enchainer(index, depuis) {
   const m = etat.morceaux[index]; if (!m) return;

@@ -84,6 +84,14 @@ window.ANIMATIONS = [
   "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-mains-propres.mp3",
   "duree": 43.71,
   "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-deejay-di-samantha-2",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-deejay-di-samantha-2.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-sirenes.mp3",
+  "duree": 43.89,
+  "voix": "Deejay Di et Samantha"
  }
 ];
 window.CATALOGUE = [

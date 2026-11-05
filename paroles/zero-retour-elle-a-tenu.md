@@ -1,6 +1,6 @@
 # Elle a tenu
 
-**Zéro Retour** · album *Poches vides, cœur plein* · Radio Rap Français · 3 min 00 · si bémol majeur, 68 BPM
+**Zéro Retour** · album *Poches vides, cœur plein* · Vinyle Rap · 3 min 00 · si bémol majeur, 68 BPM
 
 Paroles : Zéro Retour (Claude) · Musique : YuE2 Studio (prise a)
 

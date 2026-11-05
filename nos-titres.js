@@ -163,7 +163,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 24.18,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "La météo de Samantha"
  },
  {
   "id": "intermede-messages",
@@ -171,7 +172,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 20.97,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "Les messages des auditeurs"
  },
  {
   "id": "intermede-defi",
@@ -179,7 +181,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 19.51,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "Le défi « Vinyle Rap cinq fois »"
  },
  {
   "id": "intermede-horoscope",
@@ -187,7 +190,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 23.36,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "L'horoscope de Samantha"
  },
  {
   "id": "intermede-quiz",
@@ -195,7 +199,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 18.42,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "Le quiz du vrai prénom"
  },
  {
   "id": "intermede-jingle",
@@ -203,7 +208,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 18.6,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "Le jingle raté"
  },
  {
   "id": "intermede-croissants",
@@ -211,7 +217,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 27.86,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "Les croissants, la suite"
  },
  {
   "id": "intermede-applaudissements",
@@ -219,7 +226,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 28.54,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "Le bouton des applaudissements"
  },
  {
   "id": "intermede-pub",
@@ -227,7 +235,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 28.64,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "La pub du « Son en spray »"
  },
  {
   "id": "intermede-dedicaces",
@@ -235,7 +244,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 25.59,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "Les dédicaces"
  },
  {
   "id": "intermede-conseils",
@@ -243,7 +253,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 27.12,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "La minute des conseils de Deejay Di"
  },
  {
   "id": "intermede-chanter",
@@ -251,7 +262,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 31.9,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "Samantha veut chanter"
  },
  {
   "id": "intermede-flash-info",
@@ -259,7 +271,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 20.94,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "Le flash info du quartier"
  },
  {
   "id": "intermede-argot",
@@ -267,7 +280,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 28.14,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "La leçon d'argot"
  },
  {
   "id": "intermede-beatbox",
@@ -275,7 +289,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 19.79,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "Le défi beatbox"
  },
  {
   "id": "intermede-repondeur",
@@ -283,7 +298,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 19.6,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "Le répondeur"
  },
  {
   "id": "intermede-retard",
@@ -291,7 +307,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 20.15,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "L'excuse du retard"
  },
  {
   "id": "intermede-premiere-soiree",
@@ -299,7 +316,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 21.78,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "La première soirée de DJ"
  },
  {
   "id": "intermede-micro",
@@ -307,7 +325,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 20.7,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "Le test du micro"
  },
  {
   "id": "intermede-zen",
@@ -315,7 +334,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 25.49,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "La minute zen"
  },
  {
   "id": "intermede-recette",
@@ -323,7 +343,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 17.91,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "La recette du sandwich du DJ"
  },
  {
   "id": "intermede-seule",
@@ -331,7 +352,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 22.13,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "Samantha seule aux commandes"
  },
  {
   "id": "intermede-blind-test",
@@ -339,7 +361,8 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 19.18,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "Le blind test"
  },
  {
   "id": "intermede-boite-a-idees",
@@ -347,7 +370,62 @@ window.ANIMATIONS = [
   "station": "rapfr",
   "avant": null,
   "duree": 25.48,
-  "voix": "Deejay Di et Samantha"
+  "voix": "Deejay Di et Samantha",
+  "nom": "La boîte à idées"
+ },
+ {
+  "id": "id-vinyle-rap-rue",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/id-vinyle-rap-rue.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 3.31,
+  "voix": "Deejay Di",
+  "nom": "« Vinyle Rap. Le son de la rue, sans filtre »"
+ },
+ {
+  "id": "id-vinyle-rap-raison",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/id-vinyle-rap-raison.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 3.64,
+  "voix": "Samantha",
+  "nom": "« Tu écoutes Vinyle Rap… et t'as bien raison ! »"
+ },
+ {
+  "id": "id-vinyle-rap-ensemble",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/id-vinyle-rap-ensemble.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 3.86,
+  "voix": "Deejay Di et Samantha",
+  "nom": "« Ici, c'est que du rap… Vinyle Rap ! »"
+ },
+ {
+  "id": "id-vinyle-rap-excuses",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/id-vinyle-rap-excuses.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 3.37,
+  "voix": "Samantha",
+  "nom": "« Monte le son, baisse les excuses »"
+ },
+ {
+  "id": "id-vinyle-rap-blabla",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/id-vinyle-rap-blabla.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 5.13,
+  "voix": "Deejay Di",
+  "nom": "« Pas de pub, pas de blabla… bon, un petit peu »"
+ },
+ {
+  "id": "id-vinyle-rap-chut",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/id-vinyle-rap-chut.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 3.6,
+  "voix": "Samantha",
+  "nom": "« Chut… t'es sur Vinyle Rap, le quartier écoute »"
  }
 ];
 window.CATALOGUE = [

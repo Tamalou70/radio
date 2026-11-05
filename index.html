@@ -129,6 +129,17 @@
   .bascule { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; color: var(--texte-3); font-size: 14px; }
   .bascule input { accent-color: var(--accent); }
 
+  /* ---------- Panneau Admin : grille d'antenne ---------- */
+  .admin-note { color: var(--texte-3); font-size: 14.5px; margin: 0 0 10px; }
+  .admin-note a, .lien-admin { color: var(--accent); font-weight: 700; text-decoration: none; }
+  .admin-prochaine { font-weight: 700; color: var(--texte); margin: 0 0 14px; }
+  .admin-liste { max-height: 560px; overflow: auto; }
+  .admin-liste li { grid-template-columns: 78px 30px 1fr auto; padding: 9px 0; }
+  .admin-liste li.passe { opacity: .45; }
+  .admin-liste li.voix .t { color: var(--texte-2); font-weight: 600; white-space: normal; }
+  .admin-liste li.en-cours { background: var(--accent-doux); }
+  .admin-journal { background: var(--fond-2); border: 1px solid var(--bord); border-radius: 12px; padding: 12px 14px; max-height: 260px; overflow: auto;
+                   font: 500 13px/1.5 ui-monospace, Consolas, monospace; color: var(--texte-2); white-space: pre-wrap; margin: 0; }
   @media (max-width: 860px) {
     .scene-grille { grid-template-columns: 1fr; }
     .pochette { max-width: 420px; width: 100%; margin: 0 auto; }
@@ -192,12 +203,24 @@
   </div>
 </section>
 
+<section class="bloc admin" id="admin" hidden>
+  <div class="entete-bloc"><h2>Grille d'antenne</h2><span class="etiquette" id="adminStation"></span></div>
+  <p class="admin-note">La même pour tous les auditeurs du direct : les titres et les voix de Deejay Di et Samantha, à l'heure.
+    À chaque passage d'un titre à l'autre, une pause tirée au hasard du jour : musique seule, jingle court, annonce du titre qui
+    arrive, intermède, ou pause longue à deux voix ; un jingle au début de chaque heure. <a href="#">Fermer</a></p>
+  <p class="admin-prochaine" id="adminProchaine"></p>
+  <ol class="liste admin-liste" id="adminGrille"></ol>
+  <div class="entete-bloc"><h2>Journal de l'antenne</h2><span class="etiquette">ce navigateur</span></div>
+  <pre class="admin-journal" id="adminJournal"></pre>
+</section>
+
 <footer class="pied">
   <div class="colonnes">
     <div>
       <h3>Nos titres, faits maison</h3>
       <p>Chaque station tourne en continu depuis minuit : tout le monde entend le même titre au même moment, comme une vraie radio. Toutes les musiques sont nos propres créations, faites pour Base Clean.</p>
       <p><label class="bascule"><input type="checkbox" id="animatrice"> 🎙️ Animateurs radio : Deejay Di et Samantha</label></p>
+      <p><a class="lien-admin" href="#admin">🗓️ Grille d'antenne (admin) : heures de diffusion et voix</a></p>
     </div>
     <div>
       <h3>Crédits de la station</h3>
@@ -207,7 +230,7 @@
 </footer>
 
 <audio id="audio" preload="none" crossorigin="anonymous"></audio>
-<script src="nos-titres.js?v=1793912338156"></script>
+<script src="nos-titres.js?v=1793913815361"></script>
 <script>
 "use strict";
 // Un lien de partage (#stations=… ou #avis=…) ouvert sur cette page est renvoyé vers la page Catalogue, qui sait le lire.
@@ -334,21 +357,25 @@ const etat = { station: null, morceaux: [], index: 0, enDirect: true, debutMs: 0
 const courant = () => etat.morceaux[etat.index] || null;
 let analyseur = null, donneesSpectre = null;
 // ---------- Fondu enchaîné : chaque lecteur a son gain, puis volume général, spectre, haut-parleurs ----------
-let ctxAudio = null, maitre = null, enFondu = false, numeroFondu = 0;   // numéro : un fondu dépassé (station changée…) ne fait plus rien
+let ctxAudio = null, maitre = null, baisse = null, enFondu = false, numeroFondu = 0;   // numéro : un fondu dépassé (station changée…) ne fait plus rien
 const GAINS = new Map();
+// Chemin du son : chaque lecteur de musique → son gain (fondus) → « baisse » (la musique baissée sous les voix, 05/11 au soir)
+// → volume général → spectre → haut-parleurs ; la voix → son gain → volume général. Deux réglages séparés : un fondu et une
+// baisse ne se gênent jamais.
 function brancherSpectre() {
   if (analyseur) { if (ctxAudio && ctxAudio.state === "suspended") ctxAudio.resume(); return; }
   if (!window.AudioContext) return;
   try {
     ctxAudio = new AudioContext();
     maitre = ctxAudio.createGain(); maitre.gain.value = $("volume").value / 100;
+    baisse = ctxAudio.createGain(); baisse.gain.value = 1; baisse.connect(maitre);
     analyseur = ctxAudio.createAnalyser(); analyseur.fftSize = 256; analyseur.smoothingTimeConstant = 0.82;
     maitre.connect(analyseur); analyseur.connect(ctxAudio.destination); donneesSpectre = new Uint8Array(analyseur.frequencyBinCount);
     for (const el of [...LECTEURS, VOIX]) {
       const g = ctxAudio.createGain(); g.gain.value = el === VOIX ? VOLUME_VOIX : el === audio ? gainDe(courant()) : 0;
-      ctxAudio.createMediaElementSource(el).connect(g); g.connect(maitre); GAINS.set(el, g); el.volume = 1;
+      ctxAudio.createMediaElementSource(el).connect(g); g.connect(el === VOIX ? maitre : baisse); GAINS.set(el, g); el.volume = 1;
     }
-  } catch (_) { analyseur = null; maitre = null; GAINS.clear(); }
+  } catch (_) { analyseur = null; maitre = null; baisse = null; GAINS.clear(); }
 }
 // courbe à puissance constante (sinus / cosinus) : pas de creux au milieu du fondu
 const courbe = (de, a, n) => Float32Array.from({ length: n }, (_, i) => { const t = i / (n - 1); return a > de ? de + (a - de) * Math.sin(t * Math.PI / 2) : a + (de - a) * Math.cos(t * Math.PI / 2); });
@@ -372,8 +399,7 @@ function regler(el, valeur, secondes) {
   const c = courbe(el.volume, a, pas + 1); let k = 0;
   el._fondu = setInterval(() => { k++; el.volume = Math.max(0, Math.min(1, c[k])); if (k >= pas) clearInterval(el._fondu); }, 50);
 }
-// Toutes les 200 ms : le titre actif a-t-il fini son créneau ? Alors le suivant entre en fondu.
-// Si les animateurs vont parler, on part plus tôt (AVANCE_VOIX) : ils parlent sur la fin du titre, musique baissée.
+// Toutes les 200 ms : le titre actif a-t-il fini son créneau ? Alors le suivant entre en fondu (FONDU s avant sa fin utile).
 const finUtile = (m) => debutDe(m) + dureeDe(m) + FONDU;   // seconde où le son utile du titre s'arrête
 let debutFondu = 0;
 function veilleFondu() {
@@ -382,95 +408,152 @@ function veilleFondu() {
   const m = courant();
   if (!m || !etat.joue || enFondu || !MESURES[m.chemin]) return;
   if (audio.paused || audio.readyState < 2) return;
-  const voixAttendue = $("animatrice").checked && (animationDemandee || passagesSansVoix >= PASSAGES_ENTRE_INTERMEDES)
-    && ANIMATIONS.some((a) => !a.station || a.station === m.genre);
-  if (finUtile(m) - audio.currentTime > (voixAttendue ? AVANCE_VOIX : FONDU)) return;
+  if (finUtile(m) - audio.currentTime > FONDU) return;
   const n = etat.morceaux.length; if (!n) return;
   let i = (etat.index + 1) % n, depuis = 0;
   if (etat.enDirect) { const p = positionEnDirect(etat.morceaux, Date.now() + 300); if (p.index !== etat.index) { i = p.index; depuis = p.secondes; } }
-  // Case « Animateurs radio » cochée : l'annonce qui lance le titre suivant passe avant lui ; juste après avoir coché la case,
-  // une annonce de la station passe tout de suite et enchaîne sur le titre qu'elle lance.
-  if ($("animatrice").checked) {
-    let anim = null;
-    if (animationDemandee) {
-      // juste après avoir coché la case : une voix tout de suite (l'annonce d'un titre de la station, sinon un intermède)
-      anim = animationPour(etat.morceaux[i]) || ANIMATIONS.find((a) => a.avant && etat.morceaux.some((t) => t.chemin === a.avant)) || null;
-      if (anim && anim.avant) i = etat.morceaux.findIndex((t) => t.chemin === anim.avant);
-      if (!anim) anim = intermedeSuivant(etat.morceaux[i].genre);
-    } else if (passagesSansVoix >= PASSAGES_ENTRE_INTERMEDES) {
-      // une voix au plus tous les trois passages (05/11/2026 : tous les titres ont maintenant leur annonce, sinon les animateurs
-      // parleraient avant chaque titre) : l'annonce du titre qui arrive s'il en a une, sinon un intermède (Simon : « environ un
-      // passage sur trois, jamais deux fois le même de suite ») ; les autres passages en fondu simple.
-      // 05/11 au soir : les voix alternent, une annonce du titre qui arrive, puis un intermède (tous les titres ont leur annonce :
-      // sans cela, les intermèdes ne passaient jamais).
-      const annonce = animationPour(etat.morceaux[i]);
-      anim = (annonce && annonceAuTour) ? annonce : (intermedeSuivant(etat.morceaux[i].genre) || annonce);
-    }
-    if (anim) { animationDemandee = false; passagesSansVoix = 0; annonceAuTour = !anim.avant; animer(anim, i); return; }
-    passagesSansVoix++;
-  }
   enchainer(i, depuis);
 }
-const PASSAGES_ENTRE_INTERMEDES = 2;   // 2 passages en fondu simple, puis un intermède : environ un passage sur trois
-let passagesSansVoix = 0, sacIntermedes = [], sacGenre = null, dernierIntermede = null, annonceAuTour = true;
-// Un intermède = une intervention sans titre lancé (« avant » vide) de la station ; tirés dans un sac mélangé (tous passent
-// avant qu'un revienne) et jamais le même deux fois de suite.
-function intermedeSuivant(genre) {
-  const tous = ANIMATIONS.filter((a) => !a.avant && (!a.station || a.station === genre));
-  if (!tous.length) return null;
-  if (sacGenre !== genre || !sacIntermedes.length) {
-    sacGenre = genre; sacIntermedes = tous.slice().sort(() => Math.random() - 0.5);
-    if (sacIntermedes.length > 1 && sacIntermedes[0].id === dernierIntermede) sacIntermedes.push(sacIntermedes.shift());
+
+// ---------- Grille d'antenne : les voix des animateurs font partie du DIRECT (05/11/2026 au soir) ----------
+// Simon : « J'écoute le site et je n'ai toujours plus d'animateurs ; on ne peut pas trouver une meilleure solution ? Un panel
+// ADMIN où je vois les heures de diffusion et les annonces qui vont passer ; une fois sur deux ça bugue, et si on diffuse, on ne
+// veut pas de bug. » Avant, chaque navigateur décidait lui-même, à la fin de chaque titre, s'il passait une voix : une page
+// rechargée, un minuteur raté, un autre navigateur, et plus rien. Désormais une GRILLE FIXE, calculée depuis minuit à partir de
+// la date, la même pour tous les auditeurs et pour le panneau Admin. Les titres tournent comme avant (positionEnDirect) ; à
+// chaque passage d'un titre à l'autre, la grille tire (au hasard du jour, le même pour tous) une PAUSE :
+// Simon, ensuite : « on a fait beaucoup d'annonces, on devrait les entendre plus souvent ; des petits interludes, des moyens et
+// des longs ; on n'est pas obligé de faire 3 sons, 1 annonce : on pourrait en avoir plusieurs ». Donc :
+//   rien (musique seule) · jingle court (ID de station, 3-5 s) · annonce du titre qui arrive · intermède ·
+//   pause longue (intermède puis annonce du titre qui arrive, ou jingle puis intermède).
+// - Un jingle au premier passage de chaque heure, comme une vraie radio.
+// - Une même annonce pas deux fois en moins d'une heure ; intermèdes et jingles tirés dans un ordre mélangé du jour (tous passent
+//   avant qu'un revienne, jamais deux fois le même de suite).
+// - Placement : la dernière voix (l'annonce, ou l'intermède seul) commence AVANT_PASSAGE s avant le passage, soit 14 s avant la fin
+//   utile du titre ; les voix d'avant sont posées juste devant, sur la fin du titre qui finit ; un jingle seul part 3 s avant.
+//   La musique baisse dessous (FOND), le fondu entre les deux titres se fait sous les voix, le nouveau titre remonte à la fin.
+// L'horloge seule décide : le lecteur joue la voix prévue maintenant, au bon endroit (même en arrivant au milieu). Plus de hasard
+// dans le navigateur, plus de chaîne de minuteurs à casser.
+const VOLUME_VOIX = 1.1, FOND = 0.25, AVANT_PASSAGE = 6, AVANT_JINGLE = 3, ENTRE_VOIX = 0.35, SORTIE_VOIX = 1.2, ANNONCE_MIN_ECART = 3600;
+const PAUSES = [["rien", 25], ["jingle", 25], ["annonce", 20], ["intermede", 15], ["longue", 15]];   // poids sur 100
+const estJingle = (a) => /^id-/.test(String(a.id)), estAnnonce = (a) => !!a.avant, estIntermede = (a) => !a.avant && !estJingle(a);
+const jourDe = (ms) => { const d = new Date(ms); return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); };
+const minuitDe = (ms) => { const d = new Date(ms); d.setHours(0, 0, 0, 0); return d.getTime(); };
+const hasardFixe = (texte) => { let h = 2166136261; for (const c of texte) h = Math.imul(h ^ c.charCodeAt(0), 16777619); h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0; h = Math.imul(h ^ (h >>> 13), 3266489909) >>> 0; return ((h ^ (h >>> 16)) >>> 0) / 4294967296; };   // >>> 0 : sans lui, le nombre peut sortir négatif
+const GRILLES = new Map();
+function grilleDu(morceaux, maintenantMs) {
+  const jour = jourDe(maintenantMs), genre = morceaux[0] ? morceaux[0].genre : "";
+  const cle = jour + "|" + morceaux.map((m) => m.chemin).join(",");
+  if (GRILLES.has(cle)) return GRILLES.get(cle);
+  const deLaStation = ANIMATIONS.filter((a) => !a.station || a.station === genre);
+  const annonces = new Map(deLaStation.filter(estAnnonce).map((a) => [a.avant, a]));
+  const sacs = { intermede: melangeFixe(deLaStation.filter(estIntermede), jour + "|i|" + genre), jingle: melangeFixe(deLaStation.filter(estJingle), jour + "|j|" + genre) };
+  const rang = { intermede: 0, jingle: 0 }, derniers = { intermede: null, jingle: null }, annonceDite = new Map();
+  const tirer = (sorte) => {   // le suivant du sac, jamais deux fois le même de suite
+    const sac = sacs[sorte]; if (!sac.length) return null;
+    let a = sac[rang[sorte] % sac.length];
+    if (a.id === derniers[sorte] && sac.length > 1) { rang[sorte]++; a = sac[rang[sorte] % sac.length]; }
+    rang[sorte]++; derniers[sorte] = a.id; return a;
+  };
+  const totalPoids = PAUSES.reduce((s, [, p]) => s + p, 0);
+  const passages = [], n = morceaux.length; let t = 0, k = 0;
+  while (n && t < 90000) {   // une journée et une heure de plus
+    const avant = morceaux[k % n], apres = morceaux[(k + 1) % n], debut = t;
+    t += dureeDe(avant);
+    // la pause de ce passage, tirée au hasard du jour
+    let r = hasardFixe(jour + "|" + genre + "|" + k) * totalPoids, sorte = "rien";
+    for (const [nom, p] of PAUSES) { if (r < p) { sorte = nom; break; } r -= p; }
+    if (Math.floor(t / 3600) !== Math.floor(debut / 3600) && sacs.jingle.length && sorte === "rien") sorte = "jingle";   // le jingle de l'heure
+    const annonce = annonces.get(apres.chemin), annonceLibre = annonce && !(annonceDite.get(annonce.id) > t - ANNONCE_MIN_ECART);
+    let liste = [];
+    if (sorte === "jingle") liste = [tirer("jingle")];
+    else if (sorte === "annonce") liste = [annonceLibre ? annonce : tirer("intermede")];
+    else if (sorte === "intermede") liste = [tirer("intermede")];
+    else if (sorte === "longue") liste = annonceLibre ? [tirer("intermede"), annonce] : [tirer("jingle"), tirer("intermede")];
+    liste = liste.filter(Boolean);
+    if (Math.floor(t / 3600) !== Math.floor(debut / 3600) && sacs.jingle.length && !liste.some(estJingle)) liste.unshift(tirer("jingle"));
+    for (const a of liste) if (estAnnonce(a)) annonceDite.set(a.id, t);
+    // placement : la dernière voix part AVANT_PASSAGE s avant le passage (un jingle seul : AVANT_JINGLE), les autres juste devant
+    const voix = [];
+    if (liste.length) {
+      const dureeV = (a) => a.duree || 20;
+      let fin = (liste.length === 1 && estJingle(liste[0]) ? t - AVANT_JINGLE : t - AVANT_PASSAGE) + dureeV(liste[liste.length - 1]);
+      for (let i = liste.length - 1; i >= 0; i--) { const d = dureeV(liste[i]); voix.unshift({ anim: liste[i], debut: fin - d, fin }); fin = fin - d - ENTRE_VOIX; }
+      const recul = Math.max(0, debut + 15 - voix[0].debut);   // jamais avant les 15 premières secondes du titre qui finit
+      if (recul) for (const v of voix) { v.debut += recul; v.fin += recul; }
+    }
+    passages.push({ debut, t, k, avant, apres, sorte: liste.length ? sorte : "rien", voix, debutPause: voix.length ? voix[0].debut : null, finPause: voix.length ? voix[voix.length - 1].fin : null });
+    k++;
   }
-  const a = sacIntermedes.shift(); dernierIntermede = a.id; return a;
+  const g = { minuit: minuitDe(maintenantMs), passages };
+  if (GRILLES.size > 8) GRILLES.clear();
+  GRILLES.set(cle, g); return g;
 }
-// ---------- Animateurs radio (05/11/2026) : voix enregistrées, la musique ne s'arrête jamais sous elles ----------
-// Simon (05/11) : « À la radio, il y a toujours le son de l'ancienne musique derrière et la nouvelle qui arrive, sinon ça fait de
-// gros blancs. On pourrait un peu allonger les fondus de fin et diminuer le son, que cela semble plus réel. » Donc :
-// 1) AVANCE_VOIX s avant la fin du titre, la musique baisse (FOND ≈ -12 dB) et les animateurs parlent par-dessus ;
-// 2) l'ancien titre finit sous la voix et passe la main au nouveau, baissé lui aussi, par un long fondu (FONDU_SOUS_VOIX) ;
-// 3) à la fin de la voix, le nouveau titre remonte. Voix plus courte que la fin du titre : fondu enchaîné normal à sa fin.
-const VOLUME_VOIX = 1.1, FOND = 0.25, AVANCE_VOIX = 14, FONDU_SOUS_VOIX = 8, BAISSE = 1.5, ENTREE_VOIX = 0.8, SORTIE_VOIX = 1.5, REMONTEE = 3;
-let animationDemandee = false;
-const animationPour = (m) => (m ? ANIMATIONS.find((a) => a.avant === m.chemin) || null : null);
-function animer(anim, index) {
-  const m = etat.morceaux[index], mAncien = courant(); if (!m || !mAncien) return;
-  const ancien = audio, neuf = LECTEURS[LECTEURS[0] === audio ? 1 : 0], jeton = ++numeroFondu, t0 = Date.now();
-  enFondu = true; debutFondu = Date.now();
-  regler(ancien, gainDe(mAncien) * FOND, BAISSE);          // 1) la musique baisse sous la voix, sans s'arrêter
-  VOIX.src = anim.son; regler(VOIX, VOLUME_VOIX, 0);
-  setTimeout(() => { if (jeton === numeroFondu) VOIX.play().catch(() => {}); }, ENTREE_VOIX * 1000);   // les animateurs parlent
-  const finAncien = finUtile(mAncien);
-  let parti = false, remonte = false;
-  const partir = (sousVoix) => {                           // 2) le nouveau titre arrive : baissé si la voix parle encore
-    if (parti || jeton !== numeroFondu) return; parti = true;
-    audio = neuf; etat.index = index; etat.enDirect = false; etat.debutMs = Date.now();
-    regler(neuf, 0, 0); neuf.src = adresseSon(m);
-    const pos = debutDe(m); if (pos > 0) neuf.addEventListener("loadedmetadata", () => { neuf.currentTime = pos; }, { once: true });
-    const duree = sousVoix ? FONDU_SOUS_VOIX : FONDU;
-    neuf.addEventListener("playing", () => {
-      if (jeton !== numeroFondu) return;
-      regler(neuf, gainDe(m) * (remonte ? 1 : FOND), duree); regler(ancien, 0, duree);   // long fondu de fin de l'ancien
-      setTimeout(() => { if (jeton === numeroFondu && audio !== ancien) ancien.pause(); }, duree * 1000 + 300);
-    }, { once: true });
-    neuf.play().catch(() => {});
-    // le nouveau ne démarre pas (réseau) : on reprend le direct au lieu de laisser un blanc
-    setTimeout(() => { if (jeton === numeroFondu && audio === neuf && neuf.paused) { VOIX.pause(); enFondu = false; suivant(); } }, 10000);
-    afficher(true);
-  };
-  const remonter = () => {                                 // 3) fin de la voix : le nouveau titre remonte
-    if (remonte || jeton !== numeroFondu) return; remonte = true;
-    if (!parti) partir(false); else regler(neuf, gainDe(m), REMONTEE);
-    setTimeout(() => { if (jeton === numeroFondu) enFondu = false; }, (FONDU + 1) * 1000);
-  };
-  const veille = setInterval(() => {
-    if (jeton !== numeroFondu) return clearInterval(veille);
-    if (!parti && (ancien.ended || ancien.currentTime >= finAncien - FONDU_SOUS_VOIX)) partir(true);
-    const d = VOIX.duration, muette = VOIX.paused && !VOIX.ended && Date.now() - t0 > (ENTREE_VOIX + 4) * 1000;   // lecture refusée
-    if (VOIX.ended || muette || (d && isFinite(d) && VOIX.currentTime >= d - SORTIE_VOIX)) { clearInterval(veille); remonter(); }
-  }, 100);
-  VOIX.addEventListener("error", () => { if (jeton === numeroFondu) { clearInterval(veille); remonter(); } }, { once: true });
+// ce qui passe à cet instant sur ces titres : la pause en cours (ou rien), la voix en cours dedans, et où on en est
+function voixPrevue(morceaux, ms) {
+  if (!morceaux.length || !ANIMATIONS.length) return null;
+  const g = grilleDu(morceaux, ms), s = (ms - g.minuit) / 1000;
+  for (const p of g.passages) {
+    if (p.t - 180 > s) break;
+    if (p.voix.length && s >= p.debutPause && s < p.finPause) {
+      const v = p.voix.find((x) => s >= x.debut && s < x.fin) || null;
+      return { p, v, decalage: v ? s - v.debut : 0, reste: p.finPause - s, derniere: v === p.voix[p.voix.length - 1] };
+    }
+  }
+  return null;
 }
+const nomVoix = (a) => {
+  if (!a) return "";
+  if (estAnnonce(a)) { const m = PAR_ID.get(a.avant); return "Annonce de « " + (m ? m.titre : a.avant) + " »"; }
+  if (estJingle(a)) return "Jingle : " + (a.nom || a.id);
+  if (a.nom) return "Intermède : " + a.nom;
+  const n = String(a.id).replace(/^intermede-/, "").replace(/-/g, " ");
+  return "Intermède : " + n.charAt(0).toUpperCase() + n.slice(1);
+};
+// Journal de l'antenne : ce que fait CE navigateur (affiché dans le panneau Admin, et dans la console)
+const JOURNAL_ANTENNE = [];
+function noter(texte) {
+  JOURNAL_ANTENNE.push(new Date(Date.now()).toLocaleTimeString("fr-FR") + "  " + texte);
+  if (JOURNAL_ANTENNE.length > 80) JOURNAL_ANTENNE.shift();
+  try { console.log("[antenne]", texte); } catch (_) {}
+}
+// la musique baissée sous les voix, ou remise : une cible douce (setTargetAtTime ne se heurte jamais à un autre réglage)
+let cibleBaisse = 1;
+function baisserMusique(cible) {
+  if (!baisse || cible === cibleBaisse) return;
+  cibleBaisse = cible;
+  const t = ctxAudio.currentTime, v = baisse.gain.value;
+  try { baisse.gain.cancelScheduledValues(0); baisse.gain.setValueAtTime(v, t); baisse.gain.setTargetAtTime(cible, t, cible < 1 ? 0.35 : 0.9); }
+  catch (_) { try { baisse.gain.value = cible; } catch (__) {} }
+}
+// Toutes les 250 ms : quelle voix doit passer maintenant ? Le lecteur suit la grille, rien d'autre.
+let voixEnCours = null, departVoix = 0;
+function veilleVoix() {
+  const ms = Date.now();
+  const v = etat.joue && etat.enDirect && $("animatrice").checked ? voixPrevue(etat.morceaux, ms) : null;
+  if (!v) {
+    if (voixEnCours) { VOIX.pause(); noter("fin de la pause, la musique remonte"); voixEnCours = null; dire(""); }
+    baisserMusique(1);
+    return;
+  }
+  if (v.v) {
+    const cle = v.v.anim.id + "@" + Math.round(v.v.debut);
+    if (voixEnCours !== cle) {
+      voixEnCours = cle; departVoix = ms - v.decalage * 1000;
+      VOIX.src = v.v.anim.son; regler(VOIX, VOLUME_VOIX, 0);
+      if (v.decalage > 0.5) VOIX.addEventListener("loadedmetadata", () => { try { VOIX.currentTime = Math.max(0, (Date.now() - departVoix) / 1000); } catch (_) {} }, { once: true });
+      VOIX.play().catch((e) => noter("⚠️ voix refusée par le navigateur : " + (e && e.message)));
+      noter("🎙️ " + nomVoix(v.v.anim) + " (" + Math.round(v.v.anim.duree || 0) + " s)" + (v.decalage > 1 ? ", prise en cours à " + Math.round(v.decalage) + " s" : ""));
+      dire("🎙️ Deejay Di et Samantha à l'antenne");
+    } else if (VOIX.readyState >= 2 && !VOIX.ended) {
+      const attendu = (ms - departVoix) / 1000;
+      if (VOIX.paused) VOIX.play().catch(() => {});
+      else if (Math.abs(VOIX.currentTime - attendu) > 2.5) { try { VOIX.currentTime = attendu; } catch (_) {} }   // recalée sur l'horloge
+    }
+  }
+  baisserMusique(v.reste < SORTIE_VOIX || (VOIX.ended && v.derniere) ? 1 : FOND);
+}
+VOIX.addEventListener("error", () => { if (voixEnCours) noter("⚠️ la voix ne se charge pas : " + VOIX.src.split("/").pop()); });
 function enchainer(index, depuis) {
   const m = etat.morceaux[index]; if (!m) return;
   const ancien = audio, neuf = LECTEURS[LECTEURS[0] === audio ? 1 : 0], jeton = ++numeroFondu;
@@ -492,7 +575,7 @@ function enchainer(index, depuis) {
 function jouer(index, depuis, enDirect) {
   if ("speechSynthesis" in window) speechSynthesis.cancel();
   for (const el of LECTEURS) if (el !== audio) el.pause();
-  VOIX.pause();
+  VOIX.pause(); voixEnCours = null;
   enFondu = false; numeroFondu++;
   etat.index = index; etat.enDirect = enDirect;
   const m = courant(); if (!m) return;
@@ -522,8 +605,52 @@ function suivant() {
 }
 // fin de titre sans fondu (titre non mesuré, ou après une erreur) : le suivant
 for (const el of LECTEURS) el.addEventListener("ended", (ev) => { if (ev.target === audio && !enFondu) suivant(); });
-$("animatrice").addEventListener("change", (e) => { animationDemandee = e.target.checked; dire(e.target.checked ? "🎙️ Deejay Di et Samantha arrivent à la fin du titre." : ""); try { localStorage.setItem("radio-animateurs", e.target.checked ? "1" : "0"); } catch (_) {} });
-try { if (localStorage.getItem("radio-animateurs") === "1") { $("animatrice").checked = true; animationDemandee = true; } } catch (_) {}
+const prochaineVoix = () => { if (!etat.morceaux.length) return null; const g = grilleDu(etat.morceaux, Date.now()), s = (Date.now() - g.minuit) / 1000; const p = g.passages.find((x) => x.voix.length && x.finPause > s); return p ? g.minuit + Math.max(s, p.debutPause) * 1000 : null; };
+$("animatrice").addEventListener("change", (e) => { try { localStorage.setItem("radio-animateurs", e.target.checked ? "1" : "0"); } catch (_) {} const q = e.target.checked ? prochaineVoix() : null; dire(e.target.checked ? "🎙️ Deejay Di et Samantha sont à l'antenne" + (q ? " : prochaine intervention à " + new Date(q).toLocaleTimeString("fr-FR") : "") + "." : "Animateurs coupés : seulement la musique."); noter(e.target.checked ? "case des animateurs cochée" : "case des animateurs décochée"); });
+try { $("animatrice").checked = localStorage.getItem("radio-animateurs") !== "0"; } catch (_) { $("animatrice").checked = true; }
+
+function stationAdmin() {
+  if (etat.station && ANIMATIONS.some((a) => !a.station || morceauxDe(etat.station).some((m) => m.genre === a.station))) return etat.station;
+  return STATIONS.find((s) => morceauxDe(s).some((m) => ANIMATIONS.some((a) => a.station === m.genre))) || etat.station || STATIONS[0];
+}
+function afficherAdmin() {
+  const zone = $("admin"); if (!zone || zone.hidden) return;
+  const st = stationAdmin(); if (!st) return;
+  const morceaux = morceauxDe(st), ms = Date.now(), g = grilleDu(morceaux, ms), s = (ms - g.minuit) / 1000;
+  const h = (sec) => new Date(g.minuit + sec * 1000).toLocaleTimeString("fr-FR");
+  const ecoute = etat.joue && etat.station === st;
+  $("adminStation").textContent = st.nom + " · " + (ecoute ? (etat.enDirect ? "tu écoutes le direct" : "tu écoutes hors direct : pas de voix") : "pas écoutée ici") + " · " + ($("animatrice").checked ? "animateurs à l'antenne" : "animateurs coupés");
+  const lignes = [];
+  for (const p of g.passages) {
+    if (p.t < s - 600) continue;
+    if (p.debut > s + 4 * 3600) break;
+    const enCours = s >= p.debut && s < p.t;
+    lignes.push({ heure: h(p.debut), icone: "▶", texte: p.avant.titre + " — " + p.avant.artiste, duree: format(p.t - p.debut), classe: enCours ? "en-cours" : p.t < s ? "passe" : "" });
+    const SORTES = { jingle: "pause courte", annonce: "pause moyenne", intermede: "pause moyenne", longue: "pause longue" };
+    p.voix.forEach((v, i) => {
+      const vEnCours = s >= v.debut && s < v.fin;
+      const ou = i === 0 ? " · " + SORTES[p.sorte] + ", entre « " + p.avant.titre + " » et « " + p.apres.titre + " »" : "";
+      lignes.push({ heure: h(v.debut), icone: estJingle(v.anim) ? "📻" : "🎙️", texte: nomVoix(v.anim) + ou, duree: Math.round(v.anim.duree || 0) + " s", classe: "voix" + (vEnCours ? " en-cours" : v.fin < s ? " passe" : "") });
+    });
+  }
+  const liste = $("adminGrille"); liste.replaceChildren();
+  for (const l of lignes) {
+    const li = document.createElement("li"); li.className = l.classe;
+    for (const [cls, txt] of [["heure", l.heure], ["icone-admin", l.icone], ["t", l.texte], ["duree", l.duree]]) { const sp = document.createElement("span"); sp.className = cls; sp.textContent = txt; li.append(sp); }
+    liste.append(li);
+  }
+  const prochaine = g.passages.find((p) => p.voix.length && p.debutPause > s);
+  const heureDebut = s, dansLHeure = g.passages.filter((p) => p.voix.length && p.debutPause >= heureDebut && p.debutPause < heureDebut + 3600);
+  const compte = (f) => dansLHeure.reduce((n, p) => n + p.voix.filter((v) => f(v.anim)).length, 0);
+  $("adminProchaine").textContent = (prochaine ? "Prochaine pause à " + h(prochaine.debutPause) + " : " + prochaine.voix.map((v) => nomVoix(v.anim)).join(" + ") : "Aucune voix prévue sur cette station.")
+    + " — dans l'heure qui vient : " + compte(estJingle) + " jingles, " + compte(estAnnonce) + " annonces, " + compte(estIntermede) + " intermèdes.";
+  $("adminJournal").textContent = JOURNAL_ANTENNE.length ? JOURNAL_ANTENNE.slice().reverse().join("\n") : "Rien encore : lance le direct.";
+  const encours = liste.querySelector("li.en-cours"); if (encours && !afficherAdmin.place) { afficherAdmin.place = true; encours.scrollIntoView({ block: "center" }); }
+}
+function ouvrirAdmin() { const ouvert = location.hash === "#admin"; $("admin").hidden = !ouvert; afficherAdmin.place = false; if (ouvert) { afficherAdmin(); $("admin").scrollIntoView({ block: "start" }); } }
+window.addEventListener("hashchange", ouvrirAdmin); ouvrirAdmin();
+setInterval(afficherAdmin, 2000);
+
 for (const el of LECTEURS) el.addEventListener("error", (ev) => { if (ev.target !== audio || !courant()) return; dire("Ce titre ne se lit pas (format ou connexion) : titre suivant dans 3 s."); setTimeout(suivant, 3000); });
 for (const el of LECTEURS) el.addEventListener("playing", (ev) => { if (ev.target === audio) dire(""); });
 
@@ -608,7 +735,7 @@ function tic() {
     if (!etat.joue && etat.enDirect && e >= dureeDe(m)) { const p = positionEnDirect(etat.morceaux, Date.now()); jouer(p.index, p.secondes, true); }
   }
 }
-setInterval(tic, 500); setInterval(() => construireRail(), 60000); setInterval(veilleFondu, 200);
+setInterval(tic, 500); setInterval(() => construireRail(), 60000); setInterval(veilleFondu, 200); setInterval(veilleVoix, 250);
 // Spectre : barres à la couleur de la station (vraies fréquences si le navigateur le permet, sinon vague calme).
 const reduit = matchMedia("(prefers-reduced-motion: reduce)").matches;
 (function dessiner() {

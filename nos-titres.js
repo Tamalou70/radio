@@ -92,6 +92,14 @@ window.ANIMATIONS = [
   "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-sirenes.mp3",
   "duree": 43.89,
   "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-deejay-di-samantha-3",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-deejay-di-samantha-3.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-petit-frere.mp3",
+  "duree": 34.38,
+  "voix": "Deejay Di et Samantha"
  }
 ];
 window.CATALOGUE = [

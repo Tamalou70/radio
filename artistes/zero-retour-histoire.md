@@ -1,6 +1,6 @@
 # Zéro Retour — l'histoire
 
-> Écrite d'après ses dix titres et leurs paroles (album *Poches vides, cœur plein*, Radio Rap Français). Chaque chapitre porte
+> Écrite d'après ses dix titres et leurs paroles (album *Poches vides, cœur plein*, Vinyle Rap). Chaque chapitre porte
 > le titre qui le raconte. [Écouter la radio](https://tamalou70.github.io/radio/) · [Les paroles](../paroles/README.md)
 
 On ne connaît pas son vrai prénom. Au quartier, seuls les petits le disent encore. Pour tous les autres, c'est **Zéro Retour**.

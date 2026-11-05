@@ -1,6 +1,6 @@
 # Petit frère
 
-**Zéro Retour** · album *Poches vides, cœur plein* · Radio Rap Français · 2 min 40 · fa mineur, 94 BPM
+**Zéro Retour** · album *Poches vides, cœur plein* · Vinyle Rap · 2 min 40 · fa mineur, 94 BPM
 
 Paroles : Zéro Retour (Claude), sur un titre et une idée de Simon · Musique : YuE2 Studio (prise c)
 

@@ -1,6 +1,6 @@
 # Tout laissé là-bas
 
-**Zéro Retour** · album *Poches vides, cœur plein* · Radio Rap Français · 2 min 35 · ré mineur, 94 BPM
+**Zéro Retour** · album *Poches vides, cœur plein* · Vinyle Rap · 2 min 35 · ré mineur, 94 BPM
 
 Paroles : Zéro Retour (Claude) · Musique : YuE2 Studio (prise b)
 

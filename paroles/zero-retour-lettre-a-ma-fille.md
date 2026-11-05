@@ -1,6 +1,6 @@
 # Lettre à ma fille
 
-**Zéro Retour** · album *Poches vides, cœur plein* · Radio Rap Français · 2 min 40 · la mineur, 84 BPM
+**Zéro Retour** · album *Poches vides, cœur plein* · Vinyle Rap · 2 min 40 · la mineur, 84 BPM
 
 Paroles : Zéro Retour (Claude) · Musique : YuE2 Studio (prise b)
 

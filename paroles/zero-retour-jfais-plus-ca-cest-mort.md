@@ -1,6 +1,6 @@
 # J'fais plus ça, c'est mort
 
-**Zéro Retour** · album *Poches vides, cœur plein* · Radio Rap Français · 2 min 19 · ré mineur, 94 BPM
+**Zéro Retour** · album *Poches vides, cœur plein* · Vinyle Rap · 2 min 19 · ré mineur, 94 BPM
 
 Paroles : Zéro Retour (Claude), sur un titre de Simon · Musique : YuE2 Studio (prise b)
 

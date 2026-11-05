@@ -14,6 +14,68 @@ window.POCHETTES = {
  "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-petit-frere.mp3": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/pochettes/zero-retour-petit-frere.jpg",
  "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-mains-propres.mp3": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/pochettes/zero-retour-mains-propres.jpg"
 };
+window.MESURES = {
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/allside-russe.mp3": {
+  "debut": 0.77,
+  "fin": 206.81,
+  "gain": 0.71
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/techallside.mp3": {
+  "debut": 0.71,
+  "fin": 119.16,
+  "gain": 0.77
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-jfais-plus-ca-cest-mort.mp3": {
+  "debut": 0,
+  "fin": 138.32,
+  "gain": 0.87
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-tout-laisse-la-bas.mp3": {
+  "debut": 0,
+  "fin": 155,
+  "gain": 0.88
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-lettre-a-ma-fille.mp3": {
+  "debut": 0,
+  "fin": 160.48,
+  "gain": 0.9
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-lumiere.mp3": {
+  "debut": 0,
+  "fin": 170,
+  "gain": 0.89
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-sirenes.mp3": {
+  "debut": 0,
+  "fin": 160,
+  "gain": 0.92
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-dos-au-miroir.mp3": {
+  "debut": 0,
+  "fin": 173.64,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-elle-a-tenu.mp3": {
+  "debut": 0,
+  "fin": 180,
+  "gain": 0.89
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-devant-la-porte.mp3": {
+  "debut": 0,
+  "fin": 185,
+  "gain": 0.98
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-petit-frere.mp3": {
+  "debut": 0,
+  "fin": 160,
+  "gain": 0.94
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-mains-propres.mp3": {
+  "debut": 0,
+  "fin": 160,
+  "gain": 0.95
+ }
+};
 window.CATALOGUE = [
 ["ALLSIDE","","Ночь не спит","",225,3.1,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/allside-russe.mp3","russe","ALLSIDE","Ночь не спит","allside-russe",0,"russe",1,"sur","création maison"],
 ["ALLSIDE","","Полный газ","",137,1.85,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/techallside.mp3","russe","ALLSIDE","Полный газ","techallside",0,"russe",1,"sur","création maison"],

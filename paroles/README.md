@@ -25,3 +25,4 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 16 | [Les filles du bâtiment](cash-cash-filles-du-batiment.md) | Cash Cash | Vinyle Rap |
 | 17 | [Rembobine](cash-cash-rembobine.md) | Cash Cash | Vinyle Rap |
 | 18 | [Sisi](cash-cash-sisi.md) | Cash Cash | Vinyle Rap |
+| 19 | [Elle compte](cash-cash-elle-compte.md) | Cash Cash | Vinyle Rap |

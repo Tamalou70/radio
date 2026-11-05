@@ -116,6 +116,46 @@ window.ANIMATIONS = [
   "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-jfais-plus-ca-cest-mort.mp3",
   "duree": 33.71,
   "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-deejay-di-samantha-6",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-deejay-di-samantha-6.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-tout-laisse-la-bas.mp3",
+  "duree": 33.01,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-deejay-di-samantha-7",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-deejay-di-samantha-7.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-lettre-a-ma-fille.mp3",
+  "duree": 21.51,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-deejay-di-samantha-8",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-deejay-di-samantha-8.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-dos-au-miroir.mp3",
+  "duree": 28.62,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-deejay-di-samantha-9",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-deejay-di-samantha-9.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-elle-a-tenu.mp3",
+  "duree": 25.63,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-deejay-di-samantha-10",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-deejay-di-samantha-10.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-devant-la-porte.mp3",
+  "duree": 30.24,
+  "voix": "Deejay Di et Samantha"
  }
 ];
 window.CATALOGUE = [

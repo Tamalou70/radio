@@ -124,6 +124,11 @@ window.MESURES = {
   "debut": 0,
   "fin": 175,
   "gain": 0.93
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/chrome-dimanche-lent.mp3": {
+  "debut": 0,
+  "fin": 145.31,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -670,5 +675,6 @@ window.CATALOGUE = [
 ["Cash Cash","Au dos des tickets","Elle compte","",175,5.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-elle-compte.mp3","rapfr","Cash Cash","Elle compte","cash-cash-elle-compte",0,"rapfr",1,"sur","création maison"],
 ["Cash Cash","Au dos des tickets","Au dos des tickets","",175,5.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-au-dos-des-tickets.mp3","rapfr","Cash Cash","Au dos des tickets","cash-cash-au-dos-des-tickets",0,"rapfr",1,"sur","création maison"],
 ["Cash Cash","Au dos des tickets","Pompe 4","",170,5.21,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-pompe-4.mp3","rapfr","Cash Cash","Pompe 4","cash-cash-pompe-4",0,"rapfr",1,"sur","création maison"],
-["Cash Cash","Au dos des tickets","Démission","",175,5.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-demission.mp3","rapfr","Cash Cash","Démission","cash-cash-demission",0,"rapfr",1,"sur","création maison"]
+["Cash Cash","Au dos des tickets","Démission","",175,5.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-demission.mp3","rapfr","Cash Cash","Démission","cash-cash-demission",0,"rapfr",1,"sur","création maison"],
+["Chrome","","Dimanche lent","",146,5.67,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/chrome-dimanche-lent.mp3","rapfr","Chrome","Dimanche lent","chrome-dimanche-lent",0,"rapfr",1,"sur","création maison"]
 ];

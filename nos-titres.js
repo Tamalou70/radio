@@ -651,6 +651,14 @@ window.ANIMATIONS = [
   "duree": 15.69,
   "voix": "Deejay Di et Samantha",
   "nom": "Refrain chanté de « Rembobine »"
+ },
+ {
+  "id": "duo-chrome-1",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-chrome-1.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/chrome-dimanche-lent.mp3",
+  "duree": 31.55,
+  "voix": "Deejay Di et Samantha"
  }
 ];
 window.CATALOGUE = [

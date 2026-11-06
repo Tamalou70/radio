@@ -235,7 +235,7 @@
 </footer>
 
 <audio id="audio" preload="none" crossorigin="anonymous"></audio>
-<script src="nos-titres.js?v=1793920451055"></script>
+<script src="nos-titres.js?v=1793923562978"></script>
 <script>
 "use strict";
 // Un lien de partage (#stations=… ou #avis=…) ouvert sur cette page est renvoyé vers la page Catalogue, qui sait le lire.
@@ -368,7 +368,7 @@ const courant = () => etat.morceaux[etat.index] || null;
 let analyseur = null, donneesSpectre = null;
 // ---------- Fondu enchaîné : chaque lecteur a son gain, puis volume général, spectre, haut-parleurs ----------
 let ctxAudio = null, maitre = null, baisse = null, enFondu = false, numeroFondu = 0;   // numéro : un fondu dépassé (station changée…) ne fait plus rien
-const GAINS = new Map();
+const GAINS = new Map(), EFFETS = new Map();   // EFFETS : filtre et écho de chaque lecteur de musique (transitions, 06/11/2026)
 // Chemin du son : chaque lecteur de musique → son gain (fondus) → « baisse » (la musique baissée sous les voix, 05/11 au soir)
 // → volume général → spectre → haut-parleurs ; la voix → son gain → volume général. Deux réglages séparés : un fondu et une
 // baisse ne se gênent jamais.
@@ -383,7 +383,20 @@ function brancherSpectre() {
     maitre.connect(analyseur); analyseur.connect(ctxAudio.destination); donneesSpectre = new Uint8Array(analyseur.frequencyBinCount);
     for (const el of [...LECTEURS, VOIX]) {
       const g = ctxAudio.createGain(); g.gain.value = el === VOIX ? VOLUME_VOIX : el === audio ? gainDe(courant()) : 0;
-      ctxAudio.createMediaElementSource(el).connect(g); g.connect(el === VOIX ? maitre : baisse); GAINS.set(el, g); el.volume = 1;
+      const src = ctxAudio.createMediaElementSource(el);
+      if (el === VOIX) { src.connect(g); g.connect(maitre); }
+      else {
+        // transitions (06/11/2026) : un filtre passe-bas (grand ouvert au repos) avant le gain, et un écho (fermé au repos) après lui ;
+        // la queue de l'écho va droit à « baisse », pour sonner encore quand le titre s'est tu
+        const filtre = ctxAudio.createBiquadFilter(); filtre.type = "lowpass"; filtre.frequency.value = 20000; filtre.Q.value = 0.7;
+        const envoi = ctxAudio.createGain(); envoi.gain.value = 0;
+        const retard = ctxAudio.createDelay(2); retard.delayTime.value = 0.42;
+        const retour = ctxAudio.createGain(); retour.gain.value = 0.45;
+        src.connect(filtre); filtre.connect(g); g.connect(baisse);
+        g.connect(envoi); envoi.connect(retard); retard.connect(retour); retour.connect(retard); retard.connect(baisse);
+        EFFETS.set(el, { filtre, envoi });
+      }
+      GAINS.set(el, g); el.volume = 1;
     }
   } catch (_) { analyseur = null; maitre = null; baisse = null; GAINS.clear(); }
 }
@@ -449,6 +462,12 @@ const PAUSES = [["rien", 25], ["jingle", 25], ["annonce", 20], ["intermede", 15]
 // estRappel (06/11/2026) : refrain chanté par les animateurs sur la fin du titre qui vient de passer (champ apres)
 const estJingle = (a) => /^id-/.test(String(a.id)), estAnnonce = (a) => !!a.avant, estRappel = (a) => !!a.apres, estIntermede = (a) => !a.avant && !a.apres && !estJingle(a);
 const RAPPEL_MIN_ECART = 7200, RAPPEL_CHANCE = 0.5;   // un même refrain chanté pas deux fois en 2 h ; une fois sur deux quand il peut
+// TRANSITIONS VARIÉES (06/11/2026). Simon : « ajoute des transitions qui changent ». Chaque passage tire la sienne (hasard du jour,
+// le même pour tous) : [nom, poids, durée de montée du nouveau, durée de descente de l'ancien].
+//   fondu : le fondu enchaîné classique · filtre : l'ancien titre s'étouffe dans les graves en partant · écho : sa dernière phrase
+//   rebondit pendant que le suivant arrive · long : un passage qui traîne · rapide : le suivant arrive d'un coup.
+const TRANSITIONS = [["fondu", 35, 8, 8], ["filtre", 20, 6, 8], ["echo", 15, 4, 2.5], ["long", 15, 11, 10], ["rapide", 15, 2.5, 2.5]];
+const NOMS_TRANSITIONS = { fondu: "fondu", filtre: "filtre", echo: "écho", long: "fondu long", rapide: "rapide" };
 const jourDe = (ms) => { const d = new Date(ms); return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); };
 const minuitDe = (ms) => { const d = new Date(ms); d.setHours(0, 0, 0, 0); return d.getTime(); };
 const hasardFixe = (texte) => { let h = 2166136261; for (const c of texte) h = Math.imul(h ^ c.charCodeAt(0), 16777619); h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0; h = Math.imul(h ^ (h >>> 13), 3266489909) >>> 0; return ((h ^ (h >>> 16)) >>> 0) / 4294967296; };   // >>> 0 : sans lui, le nombre peut sortir négatif
@@ -509,7 +528,9 @@ function grilleDu(morceaux, maintenantMs) {
       const recul = Math.max(0, debut + 15 - voix[0].debut);   // jamais avant les 15 premières secondes du titre qui finit
       if (recul) for (const v of voix) { v.debut += recul; v.fin += recul; }
     }
-    passages.push({ debut, t, k, avant, apres, sorte: !liste.length ? "rien" : liste.some(estRappel) ? "refrain" : sorte, voix, debutPause: voix.length ? voix[0].debut : null, finPause: voix.length ? voix[voix.length - 1].fin : null });
+    let rt = hasardFixe(jour + "|t|" + genre + "|" + k) * TRANSITIONS.reduce((s2, x) => s2 + x[1], 0), transition = "fondu";
+    for (const [nom, p] of TRANSITIONS) { if (rt < p) { transition = nom; break; } rt -= p; }
+    passages.push({ debut, t, k, avant, apres, transition, sorte: !liste.length ? "rien" : liste.some(estRappel) ? "refrain" : sorte, voix, debutPause: voix.length ? voix[0].debut : null, finPause: voix.length ? voix[voix.length - 1].fin : null });
     k++;
   }
   const g = { minuit: minuitDe(maintenantMs), passages };
@@ -582,9 +603,24 @@ function veilleVoix() {
   baisserMusique(v.reste < SORTIE_VOIX || (VOIX.ended && v.derniere) ? 1 : FOND);
 }
 VOIX.addEventListener("error", () => { if (voixEnCours) noter("⚠️ la voix ne se charge pas : " + VOIX.src.split("/").pop()); });
+// effets de transition remis au repos (filtre grand ouvert, écho fermé)
+function remettreEffets(el) {
+  const e = EFFETS.get(el); if (!e || !ctxAudio) return;
+  const t = ctxAudio.currentTime;
+  try { e.filtre.frequency.cancelScheduledValues(0); e.filtre.frequency.setValueAtTime(20000, t); e.envoi.gain.cancelScheduledValues(0); e.envoi.gain.setValueAtTime(0, t); } catch (_) {}
+}
+// la transition prévue par la grille au passage le plus proche de maintenant (sur le direct), sinon le fondu classique
+function transitionDe(ms) {
+  if (!etat.enDirect || !etat.morceaux.length) return "fondu";
+  const g = grilleDu(etat.morceaux, ms), s = (ms - g.minuit) / 1000;
+  let meilleur = null;
+  for (const p of g.passages) { const d = Math.abs(p.t - s); if (d < 30 && (!meilleur || d < meilleur.d)) meilleur = { p, d }; if (p.t > s + 60) break; }
+  return meilleur ? meilleur.p.transition : "fondu";
+}
 function enchainer(index, depuis) {
   const m = etat.morceaux[index]; if (!m) return;
   const ancien = audio, neuf = LECTEURS[LECTEURS[0] === audio ? 1 : 0], jeton = ++numeroFondu;
+  const type = transitionDe(Date.now()), T = TRANSITIONS.find((x) => x[0] === type) || TRANSITIONS[0];
   enFondu = true; debutFondu = Date.now(); audio = neuf;
   etat.index = index; etat.debutMs = Date.now() - depuis * 1000;
   regler(neuf, 0, 0); neuf.src = adresseSon(m);
@@ -592,8 +628,14 @@ function enchainer(index, depuis) {
   if (pos > 0) neuf.addEventListener("loadedmetadata", () => { neuf.currentTime = pos; }, { once: true });
   neuf.addEventListener("playing", () => {
     if (jeton !== numeroFondu) return;
-    regler(neuf, gainDe(m), FONDU); regler(ancien, 0, FONDU);
-    setTimeout(() => { if (jeton !== numeroFondu) return; if (audio !== ancien) ancien.pause(); enFondu = false; }, FONDU * 1000 + 300);
+    remettreEffets(neuf);
+    regler(neuf, gainDe(m), T[2]); regler(ancien, 0, T[3]);
+    const e = EFFETS.get(ancien), t0 = ctxAudio ? ctxAudio.currentTime : 0;
+    if (e && type === "filtre") { try { e.filtre.frequency.cancelScheduledValues(0); e.filtre.frequency.setValueAtTime(20000, t0); e.filtre.frequency.exponentialRampToValueAtTime(350, t0 + 6); } catch (_) {} }
+    if (e && type === "echo") { try { e.envoi.gain.cancelScheduledValues(0); e.envoi.gain.setValueAtTime(0.8, t0); e.envoi.gain.setValueAtTime(0, t0 + 2.4); } catch (_) {} }
+    if (type !== "fondu") noter("⇄ transition : " + NOMS_TRANSITIONS[type]);
+    const fin = Math.max(T[2], T[3], type === "echo" ? 5 : 0);
+    setTimeout(() => { if (jeton !== numeroFondu) return; if (audio !== ancien) { ancien.pause(); remettreEffets(ancien); } enFondu = false; }, fin * 1000 + 300);
   }, { once: true });
   neuf.play().catch(() => { if (jeton === numeroFondu) enFondu = false; });
   // le suivant ne démarre pas (réseau) : on reprend le direct au lieu de laisser un blanc
@@ -602,7 +644,7 @@ function enchainer(index, depuis) {
 }
 function jouer(index, depuis, enDirect) {
   if ("speechSynthesis" in window) speechSynthesis.cancel();
-  for (const el of LECTEURS) if (el !== audio) el.pause();
+  for (const el of LECTEURS) { if (el !== audio) el.pause(); remettreEffets(el); }
   VOIX.pause(); voixEnCours = null;
   enFondu = false; numeroFondu++;
   etat.index = index; etat.enDirect = enDirect;
@@ -668,7 +710,7 @@ function construireAdmin(st, g) {
       liste.append(li);
     }
     bilan.titres++;
-    ajouter(Math.max(0, p.debut), p.t, "▶", p.avant.titre + " — " + p.avant.artiste, format(p.t - p.debut), "");
+    ajouter(Math.max(0, p.debut), p.t, "▶", p.avant.titre + " — " + p.avant.artiste + " · sortie : " + NOMS_TRANSITIONS[p.transition], format(p.t - p.debut), "");
     p.voix.forEach((v, i) => {
       if (estJingle(v.anim)) bilan.jingles++; else if (estAnnonce(v.anim)) bilan.annonces++; else if (estRappel(v.anim)) bilan.refrains++; else bilan.intermedes++;
       const ou = i === 0 ? " · " + SORTES_ADMIN[p.sorte] + ", entre « " + p.avant.titre + " » et « " + p.apres.titre + " »" : "";

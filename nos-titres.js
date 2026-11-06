@@ -556,6 +556,96 @@ window.ANIMATIONS = [
   "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-demission.mp3",
   "duree": 34.32,
   "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "refrain-zero-retour-tout-laisse-la-bas",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/refrain-zero-retour-tout-laisse-la-bas.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "apres": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-tout-laisse-la-bas.mp3",
+  "duree": 17.5,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Refrain chanté de « Tout laissé là-bas »"
+ },
+ {
+  "id": "refrain-zero-retour-jfais-plus-ca-cest-mort",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/refrain-zero-retour-jfais-plus-ca-cest-mort.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "apres": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-jfais-plus-ca-cest-mort.mp3",
+  "duree": 12.77,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Refrain chanté de « J'fais plus ça, c'est mort »"
+ },
+ {
+  "id": "refrain-zero-retour-lumiere",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/refrain-zero-retour-lumiere.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "apres": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-lumiere.mp3",
+  "duree": 16.47,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Refrain chanté de « Lumière »"
+ },
+ {
+  "id": "refrain-zero-retour-petit-frere",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/refrain-zero-retour-petit-frere.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "apres": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-petit-frere.mp3",
+  "duree": 12.53,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Refrain chanté de « Petit frère »"
+ },
+ {
+  "id": "refrain-zero-retour-sirenes",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/refrain-zero-retour-sirenes.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "apres": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-sirenes.mp3",
+  "duree": 15.42,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Refrain chanté de « Sirènes »"
+ },
+ {
+  "id": "refrain-zero-retour-mains-propres",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/refrain-zero-retour-mains-propres.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "apres": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/zero-retour-mains-propres.mp3",
+  "duree": 14.67,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Refrain chanté de « Mains propres »"
+ },
+ {
+  "id": "refrain-cash-cash-sisi",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/refrain-cash-cash-sisi.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "apres": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-sisi.mp3",
+  "duree": 17.92,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Refrain chanté de « Sisi »"
+ },
+ {
+  "id": "refrain-cash-cash-jte-ldis-cash",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/refrain-cash-cash-jte-ldis-cash.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "apres": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-jte-ldis-cash.mp3",
+  "duree": 11.71,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Refrain chanté de « J'te l'dis cash »"
+ },
+ {
+  "id": "refrain-cash-cash-rembobine",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/refrain-cash-cash-rembobine.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "apres": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-rembobine.mp3",
+  "duree": 15.69,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Refrain chanté de « Rembobine »"
  }
 ];
 window.CATALOGUE = [

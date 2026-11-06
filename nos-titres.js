@@ -659,6 +659,78 @@ window.ANIMATIONS = [
   "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/chrome-dimanche-lent.mp3",
   "duree": 31.55,
   "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "promo-dedicaces",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/promo-dedicaces.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 31.53,
+  "voix": "Deejay Di et Samantha",
+  "nom": "La ligne des dédicaces"
+ },
+ {
+  "id": "promo-studio",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/promo-studio.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 22.05,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Le studio ouvert aux artistes"
+ },
+ {
+  "id": "promo-pub",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/promo-pub.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 24.51,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Ta pub sur Vinyle Rap"
+ },
+ {
+  "id": "promo-ligne-de-nuit",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/promo-ligne-de-nuit.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 18.61,
+  "voix": "Deejay Di et Samantha",
+  "nom": "La ligne de nuit"
+ },
+ {
+  "id": "promo-defi-refrain",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/promo-defi-refrain.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 22.28,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Le défi du refrain"
+ },
+ {
+  "id": "promo-petites-annonces",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/promo-petites-annonces.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 22.54,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Les petites annonces"
+ },
+ {
+  "id": "promo-casting",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/promo-casting.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 21.31,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Le casting du troisième animateur"
+ },
+ {
+  "id": "promo-salut-auditeurs",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/promo-salut-auditeurs.mp3",
+  "station": "rapfr",
+  "avant": null,
+  "duree": 13.08,
+  "voix": "Deejay Di et Samantha",
+  "nom": "Le salut des auditeurs"
  }
 ];
 window.CATALOGUE = [

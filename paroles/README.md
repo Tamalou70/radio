@@ -142,3 +142,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 133 | [B123 — La poupee](blague-b123-la-poupee.md) | Deejay Di et Samantha | Radio Blague |
 | 134 | [B124 — Le bras](blague-b124-le-bras.md) | Deejay Di et Samantha | Radio Blague |
 | 135 | [B125 — La signature](blague-b125-la-signature.md) | Deejay Di et Samantha | Radio Blague |
+| 136 | [B126 — Eternuement](blague-b126-eternuement.md) | Deejay Di et Samantha | Radio Blague |
+| 137 | [B127 — Soixante minutes](blague-b127-soixante-minutes.md) | Deejay Di et Samantha | Radio Blague |
+| 138 | [B128 — La barque](blague-b128-la-barque.md) | Deejay Di et Samantha | Radio Blague |
+| 139 | [B129 — Plan a trois](blague-b129-plan-a-trois.md) | Deejay Di et Samantha | Radio Blague |
+| 140 | [B130 — Le casting](blague-b130-le-casting.md) | Deejay Di et Samantha | Radio Blague |

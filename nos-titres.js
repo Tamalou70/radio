@@ -314,6 +314,81 @@ window.MESURES = {
   "debut": 0,
   "fin": 17.86,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b042-pet.mp3": {
+  "debut": 0,
+  "fin": 11.32,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b047-concours-de-cons.mp3": {
+  "debut": 0,
+  "fin": 9.52,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b051-chuck-norris-duel.mp3": {
+  "debut": 0,
+  "fin": 24.54,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b052-chuck-norris-adulte.mp3": {
+  "debut": 0,
+  "fin": 23.9,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b053-chuck-norris-los-santos.mp3": {
+  "debut": 0,
+  "fin": 24.38,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b054-seins-contagieux.mp3": {
+  "debut": 0,
+  "fin": 33.58,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b055-voisin-bricoleur.mp3": {
+  "debut": 0,
+  "fin": 33.98,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b056-triplees.mp3": {
+  "debut": 0,
+  "fin": 41.63,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b057-penis-vaudou.mp3": {
+  "debut": 0,
+  "fin": 43.56,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b058-serpent.mp3": {
+  "debut": 0,
+  "fin": 30.48,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b060-trayeuse.mp3": {
+  "debut": 0,
+  "fin": 59.83,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b061-amazones.mp3": {
+  "debut": 0,
+  "fin": 44.39,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b062-robot-secretaire.mp3": {
+  "debut": 0,
+  "fin": 53.3,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b063-jument.mp3": {
+  "debut": 0,
+  "fin": 46.5,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b065-perroquet-espion.mp3": {
+  "debut": 0,
+  "fin": 46.26,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1026,5 +1101,20 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 1 — validées sur le texte","B036 — Le compliment","",12,0.27,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b036-compliment.mp3","blague","Deejay Di et Samantha","B036 — Le compliment","blague-b036-compliment",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 1 — validées sur le texte","B037 — Le pare-brise","",13,0.29,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b037-pare-brise.mp3","blague","Deejay Di et Samantha","B037 — Le pare-brise","blague-b037-pare-brise",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 1 — validées sur le texte","B039 — Les mouchoirs","",14,0.32,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b039-mouchoirs.mp3","blague","Deejay Di et Samantha","B039 — Les mouchoirs","blague-b039-mouchoirs",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 1 — validées sur le texte","B040 — Le nom de jeune fille","",18,0.41,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b040-nom-de-jeune-fille.mp3","blague","Deejay Di et Samantha","B040 — Le nom de jeune fille","blague-b040-nom-de-jeune-fille",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B040 — Le nom de jeune fille","",18,0.41,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b040-nom-de-jeune-fille.mp3","blague","Deejay Di et Samantha","B040 — Le nom de jeune fille","blague-b040-nom-de-jeune-fille",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B042 — Pet","",11,0.26,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b042-pet.mp3","blague","Deejay Di et Samantha","B042 — Pet","blague-b042-pet",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B047 — Concours de cons","",10,0.22,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b047-concours-de-cons.mp3","blague","Deejay Di et Samantha","B047 — Concours de cons","blague-b047-concours-de-cons",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B051 — Chuck norris duel","",26,0.6,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b051-chuck-norris-duel.mp3","blague","Deejay Di et Samantha","B051 — Chuck norris duel","blague-b051-chuck-norris-duel",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B052 — Chuck norris adulte","",25,0.58,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b052-chuck-norris-adulte.mp3","blague","Deejay Di et Samantha","B052 — Chuck norris adulte","blague-b052-chuck-norris-adulte",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B053 — Chuck norris los santos","",26,0.59,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b053-chuck-norris-los-santos.mp3","blague","Deejay Di et Samantha","B053 — Chuck norris los santos","blague-b053-chuck-norris-los-santos",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B054 — Seins contagieux","",35,0.8,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b054-seins-contagieux.mp3","blague","Deejay Di et Samantha","B054 — Seins contagieux","blague-b054-seins-contagieux",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B055 — Voisin bricoleur","",36,0.81,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b055-voisin-bricoleur.mp3","blague","Deejay Di et Samantha","B055 — Voisin bricoleur","blague-b055-voisin-bricoleur",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B056 — Triplees","",43,0.99,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b056-triplees.mp3","blague","Deejay Di et Samantha","B056 — Triplees","blague-b056-triplees",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B057 — Penis vaudou","",45,1.03,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b057-penis-vaudou.mp3","blague","Deejay Di et Samantha","B057 — Penis vaudou","blague-b057-penis-vaudou",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B058 — Serpent","",32,0.73,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b058-serpent.mp3","blague","Deejay Di et Samantha","B058 — Serpent","blague-b058-serpent",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B060 — Trayeuse","",61,1.41,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b060-trayeuse.mp3","blague","Deejay Di et Samantha","B060 — Trayeuse","blague-b060-trayeuse",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B061 — Amazones","",46,1.05,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b061-amazones.mp3","blague","Deejay Di et Samantha","B061 — Amazones","blague-b061-amazones",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B062 — Robot secretaire","",55,1.26,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b062-robot-secretaire.mp3","blague","Deejay Di et Samantha","B062 — Robot secretaire","blague-b062-robot-secretaire",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B063 — Jument","",48,1.1,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b063-jument.mp3","blague","Deejay Di et Samantha","B063 — Jument","blague-b063-jument",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B065 — Perroquet espion","",48,1.09,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b065-perroquet-espion.mp3","blague","Deejay Di et Samantha","B065 — Perroquet espion","blague-b065-perroquet-espion",0,"blague",1,"sur","création maison"]
 ];

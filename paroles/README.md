@@ -67,3 +67,18 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 58 | [B037 — Le pare-brise](blague-b037-pare-brise.md) | Deejay Di et Samantha | Radio Blague |
 | 59 | [B039 — Les mouchoirs](blague-b039-mouchoirs.md) | Deejay Di et Samantha | Radio Blague |
 | 60 | [B040 — Le nom de jeune fille](blague-b040-nom-de-jeune-fille.md) | Deejay Di et Samantha | Radio Blague |
+| 61 | [B042 — Pet](blague-b042-pet.md) | Deejay Di et Samantha | Radio Blague |
+| 62 | [B047 — Concours de cons](blague-b047-concours-de-cons.md) | Deejay Di et Samantha | Radio Blague |
+| 63 | [B051 — Chuck norris duel](blague-b051-chuck-norris-duel.md) | Deejay Di et Samantha | Radio Blague |
+| 64 | [B052 — Chuck norris adulte](blague-b052-chuck-norris-adulte.md) | Deejay Di et Samantha | Radio Blague |
+| 65 | [B053 — Chuck norris los santos](blague-b053-chuck-norris-los-santos.md) | Deejay Di et Samantha | Radio Blague |
+| 66 | [B054 — Seins contagieux](blague-b054-seins-contagieux.md) | Deejay Di et Samantha | Radio Blague |
+| 67 | [B055 — Voisin bricoleur](blague-b055-voisin-bricoleur.md) | Deejay Di et Samantha | Radio Blague |
+| 68 | [B056 — Triplees](blague-b056-triplees.md) | Deejay Di et Samantha | Radio Blague |
+| 69 | [B057 — Penis vaudou](blague-b057-penis-vaudou.md) | Deejay Di et Samantha | Radio Blague |
+| 70 | [B058 — Serpent](blague-b058-serpent.md) | Deejay Di et Samantha | Radio Blague |
+| 71 | [B060 — Trayeuse](blague-b060-trayeuse.md) | Deejay Di et Samantha | Radio Blague |
+| 72 | [B061 — Amazones](blague-b061-amazones.md) | Deejay Di et Samantha | Radio Blague |
+| 73 | [B062 — Robot secretaire](blague-b062-robot-secretaire.md) | Deejay Di et Samantha | Radio Blague |
+| 74 | [B063 — Jument](blague-b063-jument.md) | Deejay Di et Samantha | Radio Blague |
+| 75 | [B065 — Perroquet espion](blague-b065-perroquet-espion.md) | Deejay Di et Samantha | Radio Blague |

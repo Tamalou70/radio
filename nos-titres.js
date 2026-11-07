@@ -389,6 +389,56 @@ window.MESURES = {
   "debut": 0,
   "fin": 46.26,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b066-nudiste.mp3": {
+  "debut": 0,
+  "fin": 24.51,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b067-coude.mp3": {
+  "debut": 0,
+  "fin": 27.27,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b068-papi-sourd.mp3": {
+  "debut": 0,
+  "fin": 32.21,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b069-aspirine.mp3": {
+  "debut": 0,
+  "fin": 19.2,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b070-medecin-legiste.mp3": {
+  "debut": 0,
+  "fin": 54.61,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b071-tampon-capote.mp3": {
+  "debut": 0,
+  "fin": 11.79,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b072-la-fete.mp3": {
+  "debut": 0,
+  "fin": 15.45,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b073-chien-vache.mp3": {
+  "debut": 0,
+  "fin": 18.13,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b074-alcoolique.mp3": {
+  "debut": 0,
+  "fin": 16.07,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b075-alcooliques-anonymes.mp3": {
+  "debut": 0,
+  "fin": 15.21,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1116,5 +1166,15 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 2 — validées sur le texte","B061 — Amazones","",46,1.05,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b061-amazones.mp3","blague","Deejay Di et Samantha","B061 — Amazones","blague-b061-amazones",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 2 — validées sur le texte","B062 — Robot secretaire","",55,1.26,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b062-robot-secretaire.mp3","blague","Deejay Di et Samantha","B062 — Robot secretaire","blague-b062-robot-secretaire",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 2 — validées sur le texte","B063 — Jument","",48,1.1,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b063-jument.mp3","blague","Deejay Di et Samantha","B063 — Jument","blague-b063-jument",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 2 — validées sur le texte","B065 — Perroquet espion","",48,1.09,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b065-perroquet-espion.mp3","blague","Deejay Di et Samantha","B065 — Perroquet espion","blague-b065-perroquet-espion",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 2 — validées sur le texte","B065 — Perroquet espion","",48,1.09,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b065-perroquet-espion.mp3","blague","Deejay Di et Samantha","B065 — Perroquet espion","blague-b065-perroquet-espion",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 3 — à juger","B066 — Nudiste","",26,0.6,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b066-nudiste.mp3","blague","Deejay Di et Samantha","B066 — Nudiste","blague-b066-nudiste",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 3 — à juger","B067 — Coude","",29,0.66,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b067-coude.mp3","blague","Deejay Di et Samantha","B067 — Coude","blague-b067-coude",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 3 — à juger","B068 — Papi sourd","",34,0.77,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b068-papi-sourd.mp3","blague","Deejay Di et Samantha","B068 — Papi sourd","blague-b068-papi-sourd",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 3 — à juger","B069 — Aspirine","",19,0.44,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b069-aspirine.mp3","blague","Deejay Di et Samantha","B069 — Aspirine","blague-b069-aspirine",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 3 — à juger","B070 — Medecin legiste","",56,1.29,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b070-medecin-legiste.mp3","blague","Deejay Di et Samantha","B070 — Medecin legiste","blague-b070-medecin-legiste",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 3 — à juger","B071 — Tampon capote","",12,0.27,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b071-tampon-capote.mp3","blague","Deejay Di et Samantha","B071 — Tampon capote","blague-b071-tampon-capote",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 3 — à juger","B072 — La fete","",15,0.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b072-la-fete.mp3","blague","Deejay Di et Samantha","B072 — La fete","blague-b072-la-fete",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 3 — à juger","B073 — Chien vache","",18,0.42,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b073-chien-vache.mp3","blague","Deejay Di et Samantha","B073 — Chien vache","blague-b073-chien-vache",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 3 — à juger","B074 — Alcoolique","",16,0.37,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b074-alcoolique.mp3","blague","Deejay Di et Samantha","B074 — Alcoolique","blague-b074-alcoolique",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 3 — à juger","B075 — Alcooliques anonymes","",15,0.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b075-alcooliques-anonymes.mp3","blague","Deejay Di et Samantha","B075 — Alcooliques anonymes","blague-b075-alcooliques-anonymes",0,"blague",1,"sur","création maison"]
 ];

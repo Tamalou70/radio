@@ -82,3 +82,13 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 73 | [B062 — Robot secretaire](blague-b062-robot-secretaire.md) | Deejay Di et Samantha | Radio Blague |
 | 74 | [B063 — Jument](blague-b063-jument.md) | Deejay Di et Samantha | Radio Blague |
 | 75 | [B065 — Perroquet espion](blague-b065-perroquet-espion.md) | Deejay Di et Samantha | Radio Blague |
+| 76 | [B066 — Nudiste](blague-b066-nudiste.md) | Deejay Di et Samantha | Radio Blague |
+| 77 | [B067 — Coude](blague-b067-coude.md) | Deejay Di et Samantha | Radio Blague |
+| 78 | [B068 — Papi sourd](blague-b068-papi-sourd.md) | Deejay Di et Samantha | Radio Blague |
+| 79 | [B069 — Aspirine](blague-b069-aspirine.md) | Deejay Di et Samantha | Radio Blague |
+| 80 | [B070 — Medecin legiste](blague-b070-medecin-legiste.md) | Deejay Di et Samantha | Radio Blague |
+| 81 | [B071 — Tampon capote](blague-b071-tampon-capote.md) | Deejay Di et Samantha | Radio Blague |
+| 82 | [B072 — La fete](blague-b072-la-fete.md) | Deejay Di et Samantha | Radio Blague |
+| 83 | [B073 — Chien vache](blague-b073-chien-vache.md) | Deejay Di et Samantha | Radio Blague |
+| 84 | [B074 — Alcoolique](blague-b074-alcoolique.md) | Deejay Di et Samantha | Radio Blague |
+| 85 | [B075 — Alcooliques anonymes](blague-b075-alcooliques-anonymes.md) | Deejay Di et Samantha | Radio Blague |

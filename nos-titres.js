@@ -614,6 +614,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 41.6,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b111-tic-tac.mp3": {
+  "debut": 0,
+  "fin": 13.2,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b112-heureux.mp3": {
+  "debut": 0,
+  "fin": 13.47,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b113-harmonie.mp3": {
+  "debut": 0,
+  "fin": 14.76,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b114-premier-avril.mp3": {
+  "debut": 0,
+  "fin": 21.1,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b115-la-poubelle.mp3": {
+  "debut": 0,
+  "fin": 16.18,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1386,5 +1411,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 7 — à juger","B107 — Cacahuetes","",37,0.85,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b107-cacahuetes.mp3","blague","Deejay Di et Samantha","B107 — Cacahuetes","blague-b107-cacahuetes",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 7 — à juger","B108 — Jeu des draps","",37,0.84,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b108-jeu-des-draps.mp3","blague","Deejay Di et Samantha","B108 — Jeu des draps","blague-b108-jeu-des-draps",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 7 — à juger","B109 — Concours du cheval","",22,0.51,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b109-concours-du-cheval.mp3","blague","Deejay Di et Samantha","B109 — Concours du cheval","blague-b109-concours-du-cheval",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 7 — à juger","B110 — Jeu video","",43,0.99,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b110-jeu-video.mp3","blague","Deejay Di et Samantha","B110 — Jeu video","blague-b110-jeu-video",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 7 — à juger","B110 — Jeu video","",43,0.99,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b110-jeu-video.mp3","blague","Deejay Di et Samantha","B110 — Jeu video","blague-b110-jeu-video",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 7 — à juger","B111 — Tic tac","",13,0.3,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b111-tic-tac.mp3","blague","Deejay Di et Samantha","B111 — Tic tac","blague-b111-tic-tac",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 7 — à juger","B112 — Heureux","",13,0.31,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b112-heureux.mp3","blague","Deejay Di et Samantha","B112 — Heureux","blague-b112-heureux",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 7 — à juger","B113 — Harmonie","",15,0.34,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b113-harmonie.mp3","blague","Deejay Di et Samantha","B113 — Harmonie","blague-b113-harmonie",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 7 — à juger","B114 — Premier avril","",21,0.48,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b114-premier-avril.mp3","blague","Deejay Di et Samantha","B114 — Premier avril","blague-b114-premier-avril",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 7 — à juger","B115 — La poubelle","",16,0.37,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b115-la-poubelle.mp3","blague","Deejay Di et Samantha","B115 — La poubelle","blague-b115-la-poubelle",0,"blague",1,"sur","création maison"]
 ];

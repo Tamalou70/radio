@@ -127,3 +127,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 118 | [B108 — Jeu des draps](blague-b108-jeu-des-draps.md) | Deejay Di et Samantha | Radio Blague |
 | 119 | [B109 — Concours du cheval](blague-b109-concours-du-cheval.md) | Deejay Di et Samantha | Radio Blague |
 | 120 | [B110 — Jeu video](blague-b110-jeu-video.md) | Deejay Di et Samantha | Radio Blague |
+| 121 | [B111 — Tic tac](blague-b111-tic-tac.md) | Deejay Di et Samantha | Radio Blague |
+| 122 | [B112 — Heureux](blague-b112-heureux.md) | Deejay Di et Samantha | Radio Blague |
+| 123 | [B113 — Harmonie](blague-b113-harmonie.md) | Deejay Di et Samantha | Radio Blague |
+| 124 | [B114 — Premier avril](blague-b114-premier-avril.md) | Deejay Di et Samantha | Radio Blague |
+| 125 | [B115 — La poubelle](blague-b115-la-poubelle.md) | Deejay Di et Samantha | Radio Blague |

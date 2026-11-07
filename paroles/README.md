@@ -232,3 +232,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 223 | [B213 — Mon minou](blague-b213-mon-minou.md) | Deejay Di et Samantha | Radio Blague |
 | 224 | [B214 — Orange](blague-b214-orange.md) | Deejay Di et Samantha | Radio Blague |
 | 225 | [B215 — La rancon](blague-b215-la-rancon.md) | Deejay Di et Samantha | Radio Blague |
+| 226 | [B216 — Pas moi](blague-b216-pas-moi.md) | Deejay Di et Samantha | Radio Blague |
+| 227 | [B217 — Premiere operation](blague-b217-premiere-operation.md) | Deejay Di et Samantha | Radio Blague |
+| 228 | [B218 — L ecriture](blague-b218-l-ecriture.md) | Deejay Di et Samantha | Radio Blague |
+| 229 | [B219 — Je vous parle](blague-b219-je-vous-parle.md) | Deejay Di et Samantha | Radio Blague |
+| 230 | [B220 — Les cimetieres](blague-b220-les-cimetieres.md) | Deejay Di et Samantha | Radio Blague |

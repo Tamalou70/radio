@@ -1139,6 +1139,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 12.63,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b216-pas-moi.mp3": {
+  "debut": 0,
+  "fin": 14.43,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b217-premiere-operation.mp3": {
+  "debut": 0,
+  "fin": 13.02,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b218-l-ecriture.mp3": {
+  "debut": 0,
+  "fin": 20.61,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b219-je-vous-parle.mp3": {
+  "debut": 0,
+  "fin": 11.2,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b220-les-cimetieres.mp3": {
+  "debut": 0,
+  "fin": 15.33,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -2016,5 +2041,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 17 — à juger","B212 — Comme une chienne","",19,0.44,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b212-comme-une-chienne.mp3","blague","Deejay Di et Samantha","B212 — Comme une chienne","blague-b212-comme-une-chienne",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 17 — à juger","B213 — Mon minou","",19,0.43,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b213-mon-minou.mp3","blague","Deejay Di et Samantha","B213 — Mon minou","blague-b213-mon-minou",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 17 — à juger","B214 — Orange","",20,0.46,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b214-orange.mp3","blague","Deejay Di et Samantha","B214 — Orange","blague-b214-orange",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 17 — à juger","B215 — La rancon","",13,0.29,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b215-la-rancon.mp3","blague","Deejay Di et Samantha","B215 — La rancon","blague-b215-la-rancon",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 17 — à juger","B215 — La rancon","",13,0.29,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b215-la-rancon.mp3","blague","Deejay Di et Samantha","B215 — La rancon","blague-b215-la-rancon",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 18 — à juger","B216 — Pas moi","",14,0.33,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b216-pas-moi.mp3","blague","Deejay Di et Samantha","B216 — Pas moi","blague-b216-pas-moi",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 18 — à juger","B217 — Premiere operation","",13,0.3,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b217-premiere-operation.mp3","blague","Deejay Di et Samantha","B217 — Premiere operation","blague-b217-premiere-operation",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 18 — à juger","B218 — L ecriture","",22,0.51,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b218-l-ecriture.mp3","blague","Deejay Di et Samantha","B218 — L ecriture","blague-b218-l-ecriture",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 18 — à juger","B219 — Je vous parle","",11,0.26,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b219-je-vous-parle.mp3","blague","Deejay Di et Samantha","B219 — Je vous parle","blague-b219-je-vous-parle",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 18 — à juger","B220 — Les cimetieres","",15,0.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b220-les-cimetieres.mp3","blague","Deejay Di et Samantha","B220 — Les cimetieres","blague-b220-les-cimetieres",0,"blague",1,"sur","création maison"]
 ];

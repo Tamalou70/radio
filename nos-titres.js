@@ -1064,6 +1064,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 15.98,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b201-bebe-au-cinema.mp3": {
+  "debut": 0,
+  "fin": 22.35,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b202-patrice.mp3": {
+  "debut": 0,
+  "fin": 15.51,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b203-la-soeur.mp3": {
+  "debut": 0,
+  "fin": 19.33,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b204-le-clitoris.mp3": {
+  "debut": 0,
+  "fin": 12.43,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b205-l-etiquette.mp3": {
+  "debut": 0,
+  "fin": 31.38,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1926,5 +1951,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 16 — à juger","B197 — Samedi","",18,0.41,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b197-samedi.mp3","blague","Deejay Di et Samantha","B197 — Samedi","blague-b197-samedi",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 16 — à juger","B198 — L estheticienne","",13,0.29,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b198-l-estheticienne.mp3","blague","Deejay Di et Samantha","B198 — L estheticienne","blague-b198-l-estheticienne",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 16 — à juger","B199 — Les avances","",24,0.55,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b199-les-avances.mp3","blague","Deejay Di et Samantha","B199 — Les avances","blague-b199-les-avances",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 16 — à juger","B200 — Marche arriere","",16,0.37,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b200-marche-arriere.mp3","blague","Deejay Di et Samantha","B200 — Marche arriere","blague-b200-marche-arriere",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 16 — à juger","B200 — Marche arriere","",16,0.37,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b200-marche-arriere.mp3","blague","Deejay Di et Samantha","B200 — Marche arriere","blague-b200-marche-arriere",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 16 — à juger","B201 — Bebe au cinema","",24,0.55,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b201-bebe-au-cinema.mp3","blague","Deejay Di et Samantha","B201 — Bebe au cinema","blague-b201-bebe-au-cinema",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 16 — à juger","B202 — Patrice","",16,0.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b202-patrice.mp3","blague","Deejay Di et Samantha","B202 — Patrice","blague-b202-patrice",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 16 — à juger","B203 — La soeur","",19,0.44,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b203-la-soeur.mp3","blague","Deejay Di et Samantha","B203 — La soeur","blague-b203-la-soeur",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 16 — à juger","B204 — Le clitoris","",12,0.29,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b204-le-clitoris.mp3","blague","Deejay Di et Samantha","B204 — Le clitoris","blague-b204-le-clitoris",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 16 — à juger","B205 — L etiquette","",33,0.75,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b205-l-etiquette.mp3","blague","Deejay Di et Samantha","B205 — L etiquette","blague-b205-l-etiquette",0,"blague",1,"sur","création maison"]
 ];

@@ -217,3 +217,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 208 | [B198 — L estheticienne](blague-b198-l-estheticienne.md) | Deejay Di et Samantha | Radio Blague |
 | 209 | [B199 — Les avances](blague-b199-les-avances.md) | Deejay Di et Samantha | Radio Blague |
 | 210 | [B200 — Marche arriere](blague-b200-marche-arriere.md) | Deejay Di et Samantha | Radio Blague |
+| 211 | [B201 — Bebe au cinema](blague-b201-bebe-au-cinema.md) | Deejay Di et Samantha | Radio Blague |
+| 212 | [B202 — Patrice](blague-b202-patrice.md) | Deejay Di et Samantha | Radio Blague |
+| 213 | [B203 — La soeur](blague-b203-la-soeur.md) | Deejay Di et Samantha | Radio Blague |
+| 214 | [B204 — Le clitoris](blague-b204-le-clitoris.md) | Deejay Di et Samantha | Radio Blague |
+| 215 | [B205 — L etiquette](blague-b205-l-etiquette.md) | Deejay Di et Samantha | Radio Blague |

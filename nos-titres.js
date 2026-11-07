@@ -564,6 +564,56 @@ window.MESURES = {
   "debut": 0,
   "fin": 21,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b101-le-chargeur.mp3": {
+  "debut": 0,
+  "fin": 20.73,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b102-hotel-beau-pere.mp3": {
+  "debut": 0,
+  "fin": 42.58,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b103-pancarte-du-bar.mp3": {
+  "debut": 0,
+  "fin": 25.76,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b104-bon-coup.mp3": {
+  "debut": 0,
+  "fin": 16.21,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b105-mes-dents.mp3": {
+  "debut": 0,
+  "fin": 35.93,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b106-balle-de-golf.mp3": {
+  "debut": 0,
+  "fin": 44.77,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b107-cacahuetes.mp3": {
+  "debut": 0,
+  "fin": 35.73,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b108-jeu-des-draps.mp3": {
+  "debut": 0,
+  "fin": 35.27,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b109-concours-du-cheval.mp3": {
+  "debut": 0,
+  "fin": 20.77,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b110-jeu-video.mp3": {
+  "debut": 0,
+  "fin": 41.6,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1326,5 +1376,15 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 6 — à juger","B097 — Le vagin","",49,1.12,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b097-le-vagin.mp3","blague","Deejay Di et Samantha","B097 — Le vagin","blague-b097-le-vagin",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 6 — à juger","B098 — Le change","",21,0.49,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b098-le-change.mp3","blague","Deejay Di et Samantha","B098 — Le change","blague-b098-le-change",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 6 — à juger","B099 — Garde du chien","",25,0.57,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b099-garde-du-chien.mp3","blague","Deejay Di et Samantha","B099 — Garde du chien","blague-b099-garde-du-chien",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 6 — à juger","B100 — Le ski","",21,0.48,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b100-le-ski.mp3","blague","Deejay Di et Samantha","B100 — Le ski","blague-b100-le-ski",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 6 — à juger","B100 — Le ski","",21,0.48,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b100-le-ski.mp3","blague","Deejay Di et Samantha","B100 — Le ski","blague-b100-le-ski",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 6 — à juger","B101 — Le chargeur","",21,0.48,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b101-le-chargeur.mp3","blague","Deejay Di et Samantha","B101 — Le chargeur","blague-b101-le-chargeur",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 6 — à juger","B102 — Hotel beau pere","",44,1.01,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b102-hotel-beau-pere.mp3","blague","Deejay Di et Samantha","B102 — Hotel beau pere","blague-b102-hotel-beau-pere",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 6 — à juger","B103 — Pancarte du bar","",27,0.63,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b103-pancarte-du-bar.mp3","blague","Deejay Di et Samantha","B103 — Pancarte du bar","blague-b103-pancarte-du-bar",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 6 — à juger","B104 — Bon coup","",16,0.37,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b104-bon-coup.mp3","blague","Deejay Di et Samantha","B104 — Bon coup","blague-b104-bon-coup",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 6 — à juger","B105 — Mes dents","",37,0.86,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b105-mes-dents.mp3","blague","Deejay Di et Samantha","B105 — Mes dents","blague-b105-mes-dents",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 7 — à juger","B106 — Balle de golf","",46,1.06,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b106-balle-de-golf.mp3","blague","Deejay Di et Samantha","B106 — Balle de golf","blague-b106-balle-de-golf",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 7 — à juger","B107 — Cacahuetes","",37,0.85,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b107-cacahuetes.mp3","blague","Deejay Di et Samantha","B107 — Cacahuetes","blague-b107-cacahuetes",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 7 — à juger","B108 — Jeu des draps","",37,0.84,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b108-jeu-des-draps.mp3","blague","Deejay Di et Samantha","B108 — Jeu des draps","blague-b108-jeu-des-draps",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 7 — à juger","B109 — Concours du cheval","",22,0.51,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b109-concours-du-cheval.mp3","blague","Deejay Di et Samantha","B109 — Concours du cheval","blague-b109-concours-du-cheval",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 7 — à juger","B110 — Jeu video","",43,0.99,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b110-jeu-video.mp3","blague","Deejay Di et Samantha","B110 — Jeu video","blague-b110-jeu-video",0,"blague",1,"sur","création maison"]
 ];

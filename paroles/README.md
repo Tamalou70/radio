@@ -117,3 +117,13 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 108 | [B098 — Le change](blague-b098-le-change.md) | Deejay Di et Samantha | Radio Blague |
 | 109 | [B099 — Garde du chien](blague-b099-garde-du-chien.md) | Deejay Di et Samantha | Radio Blague |
 | 110 | [B100 — Le ski](blague-b100-le-ski.md) | Deejay Di et Samantha | Radio Blague |
+| 111 | [B101 — Le chargeur](blague-b101-le-chargeur.md) | Deejay Di et Samantha | Radio Blague |
+| 112 | [B102 — Hotel beau pere](blague-b102-hotel-beau-pere.md) | Deejay Di et Samantha | Radio Blague |
+| 113 | [B103 — Pancarte du bar](blague-b103-pancarte-du-bar.md) | Deejay Di et Samantha | Radio Blague |
+| 114 | [B104 — Bon coup](blague-b104-bon-coup.md) | Deejay Di et Samantha | Radio Blague |
+| 115 | [B105 — Mes dents](blague-b105-mes-dents.md) | Deejay Di et Samantha | Radio Blague |
+| 116 | [B106 — Balle de golf](blague-b106-balle-de-golf.md) | Deejay Di et Samantha | Radio Blague |
+| 117 | [B107 — Cacahuetes](blague-b107-cacahuetes.md) | Deejay Di et Samantha | Radio Blague |
+| 118 | [B108 — Jeu des draps](blague-b108-jeu-des-draps.md) | Deejay Di et Samantha | Radio Blague |
+| 119 | [B109 — Concours du cheval](blague-b109-concours-du-cheval.md) | Deejay Di et Samantha | Radio Blague |
+| 120 | [B110 — Jeu video](blague-b110-jeu-video.md) | Deejay Di et Samantha | Radio Blague |

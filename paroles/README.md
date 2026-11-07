@@ -212,3 +212,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 203 | [B193 — Le tatouage](blague-b193-le-tatouage.md) | Deejay Di et Samantha | Radio Blague |
 | 204 | [B194 — De la part de qui](blague-b194-de-la-part-de-qui.md) | Deejay Di et Samantha | Radio Blague |
 | 205 | [B195 — La pension](blague-b195-la-pension.md) | Deejay Di et Samantha | Radio Blague |
+| 206 | [B196 — La tirelire](blague-b196-la-tirelire.md) | Deejay Di et Samantha | Radio Blague |
+| 207 | [B197 — Samedi](blague-b197-samedi.md) | Deejay Di et Samantha | Radio Blague |
+| 208 | [B198 — L estheticienne](blague-b198-l-estheticienne.md) | Deejay Di et Samantha | Radio Blague |
+| 209 | [B199 — Les avances](blague-b199-les-avances.md) | Deejay Di et Samantha | Radio Blague |
+| 210 | [B200 — Marche arriere](blague-b200-marche-arriere.md) | Deejay Di et Samantha | Radio Blague |

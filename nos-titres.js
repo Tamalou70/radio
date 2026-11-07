@@ -1039,6 +1039,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 23.01,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b196-la-tirelire.mp3": {
+  "debut": 0,
+  "fin": 21.34,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b197-samedi.mp3": {
+  "debut": 0,
+  "fin": 17.74,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b198-l-estheticienne.mp3": {
+  "debut": 0,
+  "fin": 12.75,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b199-les-avances.mp3": {
+  "debut": 0,
+  "fin": 22.66,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b200-marche-arriere.mp3": {
+  "debut": 0,
+  "fin": 15.98,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1896,5 +1921,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 15 — à juger","B192 — Julie","",16,0.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b192-julie.mp3","blague","Deejay Di et Samantha","B192 — Julie","blague-b192-julie",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 15 — à juger","B193 — Le tatouage","",26,0.61,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b193-le-tatouage.mp3","blague","Deejay Di et Samantha","B193 — Le tatouage","blague-b193-le-tatouage",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 15 — à juger","B194 — De la part de qui","",19,0.44,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b194-de-la-part-de-qui.mp3","blague","Deejay Di et Samantha","B194 — De la part de qui","blague-b194-de-la-part-de-qui",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 15 — à juger","B195 — La pension","",25,0.56,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b195-la-pension.mp3","blague","Deejay Di et Samantha","B195 — La pension","blague-b195-la-pension",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 15 — à juger","B195 — La pension","",25,0.56,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b195-la-pension.mp3","blague","Deejay Di et Samantha","B195 — La pension","blague-b195-la-pension",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 16 — à juger","B196 — La tirelire","",23,0.53,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b196-la-tirelire.mp3","blague","Deejay Di et Samantha","B196 — La tirelire","blague-b196-la-tirelire",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 16 — à juger","B197 — Samedi","",18,0.41,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b197-samedi.mp3","blague","Deejay Di et Samantha","B197 — Samedi","blague-b197-samedi",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 16 — à juger","B198 — L estheticienne","",13,0.29,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b198-l-estheticienne.mp3","blague","Deejay Di et Samantha","B198 — L estheticienne","blague-b198-l-estheticienne",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 16 — à juger","B199 — Les avances","",24,0.55,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b199-les-avances.mp3","blague","Deejay Di et Samantha","B199 — Les avances","blague-b199-les-avances",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 16 — à juger","B200 — Marche arriere","",16,0.37,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b200-marche-arriere.mp3","blague","Deejay Di et Samantha","B200 — Marche arriere","blague-b200-marche-arriere",0,"blague",1,"sur","création maison"]
 ];

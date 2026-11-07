@@ -162,3 +162,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 153 | [B143 — Catapulte](blague-b143-catapulte.md) | Deejay Di et Samantha | Radio Blague |
 | 154 | [B144 — Le slow](blague-b144-le-slow.md) | Deejay Di et Samantha | Radio Blague |
 | 155 | [B145 — Apres l amour](blague-b145-apres-l-amour.md) | Deejay Di et Samantha | Radio Blague |
+| 156 | [B146 — Occasion](blague-b146-occasion.md) | Deejay Di et Samantha | Radio Blague |
+| 157 | [B147 — Le texto](blague-b147-le-texto.md) | Deejay Di et Samantha | Radio Blague |
+| 158 | [B148 — Apres le mariage](blague-b148-apres-le-mariage.md) | Deejay Di et Samantha | Radio Blague |
+| 159 | [B149 — Nymphomane](blague-b149-nymphomane.md) | Deejay Di et Samantha | Radio Blague |
+| 160 | [B150 — Cheval au telephone](blague-b150-cheval-au-telephone.md) | Deejay Di et Samantha | Radio Blague |

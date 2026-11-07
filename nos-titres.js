@@ -714,6 +714,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 15.36,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b131-le-restaurant.mp3": {
+  "debut": 0,
+  "fin": 41.42,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b132-frein-a-main.mp3": {
+  "debut": 0,
+  "fin": 41.33,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b133-lave-verres.mp3": {
+  "debut": 0,
+  "fin": 21.29,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b134-las-venturas.mp3": {
+  "debut": 0,
+  "fin": 27.66,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b135-carte-postale.mp3": {
+  "debut": 0,
+  "fin": 20.84,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1506,5 +1531,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 9 — à juger","B127 — Soixante minutes","",16,0.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b127-soixante-minutes.mp3","blague","Deejay Di et Samantha","B127 — Soixante minutes","blague-b127-soixante-minutes",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 9 — à juger","B128 — La barque","",61,1.4,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b128-la-barque.mp3","blague","Deejay Di et Samantha","B128 — La barque","blague-b128-la-barque",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 9 — à juger","B129 — Plan a trois","",30,0.68,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b129-plan-a-trois.mp3","blague","Deejay Di et Samantha","B129 — Plan a trois","blague-b129-plan-a-trois",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 9 — à juger","B130 — Le casting","",15,0.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b130-le-casting.mp3","blague","Deejay Di et Samantha","B130 — Le casting","blague-b130-le-casting",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 9 — à juger","B130 — Le casting","",15,0.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b130-le-casting.mp3","blague","Deejay Di et Samantha","B130 — Le casting","blague-b130-le-casting",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 9 — à juger","B131 — Le restaurant","",43,0.98,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b131-le-restaurant.mp3","blague","Deejay Di et Samantha","B131 — Le restaurant","blague-b131-le-restaurant",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 9 — à juger","B132 — Frein a main","",43,0.98,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b132-frein-a-main.mp3","blague","Deejay Di et Samantha","B132 — Frein a main","blague-b132-frein-a-main",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 9 — à juger","B133 — Lave verres","",21,0.49,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b133-lave-verres.mp3","blague","Deejay Di et Samantha","B133 — Lave verres","blague-b133-lave-verres",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 9 — à juger","B134 — Las venturas","",29,0.67,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b134-las-venturas.mp3","blague","Deejay Di et Samantha","B134 — Las venturas","blague-b134-las-venturas",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 9 — à juger","B135 — Carte postale","",21,0.48,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b135-carte-postale.mp3","blague","Deejay Di et Samantha","B135 — Carte postale","blague-b135-carte-postale",0,"blague",1,"sur","création maison"]
 ];

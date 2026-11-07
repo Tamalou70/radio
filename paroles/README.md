@@ -147,3 +147,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 138 | [B128 — La barque](blague-b128-la-barque.md) | Deejay Di et Samantha | Radio Blague |
 | 139 | [B129 — Plan a trois](blague-b129-plan-a-trois.md) | Deejay Di et Samantha | Radio Blague |
 | 140 | [B130 — Le casting](blague-b130-le-casting.md) | Deejay Di et Samantha | Radio Blague |
+| 141 | [B131 — Le restaurant](blague-b131-le-restaurant.md) | Deejay Di et Samantha | Radio Blague |
+| 142 | [B132 — Frein a main](blague-b132-frein-a-main.md) | Deejay Di et Samantha | Radio Blague |
+| 143 | [B133 — Lave verres](blague-b133-lave-verres.md) | Deejay Di et Samantha | Radio Blague |
+| 144 | [B134 — Las venturas](blague-b134-las-venturas.md) | Deejay Di et Samantha | Radio Blague |
+| 145 | [B135 — Carte postale](blague-b135-carte-postale.md) | Deejay Di et Samantha | Radio Blague |

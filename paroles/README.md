@@ -92,3 +92,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 83 | [B073 — Chien vache](blague-b073-chien-vache.md) | Deejay Di et Samantha | Radio Blague |
 | 84 | [B074 — Alcoolique](blague-b074-alcoolique.md) | Deejay Di et Samantha | Radio Blague |
 | 85 | [B075 — Alcooliques anonymes](blague-b075-alcooliques-anonymes.md) | Deejay Di et Samantha | Radio Blague |
+| 86 | [B076 — Supermarche](blague-b076-supermarche.md) | Deejay Di et Samantha | Radio Blague |
+| 87 | [B077 — Table a repasser](blague-b077-table-a-repasser.md) | Deejay Di et Samantha | Radio Blague |
+| 88 | [B078 — La cinquantaine](blague-b078-la-cinquantaine.md) | Deejay Di et Samantha | Radio Blague |
+| 89 | [B079 — A part ta mere](blague-b079-a-part-ta-mere.md) | Deejay Di et Samantha | Radio Blague |
+| 90 | [B080 — Tee shirt](blague-b080-tee-shirt.md) | Deejay Di et Samantha | Radio Blague |

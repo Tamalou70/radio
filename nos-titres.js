@@ -439,6 +439,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 15.21,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b076-supermarche.mp3": {
+  "debut": 0,
+  "fin": 21,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b077-table-a-repasser.mp3": {
+  "debut": 0,
+  "fin": 21.09,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b078-la-cinquantaine.mp3": {
+  "debut": 0,
+  "fin": 15.19,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b079-a-part-ta-mere.mp3": {
+  "debut": 0,
+  "fin": 8.8,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b080-tee-shirt.mp3": {
+  "debut": 0,
+  "fin": 11.71,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1176,5 +1201,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 3 — à juger","B072 — La fete","",15,0.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b072-la-fete.mp3","blague","Deejay Di et Samantha","B072 — La fete","blague-b072-la-fete",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 3 — à juger","B073 — Chien vache","",18,0.42,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b073-chien-vache.mp3","blague","Deejay Di et Samantha","B073 — Chien vache","blague-b073-chien-vache",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 3 — à juger","B074 — Alcoolique","",16,0.37,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b074-alcoolique.mp3","blague","Deejay Di et Samantha","B074 — Alcoolique","blague-b074-alcoolique",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 3 — à juger","B075 — Alcooliques anonymes","",15,0.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b075-alcooliques-anonymes.mp3","blague","Deejay Di et Samantha","B075 — Alcooliques anonymes","blague-b075-alcooliques-anonymes",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 3 — à juger","B075 — Alcooliques anonymes","",15,0.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b075-alcooliques-anonymes.mp3","blague","Deejay Di et Samantha","B075 — Alcooliques anonymes","blague-b075-alcooliques-anonymes",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 4 — à juger","B076 — Supermarche","",21,0.48,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b076-supermarche.mp3","blague","Deejay Di et Samantha","B076 — Supermarche","blague-b076-supermarche",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 4 — à juger","B077 — Table a repasser","",23,0.52,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b077-table-a-repasser.mp3","blague","Deejay Di et Samantha","B077 — Table a repasser","blague-b077-table-a-repasser",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 4 — à juger","B078 — La cinquantaine","",15,0.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b078-la-cinquantaine.mp3","blague","Deejay Di et Samantha","B078 — La cinquantaine","blague-b078-la-cinquantaine",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 4 — à juger","B079 — A part ta mere","",9,0.2,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b079-a-part-ta-mere.mp3","blague","Deejay Di et Samantha","B079 — A part ta mere","blague-b079-a-part-ta-mere",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 4 — à juger","B080 — Tee shirt","",12,0.27,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b080-tee-shirt.mp3","blague","Deejay Di et Samantha","B080 — Tee shirt","blague-b080-tee-shirt",0,"blague",1,"sur","création maison"]
 ];

@@ -184,6 +184,36 @@ window.MESURES = {
   "debut": 0,
   "fin": 148.9,
   "gain": 0.76
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/pleins-phares-pied-au-plancher.mp3": {
+  "debut": 0,
+  "fin": 179.98,
+  "gain": 0.88
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/pleins-phares-pied-au-plancher-2.mp3": {
+  "debut": 0,
+  "fin": 179.98,
+  "gain": 0.92
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/pleins-phares-pied-au-plancher-3.mp3": {
+  "debut": 0,
+  "fin": 179.98,
+  "gain": 0.99
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/pleins-phares-tunnel.mp3": {
+  "debut": 0,
+  "fin": 179.98,
+  "gain": 0.64
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/alamo-303-lac-a-sec.mp3": {
+  "debut": 0,
+  "fin": 209.98,
+  "gain": 0.85
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/alamo-303-lac-a-sec-2.mp3": {
+  "debut": 0,
+  "fin": 209.98,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -870,5 +900,11 @@ window.CATALOGUE = [
 ["Le Grand Slap","","La laverie","",182,6.95,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/le-grand-slap-la-laverie.mp3","funkdisco","Le Grand Slap","La laverie","le-grand-slap-la-laverie",0,"funkdisco",1,"sur","création maison"],
 ["Costard Funk","","Vendredi dix-huit heures","",150,5.84,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/costard-funk-vendredi-dix-huit-heures.mp3","funkdisco","Costard Funk","Vendredi dix-huit heures","costard-funk-vendredi-dix-huit-heures",0,"funkdisco",1,"sur","création maison"],
 ["Capucine","","La grande roue","",176,6.81,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/capucine-la-grande-roue.mp3","variete","Capucine","La grande roue","capucine-la-grande-roue",0,"variete",1,"sur","création maison"],
-["Rouille","","Cypress Flats","",149,6.01,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rouille-cypress-flats.mp3","punk","Rouille","Cypress Flats","rouille-cypress-flats",0,"punk",1,"sur","création maison"]
+["Rouille","","Cypress Flats","",149,6.01,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rouille-cypress-flats.mp3","punk","Rouille","Cypress Flats","rouille-cypress-flats",0,"punk",1,"sur","création maison"],
+["Pleins Phares","","Pied au plancher","",180,6.97,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/pleins-phares-pied-au-plancher.mp3","techno","Pleins Phares","Pied au plancher","pleins-phares-pied-au-plancher",0,"techno",1,"sur","création maison"],
+["Pleins Phares","","Pied au plancher (version 2)","",180,7.08,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/pleins-phares-pied-au-plancher-2.mp3","techno","Pleins Phares","Pied au plancher (version 2)","pleins-phares-pied-au-plancher-2",0,"techno",1,"sur","création maison"],
+["Pleins Phares","","Pied au plancher (version 3)","",180,7.17,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/pleins-phares-pied-au-plancher-3.mp3","techno","Pleins Phares","Pied au plancher (version 3)","pleins-phares-pied-au-plancher-3",0,"techno",1,"sur","création maison"],
+["Pleins Phares","","Tunnel","",180,6.95,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/pleins-phares-tunnel.mp3","techno","Pleins Phares","Tunnel","pleins-phares-tunnel",0,"techno",1,"sur","création maison"],
+["Alamo 303","","Lac à sec","",210,8.18,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/alamo-303-lac-a-sec.mp3","techno","Alamo 303","Lac à sec","alamo-303-lac-a-sec",0,"techno",1,"sur","création maison"],
+["Alamo 303","","Lac à sec (version 2)","",210,8.49,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/alamo-303-lac-a-sec-2.mp3","techno","Alamo 303","Lac à sec (version 2)","alamo-303-lac-a-sec-2",0,"techno",1,"sur","création maison"]
 ];

@@ -41,3 +41,9 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 32 | [Vendredi dix-huit heures](costard-funk-vendredi-dix-huit-heures.md) | Costard Funk | Boule à Facettes |
 | 33 | [La grande roue](capucine-la-grande-roue.md) | Capucine | Variétés |
 | 34 | [Cypress Flats](rouille-cypress-flats.md) | Rouille | Larsen |
+| 35 | [Pied au plancher](pleins-phares-pied-au-plancher.md) | Pleins Phares | Radio Techno |
+| 36 | [Pied au plancher (version 2)](pleins-phares-pied-au-plancher-2.md) | Pleins Phares | Radio Techno |
+| 37 | [Pied au plancher (version 3)](pleins-phares-pied-au-plancher-3.md) | Pleins Phares | Radio Techno |
+| 38 | [Tunnel](pleins-phares-tunnel.md) | Pleins Phares | Radio Techno |
+| 39 | [Lac à sec](alamo-303-lac-a-sec.md) | Alamo 303 | Radio Techno |
+| 40 | [Lac à sec (version 2)](alamo-303-lac-a-sec-2.md) | Alamo 303 | Radio Techno |

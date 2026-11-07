@@ -197,3 +197,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 188 | [B178 — Encephalorectum](blague-b178-encephalorectum.md) | Deejay Di et Samantha | Radio Blague |
 | 189 | [B179 — Comme sur la route](blague-b179-comme-sur-la-route.md) | Deejay Di et Samantha | Radio Blague |
 | 190 | [B180 — Pour des prunes](blague-b180-pour-des-prunes.md) | Deejay Di et Samantha | Radio Blague |
+| 191 | [B181 — Fais dodo](blague-b181-fais-dodo.md) | Deejay Di et Samantha | Radio Blague |
+| 192 | [B182 — Sur pied](blague-b182-sur-pied.md) | Deejay Di et Samantha | Radio Blague |
+| 193 | [B183 — Entrer dans la police](blague-b183-entrer-dans-la-police.md) | Deejay Di et Samantha | Radio Blague |
+| 194 | [B184 — L ecarteur](blague-b184-l-ecarteur.md) | Deejay Di et Samantha | Radio Blague |
+| 195 | [B185 — Comme un chien](blague-b185-comme-un-chien.md) | Deejay Di et Samantha | Radio Blague |

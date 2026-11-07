@@ -964,6 +964,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 12.26,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b181-fais-dodo.mp3": {
+  "debut": 0,
+  "fin": 18.94,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b182-sur-pied.mp3": {
+  "debut": 0,
+  "fin": 18,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b183-entrer-dans-la-police.mp3": {
+  "debut": 0,
+  "fin": 17.76,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b184-l-ecarteur.mp3": {
+  "debut": 0,
+  "fin": 40.31,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b185-comme-un-chien.mp3": {
+  "debut": 0,
+  "fin": 20.21,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1806,5 +1831,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 14 — à juger","B177 — La pipe","",27,0.62,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b177-la-pipe.mp3","blague","Deejay Di et Samantha","B177 — La pipe","blague-b177-la-pipe",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 14 — à juger","B178 — Encephalorectum","",20,0.46,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b178-encephalorectum.mp3","blague","Deejay Di et Samantha","B178 — Encephalorectum","blague-b178-encephalorectum",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 14 — à juger","B179 — Comme sur la route","",22,0.51,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b179-comme-sur-la-route.mp3","blague","Deejay Di et Samantha","B179 — Comme sur la route","blague-b179-comme-sur-la-route",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 14 — à juger","B180 — Pour des prunes","",12,0.28,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b180-pour-des-prunes.mp3","blague","Deejay Di et Samantha","B180 — Pour des prunes","blague-b180-pour-des-prunes",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 14 — à juger","B180 — Pour des prunes","",12,0.28,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b180-pour-des-prunes.mp3","blague","Deejay Di et Samantha","B180 — Pour des prunes","blague-b180-pour-des-prunes",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 14 — à juger","B181 — Fais dodo","",19,0.44,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b181-fais-dodo.mp3","blague","Deejay Di et Samantha","B181 — Fais dodo","blague-b181-fais-dodo",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 14 — à juger","B182 — Sur pied","",18,0.41,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b182-sur-pied.mp3","blague","Deejay Di et Samantha","B182 — Sur pied","blague-b182-sur-pied",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 14 — à juger","B183 — Entrer dans la police","",18,0.41,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b183-entrer-dans-la-police.mp3","blague","Deejay Di et Samantha","B183 — Entrer dans la police","blague-b183-entrer-dans-la-police",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 14 — à juger","B184 — L ecarteur","",42,0.96,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b184-l-ecarteur.mp3","blague","Deejay Di et Samantha","B184 — L ecarteur","blague-b184-l-ecarteur",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 14 — à juger","B185 — Comme un chien","",20,0.46,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b185-comme-un-chien.mp3","blague","Deejay Di et Samantha","B185 — Comme un chien","blague-b185-comme-un-chien",0,"blague",1,"sur","création maison"]
 ];

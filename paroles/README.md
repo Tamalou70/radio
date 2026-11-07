@@ -177,3 +177,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 168 | [B158 — Entre les fetes](blague-b158-entre-les-fetes.md) | Deejay Di et Samantha | Radio Blague |
 | 169 | [B159 — Le visage](blague-b159-le-visage.md) | Deejay Di et Samantha | Radio Blague |
 | 170 | [B160 — Les tampons](blague-b160-les-tampons.md) | Deejay Di et Samantha | Radio Blague |
+| 171 | [B161 — Le code](blague-b161-le-code.md) | Deejay Di et Samantha | Radio Blague |
+| 172 | [B162 — Canard ou profiteroles](blague-b162-canard-ou-profiteroles.md) | Deejay Di et Samantha | Radio Blague |
+| 173 | [B163 — L alcool](blague-b163-l-alcool.md) | Deejay Di et Samantha | Radio Blague |
+| 174 | [B164 — Le loto](blague-b164-le-loto.md) | Deejay Di et Samantha | Radio Blague |
+| 175 | [B165 — L eau chaude](blague-b165-l-eau-chaude.md) | Deejay Di et Samantha | Radio Blague |

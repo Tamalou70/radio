@@ -664,6 +664,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 15.57,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b121-la-musique.mp3": {
+  "debut": 0,
+  "fin": 28.43,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b122-la-loupe.mp3": {
+  "debut": 0,
+  "fin": 16.45,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b123-la-poupee.mp3": {
+  "debut": 0,
+  "fin": 17.15,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b124-le-bras.mp3": {
+  "debut": 0,
+  "fin": 16.69,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b125-la-signature.mp3": {
+  "debut": 0,
+  "fin": 46.01,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1446,5 +1471,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 8 — à juger","B117 — Thermometre","",16,0.37,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b117-thermometre.mp3","blague","Deejay Di et Samantha","B117 — Thermometre","blague-b117-thermometre",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 8 — à juger","B118 — Le signe","",17,0.39,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b118-le-signe.mp3","blague","Deejay Di et Samantha","B118 — Le signe","blague-b118-le-signe",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 8 — à juger","B119 — La pluie","",14,0.32,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b119-la-pluie.mp3","blague","Deejay Di et Samantha","B119 — La pluie","blague-b119-la-pluie",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 8 — à juger","B120 — Les mariages","",16,0.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b120-les-mariages.mp3","blague","Deejay Di et Samantha","B120 — Les mariages","blague-b120-les-mariages",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 8 — à juger","B120 — Les mariages","",16,0.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b120-les-mariages.mp3","blague","Deejay Di et Samantha","B120 — Les mariages","blague-b120-les-mariages",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 8 — à juger","B121 — La musique","",30,0.69,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b121-la-musique.mp3","blague","Deejay Di et Samantha","B121 — La musique","blague-b121-la-musique",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 8 — à juger","B122 — La loupe","",16,0.38,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b122-la-loupe.mp3","blague","Deejay Di et Samantha","B122 — La loupe","blague-b122-la-loupe",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 8 — à juger","B123 — La poupee","",17,0.39,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b123-la-poupee.mp3","blague","Deejay Di et Samantha","B123 — La poupee","blague-b123-la-poupee",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 8 — à juger","B124 — Le bras","",17,0.38,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b124-le-bras.mp3","blague","Deejay Di et Samantha","B124 — Le bras","blague-b124-le-bras",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 8 — à juger","B125 — La signature","",48,1.09,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b125-la-signature.mp3","blague","Deejay Di et Samantha","B125 — La signature","blague-b125-la-signature",0,"blague",1,"sur","création maison"]
 ];

@@ -137,3 +137,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 128 | [B118 — Le signe](blague-b118-le-signe.md) | Deejay Di et Samantha | Radio Blague |
 | 129 | [B119 — La pluie](blague-b119-la-pluie.md) | Deejay Di et Samantha | Radio Blague |
 | 130 | [B120 — Les mariages](blague-b120-les-mariages.md) | Deejay Di et Samantha | Radio Blague |
+| 131 | [B121 — La musique](blague-b121-la-musique.md) | Deejay Di et Samantha | Radio Blague |
+| 132 | [B122 — La loupe](blague-b122-la-loupe.md) | Deejay Di et Samantha | Radio Blague |
+| 133 | [B123 — La poupee](blague-b123-la-poupee.md) | Deejay Di et Samantha | Radio Blague |
+| 134 | [B124 — Le bras](blague-b124-le-bras.md) | Deejay Di et Samantha | Radio Blague |
+| 135 | [B125 — La signature](blague-b125-la-signature.md) | Deejay Di et Samantha | Radio Blague |

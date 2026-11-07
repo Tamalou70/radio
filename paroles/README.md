@@ -152,3 +152,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 143 | [B133 — Lave verres](blague-b133-lave-verres.md) | Deejay Di et Samantha | Radio Blague |
 | 144 | [B134 — Las venturas](blague-b134-las-venturas.md) | Deejay Di et Samantha | Radio Blague |
 | 145 | [B135 — Carte postale](blague-b135-carte-postale.md) | Deejay Di et Samantha | Radio Blague |
+| 146 | [B136 — Bigoudis](blague-b136-bigoudis.md) | Deejay Di et Samantha | Radio Blague |
+| 147 | [B137 — La valise](blague-b137-la-valise.md) | Deejay Di et Samantha | Radio Blague |
+| 148 | [B138 — Plaisir et enerve](blague-b138-plaisir-et-enerve.md) | Deejay Di et Samantha | Radio Blague |
+| 149 | [B139 — Maman arrive](blague-b139-maman-arrive.md) | Deejay Di et Samantha | Radio Blague |
+| 150 | [B140 — La finale](blague-b140-la-finale.md) | Deejay Di et Samantha | Radio Blague |

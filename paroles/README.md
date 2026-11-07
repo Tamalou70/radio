@@ -132,3 +132,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 123 | [B113 — Harmonie](blague-b113-harmonie.md) | Deejay Di et Samantha | Radio Blague |
 | 124 | [B114 — Premier avril](blague-b114-premier-avril.md) | Deejay Di et Samantha | Radio Blague |
 | 125 | [B115 — La poubelle](blague-b115-la-poubelle.md) | Deejay Di et Samantha | Radio Blague |
+| 126 | [B116 — L annonce](blague-b116-l-annonce.md) | Deejay Di et Samantha | Radio Blague |
+| 127 | [B117 — Thermometre](blague-b117-thermometre.md) | Deejay Di et Samantha | Radio Blague |
+| 128 | [B118 — Le signe](blague-b118-le-signe.md) | Deejay Di et Samantha | Radio Blague |
+| 129 | [B119 — La pluie](blague-b119-la-pluie.md) | Deejay Di et Samantha | Radio Blague |
+| 130 | [B120 — Les mariages](blague-b120-les-mariages.md) | Deejay Di et Samantha | Radio Blague |

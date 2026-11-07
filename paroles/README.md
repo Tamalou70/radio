@@ -227,3 +227,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 218 | [B208 — Le quatre quatre](blague-b208-le-quatre-quatre.md) | Deejay Di et Samantha | Radio Blague |
 | 219 | [B209 — Charles henri blaise](blague-b209-charles-henri-blaise.md) | Deejay Di et Samantha | Radio Blague |
 | 220 | [B210 — Le faux appel](blague-b210-le-faux-appel.md) | Deejay Di et Samantha | Radio Blague |
+| 221 | [B211 — Six mulets](blague-b211-six-mulets.md) | Deejay Di et Samantha | Radio Blague |
+| 222 | [B212 — Comme une chienne](blague-b212-comme-une-chienne.md) | Deejay Di et Samantha | Radio Blague |
+| 223 | [B213 — Mon minou](blague-b213-mon-minou.md) | Deejay Di et Samantha | Radio Blague |
+| 224 | [B214 — Orange](blague-b214-orange.md) | Deejay Di et Samantha | Radio Blague |
+| 225 | [B215 — La rancon](blague-b215-la-rancon.md) | Deejay Di et Samantha | Radio Blague |

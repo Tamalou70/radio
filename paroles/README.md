@@ -47,3 +47,23 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 38 | [Tunnel](pleins-phares-tunnel.md) | Pleins Phares | Radio Techno |
 | 39 | [Lac à sec](alamo-303-lac-a-sec.md) | Alamo 303 | Radio Techno |
 | 40 | [Lac à sec (version 2)](alamo-303-lac-a-sec-2.md) | Alamo 303 | Radio Techno |
+| 41 | [B011 — Satan](blague-b011-satan.md) | Deejay Di et Samantha | Radio Blague |
+| 42 | [B012 — Le lapsus](blague-b012-lapsus.md) | Deejay Di et Samantha | Radio Blague |
+| 43 | [B013 — Le poulet](blague-b013-poulet.md) | Deejay Di et Samantha | Radio Blague |
+| 44 | [B014 — Le sexologue](blague-b014-sexologue.md) | Deejay Di et Samantha | Radio Blague |
+| 45 | [B015 — Le gendre](blague-b015-gendre.md) | Deejay Di et Samantha | Radio Blague |
+| 46 | [B019 — En or](blague-b019-en-or.md) | Deejay Di et Samantha | Radio Blague |
+| 47 | [B020 — Elle me l'a dit](blague-b020-elle-me-la-dit.md) | Deejay Di et Samantha | Radio Blague |
+| 48 | [B021 — Les moules](blague-b021-moules.md) | Deejay Di et Samantha | Radio Blague |
+| 49 | [B022 — La vie](blague-b022-la-vie.md) | Deejay Di et Samantha | Radio Blague |
+| 50 | [B024 — Le pot](blague-b024-le-pot.md) | Deejay Di et Samantha | Radio Blague |
+| 51 | [B026 — Le petit doigt](blague-b026-petit-doigt.md) | Deejay Di et Samantha | Radio Blague |
+| 52 | [B027 — Avalé](blague-b027-avale.md) | Deejay Di et Samantha | Radio Blague |
+| 53 | [B031 — Le capitaine Crochet](blague-b031-capitaine-crochet.md) | Deejay Di et Samantha | Radio Blague |
+| 54 | [B032 — Sans queue ni tête](blague-b032-sans-queue-ni-tete.md) | Deejay Di et Samantha | Radio Blague |
+| 55 | [B033 — Des choses sales](blague-b033-choses-sales.md) | Deejay Di et Samantha | Radio Blague |
+| 56 | [B034 — L'interphone](blague-b034-interphone.md) | Deejay Di et Samantha | Radio Blague |
+| 57 | [B036 — Le compliment](blague-b036-compliment.md) | Deejay Di et Samantha | Radio Blague |
+| 58 | [B037 — Le pare-brise](blague-b037-pare-brise.md) | Deejay Di et Samantha | Radio Blague |
+| 59 | [B039 — Les mouchoirs](blague-b039-mouchoirs.md) | Deejay Di et Samantha | Radio Blague |
+| 60 | [B040 — Le nom de jeune fille](blague-b040-nom-de-jeune-fille.md) | Deejay Di et Samantha | Radio Blague |

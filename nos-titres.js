@@ -214,6 +214,106 @@ window.MESURES = {
   "debut": 0,
   "fin": 209.98,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b011-satan.mp3": {
+  "debut": 0,
+  "fin": 15.2,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b012-lapsus.mp3": {
+  "debut": 0,
+  "fin": 15.2,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b013-poulet.mp3": {
+  "debut": 0,
+  "fin": 14.57,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b014-sexologue.mp3": {
+  "debut": 0,
+  "fin": 38.07,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b015-gendre.mp3": {
+  "debut": 0,
+  "fin": 33.73,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b019-en-or.mp3": {
+  "debut": 0,
+  "fin": 12.75,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b020-elle-me-la-dit.mp3": {
+  "debut": 0,
+  "fin": 9.61,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b021-moules.mp3": {
+  "debut": 0,
+  "fin": 15.72,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b022-la-vie.mp3": {
+  "debut": 0,
+  "fin": 13.98,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b024-le-pot.mp3": {
+  "debut": 0,
+  "fin": 60.22,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b026-petit-doigt.mp3": {
+  "debut": 0,
+  "fin": 12.26,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b027-avale.mp3": {
+  "debut": 0,
+  "fin": 14.93,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b031-capitaine-crochet.mp3": {
+  "debut": 0,
+  "fin": 12.03,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b032-sans-queue-ni-tete.mp3": {
+  "debut": 0,
+  "fin": 14.24,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b033-choses-sales.mp3": {
+  "debut": 0,
+  "fin": 16.18,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b034-interphone.mp3": {
+  "debut": 0,
+  "fin": 40.97,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b036-compliment.mp3": {
+  "debut": 0,
+  "fin": 11.8,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b037-pare-brise.mp3": {
+  "debut": 0,
+  "fin": 12.51,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b039-mouchoirs.mp3": {
+  "debut": 0,
+  "fin": 14.06,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b040-nom-de-jeune-fille.mp3": {
+  "debut": 0,
+  "fin": 17.86,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -906,5 +1006,25 @@ window.CATALOGUE = [
 ["Pleins Phares","","Pied au plancher (version 3)","",180,7.17,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/pleins-phares-pied-au-plancher-3.mp3","techno","Pleins Phares","Pied au plancher (version 3)","pleins-phares-pied-au-plancher-3",0,"techno",1,"sur","création maison"],
 ["Pleins Phares","","Tunnel","",180,6.95,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/pleins-phares-tunnel.mp3","techno","Pleins Phares","Tunnel","pleins-phares-tunnel",0,"techno",1,"sur","création maison"],
 ["Alamo 303","","Lac à sec","",210,8.18,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/alamo-303-lac-a-sec.mp3","techno","Alamo 303","Lac à sec","alamo-303-lac-a-sec",0,"techno",1,"sur","création maison"],
-["Alamo 303","","Lac à sec (version 2)","",210,8.49,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/alamo-303-lac-a-sec-2.mp3","techno","Alamo 303","Lac à sec (version 2)","alamo-303-lac-a-sec-2",0,"techno",1,"sur","création maison"]
+["Alamo 303","","Lac à sec (version 2)","",210,8.49,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/alamo-303-lac-a-sec-2.mp3","techno","Alamo 303","Lac à sec (version 2)","alamo-303-lac-a-sec-2",0,"techno",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B011 — Satan","",15,0.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b011-satan.mp3","blague","Deejay Di et Samantha","B011 — Satan","blague-b011-satan",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B012 — Le lapsus","",15,0.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b012-lapsus.mp3","blague","Deejay Di et Samantha","B012 — Le lapsus","blague-b012-lapsus",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B013 — Le poulet","",15,0.34,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b013-poulet.mp3","blague","Deejay Di et Samantha","B013 — Le poulet","blague-b013-poulet",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B014 — Le sexologue","",40,0.91,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b014-sexologue.mp3","blague","Deejay Di et Samantha","B014 — Le sexologue","blague-b014-sexologue",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B015 — Le gendre","",35,0.81,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b015-gendre.mp3","blague","Deejay Di et Samantha","B015 — Le gendre","blague-b015-gendre",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B019 — En or","",13,0.29,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b019-en-or.mp3","blague","Deejay Di et Samantha","B019 — En or","blague-b019-en-or",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B020 — Elle me l'a dit","",10,0.22,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b020-elle-me-la-dit.mp3","blague","Deejay Di et Samantha","B020 — Elle me l'a dit","blague-b020-elle-me-la-dit",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B021 — Les moules","",16,0.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b021-moules.mp3","blague","Deejay Di et Samantha","B021 — Les moules","blague-b021-moules",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B022 — La vie","",14,0.32,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b022-la-vie.mp3","blague","Deejay Di et Samantha","B022 — La vie","blague-b022-la-vie",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B024 — Le pot","",62,1.41,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b024-le-pot.mp3","blague","Deejay Di et Samantha","B024 — Le pot","blague-b024-le-pot",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B026 — Le petit doigt","",12,0.28,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b026-petit-doigt.mp3","blague","Deejay Di et Samantha","B026 — Le petit doigt","blague-b026-petit-doigt",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B027 — Avalé","",15,0.34,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b027-avale.mp3","blague","Deejay Di et Samantha","B027 — Avalé","blague-b027-avale",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B031 — Le capitaine Crochet","",12,0.28,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b031-capitaine-crochet.mp3","blague","Deejay Di et Samantha","B031 — Le capitaine Crochet","blague-b031-capitaine-crochet",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B032 — Sans queue ni tête","",14,0.33,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b032-sans-queue-ni-tete.mp3","blague","Deejay Di et Samantha","B032 — Sans queue ni tête","blague-b032-sans-queue-ni-tete",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B033 — Des choses sales","",16,0.37,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b033-choses-sales.mp3","blague","Deejay Di et Samantha","B033 — Des choses sales","blague-b033-choses-sales",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B034 — L'interphone","",43,0.97,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b034-interphone.mp3","blague","Deejay Di et Samantha","B034 — L'interphone","blague-b034-interphone",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B036 — Le compliment","",12,0.27,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b036-compliment.mp3","blague","Deejay Di et Samantha","B036 — Le compliment","blague-b036-compliment",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B037 — Le pare-brise","",13,0.29,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b037-pare-brise.mp3","blague","Deejay Di et Samantha","B037 — Le pare-brise","blague-b037-pare-brise",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B039 — Les mouchoirs","",14,0.32,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b039-mouchoirs.mp3","blague","Deejay Di et Samantha","B039 — Les mouchoirs","blague-b039-mouchoirs",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 1 — validées sur le texte","B040 — Le nom de jeune fille","",18,0.41,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b040-nom-de-jeune-fille.mp3","blague","Deejay Di et Samantha","B040 — Le nom de jeune fille","blague-b040-nom-de-jeune-fille",0,"blague",1,"sur","création maison"]
 ];

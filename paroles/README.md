@@ -167,3 +167,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 158 | [B148 — Apres le mariage](blague-b148-apres-le-mariage.md) | Deejay Di et Samantha | Radio Blague |
 | 159 | [B149 — Nymphomane](blague-b149-nymphomane.md) | Deejay Di et Samantha | Radio Blague |
 | 160 | [B150 — Cheval au telephone](blague-b150-cheval-au-telephone.md) | Deejay Di et Samantha | Radio Blague |
+| 161 | [B151 — Propre pas vide](blague-b151-propre-pas-vide.md) | Deejay Di et Samantha | Radio Blague |
+| 162 | [B152 — Le canard](blague-b152-le-canard.md) | Deejay Di et Samantha | Radio Blague |
+| 163 | [B153 — La batte](blague-b153-la-batte.md) | Deejay Di et Samantha | Radio Blague |
+| 164 | [B154 — Barbecue](blague-b154-barbecue.md) | Deejay Di et Samantha | Radio Blague |
+| 165 | [B155 — Lancelot](blague-b155-lancelot.md) | Deejay Di et Samantha | Radio Blague |

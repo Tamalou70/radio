@@ -814,6 +814,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 37.65,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b151-propre-pas-vide.mp3": {
+  "debut": 0,
+  "fin": 39.82,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b152-le-canard.mp3": {
+  "debut": 0,
+  "fin": 45.05,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b153-la-batte.mp3": {
+  "debut": 0,
+  "fin": 30.86,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b154-barbecue.mp3": {
+  "debut": 0,
+  "fin": 20.63,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b155-lancelot.mp3": {
+  "debut": 0,
+  "fin": 38.18,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1626,5 +1651,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 11 — à juger","B147 — Le texto","",15,0.34,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b147-le-texto.mp3","blague","Deejay Di et Samantha","B147 — Le texto","blague-b147-le-texto",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 11 — à juger","B148 — Apres le mariage","",19,0.44,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b148-apres-le-mariage.mp3","blague","Deejay Di et Samantha","B148 — Apres le mariage","blague-b148-apres-le-mariage",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 11 — à juger","B149 — Nymphomane","",13,0.29,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b149-nymphomane.mp3","blague","Deejay Di et Samantha","B149 — Nymphomane","blague-b149-nymphomane",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 11 — à juger","B150 — Cheval au telephone","",39,0.9,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b150-cheval-au-telephone.mp3","blague","Deejay Di et Samantha","B150 — Cheval au telephone","blague-b150-cheval-au-telephone",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 11 — à juger","B150 — Cheval au telephone","",39,0.9,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b150-cheval-au-telephone.mp3","blague","Deejay Di et Samantha","B150 — Cheval au telephone","blague-b150-cheval-au-telephone",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 11 — à juger","B151 — Propre pas vide","",41,0.95,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b151-propre-pas-vide.mp3","blague","Deejay Di et Samantha","B151 — Propre pas vide","blague-b151-propre-pas-vide",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 11 — à juger","B152 — Le canard","",47,1.07,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b152-le-canard.mp3","blague","Deejay Di et Samantha","B152 — Le canard","blague-b152-le-canard",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 11 — à juger","B153 — La batte","",32,0.74,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b153-la-batte.mp3","blague","Deejay Di et Samantha","B153 — La batte","blague-b153-la-batte",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 11 — à juger","B154 — Barbecue","",21,0.47,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b154-barbecue.mp3","blague","Deejay Di et Samantha","B154 — Barbecue","blague-b154-barbecue",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 11 — à juger","B155 — Lancelot","",40,0.91,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b155-lancelot.mp3","blague","Deejay Di et Samantha","B155 — Lancelot","blague-b155-lancelot",0,"blague",1,"sur","création maison"]
 ];

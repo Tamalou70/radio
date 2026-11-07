@@ -172,3 +172,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 163 | [B153 — La batte](blague-b153-la-batte.md) | Deejay Di et Samantha | Radio Blague |
 | 164 | [B154 — Barbecue](blague-b154-barbecue.md) | Deejay Di et Samantha | Radio Blague |
 | 165 | [B155 — Lancelot](blague-b155-lancelot.md) | Deejay Di et Samantha | Radio Blague |
+| 166 | [B156 — Le bus](blague-b156-le-bus.md) | Deejay Di et Samantha | Radio Blague |
+| 167 | [B157 — Les ecureuils](blague-b157-les-ecureuils.md) | Deejay Di et Samantha | Radio Blague |
+| 168 | [B158 — Entre les fetes](blague-b158-entre-les-fetes.md) | Deejay Di et Samantha | Radio Blague |
+| 169 | [B159 — Le visage](blague-b159-le-visage.md) | Deejay Di et Samantha | Radio Blague |
+| 170 | [B160 — Les tampons](blague-b160-les-tampons.md) | Deejay Di et Samantha | Radio Blague |

@@ -839,6 +839,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 38.18,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b156-le-bus.mp3": {
+  "debut": 0,
+  "fin": 17.62,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b157-les-ecureuils.mp3": {
+  "debut": 0,
+  "fin": 41.6,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b158-entre-les-fetes.mp3": {
+  "debut": 0,
+  "fin": 18.5,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b159-le-visage.mp3": {
+  "debut": 0,
+  "fin": 15.57,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b160-les-tampons.mp3": {
+  "debut": 0,
+  "fin": 29.11,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1656,5 +1681,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 11 — à juger","B152 — Le canard","",47,1.07,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b152-le-canard.mp3","blague","Deejay Di et Samantha","B152 — Le canard","blague-b152-le-canard",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 11 — à juger","B153 — La batte","",32,0.74,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b153-la-batte.mp3","blague","Deejay Di et Samantha","B153 — La batte","blague-b153-la-batte",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 11 — à juger","B154 — Barbecue","",21,0.47,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b154-barbecue.mp3","blague","Deejay Di et Samantha","B154 — Barbecue","blague-b154-barbecue",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 11 — à juger","B155 — Lancelot","",40,0.91,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b155-lancelot.mp3","blague","Deejay Di et Samantha","B155 — Lancelot","blague-b155-lancelot",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 11 — à juger","B155 — Lancelot","",40,0.91,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b155-lancelot.mp3","blague","Deejay Di et Samantha","B155 — Lancelot","blague-b155-lancelot",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 12 — à juger","B156 — Le bus","",18,0.4,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b156-le-bus.mp3","blague","Deejay Di et Samantha","B156 — Le bus","blague-b156-le-bus",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 12 — à juger","B157 — Les ecureuils","",43,0.99,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b157-les-ecureuils.mp3","blague","Deejay Di et Samantha","B157 — Les ecureuils","blague-b157-les-ecureuils",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 12 — à juger","B158 — Entre les fetes","",19,0.42,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b158-entre-les-fetes.mp3","blague","Deejay Di et Samantha","B158 — Entre les fetes","blague-b158-entre-les-fetes",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 12 — à juger","B159 — Le visage","",16,0.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b159-le-visage.mp3","blague","Deejay Di et Samantha","B159 — Le visage","blague-b159-le-visage",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 12 — à juger","B160 — Les tampons","",31,0.7,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b160-les-tampons.mp3","blague","Deejay Di et Samantha","B160 — Les tampons","blague-b160-les-tampons",0,"blague",1,"sur","création maison"]
 ];

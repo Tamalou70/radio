@@ -1014,6 +1014,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 18.27,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b191-trois.mp3": {
+  "debut": 0,
+  "fin": 17.73,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b192-julie.mp3": {
+  "debut": 0,
+  "fin": 15.64,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b193-le-tatouage.mp3": {
+  "debut": 0,
+  "fin": 24.96,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b194-de-la-part-de-qui.mp3": {
+  "debut": 0,
+  "fin": 19.37,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b195-la-pension.mp3": {
+  "debut": 0,
+  "fin": 23.01,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1866,5 +1891,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 15 — à juger","B187 — Foufoune et zizi","",17,0.4,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b187-foufoune-et-zizi.mp3","blague","Deejay Di et Samantha","B187 — Foufoune et zizi","blague-b187-foufoune-et-zizi",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 15 — à juger","B188 — Misericorde","",20,0.46,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b188-misericorde.mp3","blague","Deejay Di et Samantha","B188 — Misericorde","blague-b188-misericorde",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 15 — à juger","B189 — Les journaux","",24,0.55,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b189-les-journaux.mp3","blague","Deejay Di et Samantha","B189 — Les journaux","blague-b189-les-journaux",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 15 — à juger","B190 — Le magazine","",18,0.42,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b190-le-magazine.mp3","blague","Deejay Di et Samantha","B190 — Le magazine","blague-b190-le-magazine",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 15 — à juger","B190 — Le magazine","",18,0.42,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b190-le-magazine.mp3","blague","Deejay Di et Samantha","B190 — Le magazine","blague-b190-le-magazine",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 15 — à juger","B191 — Trois","",18,0.41,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b191-trois.mp3","blague","Deejay Di et Samantha","B191 — Trois","blague-b191-trois",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 15 — à juger","B192 — Julie","",16,0.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b192-julie.mp3","blague","Deejay Di et Samantha","B192 — Julie","blague-b192-julie",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 15 — à juger","B193 — Le tatouage","",26,0.61,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b193-le-tatouage.mp3","blague","Deejay Di et Samantha","B193 — Le tatouage","blague-b193-le-tatouage",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 15 — à juger","B194 — De la part de qui","",19,0.44,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b194-de-la-part-de-qui.mp3","blague","Deejay Di et Samantha","B194 — De la part de qui","blague-b194-de-la-part-de-qui",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 15 — à juger","B195 — La pension","",25,0.56,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b195-la-pension.mp3","blague","Deejay Di et Samantha","B195 — La pension","blague-b195-la-pension",0,"blague",1,"sur","création maison"]
 ];

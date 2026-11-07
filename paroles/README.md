@@ -207,3 +207,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 198 | [B188 — Misericorde](blague-b188-misericorde.md) | Deejay Di et Samantha | Radio Blague |
 | 199 | [B189 — Les journaux](blague-b189-les-journaux.md) | Deejay Di et Samantha | Radio Blague |
 | 200 | [B190 — Le magazine](blague-b190-le-magazine.md) | Deejay Di et Samantha | Radio Blague |
+| 201 | [B191 — Trois](blague-b191-trois.md) | Deejay Di et Samantha | Radio Blague |
+| 202 | [B192 — Julie](blague-b192-julie.md) | Deejay Di et Samantha | Radio Blague |
+| 203 | [B193 — Le tatouage](blague-b193-le-tatouage.md) | Deejay Di et Samantha | Radio Blague |
+| 204 | [B194 — De la part de qui](blague-b194-de-la-part-de-qui.md) | Deejay Di et Samantha | Radio Blague |
+| 205 | [B195 — La pension](blague-b195-la-pension.md) | Deejay Di et Samantha | Radio Blague |

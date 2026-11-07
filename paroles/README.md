@@ -107,3 +107,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 98 | [B088 — La surprise](blague-b088-la-surprise.md) | Deejay Di et Samantha | Radio Blague |
 | 99 | [B089 — Opportunite](blague-b089-opportunite.md) | Deejay Di et Samantha | Radio Blague |
 | 100 | [B090 — Mot de passe](blague-b090-mot-de-passe.md) | Deejay Di et Samantha | Radio Blague |
+| 101 | [B091 — Les potes](blague-b091-les-potes.md) | Deejay Di et Samantha | Radio Blague |
+| 102 | [B092 — Chameau](blague-b092-chameau.md) | Deejay Di et Samantha | Radio Blague |
+| 103 | [B093 — Bar cimetiere](blague-b093-bar-cimetiere.md) | Deejay Di et Samantha | Radio Blague |
+| 104 | [B094 — Sable ciment](blague-b094-sable-ciment.md) | Deejay Di et Samantha | Radio Blague |
+| 105 | [B095 — Examen](blague-b095-examen.md) | Deejay Di et Samantha | Radio Blague |

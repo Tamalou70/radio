@@ -514,6 +514,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 17.53,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b091-les-potes.mp3": {
+  "debut": 0,
+  "fin": 17.47,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b092-chameau.mp3": {
+  "debut": 0,
+  "fin": 10.22,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b093-bar-cimetiere.mp3": {
+  "debut": 0,
+  "fin": 20.18,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b094-sable-ciment.mp3": {
+  "debut": 0,
+  "fin": 14.34,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b095-examen.mp3": {
+  "debut": 0,
+  "fin": 24.77,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1266,5 +1291,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 5 — à juger","B087 — Pharmacien","",45,1.04,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b087-pharmacien.mp3","blague","Deejay Di et Samantha","B087 — Pharmacien","blague-b087-pharmacien",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 5 — à juger","B088 — La surprise","",21,0.48,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b088-la-surprise.mp3","blague","Deejay Di et Samantha","B088 — La surprise","blague-b088-la-surprise",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 5 — à juger","B089 — Opportunite","",22,0.52,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b089-opportunite.mp3","blague","Deejay Di et Samantha","B089 — Opportunite","blague-b089-opportunite",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 5 — à juger","B090 — Mot de passe","",18,0.4,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b090-mot-de-passe.mp3","blague","Deejay Di et Samantha","B090 — Mot de passe","blague-b090-mot-de-passe",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 5 — à juger","B090 — Mot de passe","",18,0.4,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b090-mot-de-passe.mp3","blague","Deejay Di et Samantha","B090 — Mot de passe","blague-b090-mot-de-passe",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 5 — à juger","B091 — Les potes","",17,0.4,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b091-les-potes.mp3","blague","Deejay Di et Samantha","B091 — Les potes","blague-b091-les-potes",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 5 — à juger","B092 — Chameau","",10,0.24,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b092-chameau.mp3","blague","Deejay Di et Samantha","B092 — Chameau","blague-b092-chameau",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 5 — à juger","B093 — Bar cimetiere","",22,0.5,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b093-bar-cimetiere.mp3","blague","Deejay Di et Samantha","B093 — Bar cimetiere","blague-b093-bar-cimetiere",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 5 — à juger","B094 — Sable ciment","",14,0.33,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b094-sable-ciment.mp3","blague","Deejay Di et Samantha","B094 — Sable ciment","blague-b094-sable-ciment",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 5 — à juger","B095 — Examen","",26,0.6,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b095-examen.mp3","blague","Deejay Di et Samantha","B095 — Examen","blague-b095-examen",0,"blague",1,"sur","création maison"]
 ];

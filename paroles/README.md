@@ -97,3 +97,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 88 | [B078 — La cinquantaine](blague-b078-la-cinquantaine.md) | Deejay Di et Samantha | Radio Blague |
 | 89 | [B079 — A part ta mere](blague-b079-a-part-ta-mere.md) | Deejay Di et Samantha | Radio Blague |
 | 90 | [B080 — Tee shirt](blague-b080-tee-shirt.md) | Deejay Di et Samantha | Radio Blague |
+| 91 | [B081 — Adoptee](blague-b081-adoptee.md) | Deejay Di et Samantha | Radio Blague |
+| 92 | [B082 — Les numeros](blague-b082-les-numeros.md) | Deejay Di et Samantha | Radio Blague |
+| 93 | [B083 — Calendrier](blague-b083-calendrier.md) | Deejay Di et Samantha | Radio Blague |
+| 94 | [B084 — Test belle mere](blague-b084-test-belle-mere.md) | Deejay Di et Samantha | Radio Blague |
+| 95 | [B085 — L addition](blague-b085-l-addition.md) | Deejay Di et Samantha | Radio Blague |

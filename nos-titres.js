@@ -464,6 +464,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 11.71,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b081-adoptee.mp3": {
+  "debut": 0,
+  "fin": 12.74,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b082-les-numeros.mp3": {
+  "debut": 0,
+  "fin": 8.41,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b083-calendrier.mp3": {
+  "debut": 0,
+  "fin": 14.79,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b084-test-belle-mere.mp3": {
+  "debut": 0,
+  "fin": 38.92,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b085-l-addition.mp3": {
+  "debut": 0,
+  "fin": 20.75,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1206,5 +1231,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 4 — à juger","B077 — Table a repasser","",23,0.52,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b077-table-a-repasser.mp3","blague","Deejay Di et Samantha","B077 — Table a repasser","blague-b077-table-a-repasser",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 4 — à juger","B078 — La cinquantaine","",15,0.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b078-la-cinquantaine.mp3","blague","Deejay Di et Samantha","B078 — La cinquantaine","blague-b078-la-cinquantaine",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 4 — à juger","B079 — A part ta mere","",9,0.2,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b079-a-part-ta-mere.mp3","blague","Deejay Di et Samantha","B079 — A part ta mere","blague-b079-a-part-ta-mere",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 4 — à juger","B080 — Tee shirt","",12,0.27,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b080-tee-shirt.mp3","blague","Deejay Di et Samantha","B080 — Tee shirt","blague-b080-tee-shirt",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 4 — à juger","B080 — Tee shirt","",12,0.27,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b080-tee-shirt.mp3","blague","Deejay Di et Samantha","B080 — Tee shirt","blague-b080-tee-shirt",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 4 — à juger","B081 — Adoptee","",13,0.29,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b081-adoptee.mp3","blague","Deejay Di et Samantha","B081 — Adoptee","blague-b081-adoptee",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 4 — à juger","B082 — Les numeros","",8,0.19,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b082-les-numeros.mp3","blague","Deejay Di et Samantha","B082 — Les numeros","blague-b082-les-numeros",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 4 — à juger","B083 — Calendrier","",15,0.34,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b083-calendrier.mp3","blague","Deejay Di et Samantha","B083 — Calendrier","blague-b083-calendrier",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 4 — à juger","B084 — Test belle mere","",40,0.93,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b084-test-belle-mere.mp3","blague","Deejay Di et Samantha","B084 — Test belle mere","blague-b084-test-belle-mere",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 4 — à juger","B085 — L addition","",22,0.51,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b085-l-addition.mp3","blague","Deejay Di et Samantha","B085 — L addition","blague-b085-l-addition",0,"blague",1,"sur","création maison"]
 ];

@@ -939,6 +939,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 28.82,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b176-la-fenetre.mp3": {
+  "debut": 0,
+  "fin": 20.7,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b177-la-pipe.mp3": {
+  "debut": 0,
+  "fin": 25.56,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b178-encephalorectum.mp3": {
+  "debut": 0,
+  "fin": 19.86,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b179-comme-sur-la-route.mp3": {
+  "debut": 0,
+  "fin": 20.82,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b180-pour-des-prunes.mp3": {
+  "debut": 0,
+  "fin": 12.26,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1776,5 +1801,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 13 — à juger","B172 — Le producteur","",34,0.79,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b172-le-producteur.mp3","blague","Deejay Di et Samantha","B172 — Le producteur","blague-b172-le-producteur",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 13 — à juger","B173 — Matthieu","",23,0.53,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b173-matthieu.mp3","blague","Deejay Di et Samantha","B173 — Matthieu","blague-b173-matthieu",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 13 — à juger","B174 — Sans voix","",25,0.57,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b174-sans-voix.mp3","blague","Deejay Di et Samantha","B174 — Sans voix","blague-b174-sans-voix",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 13 — à juger","B175 — Et cetera","",30,0.7,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b175-et-cetera.mp3","blague","Deejay Di et Samantha","B175 — Et cetera","blague-b175-et-cetera",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 13 — à juger","B175 — Et cetera","",30,0.7,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b175-et-cetera.mp3","blague","Deejay Di et Samantha","B175 — Et cetera","blague-b175-et-cetera",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 14 — à juger","B176 — La fenetre","",22,0.51,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b176-la-fenetre.mp3","blague","Deejay Di et Samantha","B176 — La fenetre","blague-b176-la-fenetre",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 14 — à juger","B177 — La pipe","",27,0.62,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b177-la-pipe.mp3","blague","Deejay Di et Samantha","B177 — La pipe","blague-b177-la-pipe",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 14 — à juger","B178 — Encephalorectum","",20,0.46,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b178-encephalorectum.mp3","blague","Deejay Di et Samantha","B178 — Encephalorectum","blague-b178-encephalorectum",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 14 — à juger","B179 — Comme sur la route","",22,0.51,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b179-comme-sur-la-route.mp3","blague","Deejay Di et Samantha","B179 — Comme sur la route","blague-b179-comme-sur-la-route",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 14 — à juger","B180 — Pour des prunes","",12,0.28,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b180-pour-des-prunes.mp3","blague","Deejay Di et Samantha","B180 — Pour des prunes","blague-b180-pour-des-prunes",0,"blague",1,"sur","création maison"]
 ];

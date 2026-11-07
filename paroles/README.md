@@ -192,3 +192,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 183 | [B173 — Matthieu](blague-b173-matthieu.md) | Deejay Di et Samantha | Radio Blague |
 | 184 | [B174 — Sans voix](blague-b174-sans-voix.md) | Deejay Di et Samantha | Radio Blague |
 | 185 | [B175 — Et cetera](blague-b175-et-cetera.md) | Deejay Di et Samantha | Radio Blague |
+| 186 | [B176 — La fenetre](blague-b176-la-fenetre.md) | Deejay Di et Samantha | Radio Blague |
+| 187 | [B177 — La pipe](blague-b177-la-pipe.md) | Deejay Di et Samantha | Radio Blague |
+| 188 | [B178 — Encephalorectum](blague-b178-encephalorectum.md) | Deejay Di et Samantha | Radio Blague |
+| 189 | [B179 — Comme sur la route](blague-b179-comme-sur-la-route.md) | Deejay Di et Samantha | Radio Blague |
+| 190 | [B180 — Pour des prunes](blague-b180-pour-des-prunes.md) | Deejay Di et Samantha | Radio Blague |

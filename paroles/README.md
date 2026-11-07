@@ -222,3 +222,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 213 | [B203 — La soeur](blague-b203-la-soeur.md) | Deejay Di et Samantha | Radio Blague |
 | 214 | [B204 — Le clitoris](blague-b204-le-clitoris.md) | Deejay Di et Samantha | Radio Blague |
 | 215 | [B205 — L etiquette](blague-b205-l-etiquette.md) | Deejay Di et Samantha | Radio Blague |
+| 216 | [B206 — Les grillons](blague-b206-les-grillons.md) | Deejay Di et Samantha | Radio Blague |
+| 217 | [B207 — La banane](blague-b207-la-banane.md) | Deejay Di et Samantha | Radio Blague |
+| 218 | [B208 — Le quatre quatre](blague-b208-le-quatre-quatre.md) | Deejay Di et Samantha | Radio Blague |
+| 219 | [B209 — Charles henri blaise](blague-b209-charles-henri-blaise.md) | Deejay Di et Samantha | Radio Blague |
+| 220 | [B210 — Le faux appel](blague-b210-le-faux-appel.md) | Deejay Di et Samantha | Radio Blague |

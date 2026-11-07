@@ -187,3 +187,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 178 | [B168 — Six jours](blague-b168-six-jours.md) | Deejay Di et Samantha | Radio Blague |
 | 179 | [B169 — Les patates](blague-b169-les-patates.md) | Deejay Di et Samantha | Radio Blague |
 | 180 | [B170 — Mignonne](blague-b170-mignonne.md) | Deejay Di et Samantha | Radio Blague |
+| 181 | [B171 — Je la tiens](blague-b171-je-la-tiens.md) | Deejay Di et Samantha | Radio Blague |
+| 182 | [B172 — Le producteur](blague-b172-le-producteur.md) | Deejay Di et Samantha | Radio Blague |
+| 183 | [B173 — Matthieu](blague-b173-matthieu.md) | Deejay Di et Samantha | Radio Blague |
+| 184 | [B174 — Sans voix](blague-b174-sans-voix.md) | Deejay Di et Samantha | Radio Blague |
+| 185 | [B175 — Et cetera](blague-b175-et-cetera.md) | Deejay Di et Samantha | Radio Blague |

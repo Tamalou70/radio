@@ -914,6 +914,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 15.91,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b171-je-la-tiens.mp3": {
+  "debut": 0,
+  "fin": 20.39,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b172-le-producteur.mp3": {
+  "debut": 0,
+  "fin": 32.84,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b173-matthieu.mp3": {
+  "debut": 0,
+  "fin": 21.6,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b174-sans-voix.mp3": {
+  "debut": 0,
+  "fin": 23.34,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b175-et-cetera.mp3": {
+  "debut": 0,
+  "fin": 28.82,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1746,5 +1771,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 13 — à juger","B167 — Trois puces","",26,0.61,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b167-trois-puces.mp3","blague","Deejay Di et Samantha","B167 — Trois puces","blague-b167-trois-puces",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 13 — à juger","B168 — Six jours","",18,0.42,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b168-six-jours.mp3","blague","Deejay Di et Samantha","B168 — Six jours","blague-b168-six-jours",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 13 — à juger","B169 — Les patates","",15,0.34,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b169-les-patates.mp3","blague","Deejay Di et Samantha","B169 — Les patates","blague-b169-les-patates",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 13 — à juger","B170 — Mignonne","",16,0.37,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b170-mignonne.mp3","blague","Deejay Di et Samantha","B170 — Mignonne","blague-b170-mignonne",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 13 — à juger","B170 — Mignonne","",16,0.37,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b170-mignonne.mp3","blague","Deejay Di et Samantha","B170 — Mignonne","blague-b170-mignonne",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 13 — à juger","B171 — Je la tiens","",22,0.5,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b171-je-la-tiens.mp3","blague","Deejay Di et Samantha","B171 — Je la tiens","blague-b171-je-la-tiens",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 13 — à juger","B172 — Le producteur","",34,0.79,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b172-le-producteur.mp3","blague","Deejay Di et Samantha","B172 — Le producteur","blague-b172-le-producteur",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 13 — à juger","B173 — Matthieu","",23,0.53,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b173-matthieu.mp3","blague","Deejay Di et Samantha","B173 — Matthieu","blague-b173-matthieu",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 13 — à juger","B174 — Sans voix","",25,0.57,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b174-sans-voix.mp3","blague","Deejay Di et Samantha","B174 — Sans voix","blague-b174-sans-voix",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 13 — à juger","B175 — Et cetera","",30,0.7,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b175-et-cetera.mp3","blague","Deejay Di et Samantha","B175 — Et cetera","blague-b175-et-cetera",0,"blague",1,"sur","création maison"]
 ];

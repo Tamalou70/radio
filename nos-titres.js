@@ -786,6 +786,54 @@ window.ANIMATIONS = [
   "duree": 13.08,
   "voix": "Deejay Di et Samantha",
   "nom": "Le salut des auditeurs"
+ },
+ {
+  "id": "duo-blase-1",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-blase-1.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blase-rien-a-faire-a-paleto.mp3",
+  "duree": 34.03,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-beton-arme-1",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-beton-arme-1.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/beton-arme-strawberry-ne-dort-pas.mp3",
+  "duree": 25.93,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-reine-mere-1",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-reine-mere-1.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/reine-mere-couronne-en-plastique.mp3",
+  "duree": 34.72,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-vieux-loup-1",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-vieux-loup-1.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/vieux-loup-sortez-les-cartons.mp3",
+  "duree": 29.89,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-tension-1",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-tension-1.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/tension-dernier-metro.mp3",
+  "duree": 29.89,
+  "voix": "Deejay Di et Samantha"
+ },
+ {
+  "id": "duo-normal-1",
+  "son": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/animations/duo-normal-1.mp3",
+  "station": "rapfr",
+  "avant": "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/normal-entretien-chez-lifeinvader.mp3",
+  "duree": 31.85,
+  "voix": "Deejay Di et Samantha"
  }
 ];
 window.CATALOGUE = [

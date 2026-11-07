@@ -1164,6 +1164,16 @@ window.MESURES = {
   "debut": 0,
   "fin": 15.33,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b221-les-lavements.mp3": {
+  "debut": 0,
+  "fin": 23.91,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b222-le-responsable.mp3": {
+  "debut": 0,
+  "fin": 16.07,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -2046,5 +2056,7 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 18 — à juger","B217 — Premiere operation","",13,0.3,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b217-premiere-operation.mp3","blague","Deejay Di et Samantha","B217 — Premiere operation","blague-b217-premiere-operation",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 18 — à juger","B218 — L ecriture","",22,0.51,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b218-l-ecriture.mp3","blague","Deejay Di et Samantha","B218 — L ecriture","blague-b218-l-ecriture",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 18 — à juger","B219 — Je vous parle","",11,0.26,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b219-je-vous-parle.mp3","blague","Deejay Di et Samantha","B219 — Je vous parle","blague-b219-je-vous-parle",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 18 — à juger","B220 — Les cimetieres","",15,0.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b220-les-cimetieres.mp3","blague","Deejay Di et Samantha","B220 — Les cimetieres","blague-b220-les-cimetieres",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 18 — à juger","B220 — Les cimetieres","",15,0.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b220-les-cimetieres.mp3","blague","Deejay Di et Samantha","B220 — Les cimetieres","blague-b220-les-cimetieres",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 18 — à juger","B221 — Les lavements","",25,0.58,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b221-les-lavements.mp3","blague","Deejay Di et Samantha","B221 — Les lavements","blague-b221-les-lavements",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 18 — à juger","B222 — Le responsable","",16,0.37,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b222-le-responsable.mp3","blague","Deejay Di et Samantha","B222 — Le responsable","blague-b222-le-responsable",0,"blague",1,"sur","création maison"]
 ];

@@ -237,3 +237,5 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 228 | [B218 — L ecriture](blague-b218-l-ecriture.md) | Deejay Di et Samantha | Radio Blague |
 | 229 | [B219 — Je vous parle](blague-b219-je-vous-parle.md) | Deejay Di et Samantha | Radio Blague |
 | 230 | [B220 — Les cimetieres](blague-b220-les-cimetieres.md) | Deejay Di et Samantha | Radio Blague |
+| 231 | [B221 — Les lavements](blague-b221-les-lavements.md) | Deejay Di et Samantha | Radio Blague |
+| 232 | [B222 — Le responsable](blague-b222-le-responsable.md) | Deejay Di et Samantha | Radio Blague |

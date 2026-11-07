@@ -182,3 +182,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 173 | [B163 — L alcool](blague-b163-l-alcool.md) | Deejay Di et Samantha | Radio Blague |
 | 174 | [B164 — Le loto](blague-b164-le-loto.md) | Deejay Di et Samantha | Radio Blague |
 | 175 | [B165 — L eau chaude](blague-b165-l-eau-chaude.md) | Deejay Di et Samantha | Radio Blague |
+| 176 | [B166 — Ophtalmo](blague-b166-ophtalmo.md) | Deejay Di et Samantha | Radio Blague |
+| 177 | [B167 — Trois puces](blague-b167-trois-puces.md) | Deejay Di et Samantha | Radio Blague |
+| 178 | [B168 — Six jours](blague-b168-six-jours.md) | Deejay Di et Samantha | Radio Blague |
+| 179 | [B169 — Les patates](blague-b169-les-patates.md) | Deejay Di et Samantha | Radio Blague |
+| 180 | [B170 — Mignonne](blague-b170-mignonne.md) | Deejay Di et Samantha | Radio Blague |

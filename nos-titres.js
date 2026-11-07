@@ -764,6 +764,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 20.26,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b141-je-vise-mal.mp3": {
+  "debut": 0,
+  "fin": 7.32,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b142-le-theatre.mp3": {
+  "debut": 0,
+  "fin": 15.92,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b143-catapulte.mp3": {
+  "debut": 0,
+  "fin": 11.53,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b144-le-slow.mp3": {
+  "debut": 0,
+  "fin": 17.42,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b145-apres-l-amour.mp3": {
+  "debut": 0,
+  "fin": 13.05,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1566,5 +1591,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 10 — à juger","B137 — La valise","",27,0.62,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b137-la-valise.mp3","blague","Deejay Di et Samantha","B137 — La valise","blague-b137-la-valise",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 10 — à juger","B138 — Plaisir et enerve","",14,0.33,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b138-plaisir-et-enerve.mp3","blague","Deejay Di et Samantha","B138 — Plaisir et enerve","blague-b138-plaisir-et-enerve",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 10 — à juger","B139 — Maman arrive","",20,0.45,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b139-maman-arrive.mp3","blague","Deejay Di et Samantha","B139 — Maman arrive","blague-b139-maman-arrive",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 10 — à juger","B140 — La finale","",22,0.5,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b140-la-finale.mp3","blague","Deejay Di et Samantha","B140 — La finale","blague-b140-la-finale",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 10 — à juger","B140 — La finale","",22,0.5,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b140-la-finale.mp3","blague","Deejay Di et Samantha","B140 — La finale","blague-b140-la-finale",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 10 — à juger","B141 — Je vise mal","",7,0.17,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b141-je-vise-mal.mp3","blague","Deejay Di et Samantha","B141 — Je vise mal","blague-b141-je-vise-mal",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 10 — à juger","B142 — Le theatre","",16,0.37,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b142-le-theatre.mp3","blague","Deejay Di et Samantha","B142 — Le theatre","blague-b142-le-theatre",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 10 — à juger","B143 — Catapulte","",12,0.27,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b143-catapulte.mp3","blague","Deejay Di et Samantha","B143 — Catapulte","blague-b143-catapulte",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 10 — à juger","B144 — Le slow","",17,0.4,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b144-le-slow.mp3","blague","Deejay Di et Samantha","B144 — Le slow","blague-b144-le-slow",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 10 — à juger","B145 — Apres l amour","",13,0.3,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b145-apres-l-amour.mp3","blague","Deejay Di et Samantha","B145 — Apres l amour","blague-b145-apres-l-amour",0,"blague",1,"sur","création maison"]
 ];

@@ -157,3 +157,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 148 | [B138 — Plaisir et enerve](blague-b138-plaisir-et-enerve.md) | Deejay Di et Samantha | Radio Blague |
 | 149 | [B139 — Maman arrive](blague-b139-maman-arrive.md) | Deejay Di et Samantha | Radio Blague |
 | 150 | [B140 — La finale](blague-b140-la-finale.md) | Deejay Di et Samantha | Radio Blague |
+| 151 | [B141 — Je vise mal](blague-b141-je-vise-mal.md) | Deejay Di et Samantha | Radio Blague |
+| 152 | [B142 — Le theatre](blague-b142-le-theatre.md) | Deejay Di et Samantha | Radio Blague |
+| 153 | [B143 — Catapulte](blague-b143-catapulte.md) | Deejay Di et Samantha | Radio Blague |
+| 154 | [B144 — Le slow](blague-b144-le-slow.md) | Deejay Di et Samantha | Radio Blague |
+| 155 | [B145 — Apres l amour](blague-b145-apres-l-amour.md) | Deejay Di et Samantha | Radio Blague |

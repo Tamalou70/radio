@@ -237,7 +237,7 @@
 </footer>
 
 <audio id="audio" preload="none" crossorigin="anonymous"></audio>
-<script src="nos-titres.js?v=1793983530952"></script>
+<script src="nos-titres.js?v=1794045579316"></script>
 <script>
 "use strict";
 // Un lien de partage (#stations=… ou #avis=…) ouvert sur cette page est renvoyé vers la page Catalogue, qui sait le lire.
@@ -263,6 +263,9 @@ const adresseSon = (m) => (/^(https?:|musique\/)/.test(m.chemin) ? m.chemin : HE
 // ---------- Catalogue (mêmes colonnes et mêmes styles que radio-maquette.html) ----------
 const GENRES = [
   ["rapfr", "Rap français", "Vinyle Rap"],
+  ["funkdisco", "Funk et disco", "Boule à Facettes"],
+  ["variete", "Variété française", "Variétés"],
+  ["punk", "Rock et punk", "Larsen"],
   ["russe", "Musique russe", "Radio Russe"],
   ["neon", "French touch et synthwave", "Néon"],
   ["piano", "Piano", "Radio Piano"], ["orchestre", "Orchestre", "Radio Orchestre"], ["opera", "Opéra et opérette", "Radio Opéra"],
@@ -893,7 +896,7 @@ try { const v = localStorage.getItem("radio_volume"); if (v !== null) $("volume"
 var PARAMS_JEU = (function () { const o = {}; String((typeof location !== "undefined" && location.search) || "").replace(/^\?/, "").split("&").forEach((p) => { const i = p.indexOf("="); const k = i < 0 ? p : p.slice(0, i); if (k) { try { o[decodeURIComponent(k)] = decodeURIComponent(i < 0 ? "" : p.slice(i + 1)); } catch (_) {} } }); return o; })();
 var MODE_JEU = PARAMS_JEU.jeu === "1";
 const cleStation = (s) => String((s && s.id) || "").replace(/^pret_/, "");
-const sigleDe = (nom) => { const mots = String(nom || "").split(/\s+/).filter((w) => /^\p{L}/u.test(w)); const l = mots.length > 1 ? mots.map((w) => w[0]) : [...(mots[0] || "?")].slice(0, 2); return l.join("").slice(0, 3).toUpperCase(); };
+const sigleDe = (nom) => { let mots = String(nom || "").split(/\s+/).filter((w) => /^\p{L}/u.test(w)); const grands = mots.filter((w) => w.length > 2); if (grands.length > 1) mots = grands; const l = mots.length > 1 ? mots.map((w) => w[0]) : [...(mots[0] || "?")].slice(0, 2); return l.join("").slice(0, 3).toUpperCase(); };
 function versJeu(msg) { if (window.parent && window.parent !== window) { try { window.parent.postMessage(msg, "*"); } catch (_) {} } }
 var dernierTitreJeu = null;
 function annoncerTitreJeu() {

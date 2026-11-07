@@ -129,6 +129,61 @@ window.MESURES = {
   "debut": 0,
   "fin": 145.31,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blase-rien-a-faire-a-paleto.mp3": {
+  "debut": 0,
+  "fin": 159.94,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/beton-arme-strawberry-ne-dort-pas.mp3": {
+  "debut": 0,
+  "fin": 167.38,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/reine-mere-couronne-en-plastique.mp3": {
+  "debut": 0,
+  "fin": 167.06,
+  "gain": 0.97
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/vieux-loup-sortez-les-cartons.mp3": {
+  "debut": 0,
+  "fin": 107.95,
+  "gain": 0.78
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/tension-dernier-metro.mp3": {
+  "debut": 0,
+  "fin": 138.7,
+  "gain": 0.95
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/normal-entretien-chez-lifeinvader.mp3": {
+  "debut": 0,
+  "fin": 123.79,
+  "gain": 0.85
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/velours-roller-a-vespucci.mp3": {
+  "debut": 0,
+  "fin": 199.99,
+  "gain": 0.92
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/le-grand-slap-la-laverie.mp3": {
+  "debut": 0,
+  "fin": 181.87,
+  "gain": 0.9
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/costard-funk-vendredi-dix-huit-heures.mp3": {
+  "debut": 0,
+  "fin": 149.95,
+  "gain": 0.9
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/capucine-la-grande-roue.mp3": {
+  "debut": 0,
+  "fin": 175.9,
+  "gain": 0.81
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rouille-cypress-flats.mp3": {
+  "debut": 0,
+  "fin": 148.9,
+  "gain": 0.76
  }
 };
 window.ANIMATIONS = [
@@ -756,5 +811,16 @@ window.CATALOGUE = [
 ["Cash Cash","Au dos des tickets","Au dos des tickets","",175,5.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-au-dos-des-tickets.mp3","rapfr","Cash Cash","Au dos des tickets","cash-cash-au-dos-des-tickets",0,"rapfr",1,"sur","création maison"],
 ["Cash Cash","Au dos des tickets","Pompe 4","",170,5.21,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-pompe-4.mp3","rapfr","Cash Cash","Pompe 4","cash-cash-pompe-4",0,"rapfr",1,"sur","création maison"],
 ["Cash Cash","Au dos des tickets","Démission","",175,5.36,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/cash-cash-demission.mp3","rapfr","Cash Cash","Démission","cash-cash-demission",0,"rapfr",1,"sur","création maison"],
-["Chrome","","Dimanche lent","",146,5.67,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/chrome-dimanche-lent.mp3","rapfr","Chrome","Dimanche lent","chrome-dimanche-lent",0,"rapfr",1,"sur","création maison"]
+["Chrome","","Dimanche lent","",146,5.67,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/chrome-dimanche-lent.mp3","rapfr","Chrome","Dimanche lent","chrome-dimanche-lent",0,"rapfr",1,"sur","création maison"],
+["Blasé","","Rien à faire à Paleto","",160,6.35,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blase-rien-a-faire-a-paleto.mp3","rapfr","Blasé","Rien à faire à Paleto","blase-rien-a-faire-a-paleto",0,"rapfr",1,"sur","création maison"],
+["Béton Armé","","Strawberry ne dort pas","",167,6.64,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/beton-arme-strawberry-ne-dort-pas.mp3","rapfr","Béton Armé","Strawberry ne dort pas","beton-arme-strawberry-ne-dort-pas",0,"rapfr",1,"sur","création maison"],
+["Reine Mère","","Couronne en plastique","",168,6.69,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/reine-mere-couronne-en-plastique.mp3","rapfr","Reine Mère","Couronne en plastique","reine-mere-couronne-en-plastique",0,"rapfr",1,"sur","création maison"],
+["Vieux Loup","","Sortez les cartons","",108,4.42,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/vieux-loup-sortez-les-cartons.mp3","rapfr","Vieux Loup","Sortez les cartons","vieux-loup-sortez-les-cartons",0,"rapfr",1,"sur","création maison"],
+["Tension","","Dernier métro","",139,5.43,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/tension-dernier-metro.mp3","rapfr","Tension","Dernier métro","tension-dernier-metro",0,"rapfr",1,"sur","création maison"],
+["Normal","","Entretien chez Lifeinvader","",125,4.77,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/normal-entretien-chez-lifeinvader.mp3","rapfr","Normal","Entretien chez Lifeinvader","normal-entretien-chez-lifeinvader",0,"rapfr",1,"sur","création maison"],
+["Velours","","Roller à Vespucci","",200,7.64,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/velours-roller-a-vespucci.mp3","funkdisco","Velours","Roller à Vespucci","velours-roller-a-vespucci",0,"funkdisco",1,"sur","création maison"],
+["Le Grand Slap","","La laverie","",182,6.95,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/le-grand-slap-la-laverie.mp3","funkdisco","Le Grand Slap","La laverie","le-grand-slap-la-laverie",0,"funkdisco",1,"sur","création maison"],
+["Costard Funk","","Vendredi dix-huit heures","",150,5.84,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/costard-funk-vendredi-dix-huit-heures.mp3","funkdisco","Costard Funk","Vendredi dix-huit heures","costard-funk-vendredi-dix-huit-heures",0,"funkdisco",1,"sur","création maison"],
+["Capucine","","La grande roue","",176,6.81,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/capucine-la-grande-roue.mp3","variete","Capucine","La grande roue","capucine-la-grande-roue",0,"variete",1,"sur","création maison"],
+["Rouille","","Cypress Flats","",149,6.01,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rouille-cypress-flats.mp3","punk","Rouille","Cypress Flats","rouille-cypress-flats",0,"punk",1,"sur","création maison"]
 ];

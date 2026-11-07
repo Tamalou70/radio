@@ -30,3 +30,14 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 21 | [Pompe 4](cash-cash-pompe-4.md) | Cash Cash | Vinyle Rap |
 | 22 | [Démission](cash-cash-demission.md) | Cash Cash | Vinyle Rap |
 | 23 | [Dimanche lent](chrome-dimanche-lent.md) | Chrome | Vinyle Rap |
+| 24 | [Rien à faire à Paleto](blase-rien-a-faire-a-paleto.md) | Blasé | Vinyle Rap |
+| 25 | [Strawberry ne dort pas](beton-arme-strawberry-ne-dort-pas.md) | Béton Armé | Vinyle Rap |
+| 26 | [Couronne en plastique](reine-mere-couronne-en-plastique.md) | Reine Mère | Vinyle Rap |
+| 27 | [Sortez les cartons](vieux-loup-sortez-les-cartons.md) | Vieux Loup | Vinyle Rap |
+| 28 | [Dernier métro](tension-dernier-metro.md) | Tension | Vinyle Rap |
+| 29 | [Entretien chez Lifeinvader](normal-entretien-chez-lifeinvader.md) | Normal | Vinyle Rap |
+| 30 | [Roller à Vespucci](velours-roller-a-vespucci.md) | Velours | Boule à Facettes |
+| 31 | [La laverie](le-grand-slap-la-laverie.md) | Le Grand Slap | Boule à Facettes |
+| 32 | [Vendredi dix-huit heures](costard-funk-vendredi-dix-huit-heures.md) | Costard Funk | Boule à Facettes |
+| 33 | [La grande roue](capucine-la-grande-roue.md) | Capucine | Variétés |
+| 34 | [Cypress Flats](rouille-cypress-flats.md) | Rouille | Larsen |

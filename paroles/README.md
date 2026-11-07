@@ -112,3 +112,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 103 | [B093 — Bar cimetiere](blague-b093-bar-cimetiere.md) | Deejay Di et Samantha | Radio Blague |
 | 104 | [B094 — Sable ciment](blague-b094-sable-ciment.md) | Deejay Di et Samantha | Radio Blague |
 | 105 | [B095 — Examen](blague-b095-examen.md) | Deejay Di et Samantha | Radio Blague |
+| 106 | [B096 — Mal de gorge](blague-b096-mal-de-gorge.md) | Deejay Di et Samantha | Radio Blague |
+| 107 | [B097 — Le vagin](blague-b097-le-vagin.md) | Deejay Di et Samantha | Radio Blague |
+| 108 | [B098 — Le change](blague-b098-le-change.md) | Deejay Di et Samantha | Radio Blague |
+| 109 | [B099 — Garde du chien](blague-b099-garde-du-chien.md) | Deejay Di et Samantha | Radio Blague |
+| 110 | [B100 — Le ski](blague-b100-le-ski.md) | Deejay Di et Samantha | Radio Blague |

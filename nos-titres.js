@@ -539,6 +539,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 24.77,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b096-mal-de-gorge.mp3": {
+  "debut": 0,
+  "fin": 40.03,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b097-le-vagin.mp3": {
+  "debut": 0,
+  "fin": 47.17,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b098-le-change.mp3": {
+  "debut": 0,
+  "fin": 21.15,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b099-garde-du-chien.mp3": {
+  "debut": 0,
+  "fin": 23.41,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b100-le-ski.mp3": {
+  "debut": 0,
+  "fin": 21,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1296,5 +1321,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 5 — à juger","B092 — Chameau","",10,0.24,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b092-chameau.mp3","blague","Deejay Di et Samantha","B092 — Chameau","blague-b092-chameau",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 5 — à juger","B093 — Bar cimetiere","",22,0.5,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b093-bar-cimetiere.mp3","blague","Deejay Di et Samantha","B093 — Bar cimetiere","blague-b093-bar-cimetiere",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 5 — à juger","B094 — Sable ciment","",14,0.33,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b094-sable-ciment.mp3","blague","Deejay Di et Samantha","B094 — Sable ciment","blague-b094-sable-ciment",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 5 — à juger","B095 — Examen","",26,0.6,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b095-examen.mp3","blague","Deejay Di et Samantha","B095 — Examen","blague-b095-examen",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 5 — à juger","B095 — Examen","",26,0.6,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b095-examen.mp3","blague","Deejay Di et Samantha","B095 — Examen","blague-b095-examen",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 6 — à juger","B096 — Mal de gorge","",42,0.95,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b096-mal-de-gorge.mp3","blague","Deejay Di et Samantha","B096 — Mal de gorge","blague-b096-mal-de-gorge",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 6 — à juger","B097 — Le vagin","",49,1.12,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b097-le-vagin.mp3","blague","Deejay Di et Samantha","B097 — Le vagin","blague-b097-le-vagin",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 6 — à juger","B098 — Le change","",21,0.49,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b098-le-change.mp3","blague","Deejay Di et Samantha","B098 — Le change","blague-b098-le-change",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 6 — à juger","B099 — Garde du chien","",25,0.57,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b099-garde-du-chien.mp3","blague","Deejay Di et Samantha","B099 — Garde du chien","blague-b099-garde-du-chien",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 6 — à juger","B100 — Le ski","",21,0.48,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b100-le-ski.mp3","blague","Deejay Di et Samantha","B100 — Le ski","blague-b100-le-ski",0,"blague",1,"sur","création maison"]
 ];

@@ -102,3 +102,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 93 | [B083 — Calendrier](blague-b083-calendrier.md) | Deejay Di et Samantha | Radio Blague |
 | 94 | [B084 — Test belle mere](blague-b084-test-belle-mere.md) | Deejay Di et Samantha | Radio Blague |
 | 95 | [B085 — L addition](blague-b085-l-addition.md) | Deejay Di et Samantha | Radio Blague |
+| 96 | [B086 — Statue](blague-b086-statue.md) | Deejay Di et Samantha | Radio Blague |
+| 97 | [B087 — Pharmacien](blague-b087-pharmacien.md) | Deejay Di et Samantha | Radio Blague |
+| 98 | [B088 — La surprise](blague-b088-la-surprise.md) | Deejay Di et Samantha | Radio Blague |
+| 99 | [B089 — Opportunite](blague-b089-opportunite.md) | Deejay Di et Samantha | Radio Blague |
+| 100 | [B090 — Mot de passe](blague-b090-mot-de-passe.md) | Deejay Di et Samantha | Radio Blague |

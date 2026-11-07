@@ -989,6 +989,31 @@ window.MESURES = {
   "debut": 0,
   "fin": 20.21,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b186-le-parking.mp3": {
+  "debut": 0,
+  "fin": 24.51,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b187-foufoune-et-zizi.mp3": {
+  "debut": 0,
+  "fin": 17.32,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b188-misericorde.mp3": {
+  "debut": 0,
+  "fin": 19.9,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b189-les-journaux.mp3": {
+  "debut": 0,
+  "fin": 22.32,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b190-le-magazine.mp3": {
+  "debut": 0,
+  "fin": 18.27,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -1836,5 +1861,10 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 14 — à juger","B182 — Sur pied","",18,0.41,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b182-sur-pied.mp3","blague","Deejay Di et Samantha","B182 — Sur pied","blague-b182-sur-pied",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 14 — à juger","B183 — Entrer dans la police","",18,0.41,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b183-entrer-dans-la-police.mp3","blague","Deejay Di et Samantha","B183 — Entrer dans la police","blague-b183-entrer-dans-la-police",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 14 — à juger","B184 — L ecarteur","",42,0.96,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b184-l-ecarteur.mp3","blague","Deejay Di et Samantha","B184 — L ecarteur","blague-b184-l-ecarteur",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 14 — à juger","B185 — Comme un chien","",20,0.46,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b185-comme-un-chien.mp3","blague","Deejay Di et Samantha","B185 — Comme un chien","blague-b185-comme-un-chien",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 14 — à juger","B185 — Comme un chien","",20,0.46,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b185-comme-un-chien.mp3","blague","Deejay Di et Samantha","B185 — Comme un chien","blague-b185-comme-un-chien",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 15 — à juger","B186 — Le parking","",26,0.6,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b186-le-parking.mp3","blague","Deejay Di et Samantha","B186 — Le parking","blague-b186-le-parking",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 15 — à juger","B187 — Foufoune et zizi","",17,0.4,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b187-foufoune-et-zizi.mp3","blague","Deejay Di et Samantha","B187 — Foufoune et zizi","blague-b187-foufoune-et-zizi",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 15 — à juger","B188 — Misericorde","",20,0.46,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b188-misericorde.mp3","blague","Deejay Di et Samantha","B188 — Misericorde","blague-b188-misericorde",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 15 — à juger","B189 — Les journaux","",24,0.55,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b189-les-journaux.mp3","blague","Deejay Di et Samantha","B189 — Les journaux","blague-b189-les-journaux",0,"blague",1,"sur","création maison"],
+["Deejay Di et Samantha","Série 15 — à juger","B190 — Le magazine","",18,0.42,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b190-le-magazine.mp3","blague","Deejay Di et Samantha","B190 — Le magazine","blague-b190-le-magazine",0,"blague",1,"sur","création maison"]
 ];

@@ -202,3 +202,8 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 193 | [B183 — Entrer dans la police](blague-b183-entrer-dans-la-police.md) | Deejay Di et Samantha | Radio Blague |
 | 194 | [B184 — L ecarteur](blague-b184-l-ecarteur.md) | Deejay Di et Samantha | Radio Blague |
 | 195 | [B185 — Comme un chien](blague-b185-comme-un-chien.md) | Deejay Di et Samantha | Radio Blague |
+| 196 | [B186 — Le parking](blague-b186-le-parking.md) | Deejay Di et Samantha | Radio Blague |
+| 197 | [B187 — Foufoune et zizi](blague-b187-foufoune-et-zizi.md) | Deejay Di et Samantha | Radio Blague |
+| 198 | [B188 — Misericorde](blague-b188-misericorde.md) | Deejay Di et Samantha | Radio Blague |
+| 199 | [B189 — Les journaux](blague-b189-les-journaux.md) | Deejay Di et Samantha | Radio Blague |
+| 200 | [B190 — Le magazine](blague-b190-le-magazine.md) | Deejay Di et Samantha | Radio Blague |

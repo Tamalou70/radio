@@ -1,6 +1,6 @@
 # Rook — l'histoire
 
-> Écrite par STUDIO d'après ses dix titres (premier album, rap en anglais, future station US). Chaque chapitre porte le titre qui
+> Écrite par STUDIO d'après ses dix titres (premier album, rap en anglais, station West Coast Miami). Chaque chapitre porte le titre qui
 > le raconte. Pour les animateurs : de quoi présenter l'artiste et chaque morceau. [Écouter la radio](https://tamalou70.github.io/radio/)
 
 À Davis, au sud de Los Santos, tout le monde l'appelle **Rook**. Aux échecs, la tour : la pièce qui avance lentement, toujours en

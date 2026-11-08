@@ -1239,6 +1239,46 @@ window.MESURES = {
   "debut": 0,
   "fin": 156.91,
   "gain": 0.91
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-low-and-slow.mp3": {
+  "debut": 0.53,
+  "fin": 171.98,
+  "gain": 0.99
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-tow-yard.mp3": {
+  "debut": 0,
+  "fin": 149.11,
+  "gain": 0.99
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-hydraulics.mp3": {
+  "debut": 0,
+  "fin": 131.42,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-mama-liberty-city.mp3": {
+  "debut": 0,
+  "fin": 153.19,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-chains.mp3": {
+  "debut": 0.53,
+  "fin": 138.94,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-pink-slip.mp3": {
+  "debut": 0,
+  "fin": 137.78,
+  "gain": 0.93
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-boulevard.mp3": {
+  "debut": 0,
+  "fin": 139.78,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-three-wheel-motion.mp3": {
+  "debut": 0,
+  "fin": 158.61,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -2136,5 +2176,13 @@ window.CATALOGUE = [
 ["Rook","","Pawns","",124,4.76,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-pawns.mp3","rapus","Rook","Pawns","rook-pawns",0,"rapus",1,"sur","création maison"],
 ["Rook","","Castle","",171,6.71,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-castle.mp3","rapus","Rook","Castle","rook-castle",0,"rapus",1,"sur","création maison"],
 ["Rook","","Stalemate","",144,5.78,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-stalemate.mp3","rapus","Rook","Stalemate","rook-stalemate",0,"rapus",1,"sur","création maison"],
-["Rook","","Checkmate","",157,6.25,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-checkmate.mp3","rapus","Rook","Checkmate","rook-checkmate",0,"rapus",1,"sur","création maison"]
+["Rook","","Checkmate","",157,6.25,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-checkmate.mp3","rapus","Rook","Checkmate","rook-checkmate",0,"rapus",1,"sur","création maison"],
+["Lo Reyes","","Low and Slow","",172,6.71,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-low-and-slow.mp3","hitsus","Lo Reyes","Low and Slow","lo-reyes-low-and-slow",0,"hitsus",1,"sur","création maison"],
+["Lo Reyes","","Tow Yard","",149,5.77,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-tow-yard.mp3","hitsus","Lo Reyes","Tow Yard","lo-reyes-tow-yard",0,"hitsus",1,"sur","création maison"],
+["Lo Reyes","","Hydraulics","",131,5.14,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-hydraulics.mp3","hitsus","Lo Reyes","Hydraulics","lo-reyes-hydraulics",0,"hitsus",1,"sur","création maison"],
+["Lo Reyes","","Mama in Liberty City","",153,5.99,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-mama-liberty-city.mp3","hitsus","Lo Reyes","Mama in Liberty City","lo-reyes-mama-liberty-city",0,"hitsus",1,"sur","création maison"],
+["Lo Reyes","","Chains","",139,5.52,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-chains.mp3","hitsus","Lo Reyes","Chains","lo-reyes-chains",0,"hitsus",1,"sur","création maison"],
+["Lo Reyes","","Pink Slip","",138,5.51,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-pink-slip.mp3","hitsus","Lo Reyes","Pink Slip","lo-reyes-pink-slip",0,"hitsus",1,"sur","création maison"],
+["Lo Reyes","","Boulevard","",140,5.44,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-boulevard.mp3","hitsus","Lo Reyes","Boulevard","lo-reyes-boulevard",0,"hitsus",1,"sur","création maison"],
+["Lo Reyes","","Three Wheel Motion","",159,6.23,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-three-wheel-motion.mp3","hitsus","Lo Reyes","Three Wheel Motion","lo-reyes-three-wheel-motion",0,"hitsus",1,"sur","création maison"]
 ];

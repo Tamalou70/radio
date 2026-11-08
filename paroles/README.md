@@ -252,3 +252,11 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 243 | [Castle](rook-castle.md) | Rook | West Coast Miami |
 | 244 | [Stalemate](rook-stalemate.md) | Rook | West Coast Miami |
 | 245 | [Checkmate](rook-checkmate.md) | Rook | West Coast Miami |
+| 246 | [Low and Slow](lo-reyes-low-and-slow.md) | Lo Reyes | Hits USA |
+| 247 | [Tow Yard](lo-reyes-tow-yard.md) | Lo Reyes | Hits USA |
+| 248 | [Hydraulics](lo-reyes-hydraulics.md) | Lo Reyes | Hits USA |
+| 249 | [Mama in Liberty City](lo-reyes-mama-liberty-city.md) | Lo Reyes | Hits USA |
+| 250 | [Chains](lo-reyes-chains.md) | Lo Reyes | Hits USA |
+| 251 | [Pink Slip](lo-reyes-pink-slip.md) | Lo Reyes | Hits USA |
+| 252 | [Boulevard](lo-reyes-boulevard.md) | Lo Reyes | Hits USA |
+| 253 | [Three Wheel Motion](lo-reyes-three-wheel-motion.md) | Lo Reyes | Hits USA |

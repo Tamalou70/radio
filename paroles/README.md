@@ -242,3 +242,12 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 233 | [B223 — C est fait](blague-b223-c-est-fait.md) | Deejay Di et Samantha | Radio Blague |
 | 234 | [B224 — La salle d attente](blague-b224-la-salle-d-attente.md) | Deejay Di et Samantha | Radio Blague |
 | 235 | [B225 — Saignant](blague-b225-saignant.md) | Deejay Di et Samantha | Radio Blague |
+| 236 | [Straight Lines](rook-straight-lines.md) | Rook | West Coast Miami |
+| 237 | [Move by Mail](rook-move-by-mail.md) | Rook | West Coast Miami |
+| 238 | [Night Shift](rook-night-shift.md) | Rook | West Coast Miami |
+| 239 | [Speed Chess](rook-speed-chess.md) | Rook | West Coast Miami |
+| 240 | [Little Queen](rook-little-queen.md) | Rook | West Coast Miami |
+| 241 | [Receipts](rook-receipts.md) | Rook | West Coast Miami |
+| 242 | [Pawns](rook-pawns.md) | Rook | West Coast Miami |
+| 243 | [Castle](rook-castle.md) | Rook | West Coast Miami |
+| 244 | [Stalemate](rook-stalemate.md) | Rook | West Coast Miami |

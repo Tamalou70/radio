@@ -1189,6 +1189,51 @@ window.MESURES = {
   "debut": 0,
   "fin": 16.38,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-straight-lines.mp3": {
+  "debut": 0,
+  "fin": 158.63,
+  "gain": 0.91
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-move-by-mail.mp3": {
+  "debut": 0,
+  "fin": 148.82,
+  "gain": 0.82
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-night-shift.mp3": {
+  "debut": 0,
+  "fin": 181.47,
+  "gain": 0.93
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-speed-chess.mp3": {
+  "debut": 0,
+  "fin": 149.22,
+  "gain": 0.88
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-little-queen.mp3": {
+  "debut": 0,
+  "fin": 152.83,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-receipts.mp3": {
+  "debut": 0,
+  "fin": 152.11,
+  "gain": 0.81
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-pawns.mp3": {
+  "debut": 0,
+  "fin": 123.55,
+  "gain": 0.95
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-castle.mp3": {
+  "debut": 0,
+  "fin": 171.07,
+  "gain": 0.91
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-stalemate.mp3": {
+  "debut": 0,
+  "fin": 143.29,
+  "gain": 0.93
  }
 };
 window.ANIMATIONS = [
@@ -2076,5 +2121,14 @@ window.CATALOGUE = [
 ["Deejay Di et Samantha","Série 18 — à juger","B222 — Le responsable","",16,0.37,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b222-le-responsable.mp3","blague","Deejay Di et Samantha","B222 — Le responsable","blague-b222-le-responsable",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 18 — à juger","B223 — C est fait","",25,0.56,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b223-c-est-fait.mp3","blague","Deejay Di et Samantha","B223 — C est fait","blague-b223-c-est-fait",0,"blague",1,"sur","création maison"],
 ["Deejay Di et Samantha","Série 18 — à juger","B224 — La salle d attente","",22,0.49,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b224-la-salle-d-attente.mp3","blague","Deejay Di et Samantha","B224 — La salle d attente","blague-b224-la-salle-d-attente",0,"blague",1,"sur","création maison"],
-["Deejay Di et Samantha","Série 18 — à juger","B225 — Saignant","",16,0.38,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b225-saignant.mp3","blague","Deejay Di et Samantha","B225 — Saignant","blague-b225-saignant",0,"blague",1,"sur","création maison"]
+["Deejay Di et Samantha","Série 18 — à juger","B225 — Saignant","",16,0.38,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/blague-b225-saignant.mp3","blague","Deejay Di et Samantha","B225 — Saignant","blague-b225-saignant",0,"blague",1,"sur","création maison"],
+["Rook","","Straight Lines","",160,6.1,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-straight-lines.mp3","rapus","Rook","Straight Lines","rook-straight-lines",0,"rapus",1,"sur","création maison"],
+["Rook","","Move by Mail","",150,5.9,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-move-by-mail.mp3","rapus","Rook","Move by Mail","rook-move-by-mail",0,"rapus",1,"sur","création maison"],
+["Rook","","Night Shift","",182,7.11,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-night-shift.mp3","rapus","Rook","Night Shift","rook-night-shift",0,"rapus",1,"sur","création maison"],
+["Rook","","Speed Chess","",150,5.72,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-speed-chess.mp3","rapus","Rook","Speed Chess","rook-speed-chess",0,"rapus",1,"sur","création maison"],
+["Rook","","Little Queen","",153,6.07,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-little-queen.mp3","rapus","Rook","Little Queen","rook-little-queen",0,"rapus",1,"sur","création maison"],
+["Rook","","Receipts","",152,5.97,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-receipts.mp3","rapus","Rook","Receipts","rook-receipts",0,"rapus",1,"sur","création maison"],
+["Rook","","Pawns","",124,4.76,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-pawns.mp3","rapus","Rook","Pawns","rook-pawns",0,"rapus",1,"sur","création maison"],
+["Rook","","Castle","",171,6.71,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-castle.mp3","rapus","Rook","Castle","rook-castle",0,"rapus",1,"sur","création maison"],
+["Rook","","Stalemate","",144,5.78,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-stalemate.mp3","rapus","Rook","Stalemate","rook-stalemate",0,"rapus",1,"sur","création maison"]
 ];

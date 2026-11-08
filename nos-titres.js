@@ -1279,6 +1279,36 @@ window.MESURES = {
   "debut": 0,
   "fin": 158.61,
   "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/tommy-gunn-rat-a-tat.mp3": {
+  "debut": 0,
+  "fin": 118.27,
+  "gain": 0.99
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/tommy-gunn-forum-drive.mp3": {
+  "debut": 0,
+  "fin": 130.18,
+  "gain": 0.91
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/coyote-howl.mp3": {
+  "debut": 0,
+  "fin": 123.82,
+  "gain": 1
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/coyote-nana-june.mp3": {
+  "debut": 0,
+  "fin": 151.18,
+  "gain": 0.87
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/coyote-alamo-sea.mp3": {
+  "debut": 0,
+  "fin": 150.94,
+  "gain": 0.91
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/coyote-daddy-went-to-los-santos.mp3": {
+  "debut": 0,
+  "fin": 111.38,
+  "gain": 0.98
  }
 };
 window.ANIMATIONS = [
@@ -2184,5 +2214,11 @@ window.CATALOGUE = [
 ["Lo Reyes","","Chains","",139,5.52,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-chains.mp3","hitsus","Lo Reyes","Chains","lo-reyes-chains",0,"hitsus",1,"sur","création maison"],
 ["Lo Reyes","","Pink Slip","",138,5.51,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-pink-slip.mp3","hitsus","Lo Reyes","Pink Slip","lo-reyes-pink-slip",0,"hitsus",1,"sur","création maison"],
 ["Lo Reyes","","Boulevard","",140,5.44,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-boulevard.mp3","hitsus","Lo Reyes","Boulevard","lo-reyes-boulevard",0,"hitsus",1,"sur","création maison"],
-["Lo Reyes","","Three Wheel Motion","",159,6.23,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-three-wheel-motion.mp3","hitsus","Lo Reyes","Three Wheel Motion","lo-reyes-three-wheel-motion",0,"hitsus",1,"sur","création maison"]
+["Lo Reyes","","Three Wheel Motion","",159,6.23,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/lo-reyes-three-wheel-motion.mp3","hitsus","Lo Reyes","Three Wheel Motion","lo-reyes-three-wheel-motion",0,"hitsus",1,"sur","création maison"],
+["Tommy Gunn","","Rat-a-Tat","",118,4.65,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/tommy-gunn-rat-a-tat.mp3","rapus","Tommy Gunn","Rat-a-Tat","tommy-gunn-rat-a-tat",0,"rapus",1,"sur","création maison"],
+["Tommy Gunn","","Forum Drive","",130,5.26,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/tommy-gunn-forum-drive.mp3","rapus","Tommy Gunn","Forum Drive","tommy-gunn-forum-drive",0,"rapus",1,"sur","création maison"],
+["Coyote","","Howl","",124,5.33,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/coyote-howl.mp3","hitsus","Coyote","Howl","coyote-howl",0,"hitsus",1,"sur","création maison"],
+["Coyote","","Nana June","",151,5.85,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/coyote-nana-june.mp3","hitsus","Coyote","Nana June","coyote-nana-june",0,"hitsus",1,"sur","création maison"],
+["Coyote","","Alamo Sea","",151,5.77,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/coyote-alamo-sea.mp3","hitsus","Coyote","Alamo Sea","coyote-alamo-sea",0,"hitsus",1,"sur","création maison"],
+["Coyote","","Daddy Went to Los Santos","",111,4.26,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/coyote-daddy-went-to-los-santos.mp3","hitsus","Coyote","Daddy Went to Los Santos","coyote-daddy-went-to-los-santos",0,"hitsus",1,"sur","création maison"]
 ];

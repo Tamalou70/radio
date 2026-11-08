@@ -260,3 +260,9 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 251 | [Pink Slip](lo-reyes-pink-slip.md) | Lo Reyes | Hits USA |
 | 252 | [Boulevard](lo-reyes-boulevard.md) | Lo Reyes | Hits USA |
 | 253 | [Three Wheel Motion](lo-reyes-three-wheel-motion.md) | Lo Reyes | Hits USA |
+| 254 | [Rat-a-Tat](tommy-gunn-rat-a-tat.md) | Tommy Gunn | West Coast Miami |
+| 255 | [Forum Drive](tommy-gunn-forum-drive.md) | Tommy Gunn | West Coast Miami |
+| 256 | [Howl](coyote-howl.md) | Coyote | Hits USA |
+| 257 | [Nana June](coyote-nana-june.md) | Coyote | Hits USA |
+| 258 | [Alamo Sea](coyote-alamo-sea.md) | Coyote | Hits USA |
+| 259 | [Daddy Went to Los Santos](coyote-daddy-went-to-los-santos.md) | Coyote | Hits USA |

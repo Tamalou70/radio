@@ -240,7 +240,7 @@
 </footer>
 
 <audio id="audio" preload="none" crossorigin="anonymous"></audio>
-<script src="nos-titres.js?v=1794145655957"></script>
+<script src="nos-titres.js?v=1794152168621"></script>
 <script>
 "use strict";
 // Un lien de partage (#stations=… ou #avis=…) ouvert sur cette page est renvoyé vers la page Catalogue, qui sait le lire.
@@ -385,6 +385,19 @@ const GAINS = new Map(), EFFETS = new Map();   // EFFETS : filtre et écho de ch
 // Chemin du son : chaque lecteur de musique → son gain (fondus) → « baisse » (la musique baissée sous les voix, 05/11 au soir)
 // → volume général → spectre → haut-parleurs ; la voix → son gain → volume général. Deux réglages séparés : un fondu et une
 // baisse ne se gênent jamais.
+// SON 3D DU MODE JEU (08/11/2026, demande de RADIO de Renaissance, transmise par Simon) : en mode jeu SEULEMENT, le volume
+// général passe par un « côté » (StereoPannerNode, -1 gauche … 1 droite) puis un « étouffement » (passe-bas : 1 = rien, 0 ≈ 600 Hz,
+// une musique derrière un mur), avant le spectre et les haut-parleurs. Le jeu les règle par messages (voir MODE JEU) ; une valeur
+// reçue avant que le son soit branché est gardée et appliquée au branchement. Le site normal ne passe par rien de tout ça.
+let panJeu = null, filtreJeu = null, PAN_VOULU = 0, FILTRE_VOULU = 1;
+const frequenceFiltre = (v) => 600 * Math.pow(20000 / 600, v);
+function sortieMaitre() {
+  if (typeof MODE_JEU === "undefined" || !MODE_JEU || !ctxAudio.createStereoPanner) return analyseur;
+  panJeu = ctxAudio.createStereoPanner(); panJeu.pan.value = PAN_VOULU;
+  filtreJeu = ctxAudio.createBiquadFilter(); filtreJeu.type = "lowpass"; filtreJeu.Q.value = 0.7; filtreJeu.frequency.value = frequenceFiltre(FILTRE_VOULU);
+  panJeu.connect(filtreJeu); filtreJeu.connect(analyseur);
+  return panJeu;
+}
 function brancherSpectre() {
   if (analyseur) { if (ctxAudio && ctxAudio.state === "suspended") ctxAudio.resume(); return; }
   if (!window.AudioContext) return;
@@ -393,7 +406,7 @@ function brancherSpectre() {
     maitre = ctxAudio.createGain(); maitre.gain.value = $("volume").value / 100;
     baisse = ctxAudio.createGain(); baisse.gain.value = 1; baisse.connect(maitre);
     analyseur = ctxAudio.createAnalyser(); analyseur.fftSize = 256; analyseur.smoothingTimeConstant = 0.82;
-    maitre.connect(analyseur); analyseur.connect(ctxAudio.destination); donneesSpectre = new Uint8Array(analyseur.frequencyBinCount);
+    maitre.connect(sortieMaitre()); analyseur.connect(ctxAudio.destination); donneesSpectre = new Uint8Array(analyseur.frequencyBinCount);
     for (const el of [...LECTEURS, VOIX]) {
       const g = ctxAudio.createGain(); g.gain.value = el === VOIX ? VOLUME_VOIX : el === audio ? gainDe(courant()) : 0;
       const src = ctxAudio.createMediaElementSource(el);
@@ -930,6 +943,12 @@ window.addEventListener("message", (e) => {
     const v = Math.max(0, Math.min(1, Number(d.valeur))); if (!isFinite(v)) return;
     $("volume").value = Math.round(v * 100);
     if (maitre) maitre.gain.value = v; else audio.volume = Math.min(1, v * gainDe(courant()));
+  } else if (d.type === "pan") {
+    const v = Math.max(-1, Math.min(1, Number(d.valeur))); if (!isFinite(v)) return;
+    PAN_VOULU = v; if (panJeu) panJeu.pan.setTargetAtTime(v, ctxAudio.currentTime, 0.08);
+  } else if (d.type === "filtre") {
+    const v = Math.max(0, Math.min(1, Number(d.valeur))); if (!isFinite(v)) return;
+    FILTRE_VOULU = v; if (filtreJeu) filtreJeu.frequency.setTargetAtTime(frequenceFiltre(v), ctxAudio.currentTime, 0.1);
   } else if (d.type === "demarrer") {
     if (ctxAudio && ctxAudio.state === "suspended") ctxAudio.resume();
     if (!etat.joue || audio.paused) { etat.joue = true; brancherSpectre(); const p = positionEnDirect(etat.morceaux, Date.now()); jouer(p.index, p.secondes, true); }

@@ -22,8 +22,16 @@ douze ans, voudrait en être ; Tommy le renvoie à l'école. Au coucher du solei
 quartier d'en face, passe au ralenti. Pearl se tait, les gamins rentrent, Willis ferme sa Bible. La voiture ne s'arrête pas. Tommy
 n'a pas bougé du perron : « Forum Drive don't run ».
 
+## 3. Les jours — *Bolingbroke*
+
+Trois ans à la prison de Bolingbroke. Le premier jour, on lui prend ses lacets, sa ceinture et son nom. Le dixième, il connaît
+chaque gardien. Le quatre-vingt-dixième, la lettre de sa mère est collée au mur. Le six-centième, l'anniversaire de Lil' Chris
+passe derrière une porte en fer. Entre les deux, il lit chaque livre de la bibliothèque, deux fois, et il écrit cent couplets. Le
+jour mille quatre-vingt-quinze, la grille claque, le soleil lui tombe sur le visage, et il ne se retourne pas : « Bolingbroke got
+my years, but it ain't got my mind ».
+
 ---
 
 **Pour les annonces** : rappeur de Chamberlain Hills, voix grave et rocailleuse, gangsta rap dur de la côte Ouest ; il rappe en
 anglais. Ses mots : rat-a-tat, Chamberlain Hills, Forum Drive, le vert du quartier, et son code : ne jamais parler à la police. Ce
-qu'il refuse : qu'on touche aux enfants. Deux titres à l'antenne pour l'instant ; d'autres arrivent.
+qu'il refuse : qu'on touche aux enfants. Trois titres à l'antenne pour l'instant ; d'autres arrivent.

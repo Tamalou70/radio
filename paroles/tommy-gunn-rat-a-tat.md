@@ -8,10 +8,6 @@ Paroles : Tommy Gunn (STUDIO, Claude) · Musique : YuE2 Studio (prise a)
 
 ---
 
-### Intro
-
-
-
 ### Couplet 1
 
 Chamberlain Hills, where the sirens sing lullabies\

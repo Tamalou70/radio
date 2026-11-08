@@ -266,3 +266,4 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 257 | [Nana June](coyote-nana-june.md) | Coyote | Hits USA |
 | 258 | [Alamo Sea](coyote-alamo-sea.md) | Coyote | Hits USA |
 | 259 | [Daddy Went to Los Santos](coyote-daddy-went-to-los-santos.md) | Coyote | Hits USA |
+| 260 | [Bolingbroke](tommy-gunn-bolingbroke.md) | Tommy Gunn | West Coast Miami |

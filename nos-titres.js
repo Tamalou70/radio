@@ -1309,6 +1309,11 @@ window.MESURES = {
   "debut": 0,
   "fin": 111.38,
   "gain": 0.98
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/tommy-gunn-bolingbroke.mp3": {
+  "debut": 0,
+  "fin": 130.9,
+  "gain": 1
  }
 };
 window.ANIMATIONS = [
@@ -2220,5 +2225,6 @@ window.CATALOGUE = [
 ["Coyote","","Howl","",124,5.33,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/coyote-howl.mp3","hitsus","Coyote","Howl","coyote-howl",0,"hitsus",1,"sur","création maison"],
 ["Coyote","","Nana June","",151,5.85,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/coyote-nana-june.mp3","hitsus","Coyote","Nana June","coyote-nana-june",0,"hitsus",1,"sur","création maison"],
 ["Coyote","","Alamo Sea","",151,5.77,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/coyote-alamo-sea.mp3","hitsus","Coyote","Alamo Sea","coyote-alamo-sea",0,"hitsus",1,"sur","création maison"],
-["Coyote","","Daddy Went to Los Santos","",111,4.26,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/coyote-daddy-went-to-los-santos.mp3","hitsus","Coyote","Daddy Went to Los Santos","coyote-daddy-went-to-los-santos",0,"hitsus",1,"sur","création maison"]
+["Coyote","","Daddy Went to Los Santos","",111,4.26,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/coyote-daddy-went-to-los-santos.mp3","hitsus","Coyote","Daddy Went to Los Santos","coyote-daddy-went-to-los-santos",0,"hitsus",1,"sur","création maison"],
+["Tommy Gunn","","Bolingbroke","",131,5,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/tommy-gunn-bolingbroke.mp3","rapus","Tommy Gunn","Bolingbroke","tommy-gunn-bolingbroke",0,"rapus",1,"sur","création maison"]
 ];

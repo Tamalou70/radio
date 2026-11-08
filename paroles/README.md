@@ -239,3 +239,6 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 230 | [B220 — Les cimetieres](blague-b220-les-cimetieres.md) | Deejay Di et Samantha | Radio Blague |
 | 231 | [B221 — Les lavements](blague-b221-les-lavements.md) | Deejay Di et Samantha | Radio Blague |
 | 232 | [B222 — Le responsable](blague-b222-le-responsable.md) | Deejay Di et Samantha | Radio Blague |
+| 233 | [B223 — C est fait](blague-b223-c-est-fait.md) | Deejay Di et Samantha | Radio Blague |
+| 234 | [B224 — La salle d attente](blague-b224-la-salle-d-attente.md) | Deejay Di et Samantha | Radio Blague |
+| 235 | [B225 — Saignant](blague-b225-saignant.md) | Deejay Di et Samantha | Radio Blague |

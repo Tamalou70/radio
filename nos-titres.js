@@ -1234,6 +1234,11 @@ window.MESURES = {
   "debut": 0,
   "fin": 143.29,
   "gain": 0.93
+ },
+ "https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-checkmate.mp3": {
+  "debut": 0,
+  "fin": 156.91,
+  "gain": 0.91
  }
 };
 window.ANIMATIONS = [
@@ -2130,5 +2135,6 @@ window.CATALOGUE = [
 ["Rook","","Receipts","",152,5.97,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-receipts.mp3","rapus","Rook","Receipts","rook-receipts",0,"rapus",1,"sur","création maison"],
 ["Rook","","Pawns","",124,4.76,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-pawns.mp3","rapus","Rook","Pawns","rook-pawns",0,"rapus",1,"sur","création maison"],
 ["Rook","","Castle","",171,6.71,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-castle.mp3","rapus","Rook","Castle","rook-castle",0,"rapus",1,"sur","création maison"],
-["Rook","","Stalemate","",144,5.78,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-stalemate.mp3","rapus","Rook","Stalemate","rook-stalemate",0,"rapus",1,"sur","création maison"]
+["Rook","","Stalemate","",144,5.78,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-stalemate.mp3","rapus","Rook","Stalemate","rook-stalemate",0,"rapus",1,"sur","création maison"],
+["Rook","","Checkmate","",157,6.25,"mp3","https://pub-5d0afc1c6fbf457b8ced5bd7ac8bf289.r2.dev/nos-titres/rook-checkmate.mp3","rapus","Rook","Checkmate","rook-checkmate",0,"rapus",1,"sur","création maison"]
 ];

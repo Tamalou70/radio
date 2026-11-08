@@ -251,3 +251,4 @@ Les titres d'ALLSIDE sont recopiés tels quels, avec leurs indications de jeu en
 | 242 | [Pawns](rook-pawns.md) | Rook | West Coast Miami |
 | 243 | [Castle](rook-castle.md) | Rook | West Coast Miami |
 | 244 | [Stalemate](rook-stalemate.md) | Rook | West Coast Miami |
+| 245 | [Checkmate](rook-checkmate.md) | Rook | West Coast Miami |
